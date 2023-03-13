@@ -1,0 +1,26 @@
+client: {
+  nif: int       vai servir de id
+  name: string
+  email: string
+  phone: int
+  zip: int
+  password: string
+  wallet: int
+  isManager: boolean
+}
+
+vehicle: {
+  matricula: string    vai servir de id
+  tipo: string
+  battery: int
+  cost: int
+  isInUse: boolean
+  location: string
+}
+
+reservation: {
+ id: int
+ clientId: int
+ vehicleId: int
+ time: int
+}
