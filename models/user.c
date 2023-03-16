@@ -40,7 +40,16 @@ void printUserList(UserList *headNode)
   UserList *current = headNode;
   while (current != NULL)
   {
-    printf("\n%d,%s", current->user.nif, current->user.name);
+    printf("\n--------------------");
+    printf("\nUser:");
+    printf("\nNif: %d", current->user.nif);
+    printf("\nName: %s", current->user.name);
+    printf("\nEmail:%s", current->user.email);
+    printf("\nPhone:%d", current->user.phone);
+    printf("\nZip:%d", current->user.zip);
+    printf("\nWallet:%d", current->user.wallet);
+    printf("\nManager:%d", current->user.isManager);
+    printf("\n--------------------\n");
     current = current->next;
   }
   printf("\n");

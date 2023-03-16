@@ -36,7 +36,15 @@ void printVehicleList(VehicleList *headNode)
   VehicleList *current = headNode;
   while (current != NULL)
   {
+    printf("\n--------------------");
+    printf("\nVehicle:");
     printf("\n%s\n", current->vehicle.matricula);
+    printf("%s\n", current->vehicle.type);
+    printf("%d\n", current->vehicle.battery);
+    printf("%d\n", current->vehicle.cost);
+    printf("%d\n", current->vehicle.isInUse);
+    printf("%s\n", current->vehicle.location);
+    printf("\n--------------------");
     current = current->next;
   }
 }
