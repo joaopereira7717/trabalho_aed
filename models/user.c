@@ -20,11 +20,18 @@ User *createUser(int nif, char name[50], char email[50], int phone, int zip, cha
 
 bool createUserList(UserList **headNode, User user)
 {
-  UserList *newUser = (UserList *)malloc(sizeof(UserList));
-  newUser->user = user;
-  newUser->next = NULL;
+  UserList *new_node = (UserList *)malloc(sizeof(UserList));
 
-  *headNode = newUser;
+  if (new_node == NULL)
+  {
+    printf("could not allocate memory!");
+    return headNode;
+  }
+
+  new_node->user = user;
+  new_node->next = *headNode;
+  *headNode = new_node;
+
   return true;
 }
 
@@ -33,7 +40,24 @@ void printUserList(UserList *headNode)
   UserList *current = headNode;
   while (current != NULL)
   {
-    printf("\n%d\n", current->user.nif);
+    printf("\n%d,%s", current->user.nif, current->user.name);
     current = current->next;
   }
+  printf("\n");
+}
+
+// edit the user in the list with the given nif
+bool editUser(UserList *usersList, int nif, User user)
+{
+  UserList *current = usersList;
+  while (current != NULL)
+  {
+    if (current->user.nif == nif)
+    {
+      current->user = user;
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
 }

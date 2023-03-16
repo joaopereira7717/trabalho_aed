@@ -19,8 +19,13 @@ Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool 
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle)
 {
   VehicleList *newVehicle = (VehicleList *)malloc(sizeof(VehicleList));
+  if (newVehicle == NULL)
+  {
+    printf("could not allocate memory!");
+    return headNode;
+  }
   newVehicle->vehicle = vehicle;
-  newVehicle->next = NULL;
+  newVehicle->next = *headNode;
 
   *headNode = newVehicle;
   return true;
