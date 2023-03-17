@@ -38,13 +38,28 @@ void printVehicleList(VehicleList *headNode)
   {
     printf("\n--------------------");
     printf("\nVehicle:");
-    printf("\n%s\n", current->vehicle.matricula);
-    printf("%s\n", current->vehicle.type);
-    printf("%d\n", current->vehicle.battery);
-    printf("%d\n", current->vehicle.cost);
-    printf("%d\n", current->vehicle.isInUse);
-    printf("%s\n", current->vehicle.location);
+    printf("\nMatricula: %s\n", current->vehicle.matricula);
+    printf("Type:%s \n", current->vehicle.type);
+    printf("Battery: %d\n", current->vehicle.battery);
+    printf("Cost: %d\n", current->vehicle.cost);
+    printf("IsInUse: %d\n", current->vehicle.isInUse);
+    printf("Location: %s\n", current->vehicle.location);
     printf("\n--------------------");
     current = current->next;
   }
+}
+
+bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle)
+{
+  VehicleList *current = headNode;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.matricula, matricula) == 0)
+    {
+      current->vehicle = vehicle;
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
 }

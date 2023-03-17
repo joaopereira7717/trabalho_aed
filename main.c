@@ -20,11 +20,15 @@ int main()
   User *userToEdit = createUser(1, "name2", "email2", 2, 2, "password2", 2, false);
   bool isEdited = editUser(userList, 1, *userToEdit);
   printUserList(userList);
-  /* VehicleList *vehicleList = NULL;
+  VehicleList *vehicleList = NULL;
   Vehicle *vehicle = createVehicle("matricula", "type", 1, 1, true, "location");
   printf("%s", vehicle->matricula);
   bool isCreatedVehicle = createVehicleList(&vehicleList, *vehicle);
   printf("\nisCreated vehicle: %d", isCreatedVehicle);
-  printVehicleList(vehicleList); */
+  printVehicleList(vehicleList);
+  Vehicle *vehicleToEdit = createVehicle("matricula", "type2", 2, 2, false, "location2");
+  bool isEditedVehicle = editVehicle(vehicleList, "matricula", *vehicleToEdit);
+  printf("\nisEdited vehicle: %d", isEditedVehicle);
+  printVehicleList(vehicleList);
   return 0;
 }

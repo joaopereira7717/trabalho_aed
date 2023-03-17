@@ -21,3 +21,4 @@ struct VehicleList
 Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool isInUse, char *location);
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle);
 void printVehicleList(VehicleList *headNode);
+bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle);
