@@ -20,6 +20,9 @@ int main()
   User *userToEdit = createUser(1, "name2", "email2", 2, 2, "password2", 2, false);
   bool isEdited = editUser(userList, 1, *userToEdit);
   printUserList(userList);
+  bool isDeleted = deleteUser(userList, 1);
+  printf("\nisDeleted: %d", isDeleted);
+  printUserList(userList);
   VehicleList *vehicleList = NULL;
   Vehicle *vehicle = createVehicle("matricula", "type", 1, 1, true, "location");
   printf("%s", vehicle->matricula);
@@ -29,6 +32,9 @@ int main()
   Vehicle *vehicleToEdit = createVehicle("matricula", "type2", 2, 2, false, "location2");
   bool isEditedVehicle = editVehicle(vehicleList, "matricula", *vehicleToEdit);
   printf("\nisEdited vehicle: %d", isEditedVehicle);
+  printVehicleList(vehicleList);
+  bool isDeletedVehicle = deleteVehicle(vehicleList, "matricula");
+  printf("is deleted vehicle: %d", isDeletedVehicle);
   printVehicleList(vehicleList);
   return 0;
 }

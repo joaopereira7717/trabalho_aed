@@ -22,3 +22,4 @@ Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool 
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle);
 void printVehicleList(VehicleList *headNode);
 bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle);
+bool deleteVehicle(VehicleList **headNode, char *matricula);

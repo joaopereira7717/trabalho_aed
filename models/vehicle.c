@@ -63,3 +63,29 @@ bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle)
   }
   return false;
 }
+
+// delete vehicle
+bool deleteVehicle(VehicleList **headNode, char *matricula)
+{
+  VehicleList *current = *headNode;
+  VehicleList *previous = NULL;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.matricula, matricula) == 0)
+    {
+      if (previous == NULL)
+      {
+        *headNode = current->next;
+      }
+      else
+      {
+        previous->next = current->next;
+      }
+      free(current);
+      return true;
+    }
+    previous = current;
+    current = current->next;
+  }
+  return false;
+}

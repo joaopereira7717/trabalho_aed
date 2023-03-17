@@ -70,3 +70,29 @@ bool editUser(UserList *usersList, int nif, User user)
   }
   return false;
 }
+
+// delete user
+bool deleteUser(UserList *usersList, int nif)
+{
+  UserList *current = usersList;
+  UserList *previous = NULL;
+  while (current != NULL)
+  {
+    if (current->user.nif == nif)
+    {
+      if (previous == NULL)
+      {
+        usersList = current->next;
+      }
+      else
+      {
+        previous->next = current->next;
+      }
+      free(current);
+      return true;
+    }
+    previous = current;
+    current = current->next;
+  }
+  return false;
+}
