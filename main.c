@@ -57,5 +57,6 @@ int main()
   printf("\nisEdited rent: %d", isEditedRent);
   storeUsersInBin(userList);
   storeVehicleListInBin(vehicleList);
+  storeRentsInBin(rentList);
   return 0;
 }

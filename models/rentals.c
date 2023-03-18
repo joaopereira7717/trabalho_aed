@@ -145,3 +145,26 @@ bool editRent(RentList *headNode, int id, Rent rent)
   }
   return false;
 }
+
+bool storeRentsInBin(RentList *headNode)
+{
+  FILE *pFile = NULL;
+  RentList *current_node = headNode;
+
+  pFile = fopen("./saved-data/rents.bin", "wb");
+
+  if (pFile == NULL)
+  {
+    perror("could not open file");
+    return false;
+  }
+
+  while (current_node != NULL)
+  {
+    fwrite(&current_node->rent, sizeof(Rent), 1, pFile);
+    current_node = current_node->next;
+  }
+
+  fclose(pFile);
+  return true;
+}

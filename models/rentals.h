@@ -25,3 +25,4 @@ bool createRentList(RentList **headNode, Rent rent);
 int countRents(RentList *headNode);
 bool deleteRent(RentList **headNode, int id, char *vehicleRegistration, VehicleList *vehicleList);
 bool editRent(RentList *headNode, int id, Rent rent);
+bool storeRentsInBin(RentList *headNode);
