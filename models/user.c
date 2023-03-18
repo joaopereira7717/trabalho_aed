@@ -99,28 +99,31 @@ bool editUser(UserList *usersList, int nif, User user)
 }
 
 // delete user
-bool deleteUser(UserList *usersList, int nif)
+bool deleteUser(UserList **usersList, int nif)
 {
-  UserList *current = usersList;
+  UserList *current = *usersList;
   UserList *previous = NULL;
+
   while (current != NULL)
   {
     if (current->user.nif == nif)
     {
       if (previous == NULL)
       {
-        usersList = current->next;
+        *usersList = current->next;
       }
       else
       {
         previous->next = current->next;
       }
       free(current);
+      current = NULL;
       return true;
     }
     previous = current;
     current = current->next;
   }
+
   return false;
 }
 
@@ -149,6 +152,11 @@ bool storeUsersInBin(UserList *headNode)
 
 bool searchUserByNif(UserList *headNode, int nif)
 {
+  printUserList(headNode);
+  if (headNode == NULL)
+  {
+    return false;
+  }
   UserList *current = headNode;
   while (current != NULL)
   {

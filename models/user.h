@@ -26,6 +26,6 @@ User *createUser(int nif, char name[50], char email[50], int phone, int zip, cha
 bool createUserList(UserList **headNode, User user);
 void printUserList(UserList *headNode);
 bool editUser(UserList *usersList, int nif, User user);
-bool deleteUser(UserList *usersList, int nif);
+bool deleteUser(UserList **usersList, int nif);
 bool storeUsersInBin(UserList *headNode);
 bool searchUserByNif(UserList *headNode, int nif);

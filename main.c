@@ -22,7 +22,7 @@ int main()
   bool isEdited = editUser(userList, 1, *userToEdit);
   printf("\nisEdited: %d", isEdited);
   printUserList(userList);
-  bool isDeleted = deleteUser(userList, 1);
+  bool isDeleted = deleteUser(&userList, 1);
   printf("\nisDeleted: %d", isDeleted);
   printUserList(userList);
 
@@ -42,7 +42,8 @@ int main()
   printVehicleList(vehicleList);
 
   RentList *rentList = NULL;
-  Rent *rent = createRent("70-10-JK", 1, 10, vehicleList, userList, &rentList);
+  printUserList(userList);
+  Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
   bool isCreatedRent = createRentList(&rentList, *rent);
   printf("\nisCreated rent: %d", isCreatedRent);
   Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
