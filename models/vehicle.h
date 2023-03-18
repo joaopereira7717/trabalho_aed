@@ -5,7 +5,7 @@ typedef struct VehicleList VehicleList;
 
 typedef struct Vehicle
 {
-  char matricula[50];
+  char registration[50];
   char type[50];
   int battery;
   int cost;
@@ -20,9 +20,11 @@ struct VehicleList
 };
 
 VehicleList *readVehiclesFromTxt(VehicleList **headNode);
-Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool isInUse, char *location);
+Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location);
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle);
 void printVehicleList(VehicleList *headNode);
-bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle);
-bool deleteVehicle(VehicleList **headNode, char *matricula);
+bool editVehicle(VehicleList *headNode, char *registration, Vehicle vehicle);
+bool deleteVehicle(VehicleList **headNode, char *registration);
 bool storeVehicleListInBin(VehicleList *headNode);
+bool searchVehicleByRegistration(VehicleList *headNode, char *registration);
+bool isVehicleAvailable(VehicleList *headNode, char *registration);

@@ -21,7 +21,7 @@ VehicleList *readVehiclesFromTxt(VehicleList **headNode)
   while (!feof(pFile))
   {
     int isInUseInt;
-    fscanf(pFile, "%[^;];%[^;];%d;%d;%d;%[^;\n]\n", vehicle.matricula, vehicle.type, &vehicle.battery, &vehicle.cost, &isInUseInt, vehicle.location);
+    fscanf(pFile, "%[^;];%[^;];%d;%d;%d;%[^;\n]\n", vehicle.registration, vehicle.type, &vehicle.battery, &vehicle.cost, &isInUseInt, vehicle.location);
     vehicle.isInUse = (bool)isInUseInt;
     createVehicleList(headNode, vehicle);
   }
@@ -30,10 +30,10 @@ VehicleList *readVehiclesFromTxt(VehicleList **headNode)
   return *headNode;
 }
 
-Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool isInUse, char *location)
+Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location)
 {
   Vehicle *vehicle = (Vehicle *)malloc(sizeof(Vehicle));
-  strcpy(vehicle->matricula, matricula);
+  strcpy(vehicle->registration, registration);
   strcpy(vehicle->type, type);
   vehicle->battery = battery;
   vehicle->cost = cost;
@@ -64,7 +64,7 @@ void printVehicleList(VehicleList *headNode)
   {
     printf("\n--------------------");
     printf("\nVehicle:");
-    printf("\nMatricula: %s\n", current->vehicle.matricula);
+    printf("\nregistration: %s\n", current->vehicle.registration);
     printf("Type:%s \n", current->vehicle.type);
     printf("Battery: %d\n", current->vehicle.battery);
     printf("Cost: %d\n", current->vehicle.cost);
@@ -75,12 +75,12 @@ void printVehicleList(VehicleList *headNode)
   }
 }
 
-bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle)
+bool editVehicle(VehicleList *headNode, char *registration, Vehicle vehicle)
 {
   VehicleList *current = headNode;
   while (current != NULL)
   {
-    if (strcmp(current->vehicle.matricula, matricula) == 0)
+    if (strcmp(current->vehicle.registration, registration) == 0)
     {
       current->vehicle = vehicle;
       return true;
@@ -91,13 +91,13 @@ bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle)
 }
 
 // delete vehicle
-bool deleteVehicle(VehicleList **headNode, char *matricula)
+bool deleteVehicle(VehicleList **headNode, char *registration)
 {
   VehicleList *current = *headNode;
   VehicleList *previous = NULL;
   while (current != NULL)
   {
-    if (strcmp(current->vehicle.matricula, matricula) == 0)
+    if (strcmp(current->vehicle.registration, registration) == 0)
     {
       if (previous == NULL)
       {
@@ -137,4 +137,35 @@ bool storeVehicleListInBin(VehicleList *headNode)
 
   fclose(pFile);
   return true;
+}
+
+bool searchVehicleByRegistration(VehicleList *headNode, char *registration)
+{
+  VehicleList *current = headNode;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.registration, registration) == 0)
+    {
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
+}
+
+bool isVehicleAvailable(VehicleList *headNode, char *registration)
+{
+  VehicleList *current = headNode;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.registration, registration) == 0)
+    {
+      if (current->vehicle.isInUse == false)
+      {
+        return true;
+      }
+    }
+    current = current->next;
+  }
+  return false;
 }

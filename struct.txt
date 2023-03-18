@@ -10,7 +10,7 @@ client: {
 }
 
 vehicle: {
-  matricula: string    vai servir de id
+  registration: string    vai servir de id
   tipo: string
   battery: int
   cost: int

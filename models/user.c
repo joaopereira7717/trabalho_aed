@@ -146,3 +146,17 @@ bool storeUsersInBin(UserList *headNode)
   fclose(pFile);
   return true;
 }
+
+bool searchUserByNif(UserList *headNode, int nif)
+{
+  UserList *current = headNode;
+  while (current != NULL)
+  {
+    if (current->user.nif == nif)
+    {
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
+}
