@@ -19,8 +19,9 @@ struct RentList
   RentList *next;
 };
 
-Rent *createRent(int id, char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList);
+Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList, RentList **rentList);
 void printRentList(RentList *headNode);
 bool createRentList(RentList **headNode, Rent rent);
 int countRents(RentList *headNode);
-bool deleteRent(RentList **headNode, int id);
+bool deleteRent(RentList **headNode, int id, char *vehicleRegistration, VehicleList *vehicleList);
+bool editRent(RentList *headNode, int id, Rent rent);

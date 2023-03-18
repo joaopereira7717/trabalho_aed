@@ -8,9 +8,10 @@
 #include "./user.h"
 #include "./vehicle.h"
 
-Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList)
+Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList, RentList **rentList)
 {
-
+  Rent *rent = (Rent *)malloc(sizeof(Rent));
+  printf("Creating rent...\n");
   bool userExists = searchUserByNif(userList, userNif);
 
   if (!userExists)
@@ -35,8 +36,7 @@ Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, Vehi
     return NULL;
   }
 
-  Rent *rent = (Rent *)malloc(sizeof(Rent));
-  rent->id = countRents();
+  rent->id = countRents(*rentList);
   strcpy(rent->vehicleRegistration, vehicleRegistration);
   rent->userNif = userNif;
   rent->timeInMinutes = timeInMinutes;
@@ -86,7 +86,7 @@ void printRentList(RentList *headNode)
   printf("\n");
 }
 
-bool deleteRent(RentList **headNode, int id)
+bool deleteRent(RentList **headNode, int id, char *vehicleRegistration, VehicleList *vehicleList)
 {
   RentList *current = *headNode;
   RentList *previous = NULL;
@@ -129,4 +129,19 @@ int countRents(RentList *headNode)
     current = current->next;
   }
   return count;
+}
+
+bool editRent(RentList *headNode, int id, Rent rent)
+{
+  RentList *current = headNode;
+  while (current != NULL)
+  {
+    if (current->rent.id == id)
+    {
+      current->rent = rent;
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
 }
