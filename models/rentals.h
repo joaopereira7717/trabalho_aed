@@ -22,3 +22,5 @@ struct RentList
 Rent *createRent(int id, char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList);
 void printRentList(RentList *headNode);
 bool createRentList(RentList **headNode, Rent rent);
+int countRents(RentList *headNode);
+bool deleteRent(RentList **headNode, int id);
