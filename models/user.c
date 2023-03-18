@@ -2,7 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include "./user.h"
+
+UserList *read_users_initial_data(UserList **headNode)
+{
+  FILE *pFile = NULL;
+
+  pFile = fopen("./initial-data/users.txt", "r");
+
+  if (pFile == NULL)
+  {
+    printf("could not open file");
+    return NULL;
+  }
+
+  User user;
+
+  while (!feof(pFile))
+  {
+    int isManagerInt;
+    fscanf(pFile, "%d;%[^;];%[^;];%d;%d;%[^;];%d;%d\n", &user.nif, user.name, user.email, &user.phone, &user.zip, user.password, &user.wallet, &isManagerInt);
+    user.isManager = (bool)isManagerInt;
+    createUserList(headNode, user);
+  }
+
+  fclose(pFile);
+  return *headNode;
+}
 
 User *createUser(int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager)
 {
@@ -95,4 +122,27 @@ bool deleteUser(UserList *usersList, int nif)
     current = current->next;
   }
   return false;
+}
+
+bool store_users_list(UserList *headNode)
+{
+  FILE *pFile = NULL;
+  UserList *current_node = headNode;
+
+  pFile = fopen("./saved-data/users.bin", "wb");
+
+  if (pFile == NULL)
+  {
+    printf("could not open file");
+    return false;
+  }
+
+  while (current_node != NULL)
+  {
+    fwrite(&current_node->user, sizeof(User), 1, pFile);
+    current_node = current_node->next;
+  }
+
+  fclose(pFile);
+  return true;
 }

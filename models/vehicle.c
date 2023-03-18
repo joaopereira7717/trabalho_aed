@@ -4,6 +4,32 @@
 #include <stdbool.h>
 #include "./vehicle.h"
 
+VehicleList *read_vehicles_initial_data(VehicleList **headNode)
+{
+  FILE *pFile = NULL;
+
+  pFile = fopen("./initial-data/vehicles.txt", "r");
+
+  if (pFile == NULL)
+  {
+    printf("could not open file");
+    return NULL;
+  }
+
+  Vehicle vehicle;
+
+  while (!feof(pFile))
+  {
+    int isInUseInt;
+    fscanf(pFile, "%[^;];%[^;];%d;%d;%d;%[^;\n]\n", vehicle.matricula, vehicle.type, &vehicle.battery, &vehicle.cost, &isInUseInt, vehicle.location);
+    vehicle.isInUse = (bool)isInUseInt;
+    createVehicleList(headNode, vehicle);
+  }
+
+  fclose(pFile);
+  return *headNode;
+}
+
 Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool isInUse, char *location)
 {
   Vehicle *vehicle = (Vehicle *)malloc(sizeof(Vehicle));
