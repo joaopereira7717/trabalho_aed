@@ -12,7 +12,7 @@ VehicleList *readVehiclesFromTxt(VehicleList **headNode)
 
   if (pFile == NULL)
   {
-    printf("could not open file");
+    perror("could not open file");
     return NULL;
   }
 
@@ -47,7 +47,7 @@ bool createVehicleList(VehicleList **headNode, Vehicle vehicle)
   VehicleList *newVehicle = (VehicleList *)malloc(sizeof(VehicleList));
   if (newVehicle == NULL)
   {
-    printf("could not allocate memory!");
+    perror("could not allocate memory!");
     return headNode;
   }
   newVehicle->vehicle = vehicle;
@@ -125,7 +125,7 @@ bool storeVehicleListInBin(VehicleList *headNode)
 
   if (pFile == NULL)
   {
-    printf("could not open file");
+    perror("could not open file");
     return false;
   }
 

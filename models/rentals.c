@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <errno.h>
 #include "./rentals.h"
 #include "./user.h"
 #include "./vehicle.h"
@@ -14,7 +15,7 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
 
   if (!userExists)
   {
-    printf("User does not exist!");
+    perror("User does not exist!");
     return NULL;
   }
 
@@ -22,7 +23,7 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
 
   if (!vehicleExists)
   {
-    printf("Vehicle does not exist!");
+    perror("Vehicle does not exist!");
     return NULL;
   }
 
@@ -30,7 +31,7 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
 
   if (!isVehicleAvailable)
   {
-    printf("Vehicle is not available!");
+    perror("Vehicle is not available!");
     return NULL;
   }
 
@@ -48,7 +49,7 @@ bool createRentList(RentList **headNode, Rent rent)
 
   if (new_node == NULL)
   {
-    printf("could not allocate memory!");
+    perror("could not allocate memory!");
     return headNode;
   }
 

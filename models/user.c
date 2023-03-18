@@ -13,7 +13,7 @@ UserList *readUsersFromTxt(UserList **headNode)
 
   if (pFile == NULL)
   {
-    printf("could not open file");
+    perror("could not open file");
     return NULL;
   }
 
@@ -51,7 +51,7 @@ bool createUserList(UserList **headNode, User user)
 
   if (new_node == NULL)
   {
-    printf("could not allocate memory!");
+    perror("could not allocate memory!");
     return headNode;
   }
 
@@ -133,7 +133,7 @@ bool storeUsersInBin(UserList *headNode)
 
   if (pFile == NULL)
   {
-    printf("could not open file");
+    perror("could not open file");
     return false;
   }
 
