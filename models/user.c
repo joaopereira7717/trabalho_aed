@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "./user.h"
 
-UserList *read_users_initial_data(UserList **headNode)
+UserList *readUsersFromTxt(UserList **headNode)
 {
   FILE *pFile = NULL;
 
@@ -124,7 +124,7 @@ bool deleteUser(UserList *usersList, int nif)
   return false;
 }
 
-bool store_users_list(UserList *headNode)
+bool storeUsersInBin(UserList *headNode)
 {
   FILE *pFile = NULL;
   UserList *current_node = headNode;

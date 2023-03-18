@@ -19,9 +19,10 @@ struct VehicleList
   VehicleList *next;
 };
 
-VehicleList *read_vehicles_initial_data(VehicleList **headNode);
+VehicleList *readVehiclesFromTxt(VehicleList **headNode);
 Vehicle *createVehicle(char *matricula, char *type, int battery, int cost, bool isInUse, char *location);
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle);
 void printVehicleList(VehicleList *headNode);
 bool editVehicle(VehicleList *headNode, char *matricula, Vehicle vehicle);
 bool deleteVehicle(VehicleList **headNode, char *matricula);
+bool storeVehicleListInBin(VehicleList *headNode);

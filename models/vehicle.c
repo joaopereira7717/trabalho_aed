@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "./vehicle.h"
 
-VehicleList *read_vehicles_initial_data(VehicleList **headNode)
+VehicleList *readVehiclesFromTxt(VehicleList **headNode)
 {
   FILE *pFile = NULL;
 
@@ -114,4 +114,27 @@ bool deleteVehicle(VehicleList **headNode, char *matricula)
     current = current->next;
   }
   return false;
+}
+
+bool storeVehicleListInBin(VehicleList *headNode)
+{
+  FILE *pFile = NULL;
+  VehicleList *current_node = headNode;
+
+  pFile = fopen("./saved-data/vehicles.bin", "wb");
+
+  if (pFile == NULL)
+  {
+    printf("could not open file");
+    return false;
+  }
+
+  while (current_node != NULL)
+  {
+    fwrite(&current_node->vehicle, sizeof(Vehicle), 1, pFile);
+    current_node = current_node->next;
+  }
+
+  fclose(pFile);
+  return true;
 }
