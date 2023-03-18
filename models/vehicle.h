@@ -28,3 +28,4 @@ bool deleteVehicle(VehicleList **headNode, char *registration);
 bool storeVehicleListInBin(VehicleList *headNode);
 bool searchVehicleByRegistration(VehicleList *headNode, char *registration);
 bool isVehicleAvailable(VehicleList *headNode, char *registration);
+bool editVehicleAvailability(VehicleList *headNode, char *registration, bool isInUse);

@@ -40,7 +40,7 @@ int main()
   printVehicleList(vehicleList);
 
   RentList *rentList = NULL;
-  Rent *rent = createRent(1, 'a', 1, 1);
+  Rent *rent = createRent(1, "70-10-JK", 123, 10, vehicleList, userList);
   bool isCreatedRent = createRentList(&rentList, *rent);
   printRentList(rentList);
 

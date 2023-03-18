@@ -8,10 +8,10 @@
 #include "./user.h"
 #include "./vehicle.h"
 
-Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinutes)
+Rent *createRent(int id, char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList)
 {
 
-  bool userExists = searchUserByNif(userNif);
+  bool userExists = searchUserByNif(userList, userNif);
 
   if (!userExists)
   {
@@ -19,7 +19,7 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
     return NULL;
   }
 
-  bool vehicleExists = searchVehicleByRegistration(vehicleRegistration);
+  bool vehicleExists = searchVehicleByRegistration(vehicleList, vehicleRegistration);
 
   if (!vehicleExists)
   {
@@ -27,9 +27,9 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
     return NULL;
   }
 
-  bool isVehicleAvailable = searchVehicleAvailability(vehicleRegistration);
+  bool isAvailable = isVehicleAvailable(vehicleList, vehicleRegistration);
 
-  if (!isVehicleAvailable)
+  if (!isAvailable)
   {
     perror("Vehicle is not available!");
     return NULL;
@@ -37,9 +37,19 @@ Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinute
 
   Rent *rent = (Rent *)malloc(sizeof(Rent));
   rent->id = id;
-  rent->vehicleRegistration = vehicleRegistration;
+  strcpy(rent->vehicleRegistration, vehicleRegistration);
   rent->userNif = userNif;
   rent->timeInMinutes = timeInMinutes;
+
+  // edit vehicle availability
+  bool availabilityChanged = editVehicleAvailability(vehicleList, vehicleRegistration, false);
+
+  if (!availabilityChanged)
+  {
+    perror("Could not change vehicle availability!");
+    return NULL;
+  }
+
   return rent;
 }
 
@@ -67,7 +77,7 @@ void printRentList(RentList *headNode)
     printf("\n--------------------");
     printf("\nRent:\n");
     printf("id: %d", current->rent.id);
-    printf("\nvehicleRegistration: %c", current->rent.vehicleRegistration);
+    printf("\nvehicleRegistration: %s", current->rent.vehicleRegistration);
     printf("\nuserNif: %d", current->rent.userNif);
     printf("\ntimeInMinutes: %d", current->rent.timeInMinutes);
     printf("\n--------------------\n");

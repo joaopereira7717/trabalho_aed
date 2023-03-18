@@ -1,4 +1,6 @@
 #include <stdbool.h>
+#include "./user.h"
+#include "./vehicle.h"
 #pragma once
 
 typedef struct RentList RentList;
@@ -6,7 +8,7 @@ typedef struct RentList RentList;
 typedef struct Rent
 {
   int id;
-  char vehicleRegistration;
+  char vehicleRegistration[50];
   int userNif;
   int timeInMinutes;
 } Rent;
@@ -17,6 +19,6 @@ struct RentList
   RentList *next;
 };
 
-Rent *createRent(int id, char vehicleRegistration, int userNif, int timeInMinutes);
+Rent *createRent(int id, char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList);
 void printRentList(RentList *headNode);
 bool createRentList(RentList **headNode, Rent rent);

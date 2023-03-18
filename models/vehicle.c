@@ -169,3 +169,18 @@ bool isVehicleAvailable(VehicleList *headNode, char *registration)
   }
   return false;
 }
+
+bool editVehicleAvailability(VehicleList *headNode, char *registration, bool isInUse)
+{
+  VehicleList *current = headNode;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.registration, registration) == 0)
+    {
+      current->vehicle.isInUse = isInUse;
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
+}
