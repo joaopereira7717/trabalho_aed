@@ -1,6 +1,14 @@
 #include "./models/user.h"
 #include "./models/vehicle.h"
 #include "./models/rentals.h"
+/**
+ * @file main.c
+ * @brief File containing the main function
+ *
+ * @author João Pereira
+ * @date 2023-03-18
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

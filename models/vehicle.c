@@ -1,3 +1,10 @@
+/**
+ * @file vehicle.c
+ * @brief File containing the vehicle functions
+ *
+ * @author João Pereira
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

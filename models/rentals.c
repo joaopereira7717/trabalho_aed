@@ -1,3 +1,11 @@
+/**
+ * @file rentals.c
+ * @brief File containing the functions to manage the rentals
+ *
+ * @author João Pereira
+ * @date 2023-03-18
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

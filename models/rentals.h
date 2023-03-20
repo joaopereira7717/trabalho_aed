@@ -1,3 +1,11 @@
+/**
+ * @file rentals.h
+ * @brief File containing the functions to manage the rentals
+ *
+ * @author João Pereira
+ * @date 2023-03-18
+ */
+
 #include <stdbool.h>
 #include "./user.h"
 #include "./vehicle.h"

@@ -1,3 +1,11 @@
+/**
+ * @file user.h
+ * @brief File containing the functions to manage the users
+ *
+ * @author João Pereira
+ * @date 2023-03-18
+ */
+
 #include <stdbool.h>
 #pragma once
 
