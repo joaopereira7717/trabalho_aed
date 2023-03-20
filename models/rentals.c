@@ -2,6 +2,10 @@
  * @file rentals.c
  * @brief File containing the functions to manage the rentals
  *
+ * This file contains the implementation of functions to manage the rentals, such as creating a new rent,
+ * creating a rent list, printing the rent list, deleting a rent, counting the number of rents, editing a rent,
+ * and storing the rents in a binary file.
+ *
  * @author João Pereira
  * @date 2023-03-18
  */
@@ -16,6 +20,21 @@
 #include "./user.h"
 #include "./vehicle.h"
 
+/**
+ * @brief Creates a new rent
+ *
+ * This function creates a new rent with the given vehicle registration, user NIF, and time in minutes.
+ * It also checks if the user and vehicle exist and if the vehicle is available. If any of these conditions
+ * are not met, the function returns NULL. Otherwise, it creates a new rent and returns it.
+ *
+ * @param vehicleRegistration The registration of the vehicle to be rented
+ * @param userNif The NIF of the user renting the vehicle
+ * @param timeInMinutes The time in minutes the vehicle will be rented for
+ * @param vehicleList The list of vehicles
+ * @param userList The list of users
+ * @param rentList The list of rents
+ * @return A pointer to the newly created rent, or NULL if any of the conditions are not met
+ */
 Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList, RentList **rentList)
 {
   Rent *rent = (Rent *)malloc(sizeof(Rent));
@@ -61,6 +80,16 @@ Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, Vehi
   return rent;
 }
 
+/**
+ * @brief Creates a new node in the rent list
+ *
+ * This function creates a new node in the rent list with the given rent. It returns true if the node was
+ * successfully created, or false otherwise.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ * @param rent The rent to be added to the list
+ * @return True if the node was successfully created, or false otherwise
+ */
 bool createRentList(RentList **headNode, Rent rent)
 {
   RentList *new_node = (RentList *)malloc(sizeof(RentList));
@@ -77,6 +106,14 @@ bool createRentList(RentList **headNode, Rent rent)
   return true;
 }
 
+/**
+ * @brief Prints the rent list
+ *
+ * This function prints the rent list, showing the ID, vehicle registration, user NIF, and time in minutes
+ * for each rent in the list.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ */
 void printRentList(RentList *headNode)
 {
   RentList *current = headNode;
@@ -94,6 +131,19 @@ void printRentList(RentList *headNode)
   printf("\n");
 }
 
+/**
+ * @brief Deletes a rent from the rent list
+ *
+ * This function deletes a rent from the rent list with the given ID and vehicle registration. It also changes
+ * the availability of the vehicle to true. It returns true if the rent was successfully deleted, or false
+ * otherwise.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ * @param id The ID of the rent to be deleted
+ * @param vehicleRegistration The registration of the vehicle to be returned
+ * @param vehicleList The list of vehicles
+ * @return True if the rent was successfully deleted, or false otherwise
+ */
 bool deleteRent(RentList **headNode, int id, char *vehicleRegistration, VehicleList *vehicleList)
 {
   RentList *current = *headNode;
@@ -127,6 +177,14 @@ bool deleteRent(RentList **headNode, int id, char *vehicleRegistration, VehicleL
   return false;
 }
 
+/**
+ * @brief Counts the number of rents in the rent list
+ *
+ * This function counts the number of rents in the rent list and returns the count.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ * @return The number of rents in the rent list
+ */
 int countRents(RentList *headNode)
 {
   int count = 0;
@@ -139,6 +197,17 @@ int countRents(RentList *headNode)
   return count;
 }
 
+/**
+ * @brief Edits a rent in the rent list
+ *
+ * This function edits a rent in the rent list with the given ID. It replaces the rent with the given rent
+ * parameter. It returns true if the rent was successfully edited, or false otherwise.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ * @param id The ID of the rent to be edited
+ * @param rent The new rent to replace the old one
+ * @return True if the rent was successfully edited, or false otherwise
+ */
 bool editRent(RentList *headNode, int id, Rent rent)
 {
   RentList *current = headNode;
@@ -154,6 +223,15 @@ bool editRent(RentList *headNode, int id, Rent rent)
   return false;
 }
 
+/**
+ * @brief Stores the rents in a binary file
+ *
+ * This function stores the rents in a binary file named "rents.bin" in the "saved-data" directory. It returns
+ * true if the rents were successfully stored, or false otherwise.
+ *
+ * @param headNode A pointer to the head node of the rent list
+ * @return True if the rents were successfully stored, or false otherwise
+ */
 bool storeRentsInBin(RentList *headNode)
 {
   FILE *pFile = NULL;

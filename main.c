@@ -1,9 +1,8 @@
-#include "./models/user.h"
-#include "./models/vehicle.h"
-#include "./models/rentals.h"
 /**
  * @file main.c
  * @brief File containing the main function
+ *
+ * This file contains the main function that initializes the program and calls the necessary functions to manipulate user, vehicle, and rent data.
  *
  * @author João Pereira
  * @date 2023-03-18
@@ -13,7 +12,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "./models/user.h"
+#include "./models/vehicle.h"
+#include "./models/rentals.h"
 
+/**
+ * @brief The main function of the program
+ *
+ * This function initializes the program and calls the necessary functions to manipulate user, vehicle, and rent data.
+ *
+ * @return 0 if the program runs successfully
+ */
 int main()
 {
   printf("Program start!\n");

@@ -2,6 +2,8 @@
  * @file user.c
  * @brief File containing the functions to manage the users
  *
+ * This file contains the implementation of functions to manage users, such as reading users from a text file, creating a user, creating a user list, printing a user list, editing a user, deleting a user, storing users in a binary file, and searching for a user by NIF.
+ *
  * @author João Pereira
  * @date 2023-03-18
  */
@@ -13,6 +15,14 @@
 #include <unistd.h>
 #include "./user.h"
 
+/**
+ * @brief Reads users from a text file and creates a user list
+ *
+ * This function reads users from a text file and creates a user list. The user list is created by calling the createUserList function.
+ *
+ * @param headNode A pointer to the head node of the user list
+ * @return A pointer to the head node of the user list
+ */
 UserList *readUsersFromTxt(UserList **headNode)
 {
   FILE *pFile = NULL;
@@ -39,6 +49,21 @@ UserList *readUsersFromTxt(UserList **headNode)
   return *headNode;
 }
 
+/**
+ * @brief Creates a user
+ *
+ * This function creates a user with the given parameters and returns a pointer to the user.
+ *
+ * @param nif The NIF of the user
+ * @param name The name of the user
+ * @param email The email of the user
+ * @param phone The phone number of the user
+ * @param zip The zip code of the user
+ * @param password The password of the user
+ * @param wallet The wallet balance of the user
+ * @param isManager A boolean indicating whether the user is a manager or not
+ * @return A pointer to the created user
+ */
 User *createUser(int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager)
 {
   User *user = (User *)malloc(sizeof(User));
@@ -53,6 +78,15 @@ User *createUser(int nif, char name[50], char email[50], int phone, int zip, cha
   return user;
 }
 
+/**
+ * @brief Creates a user list
+ *
+ * This function creates a new node in the user list with the given user and adds it to the head of the list.
+ *
+ * @param headNode A pointer to the head node of the user list
+ * @param user The user to be added to the list
+ * @return A boolean indicating whether the user list was successfully created or not
+ */
 bool createUserList(UserList **headNode, User user)
 {
   UserList *new_node = (UserList *)malloc(sizeof(UserList));
@@ -70,6 +104,13 @@ bool createUserList(UserList **headNode, User user)
   return true;
 }
 
+/**
+ * @brief Prints the user list
+ *
+ * This function prints the user list to the console.
+ *
+ * @param headNode A pointer to the head node of the user list
+ */
 void printUserList(UserList *headNode)
 {
   UserList *current = headNode;
@@ -90,7 +131,16 @@ void printUserList(UserList *headNode)
   printf("\n");
 }
 
-// edit the user in the list with the given nif
+/**
+ * @brief Edits a user in the list with the given NIF
+ *
+ * This function searches for a user in the list with the given NIF and edits it with the given user.
+ *
+ * @param usersList A pointer to the head node of the user list
+ * @param nif The NIF of the user to be edited
+ * @param user The user to replace the old user
+ * @return A boolean indicating whether the user was successfully edited or not
+ */
 bool editUser(UserList *usersList, int nif, User user)
 {
   UserList *current = usersList;
@@ -106,7 +156,15 @@ bool editUser(UserList *usersList, int nif, User user)
   return false;
 }
 
-// delete user
+/**
+ * @brief Deletes a user from the list
+ *
+ * This function searches for a user in the list with the given NIF and deletes it from the list.
+ *
+ * @param usersList A pointer to the head node of the user list
+ * @param nif The NIF of the user to be deleted
+ * @return A boolean indicating whether the user was successfully deleted or not
+ */
 bool deleteUser(UserList **usersList, int nif)
 {
   UserList *current = *usersList;
@@ -135,6 +193,14 @@ bool deleteUser(UserList **usersList, int nif)
   return false;
 }
 
+/**
+ * @brief Stores the user list in a binary file
+ *
+ * This function stores the user list in a binary file.
+ *
+ * @param headNode A pointer to the head node of the user list
+ * @return A boolean indicating whether the user list was successfully stored or not
+ */
 bool storeUsersInBin(UserList *headNode)
 {
   FILE *pFile = NULL;
@@ -158,6 +224,15 @@ bool storeUsersInBin(UserList *headNode)
   return true;
 }
 
+/**
+ * @brief Searches for a user in the list with the given NIF
+ *
+ * This function searches for a user in the list with the given NIF and returns a boolean indicating whether the user was found or not.
+ *
+ * @param headNode A pointer to the head node of the user list
+ * @param nif The NIF of the user to be searched for
+ * @return A boolean indicating whether the user was found or not
+ */
 bool searchUserByNif(UserList *headNode, int nif)
 {
   printUserList(headNode);
