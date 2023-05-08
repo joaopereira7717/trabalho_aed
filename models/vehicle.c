@@ -129,7 +129,7 @@ void printVehicleList(VehicleList *headNode)
 }
 
 // sort the vehicles list by battery level in descending order
-VehicleList *sortVehicleList(VehicleList **headNode)
+VehicleList *sortVehicleListDesc(VehicleList **headNode)
 {
   VehicleList *current = *headNode;
   VehicleList *index = NULL;
@@ -335,4 +335,44 @@ bool editVehicleAvailability(VehicleList *headNode, char *registration, bool isI
     current = current->next;
   }
   return false;
+}
+
+/**
+ * @brief Sorts the vehicle list by location.
+ *
+ * This function sorts the vehicle list by location.
+ * The function takes a pointer to the head node of the list and the location to sort by as parameters.
+ * The function returns a pointer to the head node of the sorted list.
+ *
+ * @param headNode A pointer to the head node of the vehicle list.
+ * @param location The location to sort by.
+ * @return A pointer to the head node of the sorted list.
+ */
+VehicleList *sortVehiclesByLocation(VehicleList *headNode, char *location)
+{
+  VehicleList *current = headNode;
+  VehicleList *newHead = NULL;
+  VehicleList *newTail = NULL;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.location, location) == 0)
+    {
+      if (newHead == NULL)
+      {
+        newHead = current;
+        newTail = current;
+      }
+      else
+      {
+        newTail->next = current;
+        newTail = current;
+      }
+    }
+    current = current->next;
+  }
+  if (newTail != NULL)
+  {
+    newTail->next = NULL;
+  }
+  return newHead;
 }

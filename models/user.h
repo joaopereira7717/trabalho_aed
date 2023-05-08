@@ -30,6 +30,7 @@ struct UserList
 };
 
 UserList *readUsersFromTxt(UserList **headNode);
+UserList *setUsersData(UserList **headNode);
 User *createUser(int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager);
 bool createUserList(UserList **headNode, User user);
 void printUserList(UserList *headNode);

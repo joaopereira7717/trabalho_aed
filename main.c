@@ -29,6 +29,7 @@ int main()
 
   UserList *userList = NULL;
   readUsersFromTxt(&userList);
+  // setUsersData(&userList);
   printUserList(userList);
   User *user = createUser(1, "name", "email", 1, 1, "password", 0, true);
   bool isCreated = createUserList(&userList, *user);
@@ -72,12 +73,21 @@ int main()
   printRentList(rentList);
   bool isEditedRent = editRent(rentList, 2, *rent);
   printf("\nisEdited rent: %d", isEditedRent);
-  storeUsersInBin(userList);
+
   storeVehicleListInBin(vehicleList);
   storeRentsInBin(rentList);
 
-  VehicleList *sortedVehicleList = sortVehicleList(&vehicleList);
+  VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
   printf("sorted vehicle list:");
   printVehicleList(sortedVehicleList);
+  printUserList(userList);
+  storeUsersInBin(userList);
+  // clear the userList data
+  userList = NULL;
+  printf("user list after clear: \n");
+  printUserList(userList);
+  setUsersData(&userList);
+  printf("user list after setUsersData: \n");
+  printUserList(userList);
   return 0;
 }

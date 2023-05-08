@@ -49,6 +49,29 @@ UserList *readUsersFromTxt(UserList **headNode)
   return *headNode;
 }
 
+// do a function called setUsersData that checks if the binary file called ../saved-data/users.bin exists and if it does, check if there is any data, if there is, set the usersList to that data, if there isn't, set the usersList to the data from the text file
+UserList *setUsersData(UserList **headNode)
+{
+  FILE *pFile = NULL;
+
+  pFile = fopen("./saved-data/users.bin", "rb");
+
+  if (pFile == NULL)
+  {
+    perror("Could not open file");
+    return NULL;
+  }
+
+  User user;
+  while (fread(&user, sizeof(User), 1, pFile) == 1)
+  {
+    createUserList(headNode, user);
+  }
+
+  fclose(pFile);
+  return *headNode;
+}
+
 /**
  * @brief Creates a user
  *
