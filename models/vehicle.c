@@ -128,6 +128,38 @@ void printVehicleList(VehicleList *headNode)
   }
 }
 
+// sort the vehicles list by battery level in descending order
+VehicleList *sortVehicleList(VehicleList **headNode)
+{
+  VehicleList *current = *headNode;
+  VehicleList *index = NULL;
+  Vehicle temp;
+
+  if (*headNode == NULL)
+  {
+    return NULL;
+  }
+  else
+  {
+    while (current != NULL)
+    {
+      index = current->next;
+      while (index != NULL)
+      {
+        if (current->vehicle.battery < index->vehicle.battery)
+        {
+          temp = current->vehicle;
+          current->vehicle = index->vehicle;
+          index->vehicle = temp;
+        }
+        index = index->next;
+      }
+      current = current->next;
+    }
+  }
+  return *headNode;
+}
+
 /**
  * @brief Edits a vehicle in the list.
  *
@@ -281,7 +313,8 @@ bool isVehicleAvailable(VehicleList *headNode, char *registration)
  * @brief Edits a vehicle's availability.
  *
  * This function searches for a vehicle with the given registration number in the list and sets its availability to the given value.
- * The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and a boolean indicating the new availability as parameters.
+ * The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited,
+ * and a boolean indicating the new availability as parameters.
  * The function returns true if the vehicle's availability was successfully edited, false otherwise.
  *
  * @param headNode A pointer to the head node of the vehicle list.

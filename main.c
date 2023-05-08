@@ -75,5 +75,9 @@ int main()
   storeUsersInBin(userList);
   storeVehicleListInBin(vehicleList);
   storeRentsInBin(rentList);
+
+  VehicleList *sortedVehicleList = sortVehicleList(&vehicleList);
+  printf("sorted vehicle list:");
+  printVehicleList(sortedVehicleList);
   return 0;
 }
