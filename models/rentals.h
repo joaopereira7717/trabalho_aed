@@ -19,7 +19,6 @@ typedef struct Rent
   char vehicleRegistration[50];
   int userNif;
   int timeInMinutes;
-  int price;
 } Rent;
 
 struct RentList
