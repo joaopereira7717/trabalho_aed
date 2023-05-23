@@ -12,9 +12,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <locale.h>
 #include "./models/user.h"
 #include "./models/vehicle.h"
 #include "./models/rentals.h"
+#include "./models/routes.h"
 
 /**
  * @brief The main function of the program
@@ -25,7 +27,82 @@
  */
 int main()
 {
-  printf("Program start!\n");
+  setlocale(LC_ALL, "Portuguese"); // para escrever caracteres portugueses
+
+  static int tot = 0; // total de vertices
+  bool res;
+
+#pragma region GRAFOS
+
+  Vertice *graf = CriaGrafo();
+
+  Vertice *novoVertice = CriaVertice("Braga", tot);
+  if (novoVertice != NULL)
+  {
+    graf = InsereVertice(graf, novoVertice, &res);
+    tot++;
+  }
+
+  novoVertice = CriaVertice("Porto", tot);
+  if (novoVertice != NULL)
+  {
+    graf = InsereVertice(graf, novoVertice, &res);
+    tot++;
+  }
+
+  novoVertice = CriaVertice("Famalicão", tot);
+  if (novoVertice != NULL)
+  {
+    graf = InsereVertice(graf, novoVertice, &res);
+    tot++;
+  }
+
+  novoVertice = CriaVertice("Lisboa", tot);
+  if (novoVertice != NULL)
+  {
+    graf = InsereVertice(graf, novoVertice, &res);
+    tot++;
+  }
+
+  novoVertice = CriaVertice("Faro", tot);
+  if (novoVertice != NULL)
+  {
+    graf = InsereVertice(graf, novoVertice, &res);
+    tot++;
+  }
+
+  MostraGrafo(graf); // recursivo
+
+  // Adjacencias
+  // Criar ligação "Braga" a "Porto"
+  graf = InsereAdjacenteVertice(graf, "Braga", "Porto", 35, &res);
+  graf = InsereAdjacenteVertice(graf, "Braga", "Famalicão", 15, &res);
+  graf = InsereAdjacenteVertice(graf, "Famalicão", "Porto", 22, &res);
+  graf = InsereAdjacenteVertice(graf, "Porto", "Lisboa", 250, &res);
+
+  MostraGrafo(graf); // recursivo
+
+  int pathCount = 0;
+  int x = CountPaths(graf, 0, 2, pathCount);
+  printf("\nExiste %d Paths entre %d e %d\n", x, 0, 2);
+  int contaPath = 0;
+  x = CountPathsVerticesName(graf, "Braga", "Porto", contaPath);
+  x = CountPathsVerticesName(graf, "Braga", "Famalicão", contaPath);
+
+  x = CountPaths(graf, 0, 1, 0);
+
+  printf("\nExiste Path?\n");
+  bool existe = DepthFirstSearchRec(graf, 0, 3);
+  printf(" Existe Path entre %d e %d: %s\n", 0, 3, (existe == true ? "Sim" : "Não"));
+
+  graf = ResetVerticesVisitados(graf);
+
+  existe = DepthFirstSearchNamesRec(graf, "Braga", "Porto");
+  printf(" Existe Path entre %s e %s: %s\n", "Braga", "Porto", (existe == true ? "Sim" : "Não"));
+
+#pragma endregion
+
+  /* printf("Program start!\n");
 
   UserList *userList = NULL;
   readUsersFromTxt(&userList);
@@ -88,6 +165,6 @@ int main()
   printUserList(userList);
   setUsersData(&userList);
   printf("user list after setUsersData: \n");
-  printUserList(userList);
+  printUserList(userList); */
   return 0;
 }
