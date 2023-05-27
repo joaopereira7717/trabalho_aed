@@ -27,9 +27,9 @@
  */
 int main()
 {
-  setlocale(LC_ALL, "Portuguese"); // para escrever caracteres portugueses
+  setlocale(LC_ALL, "Portuguese"); // write portuguese characters
 
-  static int tot = 0; // total de vertices
+  static int tot = 0; // total vertex
   bool res;
 
 #pragma region GRAFOS
@@ -50,7 +50,7 @@ int main()
     tot++;
   }
 
-  novoVertice = CreateRouteVertex("Famalicão", tot);
+  novoVertice = CreateRouteVertex("Fafe", tot);
   if (novoVertice != NULL)
   {
     graf = InsertRouteVertex(graf, novoVertice, &res);
@@ -64,31 +64,31 @@ int main()
     tot++;
   }
 
-  novoVertice = CreateRouteVertex("Faro", tot);
+  novoVertice = CreateRouteVertex("Barcelos", tot);
   if (novoVertice != NULL)
   {
     graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  ShowRoutes(graf); // recursivo
+  ShowRoutes(graf);
 
-  // Adjacencias
-  // Criar ligação "Braga" a "Porto"
+  // Create adjacentes
   graf = InsertAdjacentVertex(graf, "Braga", "Porto", 35, &res);
-  graf = InsertAdjacentVertex(graf, "Braga", "Famalicão", 15, &res);
-  graf = InsertAdjacentVertex(graf, "Famalicão", "Porto", 22, &res);
+  graf = InsertAdjacentVertex(graf, "Braga", "Fafe", 15, &res);
+  graf = InsertAdjacentVertex(graf, "Fafe", "Porto", 60, &res);
   graf = InsertAdjacentVertex(graf, "Porto", "Lisboa", 250, &res);
+  graf = InsertAdjacentVertex(graf, "Lisboa", "Barcelos", 270, &res);
 
-  ShowRoutes(graf); // recursivo
+  ShowRoutes(graf);
 
   int pathCount = 0;
   int x = CountPaths(graf, 0, 2, pathCount);
   printf("\nExiste %d Paths entre %d e %d\n", x, 0, 2);
 
-  int contaPath = 0;
-  x = CountPathsVerticesName(graf, "Braga", "Porto", contaPath);
-  x = CountPathsVerticesName(graf, "Braga", "Famalicão", contaPath);
+  int countPath = 0;
+  x = CountPathsVerticesName(graf, "Braga", "Porto", countPath);
+  x = CountPathsVerticesName(graf, "Braga", "Fafe", countPath);
 
   x = CountPaths(graf, 0, 1, 0);
 
@@ -103,7 +103,7 @@ int main()
 
 #pragma region FICHEIROS
 
-  int res1 = SaveGraph(graf, "Vertices.bin");
+  int res1 = SaveGraph(graf, "./saved-data/Vertices.bin");
   if (res1 > 0)
     puts("\nGrafo gravado em ficheiro");
 
@@ -112,7 +112,7 @@ int main()
   puts("\nGrafo em memória:");
   ShowRoutes(graf);
 
-  graf = LoadGraph(graf, "Vertices.bin", &res);
+  graf = LoadGraph(graf, "./saved-data/Vertices.bin", &res);
   if (graf != NULL)
     puts("\nVertices do Grafo lido de ficheiro\n");
   ShowRoutes(graf);

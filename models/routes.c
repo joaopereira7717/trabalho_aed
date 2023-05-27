@@ -430,7 +430,6 @@ void ShowAllPath(Best b, int n, int v)
 
 int SaveGraph(Vertice *h, char *fileName)
 {
-
   if (h == NULL)
     return -1;
   FILE *fp;
@@ -447,8 +446,9 @@ int SaveGraph(Vertice *h, char *fileName)
     // Pode gravar de imediato as adjacencias!
     if (aux->adjacentes)
     {
-      SaveAdj(aux->adjacentes, aux->cidade, aux->cod);
-      // if (r <0) break;
+      char filePath[100];
+      sprintf(filePath, "./saved-data/%s.bin", aux->cidade);
+      SaveAdj(aux->adjacentes, filePath, aux->cod);
     }
     aux = aux->next;
   }
@@ -458,6 +458,7 @@ int SaveGraph(Vertice *h, char *fileName)
 
 int SaveAdj(Adj *h, char *fileName, int codVerticeOrigem)
 {
+  printf("Gravar adjacencias do vertice %s\n", fileName);
   FILE *fp;
   if (h == NULL)
     return -2;
@@ -505,7 +506,9 @@ Vertice *LoadAdj(Vertice *g, bool *res)
   Vertice *auxGraph = g;
   while (auxGraph)
   {
-    fp = fopen(auxGraph->cidade, "rb");
+    char filePath[100];
+    sprintf(filePath, "./saved-data/%s.bin", auxGraph->cidade);
+    fp = fopen(filePath, "rb");
     if (fp != NULL)
     {
       while (fread(&aux, 1, sizeof(AdjFile), fp))
