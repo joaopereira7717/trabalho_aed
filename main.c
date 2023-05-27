@@ -168,36 +168,36 @@ int main()
   printf("\nIs there any vehicle in a radius of %d centered in %s? \n", 50, "Braga");
   checkVehiclesInRadius(graf, vehicleList, 0, 50, "trotinete");
 #pragma endregion
-  /* #pragma region RENT
-    RentList *rentList = NULL;
-    printUserList(userList);
-    Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
-    bool isCreatedRent = createRentList(&rentList, *rent);
-    printf("\nisCreated rent: %d", isCreatedRent);
-    Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
-    bool isCreatedRent2 = createRentList(&rentList, *rent2);
-    printf("\nisCreated rent2: %d", isCreatedRent2);
-    printRentList(rentList);
-    bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
-    printf("\nisDeleted rent: %d", isDeletedRent);
-    printRentList(rentList);
-    bool isEditedRent = editRent(rentList, 2, *rent);
-    printf("\nisEdited rent: %d", isEditedRent);
+#pragma region RENT
+  RentList *rentList = NULL;
+  printUserList(userList);
+  Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
+  bool isCreatedRent = createRentList(&rentList, *rent);
+  printf("\nisCreated rent: %d", isCreatedRent);
+  Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
+  bool isCreatedRent2 = createRentList(&rentList, *rent2);
+  printf("\nisCreated rent2: %d", isCreatedRent2);
+  printRentList(rentList);
+  bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
+  printf("\nisDeleted rent: %d", isDeletedRent);
+  printRentList(rentList);
+  bool isEditedRent = editRent(rentList, 2, *rent);
+  printf("\nisEdited rent: %d", isEditedRent);
 
-    storeVehicleListInBin(vehicleList);
-    storeRentsInBin(rentList);
-  #pragma endregion
-    VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
-    printf("sorted vehicle list:");
-    printVehicleList(sortedVehicleList);
-    printUserList(userList);
-    storeUsersInBin(userList);
-    userList = NULL;
-    printf("user list after clear: \n");
-    printUserList(userList);
-    setUsersData(&userList);
-    printf("user list after setUsersData: \n");
-    printUserList(userList); */
+  storeVehicleListInBin(vehicleList);
+  storeRentsInBin(rentList);
+#pragma endregion
+  VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
+  printf("sorted vehicle list:");
+  printVehicleList(sortedVehicleList);
+  printUserList(userList);
+  storeUsersInBin(userList);
+  userList = NULL;
+  printf("user list after clear: \n");
+  printUserList(userList);
+  setUsersData(&userList);
+  printf("user list after setUsersData: \n");
+  printUserList(userList);
   Vertex *start_node = searchVertexCod(graf, 0);
   printVehicleList(vehicleList);
   resetVisitedVertex(graf);

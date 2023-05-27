@@ -586,10 +586,7 @@ VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capa
         // reset the current node to the start node and move the collected
         // vehicles to the start node
         current_node = start_node;
-
-        vehicles_collected->vehicle.battery = 100;
-        strcpy(vehicles_collected->vehicle.location, start_node->city);
-
+        move_and_recharge_vehicle(vehicle_list, vehicles_collected->vehicle.registration, start_node->city);
         markAsVisited(graph);
       }
 
@@ -649,4 +646,21 @@ bool head_insertion_vehicle_list(VehicleList **head, Vehicle new_vehicle)
   *head = new_node;
 
   return true;
+}
+
+void move_and_recharge_vehicle(VehicleList **vehicles, char vehicle_registration[50], char location[])
+{
+  VehicleList *current_vehicle = *vehicles;
+
+  while (current_vehicle != NULL)
+  {
+    if (strcmp(current_vehicle->vehicle.registration, vehicle_registration) == 0)
+    {
+      strcpy(current_vehicle->vehicle.location, location);
+
+      current_vehicle->vehicle.battery = 100;
+    }
+
+    current_vehicle = current_vehicle->next;
+  }
 }

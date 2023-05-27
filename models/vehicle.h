@@ -50,3 +50,4 @@ void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char ty
 VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capacity);
 bool check_is_legible_for_truck(VehicleList *vehicle);
 bool head_insertion_vehicle_list(VehicleList **head, Vehicle new_vehicle);
+void move_and_recharge_vehicle(VehicleList **vehicles, char vehicle_registration[50], char location[]);
