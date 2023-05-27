@@ -55,28 +55,28 @@ typedef struct Best
 
 #pragma region GRAFO
 
-Vertice *CriaGrafo();
-Vertice *InsereVertice(Vertice *g, Vertice *novo, bool *res);
-Vertice *CriaVertice(char *cidade, int tot);
-void MostraGrafo(Vertice *g);
-int ProcuraCodigoVertice(Vertice *g, char *cidade);
-Vertice *ProcuraVertice(Vertice *g, char *cidade);
-Vertice *ProcuraVerticeCod(Vertice *g, int cod);
-Vertice *DestroyGraph(Vertice *g);
+Vertice *CreateRoute();
+Vertice *InsertRouteVertex(Vertice *g, Vertice *novo, bool *res);
+Vertice *CreateRouteVertex(char *cidade, int tot);
+void ShowRoutes(Vertice *g);
+int SearchCodVertex(Vertice *g, char *cidade);
+Vertice *SearchVertex(Vertice *g, char *cidade);
+Vertice *SearchVertexCod(Vertice *g, int cod);
+Vertice *DestroyRoutes(Vertice *g);
 
 #pragma endregion
 
 #pragma region ADJACENCIAS
 
-Vertice *InsereAdjacenteVertice(Vertice *g, char *origem, char *dest, float peso, bool *res);
-Vertice *InsereAdjacenteVerticeCod(Vertice *g, int origem, int dest, float peso, bool *res);
+Vertice *InsertAdjacentVertex(Vertice *g, char *origem, char *dest, float peso, bool *res);
+Vertice *InsertAdjacentVertexCod(Vertice *g, int origem, int dest, float peso, bool *res);
 
 #pragma region LISTA_ADJACENCIAS
 
-Adj *CriaAdj(int cod, float peso);
-Adj *InsereAdj(Adj *h, Adj *novo, bool *res);
-bool ExisteAdjacentes(Adj *h, int cod);
-void MostraAdjacencias(Adj *h);
+Adj *CreateAdj(int cod, float peso);
+Adj *InsertAdj(Adj *h, Adj *novo, bool *res);
+bool ExistAdj(Adj *h, int cod);
+void ShowAdj(Adj *h);
 Adj *DestroyAdj(Adj *h);
 
 #pragma endregion
@@ -91,7 +91,7 @@ int CountPathsVerticesName(Vertice *g, char *src, char *dest, int pathCount);
 bool DepthFirstSearchRec(Vertice *g, int origem, int dest);
 bool DepthFirstSearchNamesRec(Vertice *g, char *src, char *dest);
 
-Vertice *ResetVerticesVisitados(Vertice *g);
+Vertice *ResetVisitedVertex(Vertice *g);
 
 Best BestPath(Vertice *g, int n, int v);
 void ShowAllPath(Best b, int n, int v);

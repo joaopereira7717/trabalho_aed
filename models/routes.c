@@ -4,12 +4,12 @@
 
 #pragma region GRAFO
 
-Vertice *CriaGrafo()
+Vertice *CreateRoute()
 {
   return NULL;
 }
 
-Vertice *CriaVertice(char *cidade, int cod)
+Vertice *CreateRouteVertex(char *cidade, int cod)
 {
   Vertice *novo = (Vertice *)calloc(1, sizeof(Vertice));
   if (novo == NULL)
@@ -21,7 +21,7 @@ Vertice *CriaVertice(char *cidade, int cod)
   return novo;
 }
 
-Vertice *InsereVertice(Vertice *g, Vertice *novo, bool *res)
+Vertice *InsertRouteVertex(Vertice *g, Vertice *novo, bool *res)
 {
   if (g == NULL)
   {
@@ -53,16 +53,16 @@ Vertice *InsereVertice(Vertice *g, Vertice *novo, bool *res)
   return g;
 }
 
-void MostraGrafo(Vertice *g)
+void ShowRoutes(Vertice *g)
 {
   if (g == NULL)
     return;
   printf("V: %d - %s\n", g->cod, g->cidade);
-  MostraAdjacencias(g->adjacentes);
-  MostraGrafo(g->next);
+  ShowAdj(g->adjacentes);
+  ShowRoutes(g->next);
 }
 
-Vertice *DestroyGraph(Vertice *g)
+Vertice *DestroyRoutes(Vertice *g)
 {
   if (g == NULL)
     return NULL;
@@ -79,7 +79,7 @@ Vertice *DestroyGraph(Vertice *g)
   return g;
 }
 
-int ProcuraCodigoVertice(Vertice *g, char *cidade)
+int SearchCodVertex(Vertice *g, char *cidade)
 {
   if (g == NULL)
     return -1;
@@ -87,28 +87,28 @@ int ProcuraCodigoVertice(Vertice *g, char *cidade)
     return -2;
   if (strcmp(g->cidade, cidade) == 0)
     return g->cod;
-  return (ProcuraCodigoVertice(g->next, cidade));
+  return (SearchCodVertex(g->next, cidade));
 }
 
-Vertice *ProcuraVertice(Vertice *g, char *cidade)
+Vertice *SearchVertex(Vertice *g, char *cidade)
 {
   if (g == NULL)
     return NULL;
   if (strcmp(g->cidade, cidade) == 0)
     return g;
-  return (ProcuraVertice(g->next, cidade));
+  return (SearchVertex(g->next, cidade));
 }
 
-Vertice *ProcuraVerticeCod(Vertice *g, int cod)
+Vertice *SearchVertexCod(Vertice *g, int cod)
 {
   if (g == NULL)
     return NULL;
   if (g->cod == cod)
     return g;
-  return (ProcuraVerticeCod(g->next, cod));
+  return (SearchVertexCod(g->next, cod));
 }
 
-Vertice *ResetVerticesVisitados(Vertice *g)
+Vertice *ResetVisitedVertex(Vertice *g)
 {
   Vertice *aux = g;
   while (aux)
@@ -123,7 +123,7 @@ Vertice *ResetVerticesVisitados(Vertice *g)
 
 #pragma region ADJACENCIAS
 
-Adj *CriaAdj(int cod, float peso)
+Adj *CreateAdj(int cod, float peso)
 {
   Adj *novo = (Adj *)calloc(1, sizeof(Adj));
   if (novo == NULL)
@@ -134,7 +134,7 @@ Adj *CriaAdj(int cod, float peso)
   return novo;
 }
 
-Vertice *InsereAdjacenteVertice(Vertice *g, char *origem, char *dest, float peso, bool *res)
+Vertice *InsertAdjacentVertex(Vertice *g, char *origem, char *dest, float peso, bool *res)
 {
 #pragma region Validações
   *res = false; // por defeito é falso
@@ -142,29 +142,29 @@ Vertice *InsereAdjacenteVertice(Vertice *g, char *origem, char *dest, float peso
   if (g == NULL)
     return g; //<! se grafo está vazio, ignora operação
 
-  Vertice *aux = ProcuraVertice(g, origem); //<! procura vertice origem
-  int cod = ProcuraCodigoVertice(g, dest);  //<! procura vertice destino
+  Vertice *aux = SearchVertex(g, origem); //<! procura vertice origem
+  int cod = SearchCodVertex(g, dest);     //<! procura vertice destino
   // ou
-  // Vertice* d = ProcuraVertice(g, dest);
+  // Vertice* d = SearchVertex(g, dest);
 
   if (aux == NULL || cod < 0)
     return g; //<! Se não encontrou vertice origem e destino, ignora operação
 
-  if (ExisteAdjacentes(aux->adjacentes, cod) == true)
+  if (ExistAdj(aux->adjacentes, cod) == true)
     return g; // Se já foi registado esta adjacencia, ignorar a operação
 #pragma endregion
 
 #pragma region Ação
   // Insere nova adjacencia no vertice "Origem"
-  Adj *novoAdj = CriaAdj(cod, peso);
-  aux->adjacentes = InsereAdj(aux->adjacentes, novoAdj, res);
+  Adj *novoAdj = CreateAdj(cod, peso);
+  aux->adjacentes = InsertAdj(aux->adjacentes, novoAdj, res);
   return g;
   // Se for não orientado
-  // return (InsereAdjacenteVertice(g, dest, origem, peso, res));
+  // return (InsertAdjacentVertex(g, dest, origem, peso, res));
 #pragma endregion
 }
 
-Vertice *InsereAdjacenteVerticeCod(Vertice *g, int codOrigem, int codDest, float peso, bool *res)
+Vertice *InsertAdjacentVertexCod(Vertice *g, int codOrigem, int codDest, float peso, bool *res)
 {
 
 #pragma region Validações
@@ -173,39 +173,39 @@ Vertice *InsereAdjacenteVerticeCod(Vertice *g, int codOrigem, int codDest, float
   if (g == NULL)
     return g; //<! se grafo está vazio, ignora operação
 
-  Vertice *o = ProcuraVerticeCod(g, codOrigem); //<! procura vertice origem
-  Vertice *d = ProcuraVerticeCod(g, codDest);   //<! procura vertice destino
+  Vertice *o = SearchVertexCod(g, codOrigem); //<! procura vertice origem
+  Vertice *d = SearchVertexCod(g, codDest);   //<! procura vertice destino
   if (o == NULL || d == NULL)
     return g; //<! Se não encontrou vertice origem e destino, ignora operação
 
-  if (ExisteAdjacentes(o->adjacentes, codDest) == true)
+  if (ExistAdj(o->adjacentes, codDest) == true)
     return g; // Se já foi registado esta adjacencia, ignorar a operação
 #pragma endregion
 
-    // g=InsereAdjacenteVertice(g, o->cidade, d->cidade, peso, res);
+    // g=InsertAdjacentVertex(g, o->cidade, d->cidade, peso, res);
 
 #pragma region Ação
   // Insere nova adjacencia no vertice "Origem"
-  Adj *novoAdj = CriaAdj(codDest, peso);
-  o->adjacentes = InsereAdj(o->adjacentes, novoAdj, res);
+  Adj *novoAdj = CreateAdj(codDest, peso);
+  o->adjacentes = InsertAdj(o->adjacentes, novoAdj, res);
   return g;
   // Se for não orientado
-  // return (InsereAdjacenteVertice(g, dest, origem, peso, res));
+  // return (InsertAdjacentVertex(g, dest, origem, peso, res));
 #pragma endregion
 }
 
 #pragma region GERE_LISTA_ADJACENCIAS
 
-bool ExisteAdjacentes(Adj *h, int cod)
+bool ExistAdj(Adj *h, int cod)
 {
   if (h == NULL)
     return false;
   if (h->cod == cod)
     return true;
-  return ExisteAdjacentes(h->next, cod);
+  return ExistAdj(h->next, cod);
 }
 
-Adj *InsereAdj(Adj *h, Adj *novo, bool *res)
+Adj *InsertAdj(Adj *h, Adj *novo, bool *res)
 {
 
   *res = false; // por defeito é falso
@@ -213,7 +213,7 @@ Adj *InsereAdj(Adj *h, Adj *novo, bool *res)
   if (novo == NULL) // Se novo adjacente é nulo, ignora operação
     return h;
 
-  if (ExisteAdjacentes(h, novo->cod) == true)
+  if (ExistAdj(h, novo->cod) == true)
     return h; // Se novo adj existe, ignorar operação
 
   // Inserir nova adjacencia!
@@ -230,12 +230,12 @@ Adj *InsereAdj(Adj *h, Adj *novo, bool *res)
   return h;
 }
 
-void MostraAdjacencias(Adj *h)
+void ShowAdj(Adj *h)
 {
   if (h == NULL)
     return;
   printf("\tAdj: %d - (%.0f)\n", h->cod, h->dist);
-  MostraAdjacencias(h->next);
+  ShowAdj(h->next);
 }
 
 Adj *DestroyAdj(Adj *h)
@@ -270,11 +270,11 @@ int CountPaths(Vertice *g, int src, int dst, int pathCount)
 
   else
   { // Recur for all the vertices adjacent to this vertex
-    Vertice *aux = ProcuraVerticeCod(g, src);
+    Vertice *aux = SearchVertexCod(g, src);
     Adj *hAdj = aux->adjacentes;
     while (hAdj)
     {
-      Vertice *v = ProcuraVerticeCod(g, hAdj->cod);
+      Vertice *v = SearchVertexCod(g, hAdj->cod);
       pathCount = CountPaths(g, v->cod, dst, pathCount);
       hAdj = hAdj->next;
     }
@@ -284,8 +284,8 @@ int CountPaths(Vertice *g, int src, int dst, int pathCount)
 
 int CountPathsVerticesName(Vertice *g, char *src, char *dest, int pathCount)
 {
-  int s = ProcuraCodigoVertice(g, src);
-  int d = ProcuraCodigoVertice(g, dest);
+  int s = SearchCodVertex(g, src);
+  int d = SearchCodVertex(g, dest);
   return CountPaths(g, s, d, 0);
 }
 
@@ -295,14 +295,14 @@ bool DepthFirstSearchRec(Vertice *g, int origem, int dest)
   if (origem == dest)
     return true;
 
-  Vertice *aux = ProcuraVerticeCod(g, origem);
+  Vertice *aux = SearchVertexCod(g, origem);
   aux->visitado = true;
   // printf(" Vertice: %s : %d\n", aux->cidade, aux->cod);
 
   Adj *adj = aux->adjacentes;
   while (adj)
   {
-    Vertice *aux = ProcuraVerticeCod(g, adj->cod);
+    Vertice *aux = SearchVertexCod(g, adj->cod);
     if (aux->visitado == false)
     {
       bool existe = DepthFirstSearchRec(g, adj->cod, dest);
@@ -316,8 +316,8 @@ bool DepthFirstSearchRec(Vertice *g, int origem, int dest)
 
 bool DepthFirstSearchNamesRec(Vertice *g, char *src, char *dest)
 {
-  int o = ProcuraCodigoVertice(g, src);
-  int d = ProcuraCodigoVertice(g, dest);
+  int o = SearchCodVertex(g, src);
+  int d = SearchCodVertex(g, dest);
   return DepthFirstSearchRec(g, o, d);
 }
 
@@ -488,8 +488,8 @@ Vertice *LoadGraph(Vertice *h, char *fileName, bool *res)
   Vertice *novo;
   while (fread(&aux, 1, sizeof(VerticeFile), fp))
   {
-    novo = CriaVertice(aux.cidade, aux.cod);
-    h = InsereVertice(h, novo, res);
+    novo = CreateRouteVertex(aux.cidade, aux.cod);
+    h = InsertRouteVertex(h, novo, res);
   }
   fclose(fp);
   return h;
@@ -510,7 +510,7 @@ Vertice *LoadAdj(Vertice *g, bool *res)
     {
       while (fread(&aux, 1, sizeof(AdjFile), fp))
       {
-        g = InsereAdjacenteVerticeCod(g, aux.codOrigem, aux.codDestino, aux.weight, res);
+        g = InsertAdjacentVertexCod(g, aux.codOrigem, aux.codDestino, aux.weight, res);
       }
       fclose(fp);
     }

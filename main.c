@@ -34,53 +34,53 @@ int main()
 
 #pragma region GRAFOS
 
-  Vertice *graf = CriaGrafo();
+  Vertice *graf = CreateRoute();
 
-  Vertice *novoVertice = CriaVertice("Braga", tot);
+  Vertice *novoVertice = CreateRouteVertex("Braga", tot);
   if (novoVertice != NULL)
   {
-    graf = InsereVertice(graf, novoVertice, &res);
+    graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  novoVertice = CriaVertice("Porto", tot);
+  novoVertice = CreateRouteVertex("Porto", tot);
   if (novoVertice != NULL)
   {
-    graf = InsereVertice(graf, novoVertice, &res);
+    graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  novoVertice = CriaVertice("Famalicão", tot);
+  novoVertice = CreateRouteVertex("Famalicão", tot);
   if (novoVertice != NULL)
   {
-    graf = InsereVertice(graf, novoVertice, &res);
+    graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  novoVertice = CriaVertice("Lisboa", tot);
+  novoVertice = CreateRouteVertex("Lisboa", tot);
   if (novoVertice != NULL)
   {
-    graf = InsereVertice(graf, novoVertice, &res);
+    graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  novoVertice = CriaVertice("Faro", tot);
+  novoVertice = CreateRouteVertex("Faro", tot);
   if (novoVertice != NULL)
   {
-    graf = InsereVertice(graf, novoVertice, &res);
+    graf = InsertRouteVertex(graf, novoVertice, &res);
     tot++;
   }
 
-  MostraGrafo(graf); // recursivo
+  ShowRoutes(graf); // recursivo
 
   // Adjacencias
   // Criar ligação "Braga" a "Porto"
-  graf = InsereAdjacenteVertice(graf, "Braga", "Porto", 35, &res);
-  graf = InsereAdjacenteVertice(graf, "Braga", "Famalicão", 15, &res);
-  graf = InsereAdjacenteVertice(graf, "Famalicão", "Porto", 22, &res);
-  graf = InsereAdjacenteVertice(graf, "Porto", "Lisboa", 250, &res);
+  graf = InsertAdjacentVertex(graf, "Braga", "Porto", 35, &res);
+  graf = InsertAdjacentVertex(graf, "Braga", "Famalicão", 15, &res);
+  graf = InsertAdjacentVertex(graf, "Famalicão", "Porto", 22, &res);
+  graf = InsertAdjacentVertex(graf, "Porto", "Lisboa", 250, &res);
 
-  MostraGrafo(graf); // recursivo
+  ShowRoutes(graf); // recursivo
 
   int pathCount = 0;
   int x = CountPaths(graf, 0, 2, pathCount);
@@ -96,7 +96,7 @@ int main()
   bool existe = DepthFirstSearchRec(graf, 0, 3);
   printf(" Existe Path entre %d e %d: %s\n", 0, 3, (existe == true ? "Sim" : "Não"));
 
-  graf = ResetVerticesVisitados(graf);
+  graf = ResetVisitedVertex(graf);
 
   existe = DepthFirstSearchNamesRec(graf, "Braga", "Porto");
   printf(" Existe Path entre %s e %s: %s\n", "Braga", "Porto", (existe == true ? "Sim" : "Não"));
@@ -107,20 +107,20 @@ int main()
   if (res1 > 0)
     puts("\nGrafo gravado em ficheiro");
 
-  graf = DestroyGraph(graf);
+  graf = DestroyRoutes(graf);
 
   puts("\nGrafo em memória:");
-  MostraGrafo(graf);
+  ShowRoutes(graf);
 
   graf = LoadGraph(graf, "Vertices.bin", &res);
   if (graf != NULL)
     puts("\nVertices do Grafo lido de ficheiro\n");
-  MostraGrafo(graf);
+  ShowRoutes(graf);
 
   puts("\nLer Adjacências do grafo de ficheiro\n");
   graf = LoadAdj(graf, &res);
 
-  MostraGrafo(graf);
+  ShowRoutes(graf);
 
 #pragma endregion
 
