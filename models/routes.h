@@ -2,6 +2,9 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
 
 #define N 20
 
@@ -55,29 +58,29 @@ typedef struct Best
 
 #pragma region GRAFO
 
-Vertex *CreateRoute();
-Vertex *InsertRouteVertex(Vertex *g, Vertex *new, bool *res);
-Vertex *CreateRouteVertex(char *city, int tot);
-void ShowRoutes(Vertex *g);
-int SearchCodVertex(Vertex *g, char *city);
-Vertex *SearchVertex(Vertex *g, char *city);
-Vertex *SearchVertexCod(Vertex *g, int cod);
-Vertex *DestroyRoutes(Vertex *g);
+Vertex *createRoute();
+Vertex *insertRouteVertex(Vertex *g, Vertex *new, bool *res);
+Vertex *createRouteVertex(char *city, int tot);
+void showRoutes(Vertex *g);
+int searchCodVertex(Vertex *g, char *city);
+Vertex *searchVertex(Vertex *g, char *city);
+Vertex *searchVertexCod(Vertex *g, int cod);
+Vertex *destroyRoutes(Vertex *g);
 
 #pragma endregion
 
 #pragma region ADJACENCIAS
 
-Vertex *InsertAdjacentVertex(Vertex *g, char *origem, char *dest, float valuedistance, bool *res);
-Vertex *InsertAdjacentVertexCod(Vertex *g, int origem, int dest, float valuedistance, bool *res);
+Vertex *insertAdjacentVertex(Vertex *g, char *origem, char *dest, float valuedistance, bool *res);
+Vertex *insertAdjacentVertexCod(Vertex *g, int origem, int dest, float valuedistance, bool *res);
 
 #pragma region LISTA_ADJACENCIAS
 
-Adj *CreateAdj(int cod, float valuedistance);
-Adj *InsertAdj(Adj *h, Adj *new, bool *res);
-bool ExistAdj(Adj *h, int cod);
-void ShowAdj(Adj *h);
-Adj *DestroyAdj(Adj *h);
+Adj *createAdj(int cod, float valuedistance);
+Adj *insertAdj(Adj *h, Adj *new, bool *res);
+bool existAdj(Adj *h, int cod);
+void showAdj(Adj *h);
+Adj *destroyAdj(Adj *h);
 
 #pragma endregion
 
@@ -85,24 +88,25 @@ Adj *DestroyAdj(Adj *h);
 
 #pragma region ALGORITMOS
 
-int CountPaths(Vertex *g, int src, int dst, int pathCount);
-int CountPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount);
+int countPaths(Vertex *g, int src, int dst, int pathCount);
+int countPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount);
 
-bool DepthFirstSearchRec(Vertex *g, int origem, int dest);
-bool DepthFirstSearchNamesRec(Vertex *g, char *src, char *dest);
+bool depthFirstSearchRec(Vertex *g, int origem, int dest);
+bool depthFirstSearchNamesRec(Vertex *g, char *src, char *dest);
 
-Vertex *ResetVisitedVertex(Vertex *g);
+Vertex *resetVisitedVertex(Vertex *g);
 
-Best BestPath(Vertex *g, int n, int v);
-void ShowAllPath(Best b, int n, int v);
+Best bestPath(Vertex *g, int n, int v);
+void showAllPath(Best b, int n, int v);
 
 #pragma endregion
 
 #pragma region PRESERVAÇÂO
 
-int SaveGraph(Vertex *h, char *fileName);
-int SaveAdj(Adj *h, char *fileName, int cod);
-Vertex *LoadGraph(Vertex *h, char *fileName, bool *res);
-Vertex *LoadAdj(Vertex *g, bool *res);
+int saveGraph(Vertex *h, char *fileName);
+int saveAdj(Adj *h, char *fileName, int cod);
+Vertex *loadGraph(Vertex *h, char *fileName, bool *res);
+Vertex *loadAdj(Vertex *g, bool *res);
+Vertex *routesReadTxt(Vertex *g, bool *res, int *tot);
 
 #pragma endregion

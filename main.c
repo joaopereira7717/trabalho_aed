@@ -35,98 +35,100 @@ int main()
 
 #pragma region GRAFOS
 
-  Vertex *graf = CreateRoute();
+  Vertex *graf = createRoute();
+  /* graf = routesReadTxt(graf, &res, &tot);
+  showRoutes(graf); */
 
-  Vertex *newVertex = CreateRouteVertex("Braga", tot);
+  Vertex *newVertex = createRouteVertex("Braga", tot);
   if (newVertex != NULL)
   {
-    graf = InsertRouteVertex(graf, newVertex, &res);
+    graf = insertRouteVertex(graf, newVertex, &res);
     tot++;
   }
 
-  newVertex = CreateRouteVertex("Porto", tot);
+  newVertex = createRouteVertex("Porto", tot);
   if (newVertex != NULL)
   {
-    graf = InsertRouteVertex(graf, newVertex, &res);
+    graf = insertRouteVertex(graf, newVertex, &res);
     tot++;
   }
 
-  newVertex = CreateRouteVertex("Fafe", tot);
+  newVertex = createRouteVertex("Fafe", tot);
   if (newVertex != NULL)
   {
-    graf = InsertRouteVertex(graf, newVertex, &res);
+    graf = insertRouteVertex(graf, newVertex, &res);
     tot++;
   }
 
-  newVertex = CreateRouteVertex("Lisboa", tot);
+  newVertex = createRouteVertex("Lisboa", tot);
   if (newVertex != NULL)
   {
-    graf = InsertRouteVertex(graf, newVertex, &res);
+    graf = insertRouteVertex(graf, newVertex, &res);
     tot++;
   }
 
-  newVertex = CreateRouteVertex("Barcelos", tot);
+  newVertex = createRouteVertex("Barcelos", tot);
   if (newVertex != NULL)
   {
-    graf = InsertRouteVertex(graf, newVertex, &res);
+    graf = insertRouteVertex(graf, newVertex, &res);
     tot++;
   }
 
-  ShowRoutes(graf);
+  showRoutes(graf);
 
   // Create adjacents
-  graf = InsertAdjacentVertex(graf, "Braga", "Porto", 35, &res);
-  graf = InsertAdjacentVertex(graf, "Braga", "Fafe", 15, &res);
-  graf = InsertAdjacentVertex(graf, "Fafe", "Porto", 60, &res);
-  graf = InsertAdjacentVertex(graf, "Porto", "Lisboa", 250, &res);
-  graf = InsertAdjacentVertex(graf, "Lisboa", "Barcelos", 270, &res);
+  graf = insertAdjacentVertex(graf, "Braga", "Porto", 35, &res);
+  graf = insertAdjacentVertex(graf, "Braga", "Fafe", 15, &res);
+  graf = insertAdjacentVertex(graf, "Fafe", "Porto", 60, &res);
+  graf = insertAdjacentVertex(graf, "Porto", "Lisboa", 250, &res);
+  graf = insertAdjacentVertex(graf, "Lisboa", "Barcelos", 270, &res);
 
-  ShowRoutes(graf);
+  showRoutes(graf);
 
   int pathCount = 0;
-  int x = CountPaths(graf, 0, 2, pathCount);
-  printf("\nExiste %d Paths entre %d e %d\n", x, 0, 2);
+  int x = countPaths(graf, 0, 2, pathCount);
+  printf("\nExists %d Paths between %d and %d\n", x, 0, 2);
 
   int countPath = 0;
-  x = CountPathsVertexsName(graf, "Braga", "Porto", countPath);
-  x = CountPathsVertexsName(graf, "Braga", "Fafe", countPath);
+  x = countPathsVertexsName(graf, "Braga", "Porto", countPath);
+  x = countPathsVertexsName(graf, "Braga", "Fafe", countPath);
 
-  x = CountPaths(graf, 0, 1, 0);
+  x = countPaths(graf, 0, 1, 0);
 
-  printf("\nExiste Path?\n");
-  bool existe = DepthFirstSearchRec(graf, 0, 3);
-  printf(" Existe Path entre %d e %d: %s\n", 0, 3, (existe == true ? "Sim" : "Não"));
+  printf("\nExists Path?\n");
+  bool existe = depthFirstSearchRec(graf, 3, 6);
+  printf(" Exists Path between %d and %d: %s\n", 3, 6, (existe == true ? "Yes" : "No"));
 
-  graf = ResetVisitedVertex(graf);
+  graf = resetVisitedVertex(graf);
 
-  existe = DepthFirstSearchNamesRec(graf, "Braga", "Porto");
-  printf(" Existe Path entre %s e %s: %s\n", "Braga", "Porto", (existe == true ? "Sim" : "Não"));
+  existe = depthFirstSearchNamesRec(graf, "Braga", "Porto");
+  printf(" Exists Path between %s and %s: %s\n", "Braga", "Porto", (existe == true ? "Yes" : "No"));
 
 #pragma region FICHEIROS
 
-  int res1 = SaveGraph(graf, "./saved-data/Vertexs.bin");
+  int res1 = saveGraph(graf, "./saved-data/Vertexs.bin");
   if (res1 > 0)
-    puts("\nGrafo gravado em ficheiro");
+    puts("\nRoutes saved");
 
-  graf = DestroyRoutes(graf);
+  graf = destroyRoutes(graf);
 
-  puts("\nGrafo em memória:");
-  ShowRoutes(graf);
+  puts("\nRoutes in memory:");
+  showRoutes(graf);
 
-  graf = LoadGraph(graf, "./saved-data/Vertexs.bin", &res);
+  graf = loadGraph(graf, "./saved-data/Vertexs.bin", &res);
   if (graf != NULL)
-    puts("\nVertexs do Grafo lido de ficheiro\n");
-  ShowRoutes(graf);
+    puts("\nVertex from file\n");
+  showRoutes(graf);
 
-  puts("\nLer Adjacências do grafo de ficheiro\n");
-  graf = LoadAdj(graf, &res);
+  puts("\nRead adj from the file\n");
+  graf = loadAdj(graf, &res);
 
-  ShowRoutes(graf);
+  showRoutes(graf);
 
 #pragma endregion
 
-  Best b = BestPath(graf, 5, 0);
-  ShowAllPath(b, 5, 0);
+  Best b = bestPath(graf, tot - 1, 0);
+  showAllPath(b, tot - 1, 0);
 
 #pragma endregion
 #pragma region USER
@@ -163,37 +165,40 @@ int main()
   bool isDeletedVehicle = deleteVehicle(&vehicleList, "registration");
   printf("is deleted vehicle: %d", isDeletedVehicle);
   printVehicleList(vehicleList);
+  checkVehiclesInRadius(graf, vehicleList, "Braga", 50);
+  printf("\nIs there any vehicle in a radius of %d centered in %s? \n", 50, "Braga");
+  printVehicleList(vehicleList);
 #pragma endregion
-#pragma region RENT
-  RentList *rentList = NULL;
-  printUserList(userList);
-  Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
-  bool isCreatedRent = createRentList(&rentList, *rent);
-  printf("\nisCreated rent: %d", isCreatedRent);
-  Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
-  bool isCreatedRent2 = createRentList(&rentList, *rent2);
-  printf("\nisCreated rent2: %d", isCreatedRent2);
-  printRentList(rentList);
-  bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
-  printf("\nisDeleted rent: %d", isDeletedRent);
-  printRentList(rentList);
-  bool isEditedRent = editRent(rentList, 2, *rent);
-  printf("\nisEdited rent: %d", isEditedRent);
+  /* #pragma region RENT
+    RentList *rentList = NULL;
+    printUserList(userList);
+    Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
+    bool isCreatedRent = createRentList(&rentList, *rent);
+    printf("\nisCreated rent: %d", isCreatedRent);
+    Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
+    bool isCreatedRent2 = createRentList(&rentList, *rent2);
+    printf("\nisCreated rent2: %d", isCreatedRent2);
+    printRentList(rentList);
+    bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
+    printf("\nisDeleted rent: %d", isDeletedRent);
+    printRentList(rentList);
+    bool isEditedRent = editRent(rentList, 2, *rent);
+    printf("\nisEdited rent: %d", isEditedRent);
 
-  storeVehicleListInBin(vehicleList);
-  storeRentsInBin(rentList);
-#pragma endregion
-  VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
-  printf("sorted vehicle list:");
-  printVehicleList(sortedVehicleList);
-  printUserList(userList);
-  storeUsersInBin(userList);
-  // clear the userList data
-  userList = NULL;
-  printf("user list after clear: \n");
-  printUserList(userList);
-  setUsersData(&userList);
-  printf("user list after setUsersData: \n");
-  printUserList(userList);
+    storeVehicleListInBin(vehicleList);
+    storeRentsInBin(rentList);
+  #pragma endregion
+    VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
+    printf("sorted vehicle list:");
+    printVehicleList(sortedVehicleList);
+    printUserList(userList);
+    storeUsersInBin(userList);
+    // clear the userList data
+    userList = NULL;
+    printf("user list after clear: \n");
+    printUserList(userList);
+    setUsersData(&userList);
+    printf("user list after setUsersData: \n");
+    printUserList(userList); */
   return 0;
 }

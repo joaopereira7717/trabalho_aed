@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "./routes.h"
+
 #pragma once
 
 typedef struct VehicleList VehicleList;
@@ -42,3 +43,4 @@ bool searchVehicleByRegistration(VehicleList *headNode, char *registration);
 bool isVehicleAvailable(VehicleList *headNode, char *registration);
 bool editVehicleAvailability(VehicleList *headNode, char *registration, bool isInUse);
 VehicleList *sortVehicleListDesc(VehicleList **headNode);
+VehicleList *checkVehiclesInRadius(Vertex *g, VehicleList *vl, char *city, float radius);

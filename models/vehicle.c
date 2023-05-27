@@ -75,7 +75,7 @@ Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bo
   strcpy(vehicle->location, location);
 
   // check if the location is in the graph on routes with SearchCodVertex if not, return NULL
-  if (SearchCodVertex(graf, location) < 0)
+  if (searchCodVertex(graf, location) < 0)
   {
     printf("\nThe location '%s' is not in the graph of routes!\n", location);
     return NULL;
@@ -381,6 +381,47 @@ VehicleList *sortVehiclesByLocation(VehicleList *headNode, char *location)
   if (newTail != NULL)
   {
     newTail->next = NULL;
+  }
+  return newHead;
+}
+
+// create a function that checks if there is any vehicle in a given radius
+VehicleList *checkVehiclesInRadius(Vertex *g, VehicleList *vl, char *city, float radius)
+{
+  VehicleList *current = vl;
+  VehicleList *newHead = NULL;
+  VehicleList *newTail = NULL;
+  Vertex *aux = searchVertex(g, city);
+  if (aux == NULL)
+    return NULL;
+  Adj *auxAdj = aux->adjacents;
+  while (auxAdj)
+  {
+    /* Vertex *auxVertex = searchVertexCod(g, auxAdj->cod); */
+
+    while (current != NULL)
+    {
+      if (strcmp(current->vehicle.location, city) == 0)
+      {
+        if (newHead == NULL)
+        {
+          newHead = current;
+          newTail = current;
+        }
+        else
+        {
+          newTail->next = current;
+          newTail = current;
+        }
+      }
+      current = current->next;
+    }
+    if (newTail != NULL)
+    {
+      newTail->next = NULL;
+    }
+
+    auxAdj = auxAdj->next;
   }
   return newHead;
 }
