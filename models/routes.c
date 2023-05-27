@@ -680,34 +680,57 @@ Vertex *loadAdj(Vertex *g, bool *res)
 
 #pragma endregion
 
-// create a function that reads the vertex from ./initial-data/vertices.txt and the edges from ./initial-data/edges.txt
+/**
+ * @brief Reads the initial data from two text files and creates a graph of routes and edges.
+ *
+ * @param g Pointer to the graph of routes and edges.
+ * @param res Pointer to a boolean variable that will be set to true if any errors occur during the creation of the graph.
+ * @param tot Pointer to an integer variable that will be incremented for each new vertex added to the graph.
+ * @return Pointer to the graph of routes and edges.
+ */
 Vertex *routesReadTxt(Vertex *g, bool *res, int *tot)
 {
-
   *res = false;
   FILE *fp;
+
+  // Open the file containing the list of cities
   fp = fopen("./initial-data/routes.txt", "r");
   if (fp == NULL)
     return NULL;
+
   char city[100];
+
+  // Read each city from the file and create a new vertex for it
   while (fscanf(fp, "%s", city) != EOF)
   {
     Vertex *new = createRouteVertex(city, *tot);
     g = insertRouteVertex(g, new, res);
     (*tot)++;
   }
+
+  // Close the file
   fclose(fp);
 
+  // Open the file containing the list of edges
   fp = fopen("./initial-data/edges.txt", "r");
   if (fp == NULL)
     return NULL;
+
   char origin[100], dest[100];
   float dist;
+
+  // Read each edge from the file and add it to the graph
   while (fscanf(fp, "%s %s %f", origin, dest, &dist) != EOF)
   {
     g = insertAdjacentVertex(g, origin, dest, dist, res);
   }
+
+  // Close the file
   fclose(fp);
+
+  // Display the graph of routes and edges
   showRoutes(g);
+
+  // Return the graph of routes and edges
   return g;
 }

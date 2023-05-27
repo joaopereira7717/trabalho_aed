@@ -49,13 +49,25 @@ UserList *readUsersFromTxt(UserList **headNode)
   return *headNode;
 }
 
-// do a function called setUsersData that checks if the binary file called ../saved-data/users.bin exists and if it does, check if there is any data, if there is, set the usersList to that data, if there isn't, set the usersList to the data from the text file
+/**
+ * @brief setUsersData - Reads user data from a binary file and creates a linked list of users.
+ * @headNode: A pointer to a pointer to the head node of the linked list.
+ *
+ * This function opens a binary file containing user data and reads each user record
+ * into a User struct. It then calls the createUserList function to create a new node
+ * in the linked list for each user. The headNode pointer is updated to point to the
+ * first node in the list. If the file cannot be opened, NULL is returned.
+ *
+ * Return: A pointer to the head node of the linked list.
+ */
 UserList *setUsersData(UserList **headNode)
 {
   FILE *pFile = NULL;
 
+  // Open the binary file for reading
   pFile = fopen("./saved-data/users.bin", "rb");
 
+  // Check if the file was opened successfully
   if (pFile == NULL)
   {
     perror("Could not open file");
@@ -63,12 +75,16 @@ UserList *setUsersData(UserList **headNode)
   }
 
   User user;
+  // Read each user record from the file and create a new node in the linked list
   while (fread(&user, sizeof(User), 1, pFile) == 1)
   {
     createUserList(headNode, user);
   }
 
+  // Close the file
   fclose(pFile);
+
+  // Return a pointer to the head node of the linked list
   return *headNode;
 }
 

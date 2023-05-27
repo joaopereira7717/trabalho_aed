@@ -386,6 +386,21 @@ VehicleList *sortVehiclesByLocation(VehicleList *headNode, char *location)
 }
 
 // create a function that checks if there is any vehicle in a given radius
+/**
+ * @brief checkVehiclesInRadius - Finds all vehicles of a given type within a certain radius of a city
+ * @g: Pointer to the graph of cities and their connections
+ * @vl: Pointer to the linked list of vehicles
+ * @city: The code of the city to start the search from
+ * @radius: The maximum distance from the starting city to search for vehicles
+ * @type: The type of vehicle to search for
+ *
+ * This function finds all vehicles of a given type within a certain radius of a city. It starts the search from the
+ * specified city and traverses the graph of cities and their connections to find all cities within the given radius.
+ * For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located
+ * in that city. It then prints out information about each vehicle found.
+ *
+ * Return: NULL
+ */
 void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, char type[])
 {
   if (radius < 0)
@@ -395,6 +410,7 @@ void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, 
 
   Vertex *start_node = NULL;
 
+  // Find the starting node for the search
   Vertex *current_node = g;
   while (current_node != NULL)
   {
@@ -406,18 +422,29 @@ void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, 
     current_node = current_node->next;
   }
 
+  // If the starting node is not found, print an error message and return NULL
   if (start_node == NULL)
   {
     printf("Error: Start node not found.\n");
     return NULL;
   }
 
+  // Mark all nodes in the graph as unvisited
   de_flag_visited_nodes(g);
 
+  // Traverse the graph to find all cities within the given radius
   traverse_graph(g, vl, start_node, radius, type);
   return NULL;
 }
 
+/**
+ * @brief de_flag_visited_nodes - Marks all nodes in the graph as unvisited
+ * @graph: Pointer to the graph of cities and their connections
+ *
+ * This function marks all nodes in the graph as unvisited by setting their visited flag to false.
+ *
+ * Return: void
+ */
 void de_flag_visited_nodes(Vertex *graph)
 {
   Vertex *node = graph;
@@ -428,6 +455,20 @@ void de_flag_visited_nodes(Vertex *graph)
   }
 }
 
+/**
+ * @brief traverse_graph - Traverses the graph to find all cities within a certain radius
+ * @graph: Pointer to the graph of cities and their connections
+ * @vehicles: Pointer to the linked list of vehicles
+ * @current_node: Pointer to the current node being visited
+ * @remaining_distance: The remaining distance that can be traveled from the starting city
+ * @type: The type of vehicle to search for
+ *
+ * This function traverses the graph of cities and their connections to find all cities within a certain radius of the
+ * starting city. For each city found, it searches the linked list of vehicles to find all vehicles of the given type
+ * that are located in that city. It then prints out information about each vehicle found.
+ *
+ * Return: void
+ */
 void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[])
 {
   if (remaining_distance < 0)
@@ -435,8 +476,13 @@ void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, 
     return;
   }
 
+  // Mark the current node as visited
   current_node->visited = true;
+
+  // Search the linked list of vehicles to find all vehicles of the given type that are located in the current city
   show_vehicle_by_type_on_geocode(vehicles, current_node->city, type);
+
+  // Traverse all adjacent nodes that have not been visited and are within the remaining distance
   Adj *edge = current_node->adjacents;
   while (edge != NULL)
   {
@@ -456,6 +502,17 @@ void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, 
   }
 }
 
+/**
+ * @brief Searches the linked list of vehicles for all vehicles of a given type in a city
+ * @head: Pointer to the head of the linked list of vehicles
+ * @location: The name of the city to search for vehicles in
+ * @type: The type of vehicle to search for
+ *
+ * This function searches the linked list of vehicles for all vehicles of a given type that are located in a city with
+ * the given name. It then prints out information about each vehicle found.
+ *
+ * Return: void
+ */
 void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char type[])
 {
   if (location[0] == '\0')
