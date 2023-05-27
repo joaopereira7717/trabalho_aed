@@ -6,7 +6,7 @@
 #include <string.h>
 #include <locale.h>
 
-#define N 20
+#define N 50
 
 /**
  * Estrutura de uma Adjacência.

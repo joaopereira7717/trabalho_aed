@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <limits.h>
 #include "./vehicle.h"
 
 /**
@@ -430,7 +431,7 @@ void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, 
   }
 
   // Mark all nodes in the graph as unvisited
-  de_flag_visited_nodes(g);
+  markAsVisited(g);
 
   // Traverse the graph to find all cities within the given radius
   traverse_graph(g, vl, start_node, radius, type);
@@ -438,14 +439,14 @@ void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, 
 }
 
 /**
- * @brief de_flag_visited_nodes - Marks all nodes in the graph as unvisited
+ * @brief markAsVisited - Marks all nodes in the graph as unvisited
  * @graph: Pointer to the graph of cities and their connections
  *
  * This function marks all nodes in the graph as unvisited by setting their visited flag to false.
  *
  * Return: void
  */
-void de_flag_visited_nodes(Vertex *graph)
+void markAsVisited(Vertex *graph)
 {
   Vertex *node = graph;
   while (node != NULL)
@@ -540,4 +541,112 @@ void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char ty
     }
     current_vehicle = current_vehicle->next;
   }
+}
+
+VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capacity)
+{
+  int run_number = 1;
+  int collected_count = 0;
+
+  Vertex *start_node = graph;
+  VehicleList *vehicles_collected = NULL;
+  Vertex *current_node = graph;
+  printf("current node location -> %s\n", current_node->city);
+  // loop to visit nodes in the graph
+  while (current_node != NULL)
+  {
+    if (!current_node->visited)
+    {
+      VehicleList *current_vehicle = *vehicle_list;
+
+      // iterate through the vehicle list and collect eligible vehicles
+      while (current_vehicle != NULL && collected_count < truck_capacity)
+      {
+        bool is_legible = check_is_legible_for_truck(current_vehicle);
+        bool is_same_location = strcmp(current_vehicle->vehicle.location, current_node->city) == 0;
+
+        if (is_legible && is_same_location)
+        {
+          collected_count++;
+          head_insertion_vehicle_list(&vehicles_collected, current_vehicle->vehicle);
+
+          printf("Run %d: Vehicle %s collected at %s\n", run_number, current_vehicle->vehicle.registration, current_vehicle->vehicle.location);
+        }
+
+        current_vehicle = current_vehicle->next;
+      }
+
+      current_node->visited = true;
+
+      if (collected_count == truck_capacity)
+      {
+        collected_count = 0;
+        run_number++;
+
+        // reset the current node to the start node and move the collected
+        // vehicles to the start node
+        current_node = start_node;
+
+        vehicles_collected->vehicle.battery = 100;
+        strcpy(vehicles_collected->vehicle.location, start_node->city);
+
+        markAsVisited(graph);
+      }
+
+      printf("current node location -> %s\n", current_node->city);
+    }
+
+    // find the next unvisited node with the shortest distance from the current node
+    Vertex *next_node = NULL;
+    Adj *edges = current_node->adjacents;
+    int shortest_distance = INT_MAX;
+
+    while (edges != NULL)
+    {
+      Vertex *adjacent_node = searchVertexCod(graph, edges->cod);
+
+      // if the adjacent node was not visited and has a shorter distance, update the next node
+      if (adjacent_node != NULL && !adjacent_node->visited && edges->dist < shortest_distance)
+      {
+        shortest_distance = edges->dist;
+        next_node = adjacent_node;
+      }
+
+      edges = edges->next;
+    }
+
+    current_node = next_node;
+  }
+
+  markAsVisited(graph);
+
+  return vehicles_collected;
+}
+
+bool check_is_legible_for_truck(VehicleList *vehicle)
+{
+  char typeTroti[50] = "trotinete";
+  bool is_trotti = strcmp(vehicle->vehicle.type, typeTroti) == 0;
+  bool has_low_battery = vehicle->vehicle.battery < 50;
+  bool is_not_rented = vehicle->vehicle.isInUse == false;
+
+  return is_trotti && has_low_battery && is_not_rented;
+}
+
+bool head_insertion_vehicle_list(VehicleList **head, Vehicle new_vehicle)
+{
+  VehicleList *new_node = (VehicleList *)malloc(sizeof(VehicleList));
+
+  if (new_node == NULL)
+  {
+    perror("Could not allocate memory!");
+    return head;
+  }
+
+  new_node->vehicle = new_vehicle;
+
+  new_node->next = *head;
+  *head = new_node;
+
+  return true;
 }
