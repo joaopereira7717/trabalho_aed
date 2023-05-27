@@ -386,42 +386,101 @@ VehicleList *sortVehiclesByLocation(VehicleList *headNode, char *location)
 }
 
 // create a function that checks if there is any vehicle in a given radius
-VehicleList *checkVehiclesInRadius(Vertex *g, VehicleList *vl, char *city, float radius)
+void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, char type[])
 {
-  VehicleList *current = vl;
-  VehicleList *newHead = NULL;
-  VehicleList *newTail = NULL;
-  Vertex *aux = searchVertex(g, city);
-  if (aux == NULL)
-    return NULL;
-  Adj *auxAdj = aux->adjacents;
-  while (auxAdj)
+  if (radius < 0)
   {
-    /* Vertex *auxVertex = searchVertexCod(g, auxAdj->cod); */
-
-    while (current != NULL)
-    {
-      if (strcmp(current->vehicle.location, city) == 0)
-      {
-        if (newHead == NULL)
-        {
-          newHead = current;
-          newTail = current;
-        }
-        else
-        {
-          newTail->next = current;
-          newTail = current;
-        }
-      }
-      current = current->next;
-    }
-    if (newTail != NULL)
-    {
-      newTail->next = NULL;
-    }
-
-    auxAdj = auxAdj->next;
+    return NULL;
   }
-  return newHead;
+
+  Vertex *start_node = NULL;
+
+  Vertex *current_node = g;
+  while (current_node != NULL)
+  {
+    if (current_node->cod == city)
+    {
+      start_node = current_node;
+      break;
+    }
+    current_node = current_node->next;
+  }
+
+  if (start_node == NULL)
+  {
+    printf("Error: Start node not found.\n");
+    return NULL;
+  }
+
+  de_flag_visited_nodes(g);
+
+  traverse_graph(g, vl, start_node, radius, type);
+  return NULL;
+}
+
+void de_flag_visited_nodes(Vertex *graph)
+{
+  Vertex *node = graph;
+  while (node != NULL)
+  {
+    node->visited = false;
+    node = node->next;
+  }
+}
+
+void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[])
+{
+  if (remaining_distance < 0)
+  {
+    return;
+  }
+
+  current_node->visited = true;
+  show_vehicle_by_type_on_geocode(vehicles, current_node->city, type);
+  Adj *edge = current_node->adjacents;
+  while (edge != NULL)
+  {
+    Vertex *adjacentNode = graph;
+    while (adjacentNode != NULL)
+    {
+      if (adjacentNode->cod == edge->cod && !adjacentNode->visited && edge->dist <= remaining_distance)
+      {
+        float updated_distance = remaining_distance - edge->dist;
+        traverse_graph(graph, vehicles, adjacentNode, updated_distance, type);
+      }
+
+      adjacentNode = adjacentNode->next;
+    }
+
+    edge = edge->next;
+  }
+}
+
+void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char type[])
+{
+  if (location[0] == '\0')
+  {
+    perror("Error: location is empty\n");
+    return;
+  }
+
+  if (type[0] == '\0')
+  {
+    perror("Error: type is empty\n");
+    return;
+  }
+
+  VehicleList *current_vehicle = head;
+
+  while (current_vehicle != NULL)
+  {
+    if (strcmp(current_vehicle->vehicle.location, location) == 0 && strcmp(current_vehicle->vehicle.type, type) == 0)
+    {
+      printf("\nVehicle registration: %s\n", current_vehicle->vehicle.registration);
+      printf("Vehicle Type: %s\n", current_vehicle->vehicle.type);
+      printf("Vehicle Location: %s\n", current_vehicle->vehicle.location);
+      printf("Vehicle Price: %d\n", current_vehicle->vehicle.cost);
+    }
+    current_vehicle = current_vehicle->next;
+  }
 }

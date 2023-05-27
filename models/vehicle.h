@@ -43,4 +43,7 @@ bool searchVehicleByRegistration(VehicleList *headNode, char *registration);
 bool isVehicleAvailable(VehicleList *headNode, char *registration);
 bool editVehicleAvailability(VehicleList *headNode, char *registration, bool isInUse);
 VehicleList *sortVehicleListDesc(VehicleList **headNode);
-VehicleList *checkVehiclesInRadius(Vertex *g, VehicleList *vl, char *city, float radius);
+void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, char type[]);
+void de_flag_visited_nodes(Vertex *graph);
+void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[]);
+void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char type[]);
