@@ -7,6 +7,10 @@
  */
 
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "./routes.h"
 #pragma once
 
 typedef struct VehicleList VehicleList;
@@ -28,7 +32,7 @@ struct VehicleList
 };
 
 VehicleList *readVehiclesFromTxt(VehicleList **headNode);
-Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location);
+Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location, Vertex *graph);
 bool createVehicleList(VehicleList **headNode, Vehicle vehicle);
 void printVehicleList(VehicleList *headNode);
 bool editVehicle(VehicleList *headNode, char *registration, Vehicle vehicle);

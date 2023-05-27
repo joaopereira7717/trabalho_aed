@@ -1,4 +1,4 @@
-70-10-JK;bicicleta;1;1;0;braga
-20-03-LL;trotinete;2;1;0;porto
-25-03-KL;trotinete;3;1;0;barcelos
-55-03-KL;trotinete;4;1;0;barcelos
+70-10-JK;bicicleta;1;1;0;Braga
+20-03-LL;trotinete;2;1;0;Porto
+25-03-KL;trotinete;3;1;0;Fafe
+55-03-KL;trotinete;4;1;0;Barcelos

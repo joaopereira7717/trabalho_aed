@@ -64,7 +64,7 @@ VehicleList *readVehiclesFromTxt(VehicleList **headNode)
  * @param location The location of the vehicle.
  * @return A pointer to the created vehicle.
  */
-Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location)
+Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bool isInUse, char *location, Vertex *graf)
 {
   Vehicle *vehicle = (Vehicle *)malloc(sizeof(Vehicle));
   strcpy(vehicle->registration, registration);
@@ -73,6 +73,14 @@ Vehicle *createVehicle(char *registration, char *type, int battery, int cost, bo
   vehicle->cost = cost;
   vehicle->isInUse = isInUse;
   strcpy(vehicle->location, location);
+
+  // check if the location is in the graph on routes with SearchCodVertex if not, return NULL
+  if (SearchCodVertex(graf, location) < 0)
+  {
+    printf("\nThe location '%s' is not in the graph of routes!\n", location);
+    return NULL;
+  }
+
   return vehicle;
 }
 

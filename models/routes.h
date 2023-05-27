@@ -11,7 +11,7 @@
 typedef struct Adj
 {
   int cod;    /*!< Código da Adjacência */
-  float dist; /*!< Peso */
+  float dist; /*!< ValueDistance */
   struct Adj *next;
 } Adj;
 
@@ -20,28 +20,28 @@ typedef struct Adj
  */
 typedef struct AdjFile
 {
-  int codOrigem;
-  int codDestino; /*!< Código da Adjacência */
-  float weight;   /*!< Peso */
+  int codOrigin;
+  int codDestiny; /*!< Código da Adjacência */
+  float weight;   /*!< ValueDistance */
 } AdjFile;
 
 /**
  * Descrição de um Vértice do grafo.
  */
-typedef struct Vertice
+typedef struct Vertex
 {
-  int cod;        /*!< Código do Vértice */
-  char cidade[N]; /*!< Nome da Cidade */
-  bool visitado;
-  struct Vertice *next;   /*!< Lista de Vértices */
-  struct Adj *adjacentes; /*!< Lista de Adjacências */
-} Vertice;
+  int cod;      /*!< Código do Vértice */
+  char city[N]; /*!< Nome da City */
+  bool visited;
+  struct Vertex *next;   /*!< Lista de Vértices */
+  struct Adj *adjacents; /*!< Lista de Adjacências */
+} Vertex;
 
-typedef struct VerticeFile
+typedef struct VertexFile
 {
-  int cod;        /*!< Código do Vértice */
-  char cidade[N]; /*!< Nome da Cidade */
-} VerticeFile;
+  int cod;      /*!< Código do Vértice */
+  char city[N]; /*!< Nome da City */
+} VertexFile;
 
 // Auxiliar ao Dijkstra
 #define MAX 5
@@ -50,31 +50,31 @@ typedef struct VerticeFile
 typedef struct Best
 {
   int distance[MAX];   // weight
-  int anteriores[MAX]; // vertices cod
+  int anteriores[MAX]; // vertexs cod
 } Best;
 
 #pragma region GRAFO
 
-Vertice *CreateRoute();
-Vertice *InsertRouteVertex(Vertice *g, Vertice *novo, bool *res);
-Vertice *CreateRouteVertex(char *cidade, int tot);
-void ShowRoutes(Vertice *g);
-int SearchCodVertex(Vertice *g, char *cidade);
-Vertice *SearchVertex(Vertice *g, char *cidade);
-Vertice *SearchVertexCod(Vertice *g, int cod);
-Vertice *DestroyRoutes(Vertice *g);
+Vertex *CreateRoute();
+Vertex *InsertRouteVertex(Vertex *g, Vertex *new, bool *res);
+Vertex *CreateRouteVertex(char *city, int tot);
+void ShowRoutes(Vertex *g);
+int SearchCodVertex(Vertex *g, char *city);
+Vertex *SearchVertex(Vertex *g, char *city);
+Vertex *SearchVertexCod(Vertex *g, int cod);
+Vertex *DestroyRoutes(Vertex *g);
 
 #pragma endregion
 
 #pragma region ADJACENCIAS
 
-Vertice *InsertAdjacentVertex(Vertice *g, char *origem, char *dest, float peso, bool *res);
-Vertice *InsertAdjacentVertexCod(Vertice *g, int origem, int dest, float peso, bool *res);
+Vertex *InsertAdjacentVertex(Vertex *g, char *origem, char *dest, float valuedistance, bool *res);
+Vertex *InsertAdjacentVertexCod(Vertex *g, int origem, int dest, float valuedistance, bool *res);
 
 #pragma region LISTA_ADJACENCIAS
 
-Adj *CreateAdj(int cod, float peso);
-Adj *InsertAdj(Adj *h, Adj *novo, bool *res);
+Adj *CreateAdj(int cod, float valuedistance);
+Adj *InsertAdj(Adj *h, Adj *new, bool *res);
 bool ExistAdj(Adj *h, int cod);
 void ShowAdj(Adj *h);
 Adj *DestroyAdj(Adj *h);
@@ -85,24 +85,24 @@ Adj *DestroyAdj(Adj *h);
 
 #pragma region ALGORITMOS
 
-int CountPaths(Vertice *g, int src, int dst, int pathCount);
-int CountPathsVerticesName(Vertice *g, char *src, char *dest, int pathCount);
+int CountPaths(Vertex *g, int src, int dst, int pathCount);
+int CountPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount);
 
-bool DepthFirstSearchRec(Vertice *g, int origem, int dest);
-bool DepthFirstSearchNamesRec(Vertice *g, char *src, char *dest);
+bool DepthFirstSearchRec(Vertex *g, int origem, int dest);
+bool DepthFirstSearchNamesRec(Vertex *g, char *src, char *dest);
 
-Vertice *ResetVisitedVertex(Vertice *g);
+Vertex *ResetVisitedVertex(Vertex *g);
 
-Best BestPath(Vertice *g, int n, int v);
+Best BestPath(Vertex *g, int n, int v);
 void ShowAllPath(Best b, int n, int v);
 
 #pragma endregion
 
 #pragma region PRESERVAÇÂO
 
-int SaveGraph(Vertice *h, char *fileName);
+int SaveGraph(Vertex *h, char *fileName);
 int SaveAdj(Adj *h, char *fileName, int cod);
-Vertice *LoadGraph(Vertice *h, char *fileName, bool *res);
-Vertice *LoadAdj(Vertice *g, bool *res);
+Vertex *LoadGraph(Vertex *h, char *fileName, bool *res);
+Vertex *LoadAdj(Vertex *g, bool *res);
 
 #pragma endregion
