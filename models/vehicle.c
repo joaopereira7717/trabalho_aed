@@ -543,6 +543,18 @@ void showVehicleByTypeOnLocation(VehicleList *head, char location[], char type[]
   }
 }
 
+/**
+ * @brief recoverTruck - function that recovers eligible vehicles from a graph of nodes
+ * @graph: pointer to the first node of the graph
+ * @vehicle_list: pointer to the head of the linked list of vehicles
+ * @truck_capacity: integer representing the maximum number of vehicles that can be collected in a single run
+ *
+ * This function visits each node in the graph and collects eligible vehicles that are located in the same city as the node.
+ * Once the maximum number of vehicles is collected, the function moves the vehicles to the starting node and recharges them.
+ * The function returns a pointer to the linked list of collected vehicles.
+ *
+ * Return: pointer to the linked list of collected vehicles
+ */
 VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_capacity)
 {
   int run_number = 1;
@@ -552,6 +564,7 @@ VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_c
   VehicleList *vehicles_collected = NULL;
   Vertex *current_node = graph;
   printf("current node location -> %s\n", current_node->city);
+
   // loop to visit nodes in the graph
   while (current_node != NULL)
   {
@@ -620,6 +633,14 @@ VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_c
   return vehicles_collected;
 }
 
+/**
+ * @brief checkIsLegibleForTruck - function that checks if a vehicle is eligible for collection by the truck
+ * @vehicle: pointer to the vehicle to be checked
+ *
+ * This function checks if a vehicle is a trotinete, has a battery level below 50, and is not currently rented.
+ *
+ * Return: true if the vehicle is eligible, false otherwise
+ */
 bool checkIsLegibleForTruck(VehicleList *vehicle)
 {
   char typeTroti[50] = "trotinete";
@@ -630,6 +651,15 @@ bool checkIsLegibleForTruck(VehicleList *vehicle)
   return is_trotti && has_low_battery && is_not_rented;
 }
 
+/**
+ * @brief headInsertionVehicleList - function that inserts a new vehicle at the head of a linked list
+ * @head: pointer to the head of the linked list
+ * @new_vehicle: the new vehicle to be inserted
+ *
+ * This function creates a new node for the new vehicle and inserts it at the head of the linked list.
+ *
+ * Return: true if the insertion was successful, false otherwise
+ */
 bool headInsertionVehicleList(VehicleList **head, Vehicle new_vehicle)
 {
   VehicleList *new_node = (VehicleList *)malloc(sizeof(VehicleList));
@@ -648,6 +678,16 @@ bool headInsertionVehicleList(VehicleList **head, Vehicle new_vehicle)
   return true;
 }
 
+/**
+ * @brief moveAndRechargeVehicle - function that moves a vehicle to a new location and recharges its battery
+ * @vehicles: pointer to the head of the linked list of vehicles
+ * @vehicle_registration: string representing the registration number of the vehicle to be moved
+ * @location: string representing the new location of the vehicle
+ *
+ * This function searches for the vehicle with the given registration number in the linked list and updates its location and battery level.
+ *
+ * Return: void
+ */
 void moveAndRechargeVehicle(VehicleList **vehicles, char vehicle_registration[50], char location[])
 {
   VehicleList *current_vehicle = *vehicles;

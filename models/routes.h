@@ -1,3 +1,10 @@
+/**
+ * @file routes.h
+ * @brief File containing the functions to manage the routes
+ *
+ * @author João Pereira
+ */
+
 #pragma once
 
 #include <stdio.h>
