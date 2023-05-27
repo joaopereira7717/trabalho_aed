@@ -201,7 +201,7 @@ int main()
   Vertex *start_node = searchVertexCod(graf, 0);
   printVehicleList(vehicleList);
   resetVisitedVertex(graf);
-  VehicleList *collected_vehicles = tsp_truck(start_node, &vehicleList, 1);
+  VehicleList *collected_vehicles = recoverTruck(start_node, &vehicleList, 1);
   printf("collected vehicles: \n");
   printVehicleList(collected_vehicles);
   return 0;

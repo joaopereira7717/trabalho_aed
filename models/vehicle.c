@@ -434,7 +434,7 @@ void *checkVehiclesInRadius(Vertex *g, VehicleList *vl, int city, float radius, 
   markAsVisited(g);
 
   // Traverse the graph to find all cities within the given radius
-  traverse_graph(g, vl, start_node, radius, type);
+  traverseGraph(g, vl, start_node, radius, type);
   return NULL;
 }
 
@@ -457,7 +457,7 @@ void markAsVisited(Vertex *graph)
 }
 
 /**
- * @brief traverse_graph - Traverses the graph to find all cities within a certain radius
+ * @brief traverseGraph - Traverses the graph to find all cities within a certain radius
  * @graph: Pointer to the graph of cities and their connections
  * @vehicles: Pointer to the linked list of vehicles
  * @current_node: Pointer to the current node being visited
@@ -470,7 +470,7 @@ void markAsVisited(Vertex *graph)
  *
  * Return: void
  */
-void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[])
+void traverseGraph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[])
 {
   if (remaining_distance < 0)
   {
@@ -481,7 +481,7 @@ void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, 
   current_node->visited = true;
 
   // Search the linked list of vehicles to find all vehicles of the given type that are located in the current city
-  show_vehicle_by_type_on_geocode(vehicles, current_node->city, type);
+  showVehicleByTypeOnLocation(vehicles, current_node->city, type);
 
   // Traverse all adjacent nodes that have not been visited and are within the remaining distance
   Adj *edge = current_node->adjacents;
@@ -493,7 +493,7 @@ void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, 
       if (adjacentNode->cod == edge->cod && !adjacentNode->visited && edge->dist <= remaining_distance)
       {
         float updated_distance = remaining_distance - edge->dist;
-        traverse_graph(graph, vehicles, adjacentNode, updated_distance, type);
+        traverseGraph(graph, vehicles, adjacentNode, updated_distance, type);
       }
 
       adjacentNode = adjacentNode->next;
@@ -514,7 +514,7 @@ void traverse_graph(Vertex *graph, VehicleList *vehicles, Vertex *current_node, 
  *
  * Return: void
  */
-void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char type[])
+void showVehicleByTypeOnLocation(VehicleList *head, char location[], char type[])
 {
   if (location[0] == '\0')
   {
@@ -543,7 +543,7 @@ void show_vehicle_by_type_on_geocode(VehicleList *head, char location[], char ty
   }
 }
 
-VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capacity)
+VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_capacity)
 {
   int run_number = 1;
   int collected_count = 0;
@@ -562,13 +562,13 @@ VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capa
       // iterate through the vehicle list and collect eligible vehicles
       while (current_vehicle != NULL && collected_count < truck_capacity)
       {
-        bool is_legible = check_is_legible_for_truck(current_vehicle);
+        bool is_legible = checkIsLegibleForTruck(current_vehicle);
         bool is_same_location = strcmp(current_vehicle->vehicle.location, current_node->city) == 0;
 
         if (is_legible && is_same_location)
         {
           collected_count++;
-          head_insertion_vehicle_list(&vehicles_collected, current_vehicle->vehicle);
+          headInsertionVehicleList(&vehicles_collected, current_vehicle->vehicle);
 
           printf("Run %d: Vehicle %s collected at %s\n", run_number, current_vehicle->vehicle.registration, current_vehicle->vehicle.location);
         }
@@ -586,7 +586,7 @@ VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capa
         // reset the current node to the start node and move the collected
         // vehicles to the start node
         current_node = start_node;
-        move_and_recharge_vehicle(vehicle_list, vehicles_collected->vehicle.registration, start_node->city);
+        moveAndRechargeVehicle(vehicle_list, vehicles_collected->vehicle.registration, start_node->city);
         markAsVisited(graph);
       }
 
@@ -620,7 +620,7 @@ VehicleList *tsp_truck(Vertex *graph, VehicleList **vehicle_list, int truck_capa
   return vehicles_collected;
 }
 
-bool check_is_legible_for_truck(VehicleList *vehicle)
+bool checkIsLegibleForTruck(VehicleList *vehicle)
 {
   char typeTroti[50] = "trotinete";
   bool is_trotti = strcmp(vehicle->vehicle.type, typeTroti) == 0;
@@ -630,7 +630,7 @@ bool check_is_legible_for_truck(VehicleList *vehicle)
   return is_trotti && has_low_battery && is_not_rented;
 }
 
-bool head_insertion_vehicle_list(VehicleList **head, Vehicle new_vehicle)
+bool headInsertionVehicleList(VehicleList **head, Vehicle new_vehicle)
 {
   VehicleList *new_node = (VehicleList *)malloc(sizeof(VehicleList));
 
@@ -648,7 +648,7 @@ bool head_insertion_vehicle_list(VehicleList **head, Vehicle new_vehicle)
   return true;
 }
 
-void move_and_recharge_vehicle(VehicleList **vehicles, char vehicle_registration[50], char location[])
+void moveAndRechargeVehicle(VehicleList **vehicles, char vehicle_registration[50], char location[])
 {
   VehicleList *current_vehicle = *vehicles;
 
