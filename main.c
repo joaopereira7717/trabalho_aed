@@ -85,6 +85,7 @@ int main()
   int pathCount = 0;
   int x = CountPaths(graf, 0, 2, pathCount);
   printf("\nExiste %d Paths entre %d e %d\n", x, 0, 2);
+
   int contaPath = 0;
   x = CountPathsVerticesName(graf, "Braga", "Porto", contaPath);
   x = CountPathsVerticesName(graf, "Braga", "Famalicão", contaPath);
@@ -100,8 +101,33 @@ int main()
   existe = DepthFirstSearchNamesRec(graf, "Braga", "Porto");
   printf(" Existe Path entre %s e %s: %s\n", "Braga", "Porto", (existe == true ? "Sim" : "Não"));
 
+#pragma region FICHEIROS
+
+  int res1 = SaveGraph(graf, "Vertices.bin");
+  if (res1 > 0)
+    puts("\nGrafo gravado em ficheiro");
+
+  graf = DestroyGraph(graf);
+
+  puts("\nGrafo em memória:");
+  MostraGrafo(graf);
+
+  graf = LoadGraph(graf, "Vertices.bin", &res);
+  if (graf != NULL)
+    puts("\nVertices do Grafo lido de ficheiro\n");
+  MostraGrafo(graf);
+
+  puts("\nLer Adjacências do grafo de ficheiro\n");
+  graf = LoadAdj(graf, &res);
+
+  MostraGrafo(graf);
+
 #pragma endregion
 
+  Best b = BestPath(graf, 5, 0);
+  ShowAllPath(b, 5, 0);
+
+#pragma endregion
   /* printf("Program start!\n");
 
   UserList *userList = NULL;

@@ -16,6 +16,16 @@ typedef struct Adj
 } Adj;
 
 /**
+ * Estrutura de uma Adjacência para Ficheiro
+ */
+typedef struct AdjFile
+{
+  int codOrigem;
+  int codDestino; /*!< Código da Adjacência */
+  float weight;   /*!< Peso */
+} AdjFile;
+
+/**
  * Descrição de um Vértice do grafo.
  */
 typedef struct Vertice
@@ -27,6 +37,22 @@ typedef struct Vertice
   struct Adj *adjacentes; /*!< Lista de Adjacências */
 } Vertice;
 
+typedef struct VerticeFile
+{
+  int cod;        /*!< Código do Vértice */
+  char cidade[N]; /*!< Nome da Cidade */
+} VerticeFile;
+
+// Auxiliar ao Dijkstra
+#define MAX 5
+#define MAXDISTANCE 9999
+
+typedef struct Best
+{
+  int distance[MAX];   // weight
+  int anteriores[MAX]; // vertices cod
+} Best;
+
 #pragma region GRAFO
 
 Vertice *CriaGrafo();
@@ -36,12 +62,14 @@ void MostraGrafo(Vertice *g);
 int ProcuraCodigoVertice(Vertice *g, char *cidade);
 Vertice *ProcuraVertice(Vertice *g, char *cidade);
 Vertice *ProcuraVerticeCod(Vertice *g, int cod);
+Vertice *DestroyGraph(Vertice *g);
 
 #pragma endregion
 
 #pragma region ADJACENCIAS
 
 Vertice *InsereAdjacenteVertice(Vertice *g, char *origem, char *dest, float peso, bool *res);
+Vertice *InsereAdjacenteVerticeCod(Vertice *g, int origem, int dest, float peso, bool *res);
 
 #pragma region LISTA_ADJACENCIAS
 
@@ -49,6 +77,7 @@ Adj *CriaAdj(int cod, float peso);
 Adj *InsereAdj(Adj *h, Adj *novo, bool *res);
 bool ExisteAdjacentes(Adj *h, int cod);
 void MostraAdjacencias(Adj *h);
+Adj *DestroyAdj(Adj *h);
 
 #pragma endregion
 
@@ -63,5 +92,17 @@ bool DepthFirstSearchRec(Vertice *g, int origem, int dest);
 bool DepthFirstSearchNamesRec(Vertice *g, char *src, char *dest);
 
 Vertice *ResetVerticesVisitados(Vertice *g);
+
+Best BestPath(Vertice *g, int n, int v);
+void ShowAllPath(Best b, int n, int v);
+
+#pragma endregion
+
+#pragma region PRESERVAÇÂO
+
+int SaveGraph(Vertice *h, char *fileName);
+int SaveAdj(Adj *h, char *fileName, int cod);
+Vertice *LoadGraph(Vertice *h, char *fileName, bool *res);
+Vertice *LoadAdj(Vertice *g, bool *res);
 
 #pragma endregion
