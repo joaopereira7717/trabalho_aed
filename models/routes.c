@@ -1,14 +1,35 @@
+/**
+ * @file routes.c
+ * @brief File containing the routes functions
+ *
+ * This file contains the implementation of functions related to the management of routes with graphs
+ *
+ * @author João Pereira
+ */
+
 #include <stdlib.h>
 #include <string.h>
 #include "./routes.h"
 
 #pragma region GRAPH
 
+/**
+ * @brief Creates a new empty graph.
+ *
+ * @return Pointer to the starting vertex of the graph.
+ */
 Vertex *CreateRoute()
 {
   return NULL;
 }
 
+/**
+ * @brief Creates a new vertex for the graph.
+ *
+ * @param city Name of the vertex city.
+ * @param cod Vertex identifier code.
+ * @return Pointer to the newly created vertex.
+ */
 Vertex *CreateRouteVertex(char *city, int cod)
 {
   Vertex *new = (Vertex *)calloc(1, sizeof(Vertex));
@@ -16,11 +37,19 @@ Vertex *CreateRouteVertex(char *city, int cod)
     return NULL;
   new->cod = cod;
   strcpy(new->city, city);
-  new->next = NULL;      // com "calloc" isto é dispensável
-  new->adjacents = NULL; // com "calloc" isto é dispensável
+  new->next = NULL;
+  new->adjacents = NULL;
   return new;
 }
 
+/**
+ * @brief Inserts a new vertex into the graph in alphabetical order.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param new Pointer to the new vertex to insert.
+ * @param res Pointer to a variable that stores the result of the insert operation.
+ * @return Pointer to the starting vertex of the graph.
+ */
 Vertex *InsertRouteVertex(Vertex *g, Vertex *new, bool *res)
 {
   if (g == NULL)
@@ -53,6 +82,11 @@ Vertex *InsertRouteVertex(Vertex *g, Vertex *new, bool *res)
   return g;
 }
 
+/**
+ * @brief Displays on screen all vertices and their respective adjacency lists of the graph.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ */
 void ShowRoutes(Vertex *g)
 {
   if (g == NULL)
@@ -62,6 +96,12 @@ void ShowRoutes(Vertex *g)
   ShowRoutes(g->next);
 }
 
+/**
+ * @brief Frees the memory allocated to the graph and its adjacency lists.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @return Pointer to the starting vertex of the graph (NULL).
+ */
 Vertex *DestroyRoutes(Vertex *g)
 {
   if (g == NULL)
@@ -79,6 +119,14 @@ Vertex *DestroyRoutes(Vertex *g)
   return g;
 }
 
+/**
+ * @brief Gets the identifier code of a vertex from the city name.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param city Name of the city to be searched.
+ * @return Vertex identifier code or -1 if the graph is empty, -2 if the city is not found.
+ */
+
 int SearchCodVertex(Vertex *g, char *city)
 {
   if (g == NULL)
@@ -90,6 +138,13 @@ int SearchCodVertex(Vertex *g, char *city)
   return (SearchCodVertex(g->next, city));
 }
 
+/**
+ * @brief Finds a vertex from the city name.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param city Name of the city to be searched.
+ * @return Pointer to the found vertex, or NULL if the city is not found.
+ */
 Vertex *SearchVertex(Vertex *g, char *city)
 {
   if (g == NULL)
@@ -99,6 +154,13 @@ Vertex *SearchVertex(Vertex *g, char *city)
   return (SearchVertex(g->next, city));
 }
 
+/**
+ * @brief Fetch a vertex from the identifier code.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param cod Identifier code of the vertex to be searched.
+ * @return Pointer to the found vertex or NULL if the code is not found.
+ */
 Vertex *SearchVertexCod(Vertex *g, int cod)
 {
   if (g == NULL)
@@ -108,6 +170,12 @@ Vertex *SearchVertexCod(Vertex *g, int cod)
   return (SearchVertexCod(g->next, cod));
 }
 
+/**
+ * @brief Resets the "visited" flag of all graph vertices to false.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @return Pointer to the starting vertex of the graph.
+ */
 Vertex *ResetVisitedVertex(Vertex *g)
 {
   Vertex *aux = g;
@@ -123,6 +191,13 @@ Vertex *ResetVisitedVertex(Vertex *g)
 
 #pragma region ADJACENTS
 
+/**
+ * @brief Creates a new adjacency list node.
+ *
+ * @param cod Adjacent vertex identifier code.
+ * @param valuedistance Value of distance between vertices.
+ * @return Pointer to the newly created node.
+ */
 Adj *CreateAdj(int cod, float valuedistance)
 {
   Adj *new = (Adj *)calloc(1, sizeof(Adj));
@@ -134,6 +209,16 @@ Adj *CreateAdj(int cod, float valuedistance)
   return new;
 }
 
+/**
+ * @brief Inserts a new adjacent vertex into an adjacency list.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param origin Name of the city of origin.
+ * @param dest Name of the destination city.
+ * @param valuedistance Value of distance between vertices.
+ * @param res Pointer to a variable that stores the result of the insert operation.
+ * @return Pointer to the starting vertex of the graph.
+ */
 Vertex *InsertAdjacentVertex(Vertex *g, char *origin, char *dest, float valuedistance, bool *res)
 {
 #pragma region Validações
@@ -159,6 +244,16 @@ Vertex *InsertAdjacentVertex(Vertex *g, char *origin, char *dest, float valuedis
 #pragma endregion
 }
 
+/**
+ * @brief Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes.
+ *
+ * @param g Pointer to the starting vertex of the graph.
+ * @param codOrigin Code identifying the city of origin.
+ * @param codDest Code identifying the destination city.
+ * @param valuedistance Value of distance between vertices.
+ * @param res Pointer to a variable that stores the result of the insert operation.
+ * @return Pointer to the starting vertex of the graph.
+ */
 Vertex *InsertAdjacentVertexCod(Vertex *g, int codOrigin, int codDest, float valuedistance, bool *res)
 {
 
@@ -182,6 +277,13 @@ Vertex *InsertAdjacentVertexCod(Vertex *g, int codOrigin, int codDest, float val
 
 #pragma region GERE_LISTA_ADJACENCIAS
 
+/**
+ * @brief Checks if an adjacent vertex already exists in an adjacency list.
+ *
+ * @param h Pointer to the first node in the adjacency list.
+ * @param cod Code identifying the adjacent vertex to be searched.
+ * @return true if the adjacent vertex exists in the list, false otherwise.
+ */
 bool ExistAdj(Adj *h, int cod)
 {
   if (h == NULL)
@@ -191,9 +293,16 @@ bool ExistAdj(Adj *h, int cod)
   return ExistAdj(h->next, cod);
 }
 
+/**
+ * @brief Inserts a new adjacent vertex to a given vertex in the graph.
+ *
+ * @param h The head of the vertex list.
+ * @param new The new adjacent vertex to be inserted.
+ * @param res A pointer to a boolean variable that will be set to true if the insertion is successful.
+ * @return The head of the vertex list.
+ */
 Adj *InsertAdj(Adj *h, Adj *new, bool *res)
 {
-
   *res = false;
 
   if (new == NULL)
@@ -215,6 +324,11 @@ Adj *InsertAdj(Adj *h, Adj *new, bool *res)
   return h;
 }
 
+/**
+ * @brief Recursively displays the adjacent vertices of a given vertex.
+ *
+ * @param h The head of the adjacent vertex list.
+ */
 void ShowAdj(Adj *h)
 {
   if (h == NULL)
@@ -223,6 +337,12 @@ void ShowAdj(Adj *h)
   ShowAdj(h->next);
 }
 
+/**
+ * @brief Recursively destroys the adjacent vertex list.
+ *
+ * @param h The head of the adjacent vertex list.
+ * @return NULL.
+ */
 Adj *DestroyAdj(Adj *h)
 {
   if (h == NULL)
@@ -238,12 +358,16 @@ Adj *DestroyAdj(Adj *h)
   }
   return h;
 }
-#pragma endregion
 
-#pragma endregion
-
-#pragma region AlGORITMS
-
+/**
+ * @brief Counts the number of paths between two vertices in the graph.
+ *
+ * @param g The head of the vertex list.
+ * @param src The code of the source vertex.
+ * @param dest The code of the destination vertex.
+ * @param pathCount The number of paths found so far.
+ * @return The number of paths between the source and destination vertices.
+ */
 int CountPaths(Vertex *g, int src, int dest, int pathCount)
 {
   if (g == NULL)
@@ -266,6 +390,15 @@ int CountPaths(Vertex *g, int src, int dest, int pathCount)
   return pathCount;
 }
 
+/**
+ * @brief Counts the number of paths between two vertices in the graph, given their names.
+ *
+ * @param g The head of the vertex list.
+ * @param src The name of the source vertex.
+ * @param dest The name of the destination vertex.
+ * @param pathCount The number of paths found so far.
+ * @return The number of paths between the source and destination vertices.
+ */
 int CountPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount)
 {
   int s = SearchCodVertex(g, src);
@@ -273,9 +406,16 @@ int CountPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount)
   return CountPaths(g, s, d, 0);
 }
 
+/**
+ * @brief Recursively performs a depth-first search on the graph to find a path between two vertices.
+ *
+ * @param g The head of the vertex list.
+ * @param origin The code of the origin vertex.
+ * @param dest The code of the destination vertex.
+ * @return True if a path is found, false otherwise.
+ */
 bool DepthFirstSearchRec(Vertex *g, int origin, int dest)
 {
-
   if (origin == dest)
     return true;
 
@@ -297,6 +437,14 @@ bool DepthFirstSearchRec(Vertex *g, int origin, int dest)
   return true;
 }
 
+/**
+ * @brief Recursively performs a depth-first search on the graph to find a path between two vertices, given their names.
+ *
+ * @param g The head of the vertex list.
+ * @param src The name of the source vertex.
+ * @param dest The name of the destination vertex.
+ * @return True if a path is found, false otherwise.
+ */
 bool DepthFirstSearchNamesRec(Vertex *g, char *src, char *dest)
 {
   int o = SearchCodVertex(g, src);
@@ -304,6 +452,14 @@ bool DepthFirstSearchNamesRec(Vertex *g, char *src, char *dest)
   return DepthFirstSearchRec(g, o, d);
 }
 
+/**
+ * @brief Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra's algorithm.
+ *
+ * @param g The head of the vertex list.
+ * @param n The number of vertices in the graph.
+ * @param v The code of the vertex to start the search from.
+ * @return A struct containing the shortest distance and previous vertex for each vertex in the graph.
+ */
 Best BestPath(Vertex *g, int n, int v)
 {
 
@@ -375,6 +531,12 @@ Best BestPath(Vertex *g, int n, int v)
   return b;
 }
 
+/**
+ * @brief ShowAllPath - Function that displays the shortest path and distance to all vertices in the graph
+ * @param b: Best struct containing the shortest distance and previous vertex for each vertex in the graph
+ * @param n: Number of vertices in the graph
+ * @param v: Index of the starting vertex
+ */
 void ShowAllPath(Best b, int n, int v)
 {
   int j;
@@ -397,14 +559,20 @@ void ShowAllPath(Best b, int n, int v)
 
 #pragma region FILES
 
+/**
+ * @brief SaveGraph - Function that saves the graph to a binary file
+ * @param h: Head of the linked list of vertices in the graph
+ * @param fileName: Name of the file to save the graph to
+ * @return: 1 if the graph was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL
+ */
 int SaveGraph(Vertex *h, char *fileName)
 {
   if (h == NULL)
-    return -1;
+    return -2;
   FILE *fp;
   fp = fopen(fileName, "wb");
   if (fp == NULL)
-    return -2;
+    return -1;
   Vertex *aux = h;
   VertexFile auxFile;
   while (aux != NULL)
@@ -425,6 +593,13 @@ int SaveGraph(Vertex *h, char *fileName)
   return 1;
 }
 
+/**
+ * @brief SaveAdj - Function that saves the adjacency list of a vertex to a binary file
+ * @param h: Head of the linked list of adjacent vertices
+ * @param fileName: Name of the file to save the adjacency list to
+ * @param codVertexOrigin: Code of the vertex that the adjacency list belongs to
+ * @return: 1 if the adjacency list was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL
+ */
 int SaveAdj(Adj *h, char *fileName, int codVertexOrigin)
 {
   printf("Gravar adjacencias do vertex %s\n", fileName);
@@ -448,6 +623,13 @@ int SaveAdj(Adj *h, char *fileName, int codVertexOrigin)
   return 1;
 }
 
+/**
+ * @brief LoadGraph - Function that loads a graph from a binary file
+ * @param h: Head of the linked list of vertices in the graph
+ * @param fileName: Name of the file to load the graph from
+ * @param res: Pointer to a boolean variable that will be set to true if the graph was successfully loaded
+ * @return: Head of the linked list of vertices in the loaded graph, or NULL if the file could not be opened
+ */
 Vertex *LoadGraph(Vertex *h, char *fileName, bool *res)
 {
   *res = false;
@@ -465,6 +647,12 @@ Vertex *LoadGraph(Vertex *h, char *fileName, bool *res)
   return h;
 }
 
+/**
+ * @brief LoadAdj - Function that loads the adjacency lists of all vertices in a graph from binary files
+ * @param g: Head of the linked list of vertices in the graph
+ * @param res: Pointer to a boolean variable that will be set to true if all adjacency lists were successfully loaded
+ * @return: Head of the linked list of vertices in the graph with their adjacency lists loaded
+ */
 Vertex *LoadAdj(Vertex *g, bool *res)
 {
   *res = false;

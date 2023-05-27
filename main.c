@@ -27,6 +27,7 @@
  */
 int main()
 {
+  printf("Program start!\n");
   setlocale(LC_ALL, "Portuguese"); // write portuguese characters
 
   static int tot = 0; // total vertex
@@ -128,8 +129,7 @@ int main()
   ShowAllPath(b, 5, 0);
 
 #pragma endregion
-  /* printf("Program start!\n");
-
+#pragma region USER
   UserList *userList = NULL;
   readUsersFromTxt(&userList);
   // setUsersData(&userList);
@@ -146,52 +146,54 @@ int main()
   bool isDeleted = deleteUser(&userList, 1);
   printf("\nisDeleted: %d", isDeleted);
   printUserList(userList);
-  */
+#pragma endregion
+#pragma region VEHICLE
   VehicleList *vehicleList = NULL;
+  readVehiclesFromTxt(&vehicleList);
   Vehicle *vehicle = createVehicle("registration", "type", 1, 1, true, "Fafe", graf);
   printf("%s", vehicle->registration);
   bool isCreatedVehicle = createVehicleList(&vehicleList, *vehicle);
   printf("\nisCreated vehicle: %d", isCreatedVehicle);
   readVehiclesFromTxt(&vehicleList);
-  printVehicleList(vehicleList); /*
-   Vehicle *vehicleToEdit = createVehicle("registration", "type2", 2, 2, false, "location2", graf);
-   bool isEditedVehicle = editVehicle(vehicleList, "registration", *vehicleToEdit);
-   printf("\nisEdited vehicle: %d", isEditedVehicle);
-   printVehicleList(vehicleList);
-   bool isDeletedVehicle = deleteVehicle(&vehicleList, "registration");
-   printf("is deleted vehicle: %d", isDeletedVehicle);
-   readVehiclesFromTxt(&vehicleList);
-   printVehicleList(vehicleList);
+  printVehicleList(vehicleList);
+  Vehicle *vehicleToEdit = createVehicle("registration", "type2", 2, 2, false, "Porto", graf);
+  bool isEditedVehicle = editVehicle(vehicleList, "registration", *vehicleToEdit);
+  printf("\nisEdited vehicle: %d", isEditedVehicle);
+  printVehicleList(vehicleList);
+  bool isDeletedVehicle = deleteVehicle(&vehicleList, "registration");
+  printf("is deleted vehicle: %d", isDeletedVehicle);
+  printVehicleList(vehicleList);
+#pragma endregion
+#pragma region RENT
+  RentList *rentList = NULL;
+  printUserList(userList);
+  Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
+  bool isCreatedRent = createRentList(&rentList, *rent);
+  printf("\nisCreated rent: %d", isCreatedRent);
+  Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
+  bool isCreatedRent2 = createRentList(&rentList, *rent2);
+  printf("\nisCreated rent2: %d", isCreatedRent2);
+  printRentList(rentList);
+  bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
+  printf("\nisDeleted rent: %d", isDeletedRent);
+  printRentList(rentList);
+  bool isEditedRent = editRent(rentList, 2, *rent);
+  printf("\nisEdited rent: %d", isEditedRent);
 
-   RentList *rentList = NULL;
-   printUserList(userList);
-   Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
-   bool isCreatedRent = createRentList(&rentList, *rent);
-   printf("\nisCreated rent: %d", isCreatedRent);
-   Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
-   bool isCreatedRent2 = createRentList(&rentList, *rent2);
-   printf("\nisCreated rent2: %d", isCreatedRent2);
-   printRentList(rentList);
-   bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
-   printf("\nisDeleted rent: %d", isDeletedRent);
-   printRentList(rentList);
-   bool isEditedRent = editRent(rentList, 2, *rent);
-   printf("\nisEdited rent: %d", isEditedRent);
-
-   storeVehicleListInBin(vehicleList);
-   storeRentsInBin(rentList);
-
-   VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
-   printf("sorted vehicle list:");
-   printVehicleList(sortedVehicleList);
-   printUserList(userList);
-   storeUsersInBin(userList);
-   // clear the userList data
-   userList = NULL;
-   printf("user list after clear: \n");
-   printUserList(userList);
-   setUsersData(&userList);
-   printf("user list after setUsersData: \n");
-   printUserList(userList); */
+  storeVehicleListInBin(vehicleList);
+  storeRentsInBin(rentList);
+#pragma endregion
+  VehicleList *sortedVehicleList = sortVehicleListDesc(&vehicleList);
+  printf("sorted vehicle list:");
+  printVehicleList(sortedVehicleList);
+  printUserList(userList);
+  storeUsersInBin(userList);
+  // clear the userList data
+  userList = NULL;
+  printf("user list after clear: \n");
+  printUserList(userList);
+  setUsersData(&userList);
+  printf("user list after setUsersData: \n");
+  printUserList(userList);
   return 0;
 }
