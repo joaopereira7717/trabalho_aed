@@ -1,0 +1,1598 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="routes_8h" kind="file" language="C++">
+    <compoundname>routes.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">locale.h</includes>
+    <includedby refid="main_8c" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c</includedby>
+    <includedby refid="routes_8c" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c</includedby>
+    <includedby refid="vehicle_8h" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h</label>
+        <link refid="routes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>locale.h</label>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="5">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c</label>
+        <link refid="rentals_8c"/>
+      </node>
+      <node id="6">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h</label>
+        <link refid="rentals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c</label>
+        <link refid="routes_8c"/>
+      </node>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h</label>
+        <link refid="routes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c</label>
+        <link refid="vehicle_8c"/>
+      </node>
+      <node id="4">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h</label>
+        <link refid="vehicle_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_adj" prot="public">Adj</innerclass>
+    <innerclass refid="struct_adj_file" prot="public">AdjFile</innerclass>
+    <innerclass refid="struct_vertex" prot="public">Vertex</innerclass>
+    <innerclass refid="struct_vertex_file" prot="public">VertexFile</innerclass>
+    <innerclass refid="struct_best" prot="public">Best</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="routes_8h_1a0240ac851181b84ac374872dc5434ee4" prot="public" static="no">
+        <name>N</name>
+        <initializer>50</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="16" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="routes_8h_1a392fb874e547e582e9c66a08a1f23326" prot="public" static="no">
+        <name>MAX</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="57" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="routes_8h_1a010fa716ced1170c05d8fc9da46a5d34" prot="public" static="no">
+        <name>MAXDISTANCE</name>
+        <initializer>9999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="58" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="routes_8h_1acd9f17cb24ce73dde34e7a6bc62f92fb" prot="public" static="no">
+        <type>struct <ref refid="struct_adj" kindref="compound">Adj</ref></type>
+        <definition>typedef struct Adj Adj</definition>
+        <argsstring></argsstring>
+        <name>Adj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Estrutura de uma Adjacência. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="26" column="5"/>
+      </memberdef>
+      <memberdef kind="typedef" id="routes_8h_1aed6ccfc49dc362b265d9e5593ddebc3c" prot="public" static="no">
+        <type>struct <ref refid="struct_adj_file" kindref="compound">AdjFile</ref></type>
+        <definition>typedef struct AdjFile AdjFile</definition>
+        <argsstring></argsstring>
+        <name>AdjFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Estrutura de uma Adjacência para Ficheiro </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="36" column="9"/>
+      </memberdef>
+      <memberdef kind="typedef" id="routes_8h_1a2e1662af5233d0fe6a6f061445d2ff25" prot="public" static="no">
+        <type>struct <ref refid="struct_vertex" kindref="compound">Vertex</ref></type>
+        <definition>typedef struct Vertex Vertex</definition>
+        <argsstring></argsstring>
+        <name>Vertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Descrição de um Vértice do grafo. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="48" column="8"/>
+      </memberdef>
+      <memberdef kind="typedef" id="routes_8h_1a83efe7c483203486d5f51915d1b5e753" prot="public" static="no">
+        <type>struct <ref refid="struct_vertex_file" kindref="compound">VertexFile</ref></type>
+        <definition>typedef struct VertexFile VertexFile</definition>
+        <argsstring></argsstring>
+        <name>VertexFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="54" column="12"/>
+      </memberdef>
+      <memberdef kind="typedef" id="routes_8h_1aac29ddebe4eb20f71937c0605f314505" prot="public" static="no">
+        <type>struct <ref refid="struct_best" kindref="compound">Best</ref></type>
+        <definition>typedef struct Best Best</definition>
+        <argsstring></argsstring>
+        <name>Best</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="64" column="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="routes_8h_1a5019e918f68638f5ee193138027405df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * createRoute</definition>
+        <argsstring>()</argsstring>
+        <name>createRoute</name>
+        <briefdescription>
+<para>Creates a new empty graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the starting vertex of the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="68" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="21" bodyend="24" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="68" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a6b02bd0cb67e4175a6ff84da2fc20036" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * insertRouteVertex</definition>
+        <argsstring>(Vertex *g, Vertex *new, bool *res)</argsstring>
+        <name>insertRouteVertex</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a new vertex into the graph in alphabetical order. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the new vertex to insert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a variable that stores the result of the insert operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the starting vertex of the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="69" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="53" bodyend="83" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="69" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a84701986d37adc4a7855eae547fd5158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * createRouteVertex</definition>
+        <argsstring>(char *city, int tot)</argsstring>
+        <name>createRouteVertex</name>
+        <param>
+          <type>char *</type>
+          <declname>city</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tot</declname>
+          <defname>cod</defname>
+        </param>
+        <briefdescription>
+<para>Creates a new vertex for the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>city</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the vertex city. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_vertex" kindref="compound">Vertex</ref> identifier code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the newly created vertex. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="70" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="33" bodyend="43" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="70" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void showRoutes</definition>
+        <argsstring>(Vertex *g)</argsstring>
+        <name>showRoutes</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+<para>Displays on screen all vertices and their respective adjacency lists of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="71" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="90" bodyend="97" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1af9a8d20dbd4301590efe66c09c9cad84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int searchCodVertex</definition>
+        <argsstring>(Vertex *g, char *city)</argsstring>
+        <name>searchCodVertex</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>city</declname>
+        </param>
+        <briefdescription>
+<para>Gets the identifier code of a vertex from the city name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>city</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the city to be searched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_vertex" kindref="compound">Vertex</ref> identifier code or -1 if the graph is empty, -2 if the city is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="72" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="130" bodyend="139" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="72" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ab70e1129d2c0c8b9ea3dbb7c779505a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * searchVertex</definition>
+        <argsstring>(Vertex *g, char *city)</argsstring>
+        <name>searchVertex</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>city</declname>
+        </param>
+        <briefdescription>
+<para>Finds a vertex from the city name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>city</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the city to be searched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the found vertex, or NULL if the city is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="73" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="148" bodyend="155" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="73" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ac54eed9c8e70a3e0ef969900c8872552" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * searchVertexCod</definition>
+        <argsstring>(Vertex *g, int cod)</argsstring>
+        <name>searchVertexCod</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cod</declname>
+        </param>
+        <briefdescription>
+<para>Fetch a vertex from the identifier code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier code of the vertex to be searched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the found vertex or NULL if the code is not found. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="74" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="164" bodyend="171" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="74" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ac08fd85b0e1d73b8e22eec74d0b38185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * destroyRoutes</definition>
+        <argsstring>(Vertex *g)</argsstring>
+        <name>destroyRoutes</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+<para>Frees the memory allocated to the graph and its adjacency lists. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the starting vertex of the graph (NULL). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="75" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="105" bodyend="120" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="75" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ad41cec83095230a117758bb726522a9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * insertAdjacentVertex</definition>
+        <argsstring>(Vertex *g, char *origem, char *dest, float valuedistance, bool *res)</argsstring>
+        <name>insertAdjacentVertex</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origem</declname>
+          <defname>origin</defname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>valuedistance</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a new adjacent vertex into an adjacency list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the city of origin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the destination city. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valuedistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of distance between vertices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a variable that stores the result of the insert operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the starting vertex of the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="81" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="222" bodyend="245" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="81" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a3cd1c5401553c8d282e0bb168107ba11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * insertAdjacentVertexCod</definition>
+        <argsstring>(Vertex *g, int origem, int dest, float valuedistance, bool *res)</argsstring>
+        <name>insertAdjacentVertexCod</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>origem</declname>
+          <defname>codOrigin</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dest</declname>
+          <defname>codDest</defname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>valuedistance</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>codOrigin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Code identifying the city of origin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>codDest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Code identifying the destination city. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valuedistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of distance between vertices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a variable that stores the result of the insert operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the starting vertex of the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="82" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="257" bodyend="276" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="82" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a73e20349f3e629ccd24d5b9b7c1e3fad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+        <definition>Adj * createAdj</definition>
+        <argsstring>(int cod, float valuedistance)</argsstring>
+        <name>createAdj</name>
+        <param>
+          <type>int</type>
+          <declname>cod</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>valuedistance</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new adjacency list node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adjacent vertex identifier code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valuedistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of distance between vertices. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the newly created node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="86" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="201" bodyend="210" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="86" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a251a8ffd0dbbbd4c915eecf69eeed000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+        <definition>Adj * insertAdj</definition>
+        <argsstring>(Adj *h, Adj *new, bool *res)</argsstring>
+        <name>insertAdj</name>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Inserts a new adjacent vertex to a given vertex in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new adjacent vertex to be inserted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a boolean variable that will be set to true if the insertion is successful. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The head of the vertex list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="87" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="304" bodyend="325" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="87" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a2aa41a6a2d3caa6e5e43490c296fb32d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool existAdj</definition>
+        <argsstring>(Adj *h, int cod)</argsstring>
+        <name>existAdj</name>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cod</declname>
+        </param>
+        <briefdescription>
+<para>Checks if an adjacent vertex already exists in an adjacency list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the first node in the adjacency list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cod</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Code identifying the adjacent vertex to be searched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the adjacent vertex exists in the list, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="88" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="287" bodyend="294" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="88" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a6cdcfff755904515945a32bf205656ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void showAdj</definition>
+        <argsstring>(Adj *h)</argsstring>
+        <name>showAdj</name>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Recursively displays the adjacent vertices of a given vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the adjacent vertex list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="89" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="332" bodyend="338" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="89" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a96dc20b046a393d2896ed7e3123a9450" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+        <definition>Adj * destroyAdj</definition>
+        <argsstring>(Adj *h)</argsstring>
+        <name>destroyAdj</name>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>Recursively destroys the adjacent vertex list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the adjacent vertex list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="90" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="346" bodyend="360" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="90" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a6c171e28de18201f13008fae2434d7da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int countPaths</definition>
+        <argsstring>(Vertex *g, int src, int dst, int pathCount)</argsstring>
+        <name>countPaths</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dst</declname>
+          <defname>dest</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathCount</declname>
+        </param>
+        <briefdescription>
+<para>Counts the number of paths between two vertices in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the source vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of paths found so far. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of paths between the source and destination vertices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="98" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="371" bodyend="391" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="98" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a6dc33af1d97003e2d1dd85632d6adf5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int countPathsVertexsName</definition>
+        <argsstring>(Vertex *g, char *src, char *dest, int pathCount)</argsstring>
+        <name>countPathsVertexsName</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathCount</declname>
+        </param>
+        <briefdescription>
+<para>Counts the number of paths between two vertices in the graph, given their names. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the source vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of paths found so far. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of paths between the source and destination vertices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="99" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="402" bodyend="407" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="99" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1aa14be61fd430c21593ec7bb80ec083ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool depthFirstSearchRec</definition>
+        <argsstring>(Vertex *g, int origem, int dest)</argsstring>
+        <name>depthFirstSearchRec</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>origem</declname>
+          <defname>origin</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Recursively performs a depth-first search on the graph to find a path between two vertices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the origin vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if a path is found, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="101" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="417" bodyend="438" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="101" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1aeab2ed9ec5a8977b247fc0de0b0411dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool depthFirstSearchNamesRec</definition>
+        <argsstring>(Vertex *g, char *src, char *dest)</argsstring>
+        <name>depthFirstSearchNamesRec</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Recursively performs a depth-first search on the graph to find a path between two vertices, given their names. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the source vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if a path is found, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="102" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="448" bodyend="453" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="102" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a1a8f75be4e9b363d012459131f3d7ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * resetVisitedVertex</definition>
+        <argsstring>(Vertex *g)</argsstring>
+        <name>resetVisitedVertex</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+<para>Resets the &quot;visited&quot; flag of all graph vertices to false. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the starting vertex of the graph. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the starting vertex of the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="104" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="179" bodyend="188" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="104" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1af5ba1fa298635549c730b1f281432335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_best" kindref="compound">Best</ref></type>
+        <definition>Best bestPath</definition>
+        <argsstring>(Vertex *g, int n, int v)</argsstring>
+        <name>bestPath</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra&apos;s algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The head of the vertex list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of vertices in the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the vertex to start the search from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A struct containing the shortest distance and previous vertex for each vertex in the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="106" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="463" bodyend="532" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a77ee3a8e94ffffc8866509b0d2736443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void showAllPath</definition>
+        <argsstring>(Best b, int n, int v)</argsstring>
+        <name>showAllPath</name>
+        <param>
+          <type><ref refid="struct_best" kindref="compound">Best</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>ShowAllPath - Function that displays the shortest path and distance to all vertices in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_best" kindref="compound">Best</ref> struct containing the shortest distance and previous vertex for each vertex in the graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of vertices in the graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of the starting vertex </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="107" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="540" bodyend="556" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="107" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ab02145d9bf9a32a12062fcb320adf915" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int saveGraph</definition>
+        <argsstring>(Vertex *h, char *fileName)</argsstring>
+        <name>saveGraph</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+<para>SaveGraph - Function that saves the graph to a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the linked list of vertices in the graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file to save the graph to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>: 1 if the graph was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="113" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="568" bodyend="594" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="113" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1ad2c48746dd630427e2033e3fef8c0aa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int saveAdj</definition>
+        <argsstring>(Adj *h, char *fileName, int cod)</argsstring>
+        <name>saveAdj</name>
+        <param>
+          <type><ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cod</declname>
+          <defname>codVertexOrigin</defname>
+        </param>
+        <briefdescription>
+<para>SaveAdj - Function that saves the adjacency list of a vertex to a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the linked list of adjacent vertices </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file to save the adjacency list to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>codVertexOrigin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Code of the vertex that the adjacency list belongs to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>: 1 if the adjacency list was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="114" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="603" bodyend="623" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="114" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1aa1b1f204441114d6b5bad6387df28a9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * loadGraph</definition>
+        <argsstring>(Vertex *h, char *fileName, bool *res)</argsstring>
+        <name>loadGraph</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>LoadGraph - Function that loads a graph from a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the linked list of vertices in the graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file to load the graph from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a boolean variable that will be set to true if the graph was successfully loaded </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>: Head of the linked list of vertices in the loaded graph, or NULL if the file could not be opened </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="115" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="632" bodyend="647" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="115" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1aa5b4862a92a3141268f21eb64e266a71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * loadAdj</definition>
+        <argsstring>(Vertex *g, bool *res)</argsstring>
+        <name>loadAdj</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>LoadAdj - Function that loads the adjacency lists of all vertices in a graph from binary files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Head of the linked list of vertices in the graph </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a boolean variable that will be set to true if all adjacency lists were successfully loaded </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>: Head of the linked list of vertices in the graph with their adjacency lists loaded </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="116" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="655" bodyend="679" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="116" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="routes_8h_1a56243cd6d5aeb39369194ea05c3178cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>Vertex * routesReadTxt</definition>
+        <argsstring>(Vertex *g, bool *res, int *tot)</argsstring>
+        <name>routesReadTxt</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>tot</declname>
+        </param>
+        <briefdescription>
+<para>Reads the initial data from two text files and creates a graph of routes and edges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the graph of routes and edges. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a boolean variable that will be set to true if any errors occur during the creation of the graph. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to an integer variable that will be incremented for each new vertex added to the graph. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the graph of routes and edges. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="117" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" bodystart="691" bodyend="736" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" declline="117" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File containing the functions to manage the routes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>João Pereira </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;locale.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="routes_8h_1a0240ac851181b84ac374872dc5434ee4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>N<sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="struct_adj" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23" refid="struct_adj_1af126ceed259751781ea3b64024138f7d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_adj_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref>;<sp/></highlight></codeline>
+<codeline lineno="25" refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*<ref refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="26" refid="routes_8h_1acd9f17cb24ce73dde34e7a6bc62f92fb" refkind="member"><highlight class="normal">}<sp/><ref refid="struct_adj" kindref="compound">Adj</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_adj_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_adj_file" kindref="compound">AdjFile</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33" refid="struct_adj_file_1a3f7e074121ff0e7cbe474548c852eee2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_adj_file_1a3f7e074121ff0e7cbe474548c852eee2" kindref="member">codOrigin</ref>;</highlight></codeline>
+<codeline lineno="34" refid="struct_adj_file_1a993972db92bb1646ef99f12bc02b2789" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_adj_file_1a993972db92bb1646ef99f12bc02b2789" kindref="member">codDestiny</ref>;<sp/></highlight></codeline>
+<codeline lineno="35" refid="struct_adj_file_1a8128625c9e3fd04c27b82957732d8781" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_adj_file_1a8128625c9e3fd04c27b82957732d8781" kindref="member">weight</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="routes_8h_1aed6ccfc49dc362b265d9e5593ddebc3c" refkind="member"><highlight class="normal">}<sp/><ref refid="struct_adj_file" kindref="compound">AdjFile</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="struct_vertex" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43" refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>[<ref refid="routes_8h_1a0240ac851181b84ac374872dc5434ee4" kindref="member">N</ref>];<sp/></highlight></codeline>
+<codeline lineno="45" refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref>;</highlight></codeline>
+<codeline lineno="46" refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" kindref="member">next</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47" refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*<ref refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" kindref="member">adjacents</ref>;<sp/></highlight></codeline>
+<codeline lineno="48" refid="routes_8h_1a2e1662af5233d0fe6a6f061445d2ff25" refkind="member"><highlight class="normal">}<sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="struct_vertex_file" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_vertex_file" kindref="compound">VertexFile</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52" refid="struct_vertex_file_1af126ceed259751781ea3b64024138f7d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_vertex_file_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="struct_vertex_file_1aa95d66244c3d3c01f6c1e8ae63ea123f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_vertex_file_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>[<ref refid="routes_8h_1a0240ac851181b84ac374872dc5434ee4" kindref="member">N</ref>];<sp/></highlight></codeline>
+<codeline lineno="54" refid="routes_8h_1a83efe7c483203486d5f51915d1b5e753" refkind="member"><highlight class="normal">}<sp/><ref refid="struct_vertex_file" kindref="compound">VertexFile</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Auxiliar<sp/>ao<sp/>Dijkstra</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="routes_8h_1a392fb874e547e582e9c66a08a1f23326" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="routes_8h_1a010fa716ced1170c05d8fc9da46a5d34" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAXDISTANCE<sp/>9999</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="struct_best" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_best" kindref="compound">Best</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62" refid="struct_best_1a20db43048c55f6037809778aead48e5c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_best_1a20db43048c55f6037809778aead48e5c" kindref="member">distance</ref>[<ref refid="routes_8h_1a392fb874e547e582e9c66a08a1f23326" kindref="member">MAX</ref>];<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>weight</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" kindref="member">anteriores</ref>[<ref refid="routes_8h_1a392fb874e547e582e9c66a08a1f23326" kindref="member">MAX</ref>];<sp/></highlight><highlight class="comment">//<sp/>vertexs<sp/>cod</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="routes_8h_1aac29ddebe4eb20f71937c0605f314505" refkind="member"><highlight class="normal">}<sp/><ref refid="struct_best" kindref="compound">Best</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>GRAFO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a5019e918f68638f5ee193138027405df" kindref="member">createRoute</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a84701986d37adc4a7855eae547fd5158" kindref="member">createRouteVertex</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*city,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1af9a8d20dbd4301590efe66c09c9cad84" kindref="member">searchCodVertex</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*city);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1ab70e1129d2c0c8b9ea3dbb7c779505a0" kindref="member">searchVertex</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*city);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1ac54eed9c8e70a3e0ef969900c8872552" kindref="member">searchVertexCod</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cod);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1ac08fd85b0e1d73b8e22eec74d0b38185" kindref="member">destroyRoutes</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>ADJACENCIAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1ad41cec83095230a117758bb726522a9c" kindref="member">insertAdjacentVertex</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*origem,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valuedistance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a3cd1c5401553c8d282e0bb168107ba11" kindref="member">insertAdjacentVertexCod</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>origem,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dest,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valuedistance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>LISTA_ADJACENCIAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*<ref refid="routes_8h_1a73e20349f3e629ccd24d5b9b7c1e3fad" kindref="member">createAdj</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cod,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>valuedistance);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*<ref refid="routes_8h_1a251a8ffd0dbbbd4c915eecf69eeed000" kindref="member">insertAdj</ref>(<ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*h,<sp/><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a2aa41a6a2d3caa6e5e43490c296fb32d" kindref="member">existAdj</ref>(<ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cod);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a6cdcfff755904515945a32bf205656ef" kindref="member">showAdj</ref>(<ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*h);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*<ref refid="routes_8h_1a96dc20b046a393d2896ed7e3123a9450" kindref="member">destroyAdj</ref>(<ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*h);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>ALGORITMOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a6c171e28de18201f13008fae2434d7da" kindref="member">countPaths</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dst,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pathCount);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a6dc33af1d97003e2d1dd85632d6adf5d" kindref="member">countPathsVertexsName</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pathCount);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1aa14be61fd430c21593ec7bb80ec083ce" kindref="member">depthFirstSearchRec</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>origem,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dest);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1aeab2ed9ec5a8977b247fc0de0b0411dc" kindref="member">depthFirstSearchNamesRec</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*src,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dest);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a1a8f75be4e9b363d012459131f3d7ada" kindref="member">resetVisitedVertex</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><ref refid="struct_best" kindref="compound">Best</ref><sp/><ref refid="routes_8h_1af5ba1fa298635549c730b1f281432335" kindref="member">bestPath</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1a77ee3a8e94ffffc8866509b0d2736443" kindref="member">showAllPath</ref>(<ref refid="struct_best" kindref="compound">Best</ref><sp/>b,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>PRESERVAÇÂO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1ab02145d9bf9a32a12062fcb320adf915" kindref="member">saveGraph</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="routes_8h_1ad2c48746dd630427e2033e3fef8c0aa4" kindref="member">saveAdj</ref>(<ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cod);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1aa1b1f204441114d6b5bad6387df28a9f" kindref="member">loadGraph</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*h,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fileName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1aa5b4862a92a3141268f21eb64e266a71" kindref="member">loadAdj</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*<ref refid="routes_8h_1a56243cd6d5aeb39369194ea05c3178cf" kindref="member">routesReadTxt</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*res,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*tot);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight></codeline>
+    </programlisting>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h"/>
+  </compounddef>
+</doxygen>

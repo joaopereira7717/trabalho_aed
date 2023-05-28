@@ -1,0 +1,1332 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="vehicle_8c" kind="file" language="C++">
+    <compoundname>vehicle.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes refid="vehicle_8h" local="yes">./vehicle.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>./routes.h</label>
+        <link refid="routes_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c</label>
+        <link refid="vehicle_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>./vehicle.h</label>
+        <link refid="vehicle_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="9">
+        <label>locale.h</label>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="2">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="vehicle_8c_1a962372f88de03fcd5581aa44353afec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+        <definition>VehicleList * readVehiclesFromTxt</definition>
+        <argsstring>(VehicleList **headNode)</argsstring>
+        <name>readVehiclesFromTxt</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Reads vehicles from a text file and creates a vehicle list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function reads vehicles from a text file and creates a linked list of vehicles. The function takes a pointer to the head node of the list as a parameter and returns the head node.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The head node of the vehicle list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="29" column="13" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="29" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a1dba59da0b1fb87236e27cd988cba929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vehicle" kindref="compound">Vehicle</ref> *</type>
+        <definition>Vehicle * createVehicle</definition>
+        <argsstring>(char *registration, char *type, int battery, int cost, bool isInUse, char *location, Vertex *graf)</argsstring>
+        <name>createVehicle</name>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>battery</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cost</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isInUse</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>graf</declname>
+        </param>
+        <briefdescription>
+<para>Creates a vehicle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a vehicle with the given parameters and returns a pointer to the vehicle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>battery</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The battery level of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cost of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isInUse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean indicating whether the vehicle is in use or not. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The location of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the created vehicle. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="68" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="68" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a2f9e802c7e03357a0b24f6e35ae08e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createVehicleList</definition>
+        <argsstring>(VehicleList **headNode, Vehicle vehicle)</argsstring>
+        <name>createVehicleList</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle" kindref="compound">Vehicle</ref></type>
+          <declname>vehicle</declname>
+        </param>
+        <briefdescription>
+<para>Creates a vehicle list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new node in the vehicle list with the given vehicle and adds it to the head of the list. The function takes a pointer to the head node of the list and the vehicle to be added as parameters. The function returns true if the node was successfully created and added to the list, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vehicle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vehicle to be added to the list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the node was successfully created and added to the list, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="99" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="99" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printVehicleList</definition>
+        <argsstring>(VehicleList *headNode)</argsstring>
+        <name>printVehicleList</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Prints a vehicle list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prints the vehicles in the linked list. The function takes a pointer to the head node of the list as a parameter.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="122" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="122" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a79573fa45f9b0c6d508d15c53bfe3184" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+        <definition>VehicleList * sortVehicleListDesc</definition>
+        <argsstring>(VehicleList **headNode)</argsstring>
+        <name>sortVehicleListDesc</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="141" column="13" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="141" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a1a12f926cc8099df21bb1f19b140ae43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool editVehicle</definition>
+        <argsstring>(VehicleList *headNode, char *registration, Vehicle vehicle)</argsstring>
+        <name>editVehicle</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle" kindref="compound">Vehicle</ref></type>
+          <declname>vehicle</declname>
+        </param>
+        <briefdescription>
+<para>Edits a vehicle in the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a vehicle with the given registration number in the list and replaces it with the given vehicle. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and the new vehicle as parameters. The function returns true if the vehicle was successfully edited, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle to be edited. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vehicle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new vehicle to replace the old one. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vehicle was successfully edited, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="184" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="184" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1aa5187e1606f79dcc2f2ac6f50c9488e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool deleteVehicle</definition>
+        <argsstring>(VehicleList **headNode, char *registration)</argsstring>
+        <name>deleteVehicle</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <briefdescription>
+<para>Deletes a vehicle from the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a vehicle with the given registration number in the list and deletes it. The function takes a pointer to the head node of the list and the registration number of the vehicle to be deleted as parameters. The function returns true if the vehicle was successfully deleted, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle to be deleted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vehicle was successfully deleted, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="210" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="210" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1abf926983d64d536d6290140eb25af2cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool storeVehicleListInBin</definition>
+        <argsstring>(VehicleList *headNode)</argsstring>
+        <name>storeVehicleListInBin</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Stores the vehicle list in a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function stores the vehicles in the linked list in a binary file. The function takes a pointer to the head node of the list as a parameter. The function returns true if the list was successfully stored in the file, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the list was successfully stored in the file, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="245" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="245" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ad5c915a3b01325b4b0c444e5a6d95390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool searchVehicleByRegistration</definition>
+        <argsstring>(VehicleList *headNode, char *registration)</argsstring>
+        <name>searchVehicleByRegistration</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <briefdescription>
+<para>Searches for a vehicle by registration number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a vehicle with the given registration number in the list. The function takes a pointer to the head node of the list and the registration number of the vehicle to be searched as parameters. The function returns true if the vehicle was found, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle to be searched. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vehicle was found, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="279" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="279" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ae070c731f906704c4732c31550e6de33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool isVehicleAvailable</definition>
+        <argsstring>(VehicleList *headNode, char *registration)</argsstring>
+        <name>isVehicleAvailable</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a vehicle is available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if a vehicle with the given registration number is available (not in use). The function takes a pointer to the head node of the list and the registration number of the vehicle to be checked as parameters. The function returns true if the vehicle is available, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle to be checked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vehicle is available, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="304" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="304" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ae4e0326a3173e078e405a06341910545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool editVehicleAvailability</definition>
+        <argsstring>(VehicleList *headNode, char *registration, bool isInUse)</argsstring>
+        <name>editVehicleAvailability</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>registration</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isInUse</declname>
+        </param>
+        <briefdescription>
+<para>Edits a vehicle&apos;s availability. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a vehicle with the given registration number in the list and sets its availability to the given value. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and a boolean indicating the new availability as parameters. The function returns true if the vehicle&apos;s availability was successfully edited, false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>registration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration number of the vehicle to be edited. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isInUse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean indicating the new availability of the vehicle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the vehicle&apos;s availability was successfully edited, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="334" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="334" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ad789e0c673b0d9c3a4b2a4c13ee18f1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+        <definition>VehicleList * sortVehiclesByLocation</definition>
+        <argsstring>(VehicleList *headNode, char *location)</argsstring>
+        <name>sortVehiclesByLocation</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>location</declname>
+        </param>
+        <briefdescription>
+<para>Sorts the vehicle list by location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sorts the vehicle list by location. The function takes a pointer to the head node of the list and the location to sort by as parameters. The function returns a pointer to the head node of the sorted list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the vehicle list. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The location to sort by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the head node of the sorted list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="360" column="13" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="360" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1acf84066409b372896f5f76be1f5b45c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * checkVehiclesInRadius</definition>
+        <argsstring>(Vertex *g, VehicleList *vl, int city, float radius, char type[])</argsstring>
+        <name>checkVehiclesInRadius</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>vl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>city</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>type</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>checkVehiclesInRadius - Finds all vehicles of a given type within a certain radius of a city @g: Pointer to the graph of cities and their connections @vl: Pointer to the linked list of vehicles @city: The code of the city to start the search from @radius: The maximum distance from the starting city to search for vehicles @type: The type of vehicle to search for </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function finds all vehicles of a given type within a certain radius of a city. It starts the search from the specified city and traverses the graph of cities and their connections to find all cities within the given radius. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city. It then prints out information about each vehicle found.</para>
+<para>Return: NULL </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="405" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="405" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void markAsVisited</definition>
+        <argsstring>(Vertex *graph)</argsstring>
+        <name>markAsVisited</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>markAsVisited - Marks all nodes in the graph as unvisited @graph: Pointer to the graph of cities and their connections </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function marks all nodes in the graph as unvisited by setting their visited flag to false.</para>
+<para>Return: void </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="449" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="449" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ad6e2aee20d6d76e8c5c806293a005b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void traverseGraph</definition>
+        <argsstring>(Vertex *graph, VehicleList *vehicles, Vertex *current_node, float remaining_distance, char type[])</argsstring>
+        <name>traverseGraph</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>vehicles</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>current_node</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>remaining_distance</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>type</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>traverseGraph - Traverses the graph to find all cities within a certain radius @graph: Pointer to the graph of cities and their connections @vehicles: Pointer to the linked list of vehicles @current_node: Pointer to the current node being visited @remaining_distance: The remaining distance that can be traveled from the starting city @type: The type of vehicle to search for </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function traverses the graph of cities and their connections to find all cities within a certain radius of the starting city. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city. It then prints out information about each vehicle found.</para>
+<para>Return: void </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="473" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="473" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a783a166328fa4a2a53819bf8b360ca0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void showVehicleByTypeOnLocation</definition>
+        <argsstring>(VehicleList *head, char location[], char type[])</argsstring>
+        <name>showVehicleByTypeOnLocation</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>location</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>type</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Searches the linked list of vehicles for all vehicles of a given type in a city @head: Pointer to the head of the linked list of vehicles @location: The name of the city to search for vehicles in @type: The type of vehicle to search for. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches the linked list of vehicles for all vehicles of a given type that are located in a city with the given name. It then prints out information about each vehicle found.</para>
+<para>Return: void </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="517" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="517" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a2fe05f7785a38b737d421da08e511e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+        <definition>VehicleList * recoverTruck</definition>
+        <argsstring>(Vertex *graph, VehicleList **vehicle_list, int truck_capacity)</argsstring>
+        <name>recoverTruck</name>
+        <param>
+          <type><ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>vehicle_list</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>truck_capacity</declname>
+        </param>
+        <briefdescription>
+<para>recoverTruck - function that recovers eligible vehicles from a graph of nodes @graph: pointer to the first node of the graph @vehicle_list: pointer to the head of the linked list of vehicles @truck_capacity: integer representing the maximum number of vehicles that can be collected in a single run </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function visits each node in the graph and collects eligible vehicles that are located in the same city as the node. Once the maximum number of vehicles is collected, the function moves the vehicles to the starting node and recharges them. The function returns a pointer to the linked list of collected vehicles.</para>
+<para>Return: pointer to the linked list of collected vehicles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="558" column="13" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="558" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a3c4821076839fab7e48392abf34d4db1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool checkIsLegibleForTruck</definition>
+        <argsstring>(VehicleList *vehicle)</argsstring>
+        <name>checkIsLegibleForTruck</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>vehicle</declname>
+        </param>
+        <briefdescription>
+<para>checkIsLegibleForTruck - function that checks if a vehicle is eligible for collection by the truck @vehicle: pointer to the vehicle to be checked </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks if a vehicle is a trotinete, has a battery level below 50, and is not currently rented.</para>
+<para>Return: true if the vehicle is eligible, false otherwise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="644" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="644" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1a26f2bdaa084b360f603a0bc9334bd0cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool headInsertionVehicleList</definition>
+        <argsstring>(VehicleList **head, Vehicle new_vehicle)</argsstring>
+        <name>headInsertionVehicleList</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle" kindref="compound">Vehicle</ref></type>
+          <declname>new_vehicle</declname>
+        </param>
+        <briefdescription>
+<para>headInsertionVehicleList - function that inserts a new vehicle at the head of a linked list @head: pointer to the head of the linked list @new_vehicle: the new vehicle to be inserted </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new node for the new vehicle and inserts it at the head of the linked list.</para>
+<para>Return: true if the insertion was successful, false otherwise </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="663" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="663" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="vehicle_8c_1ae5f10ae9f25a3fb2ea24e8496399a96a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void moveAndRechargeVehicle</definition>
+        <argsstring>(VehicleList **vehicles, char vehicle_registration[50], char location[])</argsstring>
+        <name>moveAndRechargeVehicle</name>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> **</type>
+          <declname>vehicles</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>vehicle_registration</declname>
+          <array>[50]</array>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>location</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>moveAndRechargeVehicle - function that moves a vehicle to a new location and recharges its battery @vehicles: pointer to the head of the linked list of vehicles @vehicle_registration: string representing the registration number of the vehicle to be moved @location: string representing the new location of the vehicle </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for the vehicle with the given registration number in the linked list and updates its location and battery level.</para>
+<para>Return: void </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" line="691" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" bodystart="691" bodyend="706"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File containing the vehicle functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the implementation of functions related to the management of vehicles. Functions include reading vehicles from a text file, creating a vehicle, creating a vehicle list, printing a vehicle list, editing a vehicle, deleting a vehicle, storing a vehicle list in a binary file, searching for a vehicle by registration, checking if a vehicle is available, and editing a vehicle&apos;s availability.</para>
+<para><simplesect kind="author"><para>João Pereira </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vehicle_8h" kindref="compound">./vehicle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*<ref refid="vehicle_8c_1a962372f88de03fcd5581aa44353afec6" kindref="member">readVehiclesFromTxt</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**headNode)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>FILE<sp/>*pFile<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>pFile<sp/>=<sp/>fopen(</highlight><highlight class="stringliteral">&quot;./initial-data/vehicles.txt&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFile<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>open<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>vehicle;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!feof(pFile))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>isInUseInt;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>fscanf(pFile,<sp/></highlight><highlight class="stringliteral">&quot;%[^;];%[^;];%d;%d;%d;%[^;\n]\n&quot;</highlight><highlight class="normal">,<sp/>vehicle.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>vehicle.<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>,<sp/>&amp;vehicle.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref>,<sp/>&amp;vehicle.<ref refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" kindref="member">cost</ref>,<sp/>&amp;isInUseInt,<sp/>vehicle.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>vehicle.<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref><sp/>=<sp/>(bool)isInUseInt;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="vehicle_8c_1a2f9e802c7e03357a0b24f6e35ae08e2a" kindref="member">createVehicleList</ref>(headNode,<sp/>vehicle);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>fclose(pFile);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*headNode;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>*<ref refid="vehicle_8c_1a1dba59da0b1fb87236e27cd988cba929" kindref="member">createVehicle</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>battery,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cost,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isInUse,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*location,<sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*graf)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>*vehicle<sp/>=<sp/>(<ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_vehicle" kindref="compound">Vehicle</ref>));</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>strcpy(vehicle-&gt;<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>strcpy(vehicle-&gt;<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>,<sp/>type);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>vehicle-&gt;<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref><sp/>=<sp/>battery;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>vehicle-&gt;<ref refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" kindref="member">cost</ref><sp/>=<sp/>cost;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>vehicle-&gt;<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref><sp/>=<sp/>isInUse;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>strcpy(vehicle-&gt;<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>,<sp/>location);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>if<sp/>the<sp/>location<sp/>is<sp/>in<sp/>the<sp/>graph<sp/>on<sp/>routes<sp/>with<sp/>SearchCodVertex<sp/>if<sp/>not,<sp/>return<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="routes_8c_1af9a8d20dbd4301590efe66c09c9cad84" kindref="member">searchCodVertex</ref>(graf,<sp/>location)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nThe<sp/>location<sp/>&apos;%s&apos;<sp/>is<sp/>not<sp/>in<sp/>the<sp/>graph<sp/>of<sp/>routes!\n&quot;</highlight><highlight class="normal">,<sp/>location);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vehicle;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a2f9e802c7e03357a0b24f6e35ae08e2a" kindref="member">createVehicleList</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**headNode,<sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>vehicle)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*newVehicle<sp/>=<sp/>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref>));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVehicle<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>allocate<sp/>memory!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>headNode;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>newVehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref><sp/>=<sp/>vehicle;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>newVehicle-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref><sp/>=<sp/>*headNode;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>*headNode<sp/>=<sp/>newVehicle;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n--------------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nVehicle:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nregistration:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Type:%s<sp/>\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Battery:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Cost:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" kindref="member">cost</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;IsInUse:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Location:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n--------------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sort<sp/>the<sp/>vehicles<sp/>list<sp/>by<sp/>battery<sp/>level<sp/>in<sp/>descending<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*<ref refid="vehicle_8c_1a79573fa45f9b0c6d508d15c53bfe3184" kindref="member">sortVehicleListDesc</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**headNode)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>*headNode;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*index<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>temp;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*headNode<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(index<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref><sp/>&lt;<sp/>index-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref><sp/>=<sp/>index-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref><sp/>=<sp/>temp;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>index-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*headNode;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a1a12f926cc8099df21bb1f19b140ae43" kindref="member">editVehicle</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration,<sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>vehicle)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref><sp/>=<sp/>vehicle;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1aa5187e1606f79dcc2f2ac6f50c9488e7" kindref="member">deleteVehicle</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>*headNode;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*previous<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(previous<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*headNode<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref><sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(current);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>previous<sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1abf926983d64d536d6290140eb25af2cd" kindref="member">storeVehicleListInBin</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>FILE<sp/>*pFile<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current_node<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>pFile<sp/>=<sp/>fopen(</highlight><highlight class="stringliteral">&quot;./saved-data/vehicles.bin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFile<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>open<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_node<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;current_node-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_vehicle" kindref="compound">Vehicle</ref>),<sp/>1,<sp/>pFile);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>current_node<sp/>=<sp/>current_node-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>fclose(pFile);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1ad5c915a3b01325b4b0c444e5a6d95390" kindref="member">searchVehicleByRegistration</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1ae070c731f906704c4732c31550e6de33" kindref="member">isVehicleAvailable</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1ae4e0326a3173e078e405a06341910545" kindref="member">editVehicleAvailability</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*registration,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isInUse)</highlight></codeline>
+<codeline lineno="335"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref><sp/>=<sp/>isInUse;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*<ref refid="vehicle_8c_1ad789e0c673b0d9c3a4b2a4c13ee18f1c" kindref="member">sortVehiclesByLocation</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*location)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*newHead<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*newTail<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>,<sp/>location)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newHead<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newHead<sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newTail<sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newTail-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref><sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newTail<sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newTail<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/>newTail-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newHead;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="comment">//<sp/>create<sp/>a<sp/>function<sp/>that<sp/>checks<sp/>if<sp/>there<sp/>is<sp/>any<sp/>vehicle<sp/>in<sp/>a<sp/>given<sp/>radius</highlight></codeline>
+<codeline lineno="405"><highlight class="comment"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="vehicle_8c_1acf84066409b372896f5f76be1f5b45c3" kindref="member">checkVehiclesInRadius</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*g,<sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>city,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>radius,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>type[])</highlight></codeline>
+<codeline lineno="406"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(radius<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*start_node<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>the<sp/>starting<sp/>node<sp/>for<sp/>the<sp/>search</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*current_node<sp/>=<sp/>g;</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_node<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_node-&gt;<ref refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref><sp/>==<sp/>city)</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>start_node<sp/>=<sp/>current_node;</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/>current_node<sp/>=<sp/>current_node-&gt;<ref refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>starting<sp/>node<sp/>is<sp/>not<sp/>found,<sp/>print<sp/>an<sp/>error<sp/>message<sp/>and<sp/>return<sp/>NULL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(start_node<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error:<sp/>Start<sp/>node<sp/>not<sp/>found.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Mark<sp/>all<sp/>nodes<sp/>in<sp/>the<sp/>graph<sp/>as<sp/>unvisited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" kindref="member">markAsVisited</ref>(g);</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Traverse<sp/>the<sp/>graph<sp/>to<sp/>find<sp/>all<sp/>cities<sp/>within<sp/>the<sp/>given<sp/>radius</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1ad6e2aee20d6d76e8c5c806293a005b23" kindref="member">traverseGraph</ref>(g,<sp/>vl,<sp/>start_node,<sp/>radius,<sp/>type);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="439"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" kindref="member">markAsVisited</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*graph)</highlight></codeline>
+<codeline lineno="450"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*node<sp/>=<sp/>graph;</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(node<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>node-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>node<sp/>=<sp/>node-&gt;<ref refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="457"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"></highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1ad6e2aee20d6d76e8c5c806293a005b23" kindref="member">traverseGraph</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*graph,<sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicles,<sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*current_node,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>remaining_distance,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>type[])</highlight></codeline>
+<codeline lineno="474"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(remaining_distance<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Mark<sp/>the<sp/>current<sp/>node<sp/>as<sp/>visited</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/>current_node-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Search<sp/>the<sp/>linked<sp/>list<sp/>of<sp/>vehicles<sp/>to<sp/>find<sp/>all<sp/>vehicles<sp/>of<sp/>the<sp/>given<sp/>type<sp/>that<sp/>are<sp/>located<sp/>in<sp/>the<sp/>current<sp/>city</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a783a166328fa4a2a53819bf8b360ca0a" kindref="member">showVehicleByTypeOnLocation</ref>(vehicles,<sp/>current_node-&gt;<ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>,<sp/>type);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Traverse<sp/>all<sp/>adjacent<sp/>nodes<sp/>that<sp/>have<sp/>not<sp/>been<sp/>visited<sp/>and<sp/>are<sp/>within<sp/>the<sp/>remaining<sp/>distance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*edge<sp/>=<sp/>current_node-&gt;<ref refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" kindref="member">adjacents</ref>;</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(edge<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*adjacentNode<sp/>=<sp/>graph;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(adjacentNode<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(adjacentNode-&gt;<ref refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref><sp/>==<sp/>edge-&gt;<ref refid="struct_adj_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref><sp/>&amp;&amp;<sp/>!adjacentNode-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref><sp/>&amp;&amp;<sp/>edge-&gt;<ref refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref><sp/>&lt;=<sp/>remaining_distance)</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>updated_distance<sp/>=<sp/>remaining_distance<sp/>-<sp/>edge-&gt;<ref refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref>;</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vehicle_8c_1ad6e2aee20d6d76e8c5c806293a005b23" kindref="member">traverseGraph</ref>(graph,<sp/>vehicles,<sp/>adjacentNode,<sp/>updated_distance,<sp/>type);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>adjacentNode<sp/>=<sp/>adjacentNode-&gt;<ref refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>edge<sp/>=<sp/>edge-&gt;<ref refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="504"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a783a166328fa4a2a53819bf8b360ca0a" kindref="member">showVehicleByTypeOnLocation</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*head,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>location[],<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>type[])</highlight></codeline>
+<codeline lineno="518"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(location[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Error:<sp/>location<sp/>is<sp/>empty\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Error:<sp/>type<sp/>is<sp/>empty\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current_vehicle<sp/>=<sp/>head;</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"></highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_vehicle<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>,<sp/>location)<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>strcmp(current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>,<sp/>type)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nVehicle<sp/>registration:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Vehicle<sp/>Type:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Vehicle<sp/>Location:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>);</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Vehicle<sp/>Price:<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" kindref="member">cost</ref>);</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/>current_vehicle<sp/>=<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="544"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*<ref refid="vehicle_8c_1a2fe05f7785a38b737d421da08e511e89" kindref="member">recoverTruck</ref>(<ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*graph,<sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**vehicle_list,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>truck_capacity)</highlight></codeline>
+<codeline lineno="559"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>run_number<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>collected_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*start_node<sp/>=<sp/>graph;</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicles_collected<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*current_node<sp/>=<sp/>graph;</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;current<sp/>node<sp/>location<sp/>-&gt;<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_node-&gt;<ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>);</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"></highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>loop<sp/>to<sp/>visit<sp/>nodes<sp/>in<sp/>the<sp/>graph</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_node<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!current_node-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref>)</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current_vehicle<sp/>=<sp/>*vehicle_list;</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>iterate<sp/>through<sp/>the<sp/>vehicle<sp/>list<sp/>and<sp/>collect<sp/>eligible<sp/>vehicles</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_vehicle<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>collected_count<sp/>&lt;<sp/>truck_capacity)</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_legible<sp/>=<sp/><ref refid="vehicle_8c_1a3c4821076839fab7e48392abf34d4db1" kindref="member">checkIsLegibleForTruck</ref>(current_vehicle);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_same_location<sp/>=<sp/>strcmp(current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>,<sp/>current_node-&gt;<ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>)<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_legible<sp/>&amp;&amp;<sp/>is_same_location)</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>collected_count++;</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vehicle_8c_1a26f2bdaa084b360f603a0bc9334bd0cb" kindref="member">headInsertionVehicleList</ref>(&amp;vehicles_collected,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"></highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Run<sp/>%d:<sp/>Vehicle<sp/>%s<sp/>collected<sp/>at<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>run_number,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"></highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_vehicle<sp/>=<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current_node-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(collected_count<sp/>==<sp/>truck_capacity)</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>collected_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>run_number++;</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>the<sp/>current<sp/>node<sp/>to<sp/>the<sp/>start<sp/>node<sp/>and<sp/>move<sp/>the<sp/>collected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>vehicles<sp/>to<sp/>the<sp/>start<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_node<sp/>=<sp/>start_node;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vehicle_8c_1ae5f10ae9f25a3fb2ea24e8496399a96a" kindref="member">moveAndRechargeVehicle</ref>(vehicle_list,<sp/>vehicles_collected-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>start_node-&gt;<ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>);</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" kindref="member">markAsVisited</ref>(graph);</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"></highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;current<sp/>node<sp/>location<sp/>-&gt;<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>current_node-&gt;<ref refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kindref="member">city</ref>);</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"></highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>find<sp/>the<sp/>next<sp/>unvisited<sp/>node<sp/>with<sp/>the<sp/>shortest<sp/>distance<sp/>from<sp/>the<sp/>current<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*next_node<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_adj" kindref="compound">Adj</ref><sp/>*edges<sp/>=<sp/>current_node-&gt;<ref refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" kindref="member">adjacents</ref>;</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>shortest_distance<sp/>=<sp/>INT_MAX;</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(edges<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*adjacent_node<sp/>=<sp/><ref refid="routes_8c_1ac54eed9c8e70a3e0ef969900c8872552" kindref="member">searchVertexCod</ref>(graph,<sp/>edges-&gt;<ref refid="struct_adj_1af126ceed259751781ea3b64024138f7d" kindref="member">cod</ref>);</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>adjacent<sp/>node<sp/>was<sp/>not<sp/>visited<sp/>and<sp/>has<sp/>a<sp/>shorter<sp/>distance,<sp/>update<sp/>the<sp/>next<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(adjacent_node<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>!adjacent_node-&gt;<ref refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kindref="member">visited</ref><sp/>&amp;&amp;<sp/>edges-&gt;<ref refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref><sp/>&lt;<sp/>shortest_distance)</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shortest_distance<sp/>=<sp/>edges-&gt;<ref refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kindref="member">dist</ref>;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>next_node<sp/>=<sp/>adjacent_node;</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>edges<sp/>=<sp/>edges-&gt;<ref refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"></highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>current_node<sp/>=<sp/>next_node;</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" kindref="member">markAsVisited</ref>(graph);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vehicles_collected;</highlight></codeline>
+<codeline lineno="634"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="644"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a3c4821076839fab7e48392abf34d4db1" kindref="member">checkIsLegibleForTruck</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicle)</highlight></codeline>
+<codeline lineno="645"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>typeTroti[50]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;trotinete&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_trotti<sp/>=<sp/>strcmp(vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kindref="member">type</ref>,<sp/>typeTroti)<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_low_battery<sp/>=<sp/>vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref><sp/>&lt;<sp/>50;</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_not_rented<sp/>=<sp/>vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kindref="member">isInUse</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"></highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is_trotti<sp/>&amp;&amp;<sp/>has_low_battery<sp/>&amp;&amp;<sp/>is_not_rented;</highlight></codeline>
+<codeline lineno="652"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"></highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1a26f2bdaa084b360f603a0bc9334bd0cb" kindref="member">headInsertionVehicleList</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**head,<sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>new_vehicle)</highlight></codeline>
+<codeline lineno="664"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*new_node<sp/>=<sp/>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref>));</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"></highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_node<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>allocate<sp/>memory!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>head;</highlight></codeline>
+<codeline lineno="671"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/>new_node-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref><sp/>=<sp/>new_vehicle;</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"></highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/>new_node-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref><sp/>=<sp/>*head;</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/>*head<sp/>=<sp/>new_node;</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"></highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="679"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="vehicle_8c_1ae5f10ae9f25a3fb2ea24e8496399a96a" kindref="member">moveAndRechargeVehicle</ref>(<ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>**vehicles,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>vehicle_registration[50],<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>location[])</highlight></codeline>
+<codeline lineno="692"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*current_vehicle<sp/>=<sp/>*vehicles;</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"></highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_vehicle<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>,<sp/>vehicle_registration)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kindref="member">location</ref>,<sp/>location);</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kindref="member">vehicle</ref>.<ref refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kindref="member">battery</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"></highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/><sp/><sp/><sp/>current_vehicle<sp/>=<sp/>current_vehicle-&gt;<ref refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="706"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c"/>
+  </compounddef>
+</doxygen>

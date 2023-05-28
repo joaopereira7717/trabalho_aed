@@ -1,0 +1,35 @@
+\doxysection{rentals.\+h}
+\hypertarget{rentals_8h_source}{}\label{rentals_8h_source}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/rentals.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/rentals.h}}
+\mbox{\hyperlink{rentals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{./user.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vehicle_8h}{./vehicle.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rent_list}{RentList}}\ \mbox{\hyperlink{struct_rent_list}{RentList}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rent}{Rent}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_rent_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_rent_a8f6ccb815804f631c051eb8662123827}{vehicleRegistration}}[50];}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_rent_ad44e504cd2c62fca8bd43810612f8b5e}{userNif}};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_rent_ab3f85406a374fa651e08c8e29d993e96}{timeInMinutes}};}
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{struct_rent}{Rent}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rent_list}{RentList}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{struct_rent}{Rent}}\ \mbox{\hyperlink{struct_rent_list_aa86fb95e2e6fefbf086cf348913f859e}{rent}};}
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{struct_rent_list}{RentList}}\ *\mbox{\hyperlink{struct_rent_list_a2ace171a2af41b05ad9e8d2d8097667b}{next}};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{struct_rent}{Rent}}\ *\mbox{\hyperlink{rentals_8h_a630605bf530ca0a78a13ac7b7b8394dc}{createRent}}(\textcolor{keywordtype}{char}\ *vehicleRegistration,\ \textcolor{keywordtype}{int}\ userNif,\ \textcolor{keywordtype}{int}\ timeInMinutes,\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *vehicleList,\ \mbox{\hyperlink{struct_user_list}{UserList}}\ *userList,\ \mbox{\hyperlink{struct_rent_list}{RentList}}\ **rentList);}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{rentals_8h_ac32e4f9d474cf56efc5676307e970719}{printRentList}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ *headNode);}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rentals_8h_a22ac0bc64779645502309d395d6ef0c3}{createRentList}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ **headNode,\ \mbox{\hyperlink{struct_rent}{Rent}}\ rent);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{rentals_8h_af9dd3cf157a9ba44cd8d2cf899267f98}{countRents}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ *headNode);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rentals_8h_a26925977432b96e5502518bd48531445}{deleteRent}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ **headNode,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{char}\ *vehicleRegistration,\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *vehicleList);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rentals_8h_aab6c450fbb87a46cb374c78b591cb656}{editRent}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ *headNode,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{struct_rent}{Rent}}\ rent);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{rentals_8h_ac3b6a49c51c5278f9f6b2bf3b0d9f94e}{storeRentsInBin}}(\mbox{\hyperlink{struct_rent_list}{RentList}}\ *headNode);}
+
+\end{DoxyCode}

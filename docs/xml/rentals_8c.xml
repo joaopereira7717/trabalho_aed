@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="rentals_8c" kind="file" language="C++">
+    <compoundname>rentals.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes refid="rentals_8h" local="yes">./rentals.h</includes>
+    <includes refid="user_8h" local="yes">./user.h</includes>
+    <includes refid="vehicle_8h" local="yes">./vehicle.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c</label>
+        <link refid="rentals_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>./rentals.h</label>
+        <link refid="rentals_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>./routes.h</label>
+        <link refid="routes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>./user.h</label>
+        <link refid="user_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>./vehicle.h</label>
+        <link refid="vehicle_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>errno.h</label>
+      </node>
+      <node id="12">
+        <label>locale.h</label>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rentals_8c_1a630605bf530ca0a78a13ac7b7b8394dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_rent" kindref="compound">Rent</ref> *</type>
+        <definition>Rent * createRent</definition>
+        <argsstring>(char *vehicleRegistration, int userNif, int timeInMinutes, VehicleList *vehicleList, UserList *userList, RentList **rentList)</argsstring>
+        <name>createRent</name>
+        <param>
+          <type>char *</type>
+          <declname>vehicleRegistration</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>userNif</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeInMinutes</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>vehicleList</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+          <declname>userList</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> **</type>
+          <declname>rentList</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new rent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new rent with the given vehicle registration, user NIF, and time in minutes. It also checks if the user and vehicle exist and if the vehicle is available. If any of these conditions are not met, the function returns NULL. Otherwise, it creates a new rent and returns it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vehicleRegistration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration of the vehicle to be rented </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userNif</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The NIF of the user renting the vehicle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeInMinutes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time in minutes the vehicle will be rented for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vehicleList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of vehicles </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of users </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rentList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of rents </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the newly created rent, or NULL if any of the conditions are not met </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="38" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="38" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1a22ac0bc64779645502309d395d6ef0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createRentList</definition>
+        <argsstring>(RentList **headNode, Rent rent)</argsstring>
+        <name>createRentList</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rent" kindref="compound">Rent</ref></type>
+          <declname>rent</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new node in the rent list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new node in the rent list with the given rent. It returns true if the node was successfully created, or false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rent to be added to the list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the node was successfully created, or false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="93" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="93" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1ac32e4f9d474cf56efc5676307e970719" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printRentList</definition>
+        <argsstring>(RentList *headNode)</argsstring>
+        <name>printRentList</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Prints the rent list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prints the rent list, showing the ID, vehicle registration, user NIF, and time in minutes for each rent in the list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="117" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="117" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1a26925977432b96e5502518bd48531445" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool deleteRent</definition>
+        <argsstring>(RentList **headNode, int id, char *vehicleRegistration, VehicleList *vehicleList)</argsstring>
+        <name>deleteRent</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>vehicleRegistration</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+          <declname>vehicleList</declname>
+        </param>
+        <briefdescription>
+<para>Deletes a rent from the rent list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function deletes a rent from the rent list with the given ID and vehicle registration. It also changes the availability of the vehicle to true. It returns true if the rent was successfully deleted, or false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the rent to be deleted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vehicleRegistration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The registration of the vehicle to be returned </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vehicleList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of vehicles </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the rent was successfully deleted, or false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="147" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="147" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1af9dd3cf157a9ba44cd8d2cf899267f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int countRents</definition>
+        <argsstring>(RentList *headNode)</argsstring>
+        <name>countRents</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Counts the number of rents in the rent list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function counts the number of rents in the rent list and returns the count.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of rents in the rent list </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="188" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="188" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1aab6c450fbb87a46cb374c78b591cb656" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool editRent</definition>
+        <argsstring>(RentList *headNode, int id, Rent rent)</argsstring>
+        <name>editRent</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_rent" kindref="compound">Rent</ref></type>
+          <declname>rent</declname>
+        </param>
+        <briefdescription>
+<para>Edits a rent in the rent list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function edits a rent in the rent list with the given ID. It replaces the rent with the given rent parameter. It returns true if the rent was successfully edited, or false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the rent to be edited </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new rent to replace the old one </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the rent was successfully edited, or false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="211" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="211" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="rentals_8c_1ac3b6a49c51c5278f9f6b2bf3b0d9f94e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool storeRentsInBin</definition>
+        <argsstring>(RentList *headNode)</argsstring>
+        <name>storeRentsInBin</name>
+        <param>
+          <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Stores the rents in a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function stores the rents in a binary file named &quot;rents.bin&quot; in the &quot;saved-data&quot; directory. It returns true if the rents were successfully stored, or false otherwise.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the rent list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the rents were successfully stored, or false otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" line="235" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" bodystart="235" bodyend="256"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File containing the functions to manage the rentals. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the implementation of functions to manage the rentals, such as creating a new rent, creating a rent list, printing the rent list, deleting a rent, counting the number of rents, editing a rent, and storing the rents in a binary file.</para>
+<para><simplesect kind="author"><para>João Pereira </para>
+</simplesect>
+<simplesect kind="date"><para>2023-03-18 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rentals_8h" kindref="compound">./rentals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="user_8h" kindref="compound">./user.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vehicle_8h" kindref="compound">./vehicle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>*<ref refid="rentals_8c_1a630605bf530ca0a78a13ac7b7b8394dc" kindref="member">createRent</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vehicleRegistration,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>userNif,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeInMinutes,<sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicleList,<sp/><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*userList,<sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>**rentList)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>*rent<sp/>=<sp/>(<ref refid="struct_rent" kindref="compound">Rent</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_rent" kindref="compound">Rent</ref>));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Creating<sp/>rent...\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>userExists<sp/>=<sp/><ref refid="user_8c_1a33645599f77fa65990a9d319b408d83d" kindref="member">searchUserByNif</ref>(userList,<sp/>userNif);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!userExists)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;User<sp/>does<sp/>not<sp/>exist!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>vehicleExists<sp/>=<sp/><ref refid="vehicle_8c_1ad5c915a3b01325b4b0c444e5a6d95390" kindref="member">searchVehicleByRegistration</ref>(vehicleList,<sp/>vehicleRegistration);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!vehicleExists)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Vehicle<sp/>does<sp/>not<sp/>exist!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAvailable<sp/>=<sp/><ref refid="vehicle_8c_1ae070c731f906704c4732c31550e6de33" kindref="member">isVehicleAvailable</ref>(vehicleList,<sp/>vehicleRegistration);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isAvailable)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Vehicle<sp/>is<sp/>not<sp/>available!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>rent-&gt;<ref refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kindref="member">id</ref><sp/>=<sp/><ref refid="rentals_8c_1af9dd3cf157a9ba44cd8d2cf899267f98" kindref="member">countRents</ref>(*rentList);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>strcpy(rent-&gt;<ref refid="struct_rent_1a8f6ccb815804f631c051eb8662123827" kindref="member">vehicleRegistration</ref>,<sp/>vehicleRegistration);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>rent-&gt;<ref refid="struct_rent_1ad44e504cd2c62fca8bd43810612f8b5e" kindref="member">userNif</ref><sp/>=<sp/>userNif;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>rent-&gt;<ref refid="struct_rent_1ab3f85406a374fa651e08c8e29d993e96" kindref="member">timeInMinutes</ref><sp/>=<sp/>timeInMinutes;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>edit<sp/>vehicle<sp/>availability</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>availabilityChanged<sp/>=<sp/><ref refid="vehicle_8c_1ae4e0326a3173e078e405a06341910545" kindref="member">editVehicleAvailability</ref>(vehicleList,<sp/>vehicleRegistration,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!availabilityChanged)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>change<sp/>vehicle<sp/>availability!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rent;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1a22ac0bc64779645502309d395d6ef0c3" kindref="member">createRentList</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>**headNode,<sp/><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>rent)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*new_node<sp/>=<sp/>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_rent_list" kindref="compound">RentList</ref>));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(new_node<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>allocate<sp/>memory!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>headNode;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>new_node-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref><sp/>=<sp/>rent;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>new_node-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref><sp/>=<sp/>*headNode;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>*headNode<sp/>=<sp/>new_node;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1ac32e4f9d474cf56efc5676307e970719" kindref="member">printRentList</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*headNode)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n--------------------&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nRent:\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;id:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kindref="member">id</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nvehicleRegistration:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1a8f6ccb815804f631c051eb8662123827" kindref="member">vehicleRegistration</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nuserNif:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1ad44e504cd2c62fca8bd43810612f8b5e" kindref="member">userNif</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\ntimeInMinutes:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1ab3f85406a374fa651e08c8e29d993e96" kindref="member">timeInMinutes</ref>);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n--------------------\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1a26925977432b96e5502518bd48531445" kindref="member">deleteRent</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>**headNode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vehicleRegistration,<sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicleList)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*current<sp/>=<sp/>*headNode;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*previous<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kindref="member">id</ref><sp/>==<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(previous<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*headNode<sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>previous-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref><sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(current);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>change<sp/>the<sp/>vehicle<sp/>availability</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>availabilityChanged<sp/>=<sp/><ref refid="vehicle_8c_1ae4e0326a3173e078e405a06341910545" kindref="member">editVehicleAvailability</ref>(vehicleList,<sp/>vehicleRegistration,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!availabilityChanged)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>change<sp/>vehicle<sp/>availability!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>previous<sp/>=<sp/>current;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1af9dd3cf157a9ba44cd8d2cf899267f98" kindref="member">countRents</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*headNode)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1aab6c450fbb87a46cb374c78b591cb656" kindref="member">editRent</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>rent)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*current<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>.<ref refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kindref="member">id</ref><sp/>==<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref><sp/>=<sp/>rent;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>current<sp/>=<sp/>current-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="rentals_8c_1ac3b6a49c51c5278f9f6b2bf3b0d9f94e" kindref="member">storeRentsInBin</ref>(<ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*headNode)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>FILE<sp/>*pFile<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*current_node<sp/>=<sp/>headNode;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>pFile<sp/>=<sp/>fopen(</highlight><highlight class="stringliteral">&quot;./saved-data/rents.bin&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pFile<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>open<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(current_node<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>fwrite(&amp;current_node-&gt;<ref refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kindref="member">rent</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_rent" kindref="compound">Rent</ref>),<sp/>1,<sp/>pFile);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>current_node<sp/>=<sp/>current_node-&gt;<ref refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/>fclose(pFile);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c"/>
+  </compounddef>
+</doxygen>

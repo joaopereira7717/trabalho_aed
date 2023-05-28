@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_vehicle_list" kind="struct" language="C++" prot="public">
+    <compoundname>VehicleList</compoundname>
+    <includes refid="vehicle_8h" local="no">vehicle.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_vehicle" kindref="compound">Vehicle</ref></type>
+        <definition>Vehicle vehicle</definition>
+        <argsstring></argsstring>
+        <name>vehicle</name>
+        <qualifiedname>VehicleList::vehicle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="31" column="11" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref> *</type>
+        <definition>VehicleList* next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>VehicleList::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="32" column="15" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Vehicle</label>
+        <link refid="struct_vehicle"/>
+      </node>
+      <node id="1">
+        <label>VehicleList</label>
+        <link refid="struct_vehicle_list"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>vehicle</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="29" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="30" bodyend="33"/>
+    <listofallmembers>
+      <member refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" prot="public" virt="non-virtual"><scope>VehicleList</scope><name>next</name></member>
+      <member refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" prot="public" virt="non-virtual"><scope>VehicleList</scope><name>vehicle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,721 @@
+\doxysection{/\+Users/inflightit/\+Desktop/coisas/aula\+\_\+ead/trabalho\+Pratico/models/routes.h File Reference}
+\hypertarget{routes_8h}{}\label{routes_8h}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/routes.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/routes.h}}
+
+
+File containing the functions to manage the routes.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_adj}{Adj}}
+\item 
+struct \mbox{\hyperlink{struct_adj_file}{Adj\+File}}
+\item 
+struct \mbox{\hyperlink{struct_vertex}{Vertex}}
+\item 
+struct \mbox{\hyperlink{struct_vertex_file}{Vertex\+File}}
+\item 
+struct \mbox{\hyperlink{struct_best}{Best}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{routes_8h_a0240ac851181b84ac374872dc5434ee4}{N}}~50
+\item 
+\#define \mbox{\hyperlink{routes_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}}~5
+\item 
+\#define \mbox{\hyperlink{routes_8h_a010fa716ced1170c05d8fc9da46a5d34}{MAXDISTANCE}}~9999
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_adj}{Adj}} \mbox{\hyperlink{routes_8h_acd9f17cb24ce73dde34e7a6bc62f92fb}{Adj}}
+\item 
+typedef struct \mbox{\hyperlink{struct_adj_file}{Adj\+File}} \mbox{\hyperlink{routes_8h_aed6ccfc49dc362b265d9e5593ddebc3c}{Adj\+File}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vertex}{Vertex}} \mbox{\hyperlink{routes_8h_a2e1662af5233d0fe6a6f061445d2ff25}{Vertex}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vertex_file}{Vertex\+File}} \mbox{\hyperlink{routes_8h_a83efe7c483203486d5f51915d1b5e753}{Vertex\+File}}
+\item 
+typedef struct \mbox{\hyperlink{struct_best}{Best}} \mbox{\hyperlink{routes_8h_aac29ddebe4eb20f71937c0605f314505}{Best}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a5019e918f68638f5ee193138027405df}{create\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new empty graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a6b02bd0cb67e4175a6ff84da2fc20036}{insert\+Route\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}new, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Inserts a new vertex into the graph in alphabetical order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a84701986d37adc4a7855eae547fd5158}{create\+Route\+Vertex}} (char \texorpdfstring{$\ast$}{*}city, int tot)
+\begin{DoxyCompactList}\small\item\em Creates a new vertex for the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{routes_8h_a09d7bed5e43bd9d16ee464b0e6ef6d7b}{show\+Routes}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Displays on screen all vertices and their respective adjacency lists of the graph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{routes_8h_af9a8d20dbd4301590efe66c09c9cad84}{search\+Cod\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, char \texorpdfstring{$\ast$}{*}city)
+\begin{DoxyCompactList}\small\item\em Gets the identifier code of a vertex from the city name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_ab70e1129d2c0c8b9ea3dbb7c779505a0}{search\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, char \texorpdfstring{$\ast$}{*}city)
+\begin{DoxyCompactList}\small\item\em Finds a vertex from the city name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_ac54eed9c8e70a3e0ef969900c8872552}{search\+Vertex\+Cod}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, int cod)
+\begin{DoxyCompactList}\small\item\em Fetch a vertex from the identifier code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_ac08fd85b0e1d73b8e22eec74d0b38185}{destroy\+Routes}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated to the graph and its adjacency lists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_ad41cec83095230a117758bb726522a9c}{insert\+Adjacent\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, char \texorpdfstring{$\ast$}{*}origem, char \texorpdfstring{$\ast$}{*}dest, float valuedistance, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Inserts a new adjacent vertex into an adjacency list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a3cd1c5401553c8d282e0bb168107ba11}{insert\+Adjacent\+Vertex\+Cod}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, int origem, int dest, float valuedistance, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a73e20349f3e629ccd24d5b9b7c1e3fad}{create\+Adj}} (int cod, float valuedistance)
+\begin{DoxyCompactList}\small\item\em Creates a new adjacency list node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a251a8ffd0dbbbd4c915eecf69eeed000}{insert\+Adj}} (\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}h, \mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}new, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Inserts a new adjacent vertex to a given vertex in the graph. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{routes_8h_a2aa41a6a2d3caa6e5e43490c296fb32d}{exist\+Adj}} (\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}h, int cod)
+\begin{DoxyCompactList}\small\item\em Checks if an adjacent vertex already exists in an adjacency list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{routes_8h_a6cdcfff755904515945a32bf205656ef}{show\+Adj}} (\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Recursively displays the adjacent vertices of a given vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a96dc20b046a393d2896ed7e3123a9450}{destroy\+Adj}} (\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}h)
+\begin{DoxyCompactList}\small\item\em Recursively destroys the adjacent vertex list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{routes_8h_a6c171e28de18201f13008fae2434d7da}{count\+Paths}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, int src, int dst, int path\+Count)
+\begin{DoxyCompactList}\small\item\em Counts the number of paths between two vertices in the graph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{routes_8h_a6dc33af1d97003e2d1dd85632d6adf5d}{count\+Paths\+Vertexs\+Name}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, char \texorpdfstring{$\ast$}{*}src, char \texorpdfstring{$\ast$}{*}dest, int path\+Count)
+\begin{DoxyCompactList}\small\item\em Counts the number of paths between two vertices in the graph, given their names. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{routes_8h_aa14be61fd430c21593ec7bb80ec083ce}{depth\+First\+Search\+Rec}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, int origem, int dest)
+\begin{DoxyCompactList}\small\item\em Recursively performs a depth-\/first search on the graph to find a path between two vertices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{routes_8h_aeab2ed9ec5a8977b247fc0de0b0411dc}{depth\+First\+Search\+Names\+Rec}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, char \texorpdfstring{$\ast$}{*}src, char \texorpdfstring{$\ast$}{*}dest)
+\begin{DoxyCompactList}\small\item\em Recursively performs a depth-\/first search on the graph to find a path between two vertices, given their names. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a1a8f75be4e9b363d012459131f3d7ada}{reset\+Visited\+Vertex}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Resets the \"{}visited\"{} flag of all graph vertices to false. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_best}{Best}} \mbox{\hyperlink{routes_8h_af5ba1fa298635549c730b1f281432335}{best\+Path}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, int n, int v)
+\begin{DoxyCompactList}\small\item\em Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{routes_8h_a77ee3a8e94ffffc8866509b0d2736443}{show\+All\+Path}} (\mbox{\hyperlink{struct_best}{Best}} b, int n, int v)
+\begin{DoxyCompactList}\small\item\em Show\+All\+Path -\/ Function that displays the shortest path and distance to all vertices in the graph. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{routes_8h_ab02145d9bf9a32a12062fcb320adf915}{save\+Graph}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}h, char \texorpdfstring{$\ast$}{*}file\+Name)
+\begin{DoxyCompactList}\small\item\em Save\+Graph -\/ Function that saves the graph to a binary file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{routes_8h_ad2c48746dd630427e2033e3fef8c0aa4}{save\+Adj}} (\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}h, char \texorpdfstring{$\ast$}{*}file\+Name, int cod)
+\begin{DoxyCompactList}\small\item\em Save\+Adj -\/ Function that saves the adjacency list of a vertex to a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_aa1b1f204441114d6b5bad6387df28a9f}{load\+Graph}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}h, char \texorpdfstring{$\ast$}{*}file\+Name, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Load\+Graph -\/ Function that loads a graph from a binary file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_aa5b4862a92a3141268f21eb64e266a71}{load\+Adj}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, bool \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Load\+Adj -\/ Function that loads the adjacency lists of all vertices in a graph from binary files. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{routes_8h_a56243cd6d5aeb39369194ea05c3178cf}{routes\+Read\+Txt}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, bool \texorpdfstring{$\ast$}{*}res, int \texorpdfstring{$\ast$}{*}tot)
+\begin{DoxyCompactList}\small\item\em Reads the initial data from two text files and creates a graph of routes and edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the functions to manage the routes. 
+
+\begin{DoxyAuthor}{Author}
+João Pereira 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{routes_8h_a392fb874e547e582e9c66a08a1f23326}\label{routes_8h_a392fb874e547e582e9c66a08a1f23326} 
+\index{routes.h@{routes.h}!MAX@{MAX}}
+\index{MAX@{MAX}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX~5}
+
+\Hypertarget{routes_8h_a010fa716ced1170c05d8fc9da46a5d34}\label{routes_8h_a010fa716ced1170c05d8fc9da46a5d34} 
+\index{routes.h@{routes.h}!MAXDISTANCE@{MAXDISTANCE}}
+\index{MAXDISTANCE@{MAXDISTANCE}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{MAXDISTANCE}{MAXDISTANCE}}
+{\footnotesize\ttfamily \#define MAXDISTANCE~9999}
+
+\Hypertarget{routes_8h_a0240ac851181b84ac374872dc5434ee4}\label{routes_8h_a0240ac851181b84ac374872dc5434ee4} 
+\index{routes.h@{routes.h}!N@{N}}
+\index{N@{N}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~50}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{routes_8h_acd9f17cb24ce73dde34e7a6bc62f92fb}\label{routes_8h_acd9f17cb24ce73dde34e7a6bc62f92fb} 
+\index{routes.h@{routes.h}!Adj@{Adj}}
+\index{Adj@{Adj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{Adj}{Adj}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_adj}{Adj}} \mbox{\hyperlink{struct_adj}{Adj}}}
+
+Estrutura de uma Adjacência. \Hypertarget{routes_8h_aed6ccfc49dc362b265d9e5593ddebc3c}\label{routes_8h_aed6ccfc49dc362b265d9e5593ddebc3c} 
+\index{routes.h@{routes.h}!AdjFile@{AdjFile}}
+\index{AdjFile@{AdjFile}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{AdjFile}{AdjFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_adj_file}{Adj\+File}} \mbox{\hyperlink{struct_adj_file}{Adj\+File}}}
+
+Estrutura de uma Adjacência para Ficheiro \Hypertarget{routes_8h_aac29ddebe4eb20f71937c0605f314505}\label{routes_8h_aac29ddebe4eb20f71937c0605f314505} 
+\index{routes.h@{routes.h}!Best@{Best}}
+\index{Best@{Best}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{Best}{Best}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_best}{Best}} \mbox{\hyperlink{struct_best}{Best}}}
+
+\Hypertarget{routes_8h_a2e1662af5233d0fe6a6f061445d2ff25}\label{routes_8h_a2e1662af5233d0fe6a6f061445d2ff25} 
+\index{routes.h@{routes.h}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vertex}{Vertex}} \mbox{\hyperlink{struct_vertex}{Vertex}}}
+
+Descrição de um Vértice do grafo. \Hypertarget{routes_8h_a83efe7c483203486d5f51915d1b5e753}\label{routes_8h_a83efe7c483203486d5f51915d1b5e753} 
+\index{routes.h@{routes.h}!VertexFile@{VertexFile}}
+\index{VertexFile@{VertexFile}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{VertexFile}{VertexFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vertex_file}{Vertex\+File}} \mbox{\hyperlink{struct_vertex_file}{Vertex\+File}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{routes_8h_af5ba1fa298635549c730b1f281432335}\label{routes_8h_af5ba1fa298635549c730b1f281432335} 
+\index{routes.h@{routes.h}!bestPath@{bestPath}}
+\index{bestPath@{bestPath}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{bestPath()}{bestPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_best}{Best}} best\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{int}]{n,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra\textquotesingle{}s algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The head of the vertex list. \\
+\hline
+{\em n} & The number of vertices in the graph. \\
+\hline
+{\em v} & The code of the vertex to start the search from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A struct containing the shortest distance and previous vertex for each vertex in the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a6c171e28de18201f13008fae2434d7da}\label{routes_8h_a6c171e28de18201f13008fae2434d7da} 
+\index{routes.h@{routes.h}!countPaths@{countPaths}}
+\index{countPaths@{countPaths}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{countPaths()}{countPaths()}}
+{\footnotesize\ttfamily int count\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{int}]{src,  }\item[{int}]{dest,  }\item[{int}]{path\+Count }\end{DoxyParamCaption})}
+
+
+
+Counts the number of paths between two vertices in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The head of the vertex list. \\
+\hline
+{\em src} & The code of the source vertex. \\
+\hline
+{\em dest} & The code of the destination vertex. \\
+\hline
+{\em path\+Count} & The number of paths found so far. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of paths between the source and destination vertices. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a6dc33af1d97003e2d1dd85632d6adf5d}\label{routes_8h_a6dc33af1d97003e2d1dd85632d6adf5d} 
+\index{routes.h@{routes.h}!countPathsVertexsName@{countPathsVertexsName}}
+\index{countPathsVertexsName@{countPathsVertexsName}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{countPathsVertexsName()}{countPathsVertexsName()}}
+{\footnotesize\ttfamily int count\+Paths\+Vertexs\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{int}]{path\+Count }\end{DoxyParamCaption})}
+
+
+
+Counts the number of paths between two vertices in the graph, given their names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The head of the vertex list. \\
+\hline
+{\em src} & The name of the source vertex. \\
+\hline
+{\em dest} & The name of the destination vertex. \\
+\hline
+{\em path\+Count} & The number of paths found so far. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of paths between the source and destination vertices. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a73e20349f3e629ccd24d5b9b7c1e3fad}\label{routes_8h_a73e20349f3e629ccd24d5b9b7c1e3fad} 
+\index{routes.h@{routes.h}!createAdj@{createAdj}}
+\index{createAdj@{createAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{createAdj()}{createAdj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} create\+Adj (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{float}]{valuedistance }\end{DoxyParamCaption})}
+
+
+
+Creates a new adjacency list node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & Adjacent vertex identifier code. \\
+\hline
+{\em valuedistance} & Value of distance between vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created node. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a5019e918f68638f5ee193138027405df}\label{routes_8h_a5019e918f68638f5ee193138027405df} 
+\index{routes.h@{routes.h}!createRoute@{createRoute}}
+\index{createRoute@{createRoute}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{createRoute()}{createRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} create\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new empty graph. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a84701986d37adc4a7855eae547fd5158}\label{routes_8h_a84701986d37adc4a7855eae547fd5158} 
+\index{routes.h@{routes.h}!createRouteVertex@{createRouteVertex}}
+\index{createRouteVertex@{createRouteVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{createRouteVertex()}{createRouteVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} create\+Route\+Vertex (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{city,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Creates a new vertex for the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & Name of the vertex city. \\
+\hline
+{\em cod} & \doxylink{struct_vertex}{Vertex} identifier code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created vertex. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_aeab2ed9ec5a8977b247fc0de0b0411dc}\label{routes_8h_aeab2ed9ec5a8977b247fc0de0b0411dc} 
+\index{routes.h@{routes.h}!depthFirstSearchNamesRec@{depthFirstSearchNamesRec}}
+\index{depthFirstSearchNamesRec@{depthFirstSearchNamesRec}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{depthFirstSearchNamesRec()}{depthFirstSearchNamesRec()}}
+{\footnotesize\ttfamily bool depth\+First\+Search\+Names\+Rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{char \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Recursively performs a depth-\/first search on the graph to find a path between two vertices, given their names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The head of the vertex list. \\
+\hline
+{\em src} & The name of the source vertex. \\
+\hline
+{\em dest} & The name of the destination vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a path is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_aa14be61fd430c21593ec7bb80ec083ce}\label{routes_8h_aa14be61fd430c21593ec7bb80ec083ce} 
+\index{routes.h@{routes.h}!depthFirstSearchRec@{depthFirstSearchRec}}
+\index{depthFirstSearchRec@{depthFirstSearchRec}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{depthFirstSearchRec()}{depthFirstSearchRec()}}
+{\footnotesize\ttfamily bool depth\+First\+Search\+Rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{int}]{origin,  }\item[{int}]{dest }\end{DoxyParamCaption})}
+
+
+
+Recursively performs a depth-\/first search on the graph to find a path between two vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The head of the vertex list. \\
+\hline
+{\em origin} & The code of the origin vertex. \\
+\hline
+{\em dest} & The code of the destination vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a path is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a96dc20b046a393d2896ed7e3123a9450}\label{routes_8h_a96dc20b046a393d2896ed7e3123a9450} 
+\index{routes.h@{routes.h}!destroyAdj@{destroyAdj}}
+\index{destroyAdj@{destroyAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{destroyAdj()}{destroyAdj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} destroy\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})}
+
+
+
+Recursively destroys the adjacent vertex list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The head of the adjacent vertex list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ac08fd85b0e1d73b8e22eec74d0b38185}\label{routes_8h_ac08fd85b0e1d73b8e22eec74d0b38185} 
+\index{routes.h@{routes.h}!destroyRoutes@{destroyRoutes}}
+\index{destroyRoutes@{destroyRoutes}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{destroyRoutes()}{destroyRoutes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} destroy\+Routes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Frees the memory allocated to the graph and its adjacency lists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph (NULL). 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a2aa41a6a2d3caa6e5e43490c296fb32d}\label{routes_8h_a2aa41a6a2d3caa6e5e43490c296fb32d} 
+\index{routes.h@{routes.h}!existAdj@{existAdj}}
+\index{existAdj@{existAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{existAdj()}{existAdj()}}
+{\footnotesize\ttfamily bool exist\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Checks if an adjacent vertex already exists in an adjacency list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Pointer to the first node in the adjacency list. \\
+\hline
+{\em cod} & Code identifying the adjacent vertex to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the adjacent vertex exists in the list, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a251a8ffd0dbbbd4c915eecf69eeed000}\label{routes_8h_a251a8ffd0dbbbd4c915eecf69eeed000} 
+\index{routes.h@{routes.h}!insertAdj@{insertAdj}}
+\index{insertAdj@{insertAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{insertAdj()}{insertAdj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*} insert\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{new,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Inserts a new adjacent vertex to a given vertex in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The head of the vertex list. \\
+\hline
+{\em new} & The new adjacent vertex to be inserted. \\
+\hline
+{\em res} & A pointer to a boolean variable that will be set to true if the insertion is successful. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The head of the vertex list. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ad41cec83095230a117758bb726522a9c}\label{routes_8h_ad41cec83095230a117758bb726522a9c} 
+\index{routes.h@{routes.h}!insertAdjacentVertex@{insertAdjacentVertex}}
+\index{insertAdjacentVertex@{insertAdjacentVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{insertAdjacentVertex()}{insertAdjacentVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} insert\+Adjacent\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{char \texorpdfstring{$\ast$}{*}}]{origin,  }\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{float}]{valuedistance,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Inserts a new adjacent vertex into an adjacency list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em origin} & Name of the city of origin. \\
+\hline
+{\em dest} & Name of the destination city. \\
+\hline
+{\em valuedistance} & Value of distance between vertices. \\
+\hline
+{\em res} & Pointer to a variable that stores the result of the insert operation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a3cd1c5401553c8d282e0bb168107ba11}\label{routes_8h_a3cd1c5401553c8d282e0bb168107ba11} 
+\index{routes.h@{routes.h}!insertAdjacentVertexCod@{insertAdjacentVertexCod}}
+\index{insertAdjacentVertexCod@{insertAdjacentVertexCod}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{insertAdjacentVertexCod()}{insertAdjacentVertexCod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} insert\+Adjacent\+Vertex\+Cod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{int}]{cod\+Origin,  }\item[{int}]{cod\+Dest,  }\item[{float}]{valuedistance,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em cod\+Origin} & Code identifying the city of origin. \\
+\hline
+{\em cod\+Dest} & Code identifying the destination city. \\
+\hline
+{\em valuedistance} & Value of distance between vertices. \\
+\hline
+{\em res} & Pointer to a variable that stores the result of the insert operation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a6b02bd0cb67e4175a6ff84da2fc20036}\label{routes_8h_a6b02bd0cb67e4175a6ff84da2fc20036} 
+\index{routes.h@{routes.h}!insertRouteVertex@{insertRouteVertex}}
+\index{insertRouteVertex@{insertRouteVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{insertRouteVertex()}{insertRouteVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} insert\+Route\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{new,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Inserts a new vertex into the graph in alphabetical order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em new} & Pointer to the new vertex to insert. \\
+\hline
+{\em res} & Pointer to a variable that stores the result of the insert operation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_aa5b4862a92a3141268f21eb64e266a71}\label{routes_8h_aa5b4862a92a3141268f21eb64e266a71} 
+\index{routes.h@{routes.h}!loadAdj@{loadAdj}}
+\index{loadAdj@{loadAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{loadAdj()}{loadAdj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} load\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Load\+Adj -\/ Function that loads the adjacency lists of all vertices in a graph from binary files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Head of the linked list of vertices in the graph \\
+\hline
+{\em res} & Pointer to a boolean variable that will be set to true if all adjacency lists were successfully loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Head of the linked list of vertices in the graph with their adjacency lists loaded 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_aa1b1f204441114d6b5bad6387df28a9f}\label{routes_8h_aa1b1f204441114d6b5bad6387df28a9f} 
+\index{routes.h@{routes.h}!loadGraph@{loadGraph}}
+\index{loadGraph@{loadGraph}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{loadGraph()}{loadGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} load\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res }\end{DoxyParamCaption})}
+
+
+
+Load\+Graph -\/ Function that loads a graph from a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the linked list of vertices in the graph \\
+\hline
+{\em file\+Name} & Name of the file to load the graph from \\
+\hline
+{\em res} & Pointer to a boolean variable that will be set to true if the graph was successfully loaded \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: Head of the linked list of vertices in the loaded graph, or NULL if the file could not be opened 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a1a8f75be4e9b363d012459131f3d7ada}\label{routes_8h_a1a8f75be4e9b363d012459131f3d7ada} 
+\index{routes.h@{routes.h}!resetVisitedVertex@{resetVisitedVertex}}
+\index{resetVisitedVertex@{resetVisitedVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{resetVisitedVertex()}{resetVisitedVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} reset\+Visited\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Resets the \"{}visited\"{} flag of all graph vertices to false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the starting vertex of the graph. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a56243cd6d5aeb39369194ea05c3178cf}\label{routes_8h_a56243cd6d5aeb39369194ea05c3178cf} 
+\index{routes.h@{routes.h}!routesReadTxt@{routesReadTxt}}
+\index{routesReadTxt@{routesReadTxt}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{routesReadTxt()}{routesReadTxt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} routes\+Read\+Txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{res,  }\item[{int \texorpdfstring{$\ast$}{*}}]{tot }\end{DoxyParamCaption})}
+
+
+
+Reads the initial data from two text files and creates a graph of routes and edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph of routes and edges. \\
+\hline
+{\em res} & Pointer to a boolean variable that will be set to true if any errors occur during the creation of the graph. \\
+\hline
+{\em tot} & Pointer to an integer variable that will be incremented for each new vertex added to the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the graph of routes and edges. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ad2c48746dd630427e2033e3fef8c0aa4}\label{routes_8h_ad2c48746dd630427e2033e3fef8c0aa4} 
+\index{routes.h@{routes.h}!saveAdj@{saveAdj}}
+\index{saveAdj@{saveAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{saveAdj()}{saveAdj()}}
+{\footnotesize\ttfamily int save\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name,  }\item[{int}]{cod\+Vertex\+Origin }\end{DoxyParamCaption})}
+
+
+
+Save\+Adj -\/ Function that saves the adjacency list of a vertex to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the linked list of adjacent vertices \\
+\hline
+{\em file\+Name} & Name of the file to save the adjacency list to \\
+\hline
+{\em cod\+Vertex\+Origin} & Code of the vertex that the adjacency list belongs to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 1 if the adjacency list was successfully saved, -\/1 if the file could not be opened, -\/2 if the head of the linked list is NULL 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ab02145d9bf9a32a12062fcb320adf915}\label{routes_8h_ab02145d9bf9a32a12062fcb320adf915} 
+\index{routes.h@{routes.h}!saveGraph@{saveGraph}}
+\index{saveGraph@{saveGraph}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{saveGraph()}{saveGraph()}}
+{\footnotesize\ttfamily int save\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{char \texorpdfstring{$\ast$}{*}}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Save\+Graph -\/ Function that saves the graph to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the linked list of vertices in the graph \\
+\hline
+{\em file\+Name} & Name of the file to save the graph to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: 1 if the graph was successfully saved, -\/1 if the file could not be opened, -\/2 if the head of the linked list is NULL 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_af9a8d20dbd4301590efe66c09c9cad84}\label{routes_8h_af9a8d20dbd4301590efe66c09c9cad84} 
+\index{routes.h@{routes.h}!searchCodVertex@{searchCodVertex}}
+\index{searchCodVertex@{searchCodVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{searchCodVertex()}{searchCodVertex()}}
+{\footnotesize\ttfamily int search\+Cod\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{char \texorpdfstring{$\ast$}{*}}]{city }\end{DoxyParamCaption})}
+
+
+
+Gets the identifier code of a vertex from the city name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em city} & Name of the city to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_vertex}{Vertex} identifier code or -\/1 if the graph is empty, -\/2 if the city is not found. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ab70e1129d2c0c8b9ea3dbb7c779505a0}\label{routes_8h_ab70e1129d2c0c8b9ea3dbb7c779505a0} 
+\index{routes.h@{routes.h}!searchVertex@{searchVertex}}
+\index{searchVertex@{searchVertex}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{searchVertex()}{searchVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} search\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{char \texorpdfstring{$\ast$}{*}}]{city }\end{DoxyParamCaption})}
+
+
+
+Finds a vertex from the city name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em city} & Name of the city to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the found vertex, or NULL if the city is not found. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_ac54eed9c8e70a3e0ef969900c8872552}\label{routes_8h_ac54eed9c8e70a3e0ef969900c8872552} 
+\index{routes.h@{routes.h}!searchVertexCod@{searchVertexCod}}
+\index{searchVertexCod@{searchVertexCod}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{searchVertexCod()}{searchVertexCod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} search\+Vertex\+Cod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Fetch a vertex from the identifier code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+{\em cod} & Identifier code of the vertex to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the found vertex or NULL if the code is not found. 
+\end{DoxyReturn}
+\Hypertarget{routes_8h_a6cdcfff755904515945a32bf205656ef}\label{routes_8h_a6cdcfff755904515945a32bf205656ef} 
+\index{routes.h@{routes.h}!showAdj@{showAdj}}
+\index{showAdj@{showAdj}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{showAdj()}{showAdj()}}
+{\footnotesize\ttfamily void show\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_adj}{Adj}} \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})}
+
+
+
+Recursively displays the adjacent vertices of a given vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & The head of the adjacent vertex list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{routes_8h_a77ee3a8e94ffffc8866509b0d2736443}\label{routes_8h_a77ee3a8e94ffffc8866509b0d2736443} 
+\index{routes.h@{routes.h}!showAllPath@{showAllPath}}
+\index{showAllPath@{showAllPath}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{showAllPath()}{showAllPath()}}
+{\footnotesize\ttfamily void show\+All\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_best}{Best}}}]{b,  }\item[{int}]{n,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Show\+All\+Path -\/ Function that displays the shortest path and distance to all vertices in the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & \doxylink{struct_best}{Best} struct containing the shortest distance and previous vertex for each vertex in the graph \\
+\hline
+{\em n} & Number of vertices in the graph \\
+\hline
+{\em v} & Index of the starting vertex \\
+\hline
+\end{DoxyParams}
+\Hypertarget{routes_8h_a09d7bed5e43bd9d16ee464b0e6ef6d7b}\label{routes_8h_a09d7bed5e43bd9d16ee464b0e6ef6d7b} 
+\index{routes.h@{routes.h}!showRoutes@{showRoutes}}
+\index{showRoutes@{showRoutes}!routes.h@{routes.h}}
+\doxysubsubsection{\texorpdfstring{showRoutes()}{showRoutes()}}
+{\footnotesize\ttfamily void show\+Routes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Displays on screen all vertices and their respective adjacency lists of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the starting vertex of the graph. \\
+\hline
+\end{DoxyParams}

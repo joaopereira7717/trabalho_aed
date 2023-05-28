@@ -1,0 +1,110 @@
+\doxysection{routes.\+h}
+\hypertarget{routes_8h_source}{}\label{routes_8h_source}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/routes.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/routes.h}}
+\mbox{\hyperlink{routes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ N\ 50}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adj}{Adj}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adj_af126ceed259751781ea3b64024138f7d}{cod}};\ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_adj_a2578b368dad74bcd4a88bbeeb319a833}{dist}};\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adj}{Adj}}\ *\mbox{\hyperlink{struct_adj_ac5792fa79623e519e0e7b6eeeaea2ef4}{next}};}
+\DoxyCodeLine{00026\ \}\ \mbox{\hyperlink{struct_adj}{Adj}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adj_file}{AdjFile}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adj_file_a3f7e074121ff0e7cbe474548c852eee2}{codOrigin}};}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_adj_file_a993972db92bb1646ef99f12bc02b2789}{codDestiny}};\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_adj_file_a8128625c9e3fd04c27b82957732d8781}{weight}};\ \ \ }
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{struct_adj_file}{AdjFile}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertex}{Vertex}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertex_af126ceed259751781ea3b64024138f7d}{cod}};\ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertex_aa95d66244c3d3c01f6c1e8ae63ea123f}{city}}[\mbox{\hyperlink{routes_8h_a0240ac851181b84ac374872dc5434ee4}{N}}];\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_vertex_a1df99df902f5f6e81ec3e21e9c07360e}{visited}};}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{struct_vertex_ad959a48c566626429c5091adfbd48bac}{next}};\ \ \ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adj}{Adj}}\ *\mbox{\hyperlink{struct_vertex_aedb112186b8bd0ae14df3a55f7cd90ce}{adjacents}};\ }
+\DoxyCodeLine{00048\ \}\ \mbox{\hyperlink{struct_vertex}{Vertex}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vertex_file}{VertexFile}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vertex_file_af126ceed259751781ea3b64024138f7d}{cod}};\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vertex_file_aa95d66244c3d3c01f6c1e8ae63ea123f}{city}}[\mbox{\hyperlink{routes_8h_a0240ac851181b84ac374872dc5434ee4}{N}}];\ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{struct_vertex_file}{VertexFile}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Auxiliar\ ao\ Dijkstra}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ MAX\ 5}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ MAXDISTANCE\ 9999}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_best}{Best}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_best_a20db43048c55f6037809778aead48e5c}{distance}}[\mbox{\hyperlink{routes_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}}];\ \ \ \textcolor{comment}{//\ weight}}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_best_ad8d8c331edd1d4c2f034f542b077887b}{anteriores}}[\mbox{\hyperlink{routes_8h_a392fb874e547e582e9c66a08a1f23326}{MAX}}];\ \textcolor{comment}{//\ vertexs\ cod}}
+\DoxyCodeLine{00064\ \}\ \mbox{\hyperlink{struct_best}{Best}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#pragma\ region\ GRAFO}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a5019e918f68638f5ee193138027405df}{createRoute}}();}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a6b02bd0cb67e4175a6ff84da2fc20036}{insertRouteVertex}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\textcolor{keyword}{new},\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00070\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a84701986d37adc4a7855eae547fd5158}{createRouteVertex}}(\textcolor{keywordtype}{char}\ *city,\ \textcolor{keywordtype}{int}\ tot);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{routes_8h_a09d7bed5e43bd9d16ee464b0e6ef6d7b}{showRoutes}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{routes_8h_af9a8d20dbd4301590efe66c09c9cad84}{searchCodVertex}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{char}\ *city);}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_ab70e1129d2c0c8b9ea3dbb7c779505a0}{searchVertex}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{char}\ *city);}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_ac54eed9c8e70a3e0ef969900c8872552}{searchVertexCod}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00075\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_ac08fd85b0e1d73b8e22eec74d0b38185}{destroyRoutes}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#pragma\ region\ ADJACENCIAS}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_ad41cec83095230a117758bb726522a9c}{insertAdjacentVertex}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{char}\ *origem,\ \textcolor{keywordtype}{char}\ *dest,\ \textcolor{keywordtype}{float}\ valuedistance,\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a3cd1c5401553c8d282e0bb168107ba11}{insertAdjacentVertexCod}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{int}\ origem,\ \textcolor{keywordtype}{int}\ dest,\ \textcolor{keywordtype}{float}\ valuedistance,\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#pragma\ region\ LISTA\_ADJACENCIAS}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \mbox{\hyperlink{struct_adj}{Adj}}\ *\mbox{\hyperlink{routes_8h_a73e20349f3e629ccd24d5b9b7c1e3fad}{createAdj}}(\textcolor{keywordtype}{int}\ cod,\ \textcolor{keywordtype}{float}\ valuedistance);}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{struct_adj}{Adj}}\ *\mbox{\hyperlink{routes_8h_a251a8ffd0dbbbd4c915eecf69eeed000}{insertAdj}}(\mbox{\hyperlink{struct_adj}{Adj}}\ *h,\ \mbox{\hyperlink{struct_adj}{Adj}}\ *\textcolor{keyword}{new},\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{routes_8h_a2aa41a6a2d3caa6e5e43490c296fb32d}{existAdj}}(\mbox{\hyperlink{struct_adj}{Adj}}\ *h,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{routes_8h_a6cdcfff755904515945a32bf205656ef}{showAdj}}(\mbox{\hyperlink{struct_adj}{Adj}}\ *h);}
+\DoxyCodeLine{00090\ \mbox{\hyperlink{struct_adj}{Adj}}\ *\mbox{\hyperlink{routes_8h_a96dc20b046a393d2896ed7e3123a9450}{destroyAdj}}(\mbox{\hyperlink{struct_adj}{Adj}}\ *h);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#pragma\ region\ ALGORITMOS}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{routes_8h_a6c171e28de18201f13008fae2434d7da}{countPaths}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{int}\ src,\ \textcolor{keywordtype}{int}\ dst,\ \textcolor{keywordtype}{int}\ pathCount);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{routes_8h_a6dc33af1d97003e2d1dd85632d6adf5d}{countPathsVertexsName}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keywordtype}{char}\ *dest,\ \textcolor{keywordtype}{int}\ pathCount);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{routes_8h_aa14be61fd430c21593ec7bb80ec083ce}{depthFirstSearchRec}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{int}\ origem,\ \textcolor{keywordtype}{int}\ dest);}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{routes_8h_aeab2ed9ec5a8977b247fc0de0b0411dc}{depthFirstSearchNamesRec}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keywordtype}{char}\ *dest);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a1a8f75be4e9b363d012459131f3d7ada}{resetVisitedVertex}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{struct_best}{Best}}\ \mbox{\hyperlink{routes_8h_af5ba1fa298635549c730b1f281432335}{bestPath}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{routes_8h_a77ee3a8e94ffffc8866509b0d2736443}{showAllPath}}(\mbox{\hyperlink{struct_best}{Best}}\ b,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#pragma\ endregion}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#pragma\ region\ PRESERVAÇÂO}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{routes_8h_ab02145d9bf9a32a12062fcb320adf915}{saveGraph}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *h,\ \textcolor{keywordtype}{char}\ *fileName);}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{routes_8h_ad2c48746dd630427e2033e3fef8c0aa4}{saveAdj}}(\mbox{\hyperlink{struct_adj}{Adj}}\ *h,\ \textcolor{keywordtype}{char}\ *fileName,\ \textcolor{keywordtype}{int}\ cod);}
+\DoxyCodeLine{00115\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_aa1b1f204441114d6b5bad6387df28a9f}{loadGraph}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *h,\ \textcolor{keywordtype}{char}\ *fileName,\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00116\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_aa5b4862a92a3141268f21eb64e266a71}{loadAdj}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{bool}\ *res);}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *\mbox{\hyperlink{routes_8h_a56243cd6d5aeb39369194ea05c3178cf}{routesReadTxt}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \textcolor{keywordtype}{bool}\ *res,\ \textcolor{keywordtype}{int}\ *tot);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#pragma\ endregion}}
+
+\end{DoxyCode}

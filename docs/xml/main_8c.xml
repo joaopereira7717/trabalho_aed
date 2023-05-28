@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">locale.h</includes>
+    <includes refid="user_8h" local="yes">./models/user.h</includes>
+    <includes refid="vehicle_8h" local="yes">./models/vehicle.h</includes>
+    <includes refid="rentals_8h" local="yes">./models/rentals.h</includes>
+    <includes refid="routes_8h" local="yes">./models/routes.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>./models/rentals.h</label>
+        <link refid="rentals_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>./routes.h</label>
+        <link refid="routes_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>./models/user.h</label>
+        <link refid="user_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>./models/vehicle.h</label>
+        <link refid="vehicle_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>locale.h</label>
+      </node>
+      <node id="5">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+<para>The main function of the program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function initializes the program and calls the necessary functions to manipulate user, vehicle, and rent data.</para>
+<para><simplesect kind="return"><para>0 if the program runs successfully </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c" line="28" column="5" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c" bodystart="28" bodyend="208"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File containing the main function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the main function that initializes the program and calls the necessary functions to manipulate user, vehicle, and rent data.</para>
+<para><simplesect kind="author"><para>João Pereira </para>
+</simplesect>
+<simplesect kind="date"><para>2023-03-18 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;locale.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="user_8h" kindref="compound">./models/user.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vehicle_8h" kindref="compound">./models/vehicle.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rentals_8h" kindref="compound">./models/rentals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="routes_8h" kindref="compound">./models/routes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Program<sp/>start!\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>setlocale(LC_ALL,<sp/></highlight><highlight class="stringliteral">&quot;Portuguese&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>write<sp/>portuguese<sp/>characters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tot<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>total<sp/>vertex</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>GRAFOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*graf<sp/>=<sp/><ref refid="routes_8c_1a5019e918f68638f5ee193138027405df" kindref="member">createRoute</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>graf<sp/>=<sp/>routesReadTxt(graf,<sp/>&amp;res,<sp/>&amp;tot);</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>showRoutes(graf);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*newVertex<sp/>=<sp/><ref refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kindref="member">createRouteVertex</ref>(</highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/>tot);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVertex<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(graf,<sp/>newVertex,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>tot++;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>newVertex<sp/>=<sp/><ref refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kindref="member">createRouteVertex</ref>(</highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>tot);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVertex<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(graf,<sp/>newVertex,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>tot++;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>newVertex<sp/>=<sp/><ref refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kindref="member">createRouteVertex</ref>(</highlight><highlight class="stringliteral">&quot;Fafe&quot;</highlight><highlight class="normal">,<sp/>tot);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVertex<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(graf,<sp/>newVertex,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>tot++;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>newVertex<sp/>=<sp/><ref refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kindref="member">createRouteVertex</ref>(</highlight><highlight class="stringliteral">&quot;Lisboa&quot;</highlight><highlight class="normal">,<sp/>tot);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVertex<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(graf,<sp/>newVertex,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>tot++;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>newVertex<sp/>=<sp/><ref refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kindref="member">createRouteVertex</ref>(</highlight><highlight class="stringliteral">&quot;Barcelos&quot;</highlight><highlight class="normal">,<sp/>tot);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newVertex<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kindref="member">insertRouteVertex</ref>(graf,<sp/>newVertex,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>tot++;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>adjacents</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kindref="member">insertAdjacentVertex</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>35,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kindref="member">insertAdjacentVertex</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Fafe&quot;</highlight><highlight class="normal">,<sp/>15,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kindref="member">insertAdjacentVertex</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Fafe&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>60,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kindref="member">insertAdjacentVertex</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Lisboa&quot;</highlight><highlight class="normal">,<sp/>250,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kindref="member">insertAdjacentVertex</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Lisboa&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Barcelos&quot;</highlight><highlight class="normal">,<sp/>270,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pathCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/><ref refid="routes_8c_1a6dbab8f1d02d69c671fa250132262f4a" kindref="member">countPaths</ref>(graf,<sp/>0,<sp/>2,<sp/>pathCount);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nExists<sp/>%d<sp/>Paths<sp/>between<sp/>%d<sp/>and<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>x,<sp/>0,<sp/>2);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countPath<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>x<sp/>=<sp/><ref refid="routes_8c_1a6dc33af1d97003e2d1dd85632d6adf5d" kindref="member">countPathsVertexsName</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>countPath);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>x<sp/>=<sp/><ref refid="routes_8c_1a6dc33af1d97003e2d1dd85632d6adf5d" kindref="member">countPathsVertexsName</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Fafe&quot;</highlight><highlight class="normal">,<sp/>countPath);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>x<sp/>=<sp/><ref refid="routes_8c_1a6dbab8f1d02d69c671fa250132262f4a" kindref="member">countPaths</ref>(graf,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nExists<sp/>Path?\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>existe<sp/>=<sp/><ref refid="routes_8c_1a08d25e7f746a8921ca8c47af9e9bb4c6" kindref="member">depthFirstSearchRec</ref>(graf,<sp/>3,<sp/>6);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>Exists<sp/>Path<sp/>between<sp/>%d<sp/>and<sp/>%d:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>3,<sp/>6,<sp/>(existe<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Yes&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1a1a8f75be4e9b363d012459131f3d7ada" kindref="member">resetVisitedVertex</ref>(graf);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>existe<sp/>=<sp/><ref refid="routes_8c_1aeab2ed9ec5a8977b247fc0de0b0411dc" kindref="member">depthFirstSearchNamesRec</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>Exists<sp/>Path<sp/>between<sp/>%s<sp/>and<sp/>%s:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>(existe<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>?<sp/></highlight><highlight class="stringliteral">&quot;Yes&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;No&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>FICHEIROS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>res1<sp/>=<sp/><ref refid="routes_8c_1ab02145d9bf9a32a12062fcb320adf915" kindref="member">saveGraph</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;./saved-data/Vertexs.bin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res1<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;\nRoutes<sp/>saved&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1ac08fd85b0e1d73b8e22eec74d0b38185" kindref="member">destroyRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;\nRoutes<sp/>in<sp/>memory:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1aa1b1f204441114d6b5bad6387df28a9f" kindref="member">loadGraph</ref>(graf,<sp/></highlight><highlight class="stringliteral">&quot;./saved-data/Vertexs.bin&quot;</highlight><highlight class="normal">,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(graf<sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;\nVertex<sp/>from<sp/>file\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>puts(</highlight><highlight class="stringliteral">&quot;\nRead<sp/>adj<sp/>from<sp/>the<sp/>file\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>graf<sp/>=<sp/><ref refid="routes_8c_1aa5b4862a92a3141268f21eb64e266a71" kindref="member">loadAdj</ref>(graf,<sp/>&amp;res);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kindref="member">showRoutes</ref>(graf);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="struct_best" kindref="compound">Best</ref><sp/>b<sp/>=<sp/><ref refid="routes_8c_1af5ba1fa298635549c730b1f281432335" kindref="member">bestPath</ref>(graf,<sp/>tot<sp/>-<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a77ee3a8e94ffffc8866509b0d2736443" kindref="member">showAllPath</ref>(b,<sp/>tot<sp/>-<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>USER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*userList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1ad203452512810651c2171760555aa2a9" kindref="member">readUsersFromTxt</ref>(&amp;userList);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>setUsersData(&amp;userList);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="struct_user" kindref="compound">User</ref><sp/>*user<sp/>=<sp/><ref refid="user_8c_1a4b161546e24d1b81b92fef4f200cf42b" kindref="member">createUser</ref>(1,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;email&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">,<sp/>0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCreated<sp/>=<sp/><ref refid="user_8c_1af63db65a74a034cbe79bc20a596cddef" kindref="member">createUserList</ref>(&amp;userList,<sp/>*user);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisCreated:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isCreated);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="struct_user" kindref="compound">User</ref><sp/>*userToEdit<sp/>=<sp/><ref refid="user_8c_1a4b161546e24d1b81b92fef4f200cf42b" kindref="member">createUser</ref>(1,<sp/></highlight><highlight class="stringliteral">&quot;name2&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;email2&quot;</highlight><highlight class="normal">,<sp/>2,<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;password2&quot;</highlight><highlight class="normal">,<sp/>2,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEdited<sp/>=<sp/><ref refid="user_8c_1a654440f6926efc64d3240c437445d8ad" kindref="member">editUser</ref>(userList,<sp/>1,<sp/>*userToEdit);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisEdited:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isEdited);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDeleted<sp/>=<sp/><ref refid="user_8c_1ac197452dacc7d54ad7d8344f7f0bdc21" kindref="member">deleteUser</ref>(&amp;userList,<sp/>1);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisDeleted:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isDeleted);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>VEHICLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*vehicleList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a962372f88de03fcd5581aa44353afec6" kindref="member">readVehiclesFromTxt</ref>(&amp;vehicleList);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>*vehicle<sp/>=<sp/><ref refid="vehicle_8c_1a1dba59da0b1fb87236e27cd988cba929" kindref="member">createVehicle</ref>(</highlight><highlight class="stringliteral">&quot;registration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;type&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>1,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Fafe&quot;</highlight><highlight class="normal">,<sp/>graf);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>vehicle-&gt;<ref refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kindref="member">registration</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCreatedVehicle<sp/>=<sp/><ref refid="vehicle_8c_1a2f9e802c7e03357a0b24f6e35ae08e2a" kindref="member">createVehicleList</ref>(&amp;vehicleList,<sp/>*vehicle);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisCreated<sp/>vehicle:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isCreatedVehicle);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a962372f88de03fcd5581aa44353afec6" kindref="member">readVehiclesFromTxt</ref>(&amp;vehicleList);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(vehicleList);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle" kindref="compound">Vehicle</ref><sp/>*vehicleToEdit<sp/>=<sp/><ref refid="vehicle_8c_1a1dba59da0b1fb87236e27cd988cba929" kindref="member">createVehicle</ref>(</highlight><highlight class="stringliteral">&quot;registration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;type2&quot;</highlight><highlight class="normal">,<sp/>2,<sp/>2,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Porto&quot;</highlight><highlight class="normal">,<sp/>graf);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEditedVehicle<sp/>=<sp/><ref refid="vehicle_8c_1a1a12f926cc8099df21bb1f19b140ae43" kindref="member">editVehicle</ref>(vehicleList,<sp/></highlight><highlight class="stringliteral">&quot;registration&quot;</highlight><highlight class="normal">,<sp/>*vehicleToEdit);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisEdited<sp/>vehicle:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isEditedVehicle);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(vehicleList);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDeletedVehicle<sp/>=<sp/><ref refid="vehicle_8c_1aa5187e1606f79dcc2f2ac6f50c9488e7" kindref="member">deleteVehicle</ref>(&amp;vehicleList,<sp/></highlight><highlight class="stringliteral">&quot;registration&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;is<sp/>deleted<sp/>vehicle:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isDeletedVehicle);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(vehicleList);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIs<sp/>there<sp/>any<sp/>vehicle<sp/>in<sp/>a<sp/>radius<sp/>of<sp/>%d<sp/>centered<sp/>in<sp/>%s?<sp/>\n&quot;</highlight><highlight class="normal">,<sp/>50,<sp/></highlight><highlight class="stringliteral">&quot;Braga&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1acf84066409b372896f5f76be1f5b45c3" kindref="member">checkVehiclesInRadius</ref>(graf,<sp/>vehicleList,<sp/>0,<sp/>50,<sp/></highlight><highlight class="stringliteral">&quot;trotinete&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>RENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><ref refid="struct_rent_list" kindref="compound">RentList</ref><sp/>*rentList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>*rent<sp/>=<sp/><ref refid="rentals_8c_1a630605bf530ca0a78a13ac7b7b8394dc" kindref="member">createRent</ref>(</highlight><highlight class="stringliteral">&quot;70-10-JK&quot;</highlight><highlight class="normal">,<sp/>123,<sp/>10,<sp/>vehicleList,<sp/>userList,<sp/>&amp;rentList);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCreatedRent<sp/>=<sp/><ref refid="rentals_8c_1a22ac0bc64779645502309d395d6ef0c3" kindref="member">createRentList</ref>(&amp;rentList,<sp/>*rent);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisCreated<sp/>rent:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isCreatedRent);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><ref refid="struct_rent" kindref="compound">Rent</ref><sp/>*rent2<sp/>=<sp/><ref refid="rentals_8c_1a630605bf530ca0a78a13ac7b7b8394dc" kindref="member">createRent</ref>(</highlight><highlight class="stringliteral">&quot;20-03-LL&quot;</highlight><highlight class="normal">,<sp/>1234,<sp/>15,<sp/>vehicleList,<sp/>userList,<sp/>&amp;rentList);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCreatedRent2<sp/>=<sp/><ref refid="rentals_8c_1a22ac0bc64779645502309d395d6ef0c3" kindref="member">createRentList</ref>(&amp;rentList,<sp/>*rent2);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisCreated<sp/>rent2:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isCreatedRent2);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><ref refid="rentals_8c_1ac32e4f9d474cf56efc5676307e970719" kindref="member">printRentList</ref>(rentList);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDeletedRent<sp/>=<sp/><ref refid="rentals_8c_1a26925977432b96e5502518bd48531445" kindref="member">deleteRent</ref>(&amp;rentList,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;70-10-JK&quot;</highlight><highlight class="normal">,<sp/>vehicleList);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisDeleted<sp/>rent:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isDeletedRent);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><ref refid="rentals_8c_1ac32e4f9d474cf56efc5676307e970719" kindref="member">printRentList</ref>(rentList);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEditedRent<sp/>=<sp/><ref refid="rentals_8c_1aab6c450fbb87a46cb374c78b591cb656" kindref="member">editRent</ref>(rentList,<sp/>2,<sp/>*rent);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nisEdited<sp/>rent:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>isEditedRent);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1abf926983d64d536d6290140eb25af2cd" kindref="member">storeVehicleListInBin</ref>(vehicleList);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><ref refid="rentals_8c_1ac3b6a49c51c5278f9f6b2bf3b0d9f94e" kindref="member">storeRentsInBin</ref>(rentList);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*sortedVehicleList<sp/>=<sp/><ref refid="vehicle_8c_1a79573fa45f9b0c6d508d15c53bfe3184" kindref="member">sortVehicleListDesc</ref>(&amp;vehicleList);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;sorted<sp/>vehicle<sp/>list:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(sortedVehicleList);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a3e9c4ed2c50d02ecb3ce6ec8593c3ef2" kindref="member">storeUsersInBin</ref>(userList);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>userList<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;user<sp/>list<sp/>after<sp/>clear:<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a409cd4e7d7f39664f5f342ddd57dcb97" kindref="member">setUsersData</ref>(&amp;userList);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;user<sp/>list<sp/>after<sp/>setUsersData:<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><ref refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(userList);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><ref refid="struct_vertex" kindref="compound">Vertex</ref><sp/>*start_node<sp/>=<sp/><ref refid="routes_8c_1ac54eed9c8e70a3e0ef969900c8872552" kindref="member">searchVertexCod</ref>(graf,<sp/>0);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(vehicleList);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><ref refid="routes_8c_1a1a8f75be4e9b363d012459131f3d7ada" kindref="member">resetVisitedVertex</ref>(graf);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><ref refid="struct_vehicle_list" kindref="compound">VehicleList</ref><sp/>*collected_vehicles<sp/>=<sp/><ref refid="vehicle_8c_1a2fe05f7785a38b737d421da08e511e89" kindref="member">recoverTruck</ref>(start_node,<sp/>&amp;vehicleList,<sp/>1);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;collected<sp/>vehicles:<sp/>\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><ref refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kindref="member">printVehicleList</ref>(collected_vehicles);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c"/>
+  </compounddef>
+</doxygen>

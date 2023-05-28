@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_adj" kind="struct" language="C++" prot="public">
+    <compoundname>Adj</compoundname>
+    <includes refid="routes_8h" local="no">routes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_adj_1af126ceed259751781ea3b64024138f7d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cod</definition>
+        <argsstring></argsstring>
+        <name>cod</name>
+        <qualifiedname>Adj::cod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Código da Adjacência </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="23" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <qualifiedname>Adj::dist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ValueDistance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="24" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+        <definition>struct Adj* next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>Adj::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="25" column="12" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Estrutura de uma Adjacência. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Adj</label>
+        <link refid="struct_adj"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="21" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="22" bodyend="26"/>
+    <listofallmembers>
+      <member refid="struct_adj_1af126ceed259751781ea3b64024138f7d" prot="public" virt="non-virtual"><scope>Adj</scope><name>cod</name></member>
+      <member refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" prot="public" virt="non-virtual"><scope>Adj</scope><name>dist</name></member>
+      <member refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" prot="public" virt="non-virtual"><scope>Adj</scope><name>next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

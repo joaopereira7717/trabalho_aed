@@ -1,0 +1,257 @@
+\doxysection{/\+Users/inflightit/\+Desktop/coisas/aula\+\_\+ead/trabalho\+Pratico/models/user.h File Reference}
+\hypertarget{user_8h}{}\label{user_8h}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/user.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/user.h}}
+
+
+File containing the functions to manage the users.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_user}{User}}
+\item 
+struct \mbox{\hyperlink{struct_user_list}{User\+List}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_user_list}{User\+List}} \mbox{\hyperlink{user_8h_a78e597570645123d7bd3a14c95158650}{User\+List}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{user_8h_ad203452512810651c2171760555aa2a9}{read\+Users\+From\+Txt}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Reads users from a text file and creates a user list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{user_8h_a409cd4e7d7f39664f5f342ddd57dcb97}{set\+Users\+Data}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em set\+Users\+Data -\/ Reads user data from a binary file and creates a linked list of users. @head\+Node\+: A pointer to a pointer to the head node of the linked list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_user}{User}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{user_8h_a4b161546e24d1b81b92fef4f200cf42b}{create\+User}} (int nif, char name\mbox{[}50\mbox{]}, char email\mbox{[}50\mbox{]}, int phone, int zip, char password\mbox{[}50\mbox{]}, int wallet, bool is\+Manager)
+\begin{DoxyCompactList}\small\item\em Creates a user. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_af63db65a74a034cbe79bc20a596cddef}{create\+User\+List}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node, \mbox{\hyperlink{struct_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Creates a user list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a52109c29fee919bb798939a3eb7ce0c8}{print\+User\+List}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Prints the user list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_a654440f6926efc64d3240c437445d8ad}{edit\+User}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}users\+List, int nif, \mbox{\hyperlink{struct_user}{User}} user)
+\begin{DoxyCompactList}\small\item\em Edits a user in the list with the given NIF. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_ac197452dacc7d54ad7d8344f7f0bdc21}{delete\+User}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}users\+List, int nif)
+\begin{DoxyCompactList}\small\item\em Deletes a user from the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_a3e9c4ed2c50d02ecb3ce6ec8593c3ef2}{store\+Users\+In\+Bin}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Stores the user list in a binary file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{user_8h_a33645599f77fa65990a9d319b408d83d}{search\+User\+By\+Nif}} (\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}head\+Node, int nif)
+\begin{DoxyCompactList}\small\item\em Searches for a user in the list with the given NIF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the functions to manage the users. 
+
+\begin{DoxyAuthor}{Author}
+João Pereira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/03-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{user_8h_a78e597570645123d7bd3a14c95158650}\label{user_8h_a78e597570645123d7bd3a14c95158650} 
+\index{user.h@{user.h}!UserList@{UserList}}
+\index{UserList@{UserList}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{UserList}{UserList}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_user_list}{User\+List}} \mbox{\hyperlink{struct_user_list}{User\+List}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{user_8h_a4b161546e24d1b81b92fef4f200cf42b}\label{user_8h_a4b161546e24d1b81b92fef4f200cf42b} 
+\index{user.h@{user.h}!createUser@{createUser}}
+\index{createUser@{createUser}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_user}{User}} \texorpdfstring{$\ast$}{*} create\+User (\begin{DoxyParamCaption}\item[{int}]{nif,  }\item[{char}]{name\mbox{[}50\mbox{]},  }\item[{char}]{email\mbox{[}50\mbox{]},  }\item[{int}]{phone,  }\item[{int}]{zip,  }\item[{char}]{password\mbox{[}50\mbox{]},  }\item[{int}]{wallet,  }\item[{bool}]{is\+Manager }\end{DoxyParamCaption})}
+
+
+
+Creates a user. 
+
+This function creates a user with the given parameters and returns a pointer to the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nif} & The NIF of the user \\
+\hline
+{\em name} & The name of the user \\
+\hline
+{\em email} & The email of the user \\
+\hline
+{\em phone} & The phone number of the user \\
+\hline
+{\em zip} & The zip code of the user \\
+\hline
+{\em password} & The password of the user \\
+\hline
+{\em wallet} & The wallet balance of the user \\
+\hline
+{\em is\+Manager} & A boolean indicating whether the user is a manager or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created user 
+\end{DoxyReturn}
+\Hypertarget{user_8h_af63db65a74a034cbe79bc20a596cddef}\label{user_8h_af63db65a74a034cbe79bc20a596cddef} 
+\index{user.h@{user.h}!createUserList@{createUserList}}
+\index{createUserList@{createUserList}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{createUserList()}{createUserList()}}
+{\footnotesize\ttfamily bool create\+User\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{\mbox{\hyperlink{struct_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Creates a user list. 
+
+This function creates a new node in the user list with the given user and adds it to the head of the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the user list \\
+\hline
+{\em user} & The user to be added to the list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating whether the user list was successfully created or not 
+\end{DoxyReturn}
+\Hypertarget{user_8h_ac197452dacc7d54ad7d8344f7f0bdc21}\label{user_8h_ac197452dacc7d54ad7d8344f7f0bdc21} 
+\index{user.h@{user.h}!deleteUser@{deleteUser}}
+\index{deleteUser@{deleteUser}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
+{\footnotesize\ttfamily bool delete\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{users\+List,  }\item[{int}]{nif }\end{DoxyParamCaption})}
+
+
+
+Deletes a user from the list. 
+
+This function searches for a user in the list with the given NIF and deletes it from the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em users\+List} & A pointer to the head node of the user list \\
+\hline
+{\em nif} & The NIF of the user to be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating whether the user was successfully deleted or not 
+\end{DoxyReturn}
+\Hypertarget{user_8h_a654440f6926efc64d3240c437445d8ad}\label{user_8h_a654440f6926efc64d3240c437445d8ad} 
+\index{user.h@{user.h}!editUser@{editUser}}
+\index{editUser@{editUser}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{editUser()}{editUser()}}
+{\footnotesize\ttfamily bool edit\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}}]{users\+List,  }\item[{int}]{nif,  }\item[{\mbox{\hyperlink{struct_user}{User}}}]{user }\end{DoxyParamCaption})}
+
+
+
+Edits a user in the list with the given NIF. 
+
+This function searches for a user in the list with the given NIF and edits it with the given user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em users\+List} & A pointer to the head node of the user list \\
+\hline
+{\em nif} & The NIF of the user to be edited \\
+\hline
+{\em user} & The user to replace the old user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating whether the user was successfully edited or not 
+\end{DoxyReturn}
+\Hypertarget{user_8h_a52109c29fee919bb798939a3eb7ce0c8}\label{user_8h_a52109c29fee919bb798939a3eb7ce0c8} 
+\index{user.h@{user.h}!printUserList@{printUserList}}
+\index{printUserList@{printUserList}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{printUserList()}{printUserList()}}
+{\footnotesize\ttfamily void print\+User\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Prints the user list. 
+
+This function prints the user list to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the user list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{user_8h_ad203452512810651c2171760555aa2a9}\label{user_8h_ad203452512810651c2171760555aa2a9} 
+\index{user.h@{user.h}!readUsersFromTxt@{readUsersFromTxt}}
+\index{readUsersFromTxt@{readUsersFromTxt}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{readUsersFromTxt()}{readUsersFromTxt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*} read\+Users\+From\+Txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Reads users from a text file and creates a user list. 
+
+This function reads users from a text file and creates a user list. The user list is created by calling the create\+User\+List function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the user list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the head node of the user list 
+\end{DoxyReturn}
+\Hypertarget{user_8h_a33645599f77fa65990a9d319b408d83d}\label{user_8h_a33645599f77fa65990a9d319b408d83d} 
+\index{user.h@{user.h}!searchUserByNif@{searchUserByNif}}
+\index{searchUserByNif@{searchUserByNif}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{searchUserByNif()}{searchUserByNif()}}
+{\footnotesize\ttfamily bool search\+User\+By\+Nif (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{int}]{nif }\end{DoxyParamCaption})}
+
+
+
+Searches for a user in the list with the given NIF. 
+
+This function searches for a user in the list with the given NIF and returns a boolean indicating whether the user was found or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the user list \\
+\hline
+{\em nif} & The NIF of the user to be searched for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating whether the user was found or not 
+\end{DoxyReturn}
+\Hypertarget{user_8h_a409cd4e7d7f39664f5f342ddd57dcb97}\label{user_8h_a409cd4e7d7f39664f5f342ddd57dcb97} 
+\index{user.h@{user.h}!setUsersData@{setUsersData}}
+\index{setUsersData@{setUsersData}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{setUsersData()}{setUsersData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*} set\+Users\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+set\+Users\+Data -\/ Reads user data from a binary file and creates a linked list of users. @head\+Node\+: A pointer to a pointer to the head node of the linked list. 
+
+This function opens a binary file containing user data and reads each user record into a \doxylink{struct_user}{User} struct. It then calls the create\+User\+List function to create a new node in the linked list for each user. The head\+Node pointer is updated to point to the first node in the list. If the file cannot be opened, NULL is returned.
+
+Return\+: A pointer to the head node of the linked list. \Hypertarget{user_8h_a3e9c4ed2c50d02ecb3ce6ec8593c3ef2}\label{user_8h_a3e9c4ed2c50d02ecb3ce6ec8593c3ef2} 
+\index{user.h@{user.h}!storeUsersInBin@{storeUsersInBin}}
+\index{storeUsersInBin@{storeUsersInBin}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{storeUsersInBin()}{storeUsersInBin()}}
+{\footnotesize\ttfamily bool store\+Users\+In\+Bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Stores the user list in a binary file. 
+
+This function stores the user list in a binary file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the user list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean indicating whether the user list was successfully stored or not 
+\end{DoxyReturn}

@@ -1,0 +1,417 @@
+\doxysection{/\+Users/inflightit/\+Desktop/coisas/aula\+\_\+ead/trabalho\+Pratico/models/vehicle.c File Reference}
+\hypertarget{vehicle_8c}{}\label{vehicle_8c}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/vehicle.c@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/vehicle.c}}
+
+
+File containing the vehicle functions.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include \"{}./vehicle.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_a962372f88de03fcd5581aa44353afec6}{read\+Vehicles\+From\+Txt}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Reads vehicles from a text file and creates a vehicle list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vehicle}{Vehicle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_a1dba59da0b1fb87236e27cd988cba929}{create\+Vehicle}} (char \texorpdfstring{$\ast$}{*}registration, char \texorpdfstring{$\ast$}{*}type, int battery, int cost, bool is\+In\+Use, char \texorpdfstring{$\ast$}{*}location, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}graf)
+\begin{DoxyCompactList}\small\item\em Creates a vehicle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_a2f9e802c7e03357a0b24f6e35ae08e2a}{create\+Vehicle\+List}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node, \mbox{\hyperlink{struct_vehicle}{Vehicle}} vehicle)
+\begin{DoxyCompactList}\small\item\em Creates a vehicle list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_a1f861dcfe17198ab1bd092d377c563c7}{print\+Vehicle\+List}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Prints a vehicle list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_a79573fa45f9b0c6d508d15c53bfe3184}{sort\+Vehicle\+List\+Desc}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node)
+\item 
+bool \mbox{\hyperlink{vehicle_8c_a1a12f926cc8099df21bb1f19b140ae43}{edit\+Vehicle}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}registration, \mbox{\hyperlink{struct_vehicle}{Vehicle}} vehicle)
+\begin{DoxyCompactList}\small\item\em Edits a vehicle in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_aa5187e1606f79dcc2f2ac6f50c9488e7}{delete\+Vehicle}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}registration)
+\begin{DoxyCompactList}\small\item\em Deletes a vehicle from the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_abf926983d64d536d6290140eb25af2cd}{store\+Vehicle\+List\+In\+Bin}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Stores the vehicle list in a binary file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_ad5c915a3b01325b4b0c444e5a6d95390}{search\+Vehicle\+By\+Registration}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}registration)
+\begin{DoxyCompactList}\small\item\em Searches for a vehicle by registration number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_ae070c731f906704c4732c31550e6de33}{is\+Vehicle\+Available}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}registration)
+\begin{DoxyCompactList}\small\item\em Checks if a vehicle is available. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_ae4e0326a3173e078e405a06341910545}{edit\+Vehicle\+Availability}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}registration, bool is\+In\+Use)
+\begin{DoxyCompactList}\small\item\em Edits a vehicle\textquotesingle{}s availability. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_ad789e0c673b0d9c3a4b2a4c13ee18f1c}{sort\+Vehicles\+By\+Location}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head\+Node, char \texorpdfstring{$\ast$}{*}location)
+\begin{DoxyCompactList}\small\item\em Sorts the vehicle list by location. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_acf84066409b372896f5f76be1f5b45c3}{check\+Vehicles\+In\+Radius}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}g, \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}vl, int city, float radius, char type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em check\+Vehicles\+In\+Radius -\/ Finds all vehicles of a given type within a certain radius of a city @g\+: Pointer to the graph of cities and their connections @vl\+: Pointer to the linked list of vehicles @city\+: The code of the city to start the search from @radius\+: The maximum distance from the starting city to search for vehicles @type\+: The type of vehicle to search for \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_aefd22c2a318f5e40dbdd3d6339d4ba28}{mark\+As\+Visited}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}graph)
+\begin{DoxyCompactList}\small\item\em mark\+As\+Visited -\/ Marks all nodes in the graph as unvisited @graph\+: Pointer to the graph of cities and their connections \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_ad6e2aee20d6d76e8c5c806293a005b23}{traverse\+Graph}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}graph, \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}vehicles, \mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}current\+\_\+node, float remaining\+\_\+distance, char type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em traverse\+Graph -\/ Traverses the graph to find all cities within a certain radius @graph\+: Pointer to the graph of cities and their connections @vehicles\+: Pointer to the linked list of vehicles @current\+\_\+node\+: Pointer to the current node being visited @remaining\+\_\+distance\+: The remaining distance that can be traveled from the starting city @type\+: The type of vehicle to search for \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_a783a166328fa4a2a53819bf8b360ca0a}{show\+Vehicle\+By\+Type\+On\+Location}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}head, char location\mbox{[}$\,$\mbox{]}, char type\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Searches the linked list of vehicles for all vehicles of a given type in a city @head\+: Pointer to the head of the linked list of vehicles @location\+: The name of the city to search for vehicles in @type\+: The type of vehicle to search for. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{vehicle_8c_a2fe05f7785a38b737d421da08e511e89}{recover\+Truck}} (\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}graph, \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}vehicle\+\_\+list, int truck\+\_\+capacity)
+\begin{DoxyCompactList}\small\item\em recover\+Truck -\/ function that recovers eligible vehicles from a graph of nodes @graph\+: pointer to the first node of the graph @vehicle\+\_\+list\+: pointer to the head of the linked list of vehicles @truck\+\_\+capacity\+: integer representing the maximum number of vehicles that can be collected in a single run \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_a3c4821076839fab7e48392abf34d4db1}{check\+Is\+Legible\+For\+Truck}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}vehicle)
+\begin{DoxyCompactList}\small\item\em check\+Is\+Legible\+For\+Truck -\/ function that checks if a vehicle is eligible for collection by the truck @vehicle\+: pointer to the vehicle to be checked \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{vehicle_8c_a26f2bdaa084b360f603a0bc9334bd0cb}{head\+Insertion\+Vehicle\+List}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head, \mbox{\hyperlink{struct_vehicle}{Vehicle}} new\+\_\+vehicle)
+\begin{DoxyCompactList}\small\item\em head\+Insertion\+Vehicle\+List -\/ function that inserts a new vehicle at the head of a linked list @head\+: pointer to the head of the linked list @new\+\_\+vehicle\+: the new vehicle to be inserted \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vehicle_8c_ae5f10ae9f25a3fb2ea24e8496399a96a}{move\+And\+Recharge\+Vehicle}} (\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}vehicles, char vehicle\+\_\+registration\mbox{[}50\mbox{]}, char location\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em move\+And\+Recharge\+Vehicle -\/ function that moves a vehicle to a new location and recharges its battery @vehicles\+: pointer to the head of the linked list of vehicles @vehicle\+\_\+registration\+: string representing the registration number of the vehicle to be moved @location\+: string representing the new location of the vehicle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the vehicle functions. 
+
+This file contains the implementation of functions related to the management of vehicles. Functions include reading vehicles from a text file, creating a vehicle, creating a vehicle list, printing a vehicle list, editing a vehicle, deleting a vehicle, storing a vehicle list in a binary file, searching for a vehicle by registration, checking if a vehicle is available, and editing a vehicle\textquotesingle{}s availability.
+
+\begin{DoxyAuthor}{Author}
+João Pereira 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vehicle_8c_a3c4821076839fab7e48392abf34d4db1}\label{vehicle_8c_a3c4821076839fab7e48392abf34d4db1} 
+\index{vehicle.c@{vehicle.c}!checkIsLegibleForTruck@{checkIsLegibleForTruck}}
+\index{checkIsLegibleForTruck@{checkIsLegibleForTruck}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{checkIsLegibleForTruck()}{checkIsLegibleForTruck()}}
+{\footnotesize\ttfamily bool check\+Is\+Legible\+For\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+check\+Is\+Legible\+For\+Truck -\/ function that checks if a vehicle is eligible for collection by the truck @vehicle\+: pointer to the vehicle to be checked 
+
+This function checks if a vehicle is a trotinete, has a battery level below 50, and is not currently rented.
+
+Return\+: true if the vehicle is eligible, false otherwise \Hypertarget{vehicle_8c_acf84066409b372896f5f76be1f5b45c3}\label{vehicle_8c_acf84066409b372896f5f76be1f5b45c3} 
+\index{vehicle.c@{vehicle.c}!checkVehiclesInRadius@{checkVehiclesInRadius}}
+\index{checkVehiclesInRadius@{checkVehiclesInRadius}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{checkVehiclesInRadius()}{checkVehiclesInRadius()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} check\+Vehicles\+In\+Radius (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{vl,  }\item[{int}]{city,  }\item[{float}]{radius,  }\item[{char}]{type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+check\+Vehicles\+In\+Radius -\/ Finds all vehicles of a given type within a certain radius of a city @g\+: Pointer to the graph of cities and their connections @vl\+: Pointer to the linked list of vehicles @city\+: The code of the city to start the search from @radius\+: The maximum distance from the starting city to search for vehicles @type\+: The type of vehicle to search for 
+
+This function finds all vehicles of a given type within a certain radius of a city. It starts the search from the specified city and traverses the graph of cities and their connections to find all cities within the given radius. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city. It then prints out information about each vehicle found.
+
+Return\+: NULL \Hypertarget{vehicle_8c_a1dba59da0b1fb87236e27cd988cba929}\label{vehicle_8c_a1dba59da0b1fb87236e27cd988cba929} 
+\index{vehicle.c@{vehicle.c}!createVehicle@{createVehicle}}
+\index{createVehicle@{createVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{createVehicle()}{createVehicle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vehicle}{Vehicle}} \texorpdfstring{$\ast$}{*} create\+Vehicle (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{registration,  }\item[{char \texorpdfstring{$\ast$}{*}}]{type,  }\item[{int}]{battery,  }\item[{int}]{cost,  }\item[{bool}]{is\+In\+Use,  }\item[{char \texorpdfstring{$\ast$}{*}}]{location,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{graf }\end{DoxyParamCaption})}
+
+
+
+Creates a vehicle. 
+
+This function creates a vehicle with the given parameters and returns a pointer to the vehicle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em registration} & The registration number of the vehicle. \\
+\hline
+{\em type} & The type of the vehicle. \\
+\hline
+{\em battery} & The battery level of the vehicle. \\
+\hline
+{\em cost} & The cost of the vehicle. \\
+\hline
+{\em is\+In\+Use} & A boolean indicating whether the vehicle is in use or not. \\
+\hline
+{\em location} & The location of the vehicle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the created vehicle. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_a2f9e802c7e03357a0b24f6e35ae08e2a}\label{vehicle_8c_a2f9e802c7e03357a0b24f6e35ae08e2a} 
+\index{vehicle.c@{vehicle.c}!createVehicleList@{createVehicleList}}
+\index{createVehicleList@{createVehicleList}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{createVehicleList()}{createVehicleList()}}
+{\footnotesize\ttfamily bool create\+Vehicle\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{\mbox{\hyperlink{struct_vehicle}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Creates a vehicle list. 
+
+This function creates a new node in the vehicle list with the given vehicle and adds it to the head of the list. The function takes a pointer to the head node of the list and the vehicle to be added as parameters. The function returns true if the node was successfully created and added to the list, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em vehicle} & The vehicle to be added to the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node was successfully created and added to the list, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_aa5187e1606f79dcc2f2ac6f50c9488e7}\label{vehicle_8c_aa5187e1606f79dcc2f2ac6f50c9488e7} 
+\index{vehicle.c@{vehicle.c}!deleteVehicle@{deleteVehicle}}
+\index{deleteVehicle@{deleteVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{deleteVehicle()}{deleteVehicle()}}
+{\footnotesize\ttfamily bool delete\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{registration }\end{DoxyParamCaption})}
+
+
+
+Deletes a vehicle from the list. 
+
+This function searches for a vehicle with the given registration number in the list and deletes it. The function takes a pointer to the head node of the list and the registration number of the vehicle to be deleted as parameters. The function returns true if the vehicle was successfully deleted, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em registration} & The registration number of the vehicle to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vehicle was successfully deleted, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_a1a12f926cc8099df21bb1f19b140ae43}\label{vehicle_8c_a1a12f926cc8099df21bb1f19b140ae43} 
+\index{vehicle.c@{vehicle.c}!editVehicle@{editVehicle}}
+\index{editVehicle@{editVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{editVehicle()}{editVehicle()}}
+{\footnotesize\ttfamily bool edit\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{registration,  }\item[{\mbox{\hyperlink{struct_vehicle}{Vehicle}}}]{vehicle }\end{DoxyParamCaption})}
+
+
+
+Edits a vehicle in the list. 
+
+This function searches for a vehicle with the given registration number in the list and replaces it with the given vehicle. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and the new vehicle as parameters. The function returns true if the vehicle was successfully edited, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em registration} & The registration number of the vehicle to be edited. \\
+\hline
+{\em vehicle} & The new vehicle to replace the old one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vehicle was successfully edited, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_ae4e0326a3173e078e405a06341910545}\label{vehicle_8c_ae4e0326a3173e078e405a06341910545} 
+\index{vehicle.c@{vehicle.c}!editVehicleAvailability@{editVehicleAvailability}}
+\index{editVehicleAvailability@{editVehicleAvailability}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{editVehicleAvailability()}{editVehicleAvailability()}}
+{\footnotesize\ttfamily bool edit\+Vehicle\+Availability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{registration,  }\item[{bool}]{is\+In\+Use }\end{DoxyParamCaption})}
+
+
+
+Edits a vehicle\textquotesingle{}s availability. 
+
+This function searches for a vehicle with the given registration number in the list and sets its availability to the given value. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and a boolean indicating the new availability as parameters. The function returns true if the vehicle\textquotesingle{}s availability was successfully edited, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em registration} & The registration number of the vehicle to be edited. \\
+\hline
+{\em is\+In\+Use} & A boolean indicating the new availability of the vehicle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vehicle\textquotesingle{}s availability was successfully edited, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_a26f2bdaa084b360f603a0bc9334bd0cb}\label{vehicle_8c_a26f2bdaa084b360f603a0bc9334bd0cb} 
+\index{vehicle.c@{vehicle.c}!headInsertionVehicleList@{headInsertionVehicleList}}
+\index{headInsertionVehicleList@{headInsertionVehicleList}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{headInsertionVehicleList()}{headInsertionVehicleList()}}
+{\footnotesize\ttfamily bool head\+Insertion\+Vehicle\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head,  }\item[{\mbox{\hyperlink{struct_vehicle}{Vehicle}}}]{new\+\_\+vehicle }\end{DoxyParamCaption})}
+
+
+
+head\+Insertion\+Vehicle\+List -\/ function that inserts a new vehicle at the head of a linked list @head\+: pointer to the head of the linked list @new\+\_\+vehicle\+: the new vehicle to be inserted 
+
+This function creates a new node for the new vehicle and inserts it at the head of the linked list.
+
+Return\+: true if the insertion was successful, false otherwise \Hypertarget{vehicle_8c_ae070c731f906704c4732c31550e6de33}\label{vehicle_8c_ae070c731f906704c4732c31550e6de33} 
+\index{vehicle.c@{vehicle.c}!isVehicleAvailable@{isVehicleAvailable}}
+\index{isVehicleAvailable@{isVehicleAvailable}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{isVehicleAvailable()}{isVehicleAvailable()}}
+{\footnotesize\ttfamily bool is\+Vehicle\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{registration }\end{DoxyParamCaption})}
+
+
+
+Checks if a vehicle is available. 
+
+This function checks if a vehicle with the given registration number is available (not in use). The function takes a pointer to the head node of the list and the registration number of the vehicle to be checked as parameters. The function returns true if the vehicle is available, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em registration} & The registration number of the vehicle to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vehicle is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_aefd22c2a318f5e40dbdd3d6339d4ba28}\label{vehicle_8c_aefd22c2a318f5e40dbdd3d6339d4ba28} 
+\index{vehicle.c@{vehicle.c}!markAsVisited@{markAsVisited}}
+\index{markAsVisited@{markAsVisited}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{markAsVisited()}{markAsVisited()}}
+{\footnotesize\ttfamily void mark\+As\+Visited (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{graph }\end{DoxyParamCaption})}
+
+
+
+mark\+As\+Visited -\/ Marks all nodes in the graph as unvisited @graph\+: Pointer to the graph of cities and their connections 
+
+This function marks all nodes in the graph as unvisited by setting their visited flag to false.
+
+Return\+: void \Hypertarget{vehicle_8c_ae5f10ae9f25a3fb2ea24e8496399a96a}\label{vehicle_8c_ae5f10ae9f25a3fb2ea24e8496399a96a} 
+\index{vehicle.c@{vehicle.c}!moveAndRechargeVehicle@{moveAndRechargeVehicle}}
+\index{moveAndRechargeVehicle@{moveAndRechargeVehicle}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{moveAndRechargeVehicle()}{moveAndRechargeVehicle()}}
+{\footnotesize\ttfamily void move\+And\+Recharge\+Vehicle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{vehicles,  }\item[{char}]{vehicle\+\_\+registration\mbox{[}50\mbox{]},  }\item[{char}]{location\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+move\+And\+Recharge\+Vehicle -\/ function that moves a vehicle to a new location and recharges its battery @vehicles\+: pointer to the head of the linked list of vehicles @vehicle\+\_\+registration\+: string representing the registration number of the vehicle to be moved @location\+: string representing the new location of the vehicle 
+
+This function searches for the vehicle with the given registration number in the linked list and updates its location and battery level.
+
+Return\+: void \Hypertarget{vehicle_8c_a1f861dcfe17198ab1bd092d377c563c7}\label{vehicle_8c_a1f861dcfe17198ab1bd092d377c563c7} 
+\index{vehicle.c@{vehicle.c}!printVehicleList@{printVehicleList}}
+\index{printVehicleList@{printVehicleList}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{printVehicleList()}{printVehicleList()}}
+{\footnotesize\ttfamily void print\+Vehicle\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Prints a vehicle list. 
+
+This function prints the vehicles in the linked list. The function takes a pointer to the head node of the list as a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{vehicle_8c_a962372f88de03fcd5581aa44353afec6}\label{vehicle_8c_a962372f88de03fcd5581aa44353afec6} 
+\index{vehicle.c@{vehicle.c}!readVehiclesFromTxt@{readVehiclesFromTxt}}
+\index{readVehiclesFromTxt@{readVehiclesFromTxt}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{readVehiclesFromTxt()}{readVehiclesFromTxt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} read\+Vehicles\+From\+Txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Reads vehicles from a text file and creates a vehicle list. 
+
+This function reads vehicles from a text file and creates a linked list of vehicles. The function takes a pointer to the head node of the list as a parameter and returns the head node.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The head node of the vehicle list. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_a2fe05f7785a38b737d421da08e511e89}\label{vehicle_8c_a2fe05f7785a38b737d421da08e511e89} 
+\index{vehicle.c@{vehicle.c}!recoverTruck@{recoverTruck}}
+\index{recoverTruck@{recoverTruck}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{recoverTruck()}{recoverTruck()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} recover\+Truck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{graph,  }\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{vehicle\+\_\+list,  }\item[{int}]{truck\+\_\+capacity }\end{DoxyParamCaption})}
+
+
+
+recover\+Truck -\/ function that recovers eligible vehicles from a graph of nodes @graph\+: pointer to the first node of the graph @vehicle\+\_\+list\+: pointer to the head of the linked list of vehicles @truck\+\_\+capacity\+: integer representing the maximum number of vehicles that can be collected in a single run 
+
+This function visits each node in the graph and collects eligible vehicles that are located in the same city as the node. Once the maximum number of vehicles is collected, the function moves the vehicles to the starting node and recharges them. The function returns a pointer to the linked list of collected vehicles.
+
+Return\+: pointer to the linked list of collected vehicles \Hypertarget{vehicle_8c_ad5c915a3b01325b4b0c444e5a6d95390}\label{vehicle_8c_ad5c915a3b01325b4b0c444e5a6d95390} 
+\index{vehicle.c@{vehicle.c}!searchVehicleByRegistration@{searchVehicleByRegistration}}
+\index{searchVehicleByRegistration@{searchVehicleByRegistration}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{searchVehicleByRegistration()}{searchVehicleByRegistration()}}
+{\footnotesize\ttfamily bool search\+Vehicle\+By\+Registration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{registration }\end{DoxyParamCaption})}
+
+
+
+Searches for a vehicle by registration number. 
+
+This function searches for a vehicle with the given registration number in the list. The function takes a pointer to the head node of the list and the registration number of the vehicle to be searched as parameters. The function returns true if the vehicle was found, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em registration} & The registration number of the vehicle to be searched. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vehicle was found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_a783a166328fa4a2a53819bf8b360ca0a}\label{vehicle_8c_a783a166328fa4a2a53819bf8b360ca0a} 
+\index{vehicle.c@{vehicle.c}!showVehicleByTypeOnLocation@{showVehicleByTypeOnLocation}}
+\index{showVehicleByTypeOnLocation@{showVehicleByTypeOnLocation}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{showVehicleByTypeOnLocation()}{showVehicleByTypeOnLocation()}}
+{\footnotesize\ttfamily void show\+Vehicle\+By\+Type\+On\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head,  }\item[{char}]{location\mbox{[}$\,$\mbox{]},  }\item[{char}]{type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Searches the linked list of vehicles for all vehicles of a given type in a city @head\+: Pointer to the head of the linked list of vehicles @location\+: The name of the city to search for vehicles in @type\+: The type of vehicle to search for. 
+
+This function searches the linked list of vehicles for all vehicles of a given type that are located in a city with the given name. It then prints out information about each vehicle found.
+
+Return\+: void \Hypertarget{vehicle_8c_a79573fa45f9b0c6d508d15c53bfe3184}\label{vehicle_8c_a79573fa45f9b0c6d508d15c53bfe3184} 
+\index{vehicle.c@{vehicle.c}!sortVehicleListDesc@{sortVehicleListDesc}}
+\index{sortVehicleListDesc@{sortVehicleListDesc}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{sortVehicleListDesc()}{sortVehicleListDesc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} sort\+Vehicle\+List\+Desc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+\Hypertarget{vehicle_8c_ad789e0c673b0d9c3a4b2a4c13ee18f1c}\label{vehicle_8c_ad789e0c673b0d9c3a4b2a4c13ee18f1c} 
+\index{vehicle.c@{vehicle.c}!sortVehiclesByLocation@{sortVehiclesByLocation}}
+\index{sortVehiclesByLocation@{sortVehiclesByLocation}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{sortVehiclesByLocation()}{sortVehiclesByLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*} sort\+Vehicles\+By\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{char \texorpdfstring{$\ast$}{*}}]{location }\end{DoxyParamCaption})}
+
+
+
+Sorts the vehicle list by location. 
+
+This function sorts the vehicle list by location. The function takes a pointer to the head node of the list and the location to sort by as parameters. The function returns a pointer to the head node of the sorted list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+{\em location} & The location to sort by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the head node of the sorted list. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_abf926983d64d536d6290140eb25af2cd}\label{vehicle_8c_abf926983d64d536d6290140eb25af2cd} 
+\index{vehicle.c@{vehicle.c}!storeVehicleListInBin@{storeVehicleListInBin}}
+\index{storeVehicleListInBin@{storeVehicleListInBin}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{storeVehicleListInBin()}{storeVehicleListInBin()}}
+{\footnotesize\ttfamily bool store\+Vehicle\+List\+In\+Bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Stores the vehicle list in a binary file. 
+
+This function stores the vehicles in the linked list in a binary file. The function takes a pointer to the head node of the list as a parameter. The function returns true if the list was successfully stored in the file, false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the vehicle list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the list was successfully stored in the file, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{vehicle_8c_ad6e2aee20d6d76e8c5c806293a005b23}\label{vehicle_8c_ad6e2aee20d6d76e8c5c806293a005b23} 
+\index{vehicle.c@{vehicle.c}!traverseGraph@{traverseGraph}}
+\index{traverseGraph@{traverseGraph}!vehicle.c@{vehicle.c}}
+\doxysubsubsection{\texorpdfstring{traverseGraph()}{traverseGraph()}}
+{\footnotesize\ttfamily void traverse\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{graph,  }\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{vehicles,  }\item[{\mbox{\hyperlink{struct_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}}]{current\+\_\+node,  }\item[{float}]{remaining\+\_\+distance,  }\item[{char}]{type\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+traverse\+Graph -\/ Traverses the graph to find all cities within a certain radius @graph\+: Pointer to the graph of cities and their connections @vehicles\+: Pointer to the linked list of vehicles @current\+\_\+node\+: Pointer to the current node being visited @remaining\+\_\+distance\+: The remaining distance that can be traveled from the starting city @type\+: The type of vehicle to search for 
+
+This function traverses the graph of cities and their connections to find all cities within a certain radius of the starting city. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city. It then prints out information about each vehicle found.
+
+Return\+: void 

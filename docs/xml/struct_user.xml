@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_user" kind="struct" language="C++" prot="public">
+    <compoundname>User</compoundname>
+    <includes refid="user_8h" local="no">user.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_user_1ad68c6985dce5a3d709f854778dedee19" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nif</definition>
+        <argsstring></argsstring>
+        <name>nif</name>
+        <qualifiedname>User::nif</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="16" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1ae5cb967283dbbdf75cb2032c1fa08fee" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char name[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>name</name>
+        <qualifiedname>User::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="17" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1acc7965ca6d364e411c18b73e63a780ab" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char email[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>email</name>
+        <qualifiedname>User::email</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="18" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1ae2e2e8a4ea94dd765699711cba3da163" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int phone</definition>
+        <argsstring></argsstring>
+        <name>phone</name>
+        <qualifiedname>User::phone</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="19" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1acfb3aa53add26760a83b15834b2390f4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int zip</definition>
+        <argsstring></argsstring>
+        <name>zip</name>
+        <qualifiedname>User::zip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="20" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1a66860a4081ffdd725177cc1293ac23c7" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char password[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>password</name>
+        <qualifiedname>User::password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="21" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1a8fccfa9bbd26416dcb9abadce88130d9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int wallet</definition>
+        <argsstring></argsstring>
+        <name>wallet</name>
+        <qualifiedname>User::wallet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="22" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_1af2904b563c9b85eac138359a5e905161" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool isManager</definition>
+        <argsstring></argsstring>
+        <name>isManager</name>
+        <qualifiedname>User::isManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="23" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="14" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="15" bodyend="24"/>
+    <listofallmembers>
+      <member refid="struct_user_1acc7965ca6d364e411c18b73e63a780ab" prot="public" virt="non-virtual"><scope>User</scope><name>email</name></member>
+      <member refid="struct_user_1af2904b563c9b85eac138359a5e905161" prot="public" virt="non-virtual"><scope>User</scope><name>isManager</name></member>
+      <member refid="struct_user_1ae5cb967283dbbdf75cb2032c1fa08fee" prot="public" virt="non-virtual"><scope>User</scope><name>name</name></member>
+      <member refid="struct_user_1ad68c6985dce5a3d709f854778dedee19" prot="public" virt="non-virtual"><scope>User</scope><name>nif</name></member>
+      <member refid="struct_user_1a66860a4081ffdd725177cc1293ac23c7" prot="public" virt="non-virtual"><scope>User</scope><name>password</name></member>
+      <member refid="struct_user_1ae2e2e8a4ea94dd765699711cba3da163" prot="public" virt="non-virtual"><scope>User</scope><name>phone</name></member>
+      <member refid="struct_user_1a8fccfa9bbd26416dcb9abadce88130d9" prot="public" virt="non-virtual"><scope>User</scope><name>wallet</name></member>
+      <member refid="struct_user_1acfb3aa53add26760a83b15834b2390f4" prot="public" virt="non-virtual"><scope>User</scope><name>zip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

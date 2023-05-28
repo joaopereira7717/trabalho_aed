@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_1f55215847a6c1ed98db2020a069c1f2" kind="dir">
+    <compoundname>/Users/inflightit/Desktop/coisas</compoundname>
+    <innerdir refid="dir_2e7aed224a7ff24ef99fb144a36ab20e">/Users/inflightit/Desktop/coisas/aula_ead</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/"/>
+  </compounddef>
+</doxygen>

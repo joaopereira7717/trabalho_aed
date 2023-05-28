@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_rent_list" kind="struct" language="C++" prot="public">
+    <compoundname>RentList</compoundname>
+    <includes refid="rentals_8h" local="no">rentals.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_rent" kindref="compound">Rent</ref></type>
+        <definition>Rent rent</definition>
+        <argsstring></argsstring>
+        <name>rent</name>
+        <qualifiedname>RentList::rent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="26" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_rent_list" kindref="compound">RentList</ref> *</type>
+        <definition>RentList* next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>RentList::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="27" column="12" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Rent</label>
+        <link refid="struct_rent"/>
+      </node>
+      <node id="1">
+        <label>RentList</label>
+        <link refid="struct_rent_list"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>rent</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="24" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="25" bodyend="28"/>
+    <listofallmembers>
+      <member refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" prot="public" virt="non-virtual"><scope>RentList</scope><name>next</name></member>
+      <member refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" prot="public" virt="non-virtual"><scope>RentList</scope><name>rent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

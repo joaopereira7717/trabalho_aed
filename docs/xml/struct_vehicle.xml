@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_vehicle" kind="struct" language="C++" prot="public">
+    <compoundname>Vehicle</compoundname>
+    <includes refid="vehicle_8h" local="no">vehicle.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char registration[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>registration</name>
+        <qualifiedname>Vehicle::registration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="21" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char type[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>type</name>
+        <qualifiedname>Vehicle::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="22" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int battery</definition>
+        <argsstring></argsstring>
+        <name>battery</name>
+        <qualifiedname>Vehicle::battery</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="23" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cost</definition>
+        <argsstring></argsstring>
+        <name>cost</name>
+        <qualifiedname>Vehicle::cost</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="24" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool isInUse</definition>
+        <argsstring></argsstring>
+        <name>isInUse</name>
+        <qualifiedname>Vehicle::isInUse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="25" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char location[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>location</name>
+        <qualifiedname>Vehicle::location</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="26" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" line="19" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.h" bodystart="20" bodyend="27"/>
+    <listofallmembers>
+      <member refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>battery</name></member>
+      <member refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>cost</name></member>
+      <member refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>isInUse</name></member>
+      <member refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>location</name></member>
+      <member refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>registration</name></member>
+      <member refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" prot="public" virt="non-virtual"><scope>Vehicle</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

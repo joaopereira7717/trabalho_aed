@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_adj_file" kind="struct" language="C++" prot="public">
+    <compoundname>AdjFile</compoundname>
+    <includes refid="routes_8h" local="no">routes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_adj_file_1a3f7e074121ff0e7cbe474548c852eee2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int codOrigin</definition>
+        <argsstring></argsstring>
+        <name>codOrigin</name>
+        <qualifiedname>AdjFile::codOrigin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="33" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_adj_file_1a993972db92bb1646ef99f12bc02b2789" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int codDestiny</definition>
+        <argsstring></argsstring>
+        <name>codDestiny</name>
+        <qualifiedname>AdjFile::codDestiny</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Código da Adjacência </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="34" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_adj_file_1a8128625c9e3fd04c27b82957732d8781" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float weight</definition>
+        <argsstring></argsstring>
+        <name>weight</name>
+        <qualifiedname>AdjFile::weight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ValueDistance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="35" column="9" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Estrutura de uma Adjacência para Ficheiro </para>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="31" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="32" bodyend="36"/>
+    <listofallmembers>
+      <member refid="struct_adj_file_1a993972db92bb1646ef99f12bc02b2789" prot="public" virt="non-virtual"><scope>AdjFile</scope><name>codDestiny</name></member>
+      <member refid="struct_adj_file_1a3f7e074121ff0e7cbe474548c852eee2" prot="public" virt="non-virtual"><scope>AdjFile</scope><name>codOrigin</name></member>
+      <member refid="struct_adj_file_1a8128625c9e3fd04c27b82957732d8781" prot="public" virt="non-virtual"><scope>AdjFile</scope><name>weight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

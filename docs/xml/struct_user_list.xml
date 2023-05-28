@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_user_list" kind="struct" language="C++" prot="public">
+    <compoundname>UserList</compoundname>
+    <includes refid="user_8h" local="no">user.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_user_list_1a7ffd636d88d39d8b4366d5423d352b0b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_user" kindref="compound">User</ref></type>
+        <definition>User user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <qualifiedname>UserList::user</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="28" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_list_1a95d6d33ec7130b8fd25c4239b9ea0fd8" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+        <definition>UserList* next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>UserList::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="29" column="12" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>User</label>
+        <link refid="struct_user"/>
+      </node>
+      <node id="1">
+        <label>UserList</label>
+        <link refid="struct_user_list"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>user</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="26" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="27" bodyend="30"/>
+    <listofallmembers>
+      <member refid="struct_user_list_1a95d6d33ec7130b8fd25c4239b9ea0fd8" prot="public" virt="non-virtual"><scope>UserList</scope><name>next</name></member>
+      <member refid="struct_user_list_1a7ffd636d88d39d8b4366d5423d352b0b" prot="public" virt="non-virtual"><scope>UserList</scope><name>user</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

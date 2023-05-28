@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_vertex" kind="struct" language="C++" prot="public">
+    <compoundname>Vertex</compoundname>
+    <includes refid="routes_8h" local="no">routes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_vertex_1af126ceed259751781ea3b64024138f7d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cod</definition>
+        <argsstring></argsstring>
+        <name>cod</name>
+        <qualifiedname>Vertex::cod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Código do Vértice </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="43" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char city[N]</definition>
+        <argsstring>[N]</argsstring>
+        <name>city</name>
+        <qualifiedname>Vertex::city</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Nome da City </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="44" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool visited</definition>
+        <argsstring></argsstring>
+        <name>visited</name>
+        <qualifiedname>Vertex::visited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="45" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vertex_1ad959a48c566626429c5091adfbd48bac" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_vertex" kindref="compound">Vertex</ref> *</type>
+        <definition>struct Vertex* next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>Vertex::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lista de Vértices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="46" column="15" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_adj" kindref="compound">Adj</ref> *</type>
+        <definition>struct Adj* adjacents</definition>
+        <argsstring></argsstring>
+        <name>adjacents</name>
+        <qualifiedname>Vertex::adjacents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lista de Adjacências </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="47" column="12" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Descrição de um Vértice do grafo. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Adj</label>
+        <link refid="struct_adj"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Vertex</label>
+        <link refid="struct_vertex"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>adjacents</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="41" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="42" bodyend="48"/>
+    <listofallmembers>
+      <member refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" prot="public" virt="non-virtual"><scope>Vertex</scope><name>adjacents</name></member>
+      <member refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" prot="public" virt="non-virtual"><scope>Vertex</scope><name>city</name></member>
+      <member refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" prot="public" virt="non-virtual"><scope>Vertex</scope><name>cod</name></member>
+      <member refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" prot="public" virt="non-virtual"><scope>Vertex</scope><name>next</name></member>
+      <member refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" prot="public" virt="non-virtual"><scope>Vertex</scope><name>visited</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

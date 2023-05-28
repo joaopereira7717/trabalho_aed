@@ -1,0 +1,371 @@
+.TH "/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c" 3Trabalho Final EDA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/vehicle.c \- File containing the vehicle functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include '\&./vehicle\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVehicleList\fP * \fBreadVehiclesFromTxt\fP (\fBVehicleList\fP **headNode)"
+.br
+.RI "Reads vehicles from a text file and creates a vehicle list\&. "
+.ti -1c
+.RI "\fBVehicle\fP * \fBcreateVehicle\fP (char *registration, char *type, int battery, int cost, bool isInUse, char *location, \fBVertex\fP *graf)"
+.br
+.RI "Creates a vehicle\&. "
+.ti -1c
+.RI "bool \fBcreateVehicleList\fP (\fBVehicleList\fP **headNode, \fBVehicle\fP vehicle)"
+.br
+.RI "Creates a vehicle list\&. "
+.ti -1c
+.RI "void \fBprintVehicleList\fP (\fBVehicleList\fP *headNode)"
+.br
+.RI "Prints a vehicle list\&. "
+.ti -1c
+.RI "\fBVehicleList\fP * \fBsortVehicleListDesc\fP (\fBVehicleList\fP **headNode)"
+.br
+.ti -1c
+.RI "bool \fBeditVehicle\fP (\fBVehicleList\fP *headNode, char *registration, \fBVehicle\fP vehicle)"
+.br
+.RI "Edits a vehicle in the list\&. "
+.ti -1c
+.RI "bool \fBdeleteVehicle\fP (\fBVehicleList\fP **headNode, char *registration)"
+.br
+.RI "Deletes a vehicle from the list\&. "
+.ti -1c
+.RI "bool \fBstoreVehicleListInBin\fP (\fBVehicleList\fP *headNode)"
+.br
+.RI "Stores the vehicle list in a binary file\&. "
+.ti -1c
+.RI "bool \fBsearchVehicleByRegistration\fP (\fBVehicleList\fP *headNode, char *registration)"
+.br
+.RI "Searches for a vehicle by registration number\&. "
+.ti -1c
+.RI "bool \fBisVehicleAvailable\fP (\fBVehicleList\fP *headNode, char *registration)"
+.br
+.RI "Checks if a vehicle is available\&. "
+.ti -1c
+.RI "bool \fBeditVehicleAvailability\fP (\fBVehicleList\fP *headNode, char *registration, bool isInUse)"
+.br
+.RI "Edits a vehicle's availability\&. "
+.ti -1c
+.RI "\fBVehicleList\fP * \fBsortVehiclesByLocation\fP (\fBVehicleList\fP *headNode, char *location)"
+.br
+.RI "Sorts the vehicle list by location\&. "
+.ti -1c
+.RI "void * \fBcheckVehiclesInRadius\fP (\fBVertex\fP *g, \fBVehicleList\fP *vl, int city, float radius, char type[])"
+.br
+.RI "checkVehiclesInRadius - Finds all vehicles of a given type within a certain radius of a city @g: Pointer to the graph of cities and their connections @vl: Pointer to the linked list of vehicles @city: The code of the city to start the search from @radius: The maximum distance from the starting city to search for vehicles @type: The type of vehicle to search for "
+.ti -1c
+.RI "void \fBmarkAsVisited\fP (\fBVertex\fP *graph)"
+.br
+.RI "markAsVisited - Marks all nodes in the graph as unvisited @graph: Pointer to the graph of cities and their connections "
+.ti -1c
+.RI "void \fBtraverseGraph\fP (\fBVertex\fP *graph, \fBVehicleList\fP *vehicles, \fBVertex\fP *current_node, float remaining_distance, char type[])"
+.br
+.RI "traverseGraph - Traverses the graph to find all cities within a certain radius @graph: Pointer to the graph of cities and their connections @vehicles: Pointer to the linked list of vehicles @current_node: Pointer to the current node being visited @remaining_distance: The remaining distance that can be traveled from the starting city @type: The type of vehicle to search for "
+.ti -1c
+.RI "void \fBshowVehicleByTypeOnLocation\fP (\fBVehicleList\fP *head, char location[], char type[])"
+.br
+.RI "Searches the linked list of vehicles for all vehicles of a given type in a city @head: Pointer to the head of the linked list of vehicles @location: The name of the city to search for vehicles in @type: The type of vehicle to search for\&. "
+.ti -1c
+.RI "\fBVehicleList\fP * \fBrecoverTruck\fP (\fBVertex\fP *graph, \fBVehicleList\fP **vehicle_list, int truck_capacity)"
+.br
+.RI "recoverTruck - function that recovers eligible vehicles from a graph of nodes @graph: pointer to the first node of the graph @vehicle_list: pointer to the head of the linked list of vehicles @truck_capacity: integer representing the maximum number of vehicles that can be collected in a single run "
+.ti -1c
+.RI "bool \fBcheckIsLegibleForTruck\fP (\fBVehicleList\fP *vehicle)"
+.br
+.RI "checkIsLegibleForTruck - function that checks if a vehicle is eligible for collection by the truck @vehicle: pointer to the vehicle to be checked "
+.ti -1c
+.RI "bool \fBheadInsertionVehicleList\fP (\fBVehicleList\fP **head, \fBVehicle\fP new_vehicle)"
+.br
+.RI "headInsertionVehicleList - function that inserts a new vehicle at the head of a linked list @head: pointer to the head of the linked list @new_vehicle: the new vehicle to be inserted "
+.ti -1c
+.RI "void \fBmoveAndRechargeVehicle\fP (\fBVehicleList\fP **vehicles, char vehicle_registration[50], char location[])"
+.br
+.RI "moveAndRechargeVehicle - function that moves a vehicle to a new location and recharges its battery @vehicles: pointer to the head of the linked list of vehicles @vehicle_registration: string representing the registration number of the vehicle to be moved @location: string representing the new location of the vehicle "
+.in -1c
+.SH "Detailed Description"
+.PP 
+File containing the vehicle functions\&. 
+
+This file contains the implementation of functions related to the management of vehicles\&. Functions include reading vehicles from a text file, creating a vehicle, creating a vehicle list, printing a vehicle list, editing a vehicle, deleting a vehicle, storing a vehicle list in a binary file, searching for a vehicle by registration, checking if a vehicle is available, and editing a vehicle's availability\&.
+.PP
+\fBAuthor\fP
+.RS 4
+João Pereira 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "bool checkIsLegibleForTruck (\fBVehicleList\fP * vehicle)"
+
+.PP
+checkIsLegibleForTruck - function that checks if a vehicle is eligible for collection by the truck @vehicle: pointer to the vehicle to be checked This function checks if a vehicle is a trotinete, has a battery level below 50, and is not currently rented\&.
+.PP
+Return: true if the vehicle is eligible, false otherwise 
+.SS "void * checkVehiclesInRadius (\fBVertex\fP * g, \fBVehicleList\fP * vl, int city, float radius, char type[])"
+
+.PP
+checkVehiclesInRadius - Finds all vehicles of a given type within a certain radius of a city @g: Pointer to the graph of cities and their connections @vl: Pointer to the linked list of vehicles @city: The code of the city to start the search from @radius: The maximum distance from the starting city to search for vehicles @type: The type of vehicle to search for This function finds all vehicles of a given type within a certain radius of a city\&. It starts the search from the specified city and traverses the graph of cities and their connections to find all cities within the given radius\&. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city\&. It then prints out information about each vehicle found\&.
+.PP
+Return: NULL 
+.SS "\fBVehicle\fP * createVehicle (char * registration, char * type, int battery, int cost, bool isInUse, char * location, \fBVertex\fP * graf)"
+
+.PP
+Creates a vehicle\&. This function creates a vehicle with the given parameters and returns a pointer to the vehicle\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIregistration\fP The registration number of the vehicle\&. 
+.br
+\fItype\fP The type of the vehicle\&. 
+.br
+\fIbattery\fP The battery level of the vehicle\&. 
+.br
+\fIcost\fP The cost of the vehicle\&. 
+.br
+\fIisInUse\fP A boolean indicating whether the vehicle is in use or not\&. 
+.br
+\fIlocation\fP The location of the vehicle\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the created vehicle\&. 
+.RE
+.PP
+
+.SS "bool createVehicleList (\fBVehicleList\fP ** headNode, \fBVehicle\fP vehicle)"
+
+.PP
+Creates a vehicle list\&. This function creates a new node in the vehicle list with the given vehicle and adds it to the head of the list\&. The function takes a pointer to the head node of the list and the vehicle to be added as parameters\&. The function returns true if the node was successfully created and added to the list, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIvehicle\fP The vehicle to be added to the list\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the node was successfully created and added to the list, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool deleteVehicle (\fBVehicleList\fP ** headNode, char * registration)"
+
+.PP
+Deletes a vehicle from the list\&. This function searches for a vehicle with the given registration number in the list and deletes it\&. The function takes a pointer to the head node of the list and the registration number of the vehicle to be deleted as parameters\&. The function returns true if the vehicle was successfully deleted, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIregistration\fP The registration number of the vehicle to be deleted\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the vehicle was successfully deleted, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool editVehicle (\fBVehicleList\fP * headNode, char * registration, \fBVehicle\fP vehicle)"
+
+.PP
+Edits a vehicle in the list\&. This function searches for a vehicle with the given registration number in the list and replaces it with the given vehicle\&. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and the new vehicle as parameters\&. The function returns true if the vehicle was successfully edited, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIregistration\fP The registration number of the vehicle to be edited\&. 
+.br
+\fIvehicle\fP The new vehicle to replace the old one\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the vehicle was successfully edited, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool editVehicleAvailability (\fBVehicleList\fP * headNode, char * registration, bool isInUse)"
+
+.PP
+Edits a vehicle's availability\&. This function searches for a vehicle with the given registration number in the list and sets its availability to the given value\&. The function takes a pointer to the head node of the list, the registration number of the vehicle to be edited, and a boolean indicating the new availability as parameters\&. The function returns true if the vehicle's availability was successfully edited, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIregistration\fP The registration number of the vehicle to be edited\&. 
+.br
+\fIisInUse\fP A boolean indicating the new availability of the vehicle\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the vehicle's availability was successfully edited, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool headInsertionVehicleList (\fBVehicleList\fP ** head, \fBVehicle\fP new_vehicle)"
+
+.PP
+headInsertionVehicleList - function that inserts a new vehicle at the head of a linked list @head: pointer to the head of the linked list @new_vehicle: the new vehicle to be inserted This function creates a new node for the new vehicle and inserts it at the head of the linked list\&.
+.PP
+Return: true if the insertion was successful, false otherwise 
+.SS "bool isVehicleAvailable (\fBVehicleList\fP * headNode, char * registration)"
+
+.PP
+Checks if a vehicle is available\&. This function checks if a vehicle with the given registration number is available (not in use)\&. The function takes a pointer to the head node of the list and the registration number of the vehicle to be checked as parameters\&. The function returns true if the vehicle is available, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIregistration\fP The registration number of the vehicle to be checked\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the vehicle is available, false otherwise\&. 
+.RE
+.PP
+
+.SS "void markAsVisited (\fBVertex\fP * graph)"
+
+.PP
+markAsVisited - Marks all nodes in the graph as unvisited @graph: Pointer to the graph of cities and their connections This function marks all nodes in the graph as unvisited by setting their visited flag to false\&.
+.PP
+Return: void 
+.SS "void moveAndRechargeVehicle (\fBVehicleList\fP ** vehicles, char vehicle_registration[50], char location[])"
+
+.PP
+moveAndRechargeVehicle - function that moves a vehicle to a new location and recharges its battery @vehicles: pointer to the head of the linked list of vehicles @vehicle_registration: string representing the registration number of the vehicle to be moved @location: string representing the new location of the vehicle This function searches for the vehicle with the given registration number in the linked list and updates its location and battery level\&.
+.PP
+Return: void 
+.SS "void printVehicleList (\fBVehicleList\fP * headNode)"
+
+.PP
+Prints a vehicle list\&. This function prints the vehicles in the linked list\&. The function takes a pointer to the head node of the list as a parameter\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.RE
+.PP
+
+.SS "\fBVehicleList\fP * readVehiclesFromTxt (\fBVehicleList\fP ** headNode)"
+
+.PP
+Reads vehicles from a text file and creates a vehicle list\&. This function reads vehicles from a text file and creates a linked list of vehicles\&. The function takes a pointer to the head node of the list as a parameter and returns the head node\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The head node of the vehicle list\&. 
+.RE
+.PP
+
+.SS "\fBVehicleList\fP * recoverTruck (\fBVertex\fP * graph, \fBVehicleList\fP ** vehicle_list, int truck_capacity)"
+
+.PP
+recoverTruck - function that recovers eligible vehicles from a graph of nodes @graph: pointer to the first node of the graph @vehicle_list: pointer to the head of the linked list of vehicles @truck_capacity: integer representing the maximum number of vehicles that can be collected in a single run This function visits each node in the graph and collects eligible vehicles that are located in the same city as the node\&. Once the maximum number of vehicles is collected, the function moves the vehicles to the starting node and recharges them\&. The function returns a pointer to the linked list of collected vehicles\&.
+.PP
+Return: pointer to the linked list of collected vehicles 
+.SS "bool searchVehicleByRegistration (\fBVehicleList\fP * headNode, char * registration)"
+
+.PP
+Searches for a vehicle by registration number\&. This function searches for a vehicle with the given registration number in the list\&. The function takes a pointer to the head node of the list and the registration number of the vehicle to be searched as parameters\&. The function returns true if the vehicle was found, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIregistration\fP The registration number of the vehicle to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the vehicle was found, false otherwise\&. 
+.RE
+.PP
+
+.SS "void showVehicleByTypeOnLocation (\fBVehicleList\fP * head, char location[], char type[])"
+
+.PP
+Searches the linked list of vehicles for all vehicles of a given type in a city @head: Pointer to the head of the linked list of vehicles @location: The name of the city to search for vehicles in @type: The type of vehicle to search for\&. This function searches the linked list of vehicles for all vehicles of a given type that are located in a city with the given name\&. It then prints out information about each vehicle found\&.
+.PP
+Return: void 
+.SS "\fBVehicleList\fP * sortVehicleListDesc (\fBVehicleList\fP ** headNode)"
+
+.SS "\fBVehicleList\fP * sortVehiclesByLocation (\fBVehicleList\fP * headNode, char * location)"
+
+.PP
+Sorts the vehicle list by location\&. This function sorts the vehicle list by location\&. The function takes a pointer to the head node of the list and the location to sort by as parameters\&. The function returns a pointer to the head node of the sorted list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.br
+\fIlocation\fP The location to sort by\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the head node of the sorted list\&. 
+.RE
+.PP
+
+.SS "bool storeVehicleListInBin (\fBVehicleList\fP * headNode)"
+
+.PP
+Stores the vehicle list in a binary file\&. This function stores the vehicles in the linked list in a binary file\&. The function takes a pointer to the head node of the list as a parameter\&. The function returns true if the list was successfully stored in the file, false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the vehicle list\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the list was successfully stored in the file, false otherwise\&. 
+.RE
+.PP
+
+.SS "void traverseGraph (\fBVertex\fP * graph, \fBVehicleList\fP * vehicles, \fBVertex\fP * current_node, float remaining_distance, char type[])"
+
+.PP
+traverseGraph - Traverses the graph to find all cities within a certain radius @graph: Pointer to the graph of cities and their connections @vehicles: Pointer to the linked list of vehicles @current_node: Pointer to the current node being visited @remaining_distance: The remaining distance that can be traveled from the starting city @type: The type of vehicle to search for This function traverses the graph of cities and their connections to find all cities within a certain radius of the starting city\&. For each city found, it searches the linked list of vehicles to find all vehicles of the given type that are located in that city\&. It then prints out information about each vehicle found\&.
+.PP
+Return: void 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Trabalho Final EDA from the source code\&.

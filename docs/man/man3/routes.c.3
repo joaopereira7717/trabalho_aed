@@ -1,0 +1,637 @@
+.TH "/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c" 3Trabalho Final EDA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.c \- File containing the routes functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include '\&./routes\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVertex\fP * \fBcreateRoute\fP ()"
+.br
+.RI "Creates a new empty graph\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBcreateRouteVertex\fP (char *city, int cod)"
+.br
+.RI "Creates a new vertex for the graph\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBinsertRouteVertex\fP (\fBVertex\fP *g, \fBVertex\fP *new, bool *res)"
+.br
+.RI "Inserts a new vertex into the graph in alphabetical order\&. "
+.ti -1c
+.RI "void \fBshowRoutes\fP (\fBVertex\fP *g)"
+.br
+.RI "Displays on screen all vertices and their respective adjacency lists of the graph\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBdestroyRoutes\fP (\fBVertex\fP *g)"
+.br
+.RI "Frees the memory allocated to the graph and its adjacency lists\&. "
+.ti -1c
+.RI "int \fBsearchCodVertex\fP (\fBVertex\fP *g, char *city)"
+.br
+.RI "Gets the identifier code of a vertex from the city name\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBsearchVertex\fP (\fBVertex\fP *g, char *city)"
+.br
+.RI "Finds a vertex from the city name\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBsearchVertexCod\fP (\fBVertex\fP *g, int cod)"
+.br
+.RI "Fetch a vertex from the identifier code\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBresetVisitedVertex\fP (\fBVertex\fP *g)"
+.br
+.RI "Resets the 'visited' flag of all graph vertices to false\&. "
+.ti -1c
+.RI "\fBAdj\fP * \fBcreateAdj\fP (int cod, float valuedistance)"
+.br
+.RI "Creates a new adjacency list node\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBinsertAdjacentVertex\fP (\fBVertex\fP *g, char *origin, char *dest, float valuedistance, bool *res)"
+.br
+.RI "Inserts a new adjacent vertex into an adjacency list\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBinsertAdjacentVertexCod\fP (\fBVertex\fP *g, int codOrigin, int codDest, float valuedistance, bool *res)"
+.br
+.RI "Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes\&. "
+.ti -1c
+.RI "bool \fBexistAdj\fP (\fBAdj\fP *h, int cod)"
+.br
+.RI "Checks if an adjacent vertex already exists in an adjacency list\&. "
+.ti -1c
+.RI "\fBAdj\fP * \fBinsertAdj\fP (\fBAdj\fP *h, \fBAdj\fP *new, bool *res)"
+.br
+.RI "Inserts a new adjacent vertex to a given vertex in the graph\&. "
+.ti -1c
+.RI "void \fBshowAdj\fP (\fBAdj\fP *h)"
+.br
+.RI "Recursively displays the adjacent vertices of a given vertex\&. "
+.ti -1c
+.RI "\fBAdj\fP * \fBdestroyAdj\fP (\fBAdj\fP *h)"
+.br
+.RI "Recursively destroys the adjacent vertex list\&. "
+.ti -1c
+.RI "int \fBcountPaths\fP (\fBVertex\fP *g, int src, int dest, int pathCount)"
+.br
+.RI "Counts the number of paths between two vertices in the graph\&. "
+.ti -1c
+.RI "int \fBcountPathsVertexsName\fP (\fBVertex\fP *g, char *src, char *dest, int pathCount)"
+.br
+.RI "Counts the number of paths between two vertices in the graph, given their names\&. "
+.ti -1c
+.RI "bool \fBdepthFirstSearchRec\fP (\fBVertex\fP *g, int origin, int dest)"
+.br
+.RI "Recursively performs a depth-first search on the graph to find a path between two vertices\&. "
+.ti -1c
+.RI "bool \fBdepthFirstSearchNamesRec\fP (\fBVertex\fP *g, char *src, char *dest)"
+.br
+.RI "Recursively performs a depth-first search on the graph to find a path between two vertices, given their names\&. "
+.ti -1c
+.RI "\fBBest\fP \fBbestPath\fP (\fBVertex\fP *g, int n, int v)"
+.br
+.RI "Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra's algorithm\&. "
+.ti -1c
+.RI "void \fBshowAllPath\fP (\fBBest\fP b, int n, int v)"
+.br
+.RI "ShowAllPath - Function that displays the shortest path and distance to all vertices in the graph\&. "
+.ti -1c
+.RI "int \fBsaveGraph\fP (\fBVertex\fP *h, char *fileName)"
+.br
+.RI "SaveGraph - Function that saves the graph to a binary file\&. "
+.ti -1c
+.RI "int \fBsaveAdj\fP (\fBAdj\fP *h, char *fileName, int codVertexOrigin)"
+.br
+.RI "SaveAdj - Function that saves the adjacency list of a vertex to a binary file\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBloadGraph\fP (\fBVertex\fP *h, char *fileName, bool *res)"
+.br
+.RI "LoadGraph - Function that loads a graph from a binary file\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBloadAdj\fP (\fBVertex\fP *g, bool *res)"
+.br
+.RI "LoadAdj - Function that loads the adjacency lists of all vertices in a graph from binary files\&. "
+.ti -1c
+.RI "\fBVertex\fP * \fBroutesReadTxt\fP (\fBVertex\fP *g, bool *res, int *tot)"
+.br
+.RI "Reads the initial data from two text files and creates a graph of routes and edges\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+File containing the routes functions\&. 
+
+This file contains the implementation of functions related to the management of routes with graphs
+.PP
+\fBAuthor\fP
+.RS 4
+João Pereira 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBBest\fP bestPath (\fBVertex\fP * g, int n, int v)"
+
+.PP
+Finds the shortest path from a given vertex to all other vertices in the graph using Dijkstra's algorithm\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP The head of the vertex list\&. 
+.br
+\fIn\fP The number of vertices in the graph\&. 
+.br
+\fIv\fP The code of the vertex to start the search from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A struct containing the shortest distance and previous vertex for each vertex in the graph\&. 
+.RE
+.PP
+
+.SS "int countPaths (\fBVertex\fP * g, int src, int dest, int pathCount)"
+
+.PP
+Counts the number of paths between two vertices in the graph\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP The head of the vertex list\&. 
+.br
+\fIsrc\fP The code of the source vertex\&. 
+.br
+\fIdest\fP The code of the destination vertex\&. 
+.br
+\fIpathCount\fP The number of paths found so far\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of paths between the source and destination vertices\&. 
+.RE
+.PP
+
+.SS "int countPathsVertexsName (\fBVertex\fP * g, char * src, char * dest, int pathCount)"
+
+.PP
+Counts the number of paths between two vertices in the graph, given their names\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP The head of the vertex list\&. 
+.br
+\fIsrc\fP The name of the source vertex\&. 
+.br
+\fIdest\fP The name of the destination vertex\&. 
+.br
+\fIpathCount\fP The number of paths found so far\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of paths between the source and destination vertices\&. 
+.RE
+.PP
+
+.SS "\fBAdj\fP * createAdj (int cod, float valuedistance)"
+
+.PP
+Creates a new adjacency list node\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcod\fP Adjacent vertex identifier code\&. 
+.br
+\fIvaluedistance\fP Value of distance between vertices\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the newly created node\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * createRoute ()"
+
+.PP
+Creates a new empty graph\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * createRouteVertex (char * city, int cod)"
+
+.PP
+Creates a new vertex for the graph\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcity\fP Name of the vertex city\&. 
+.br
+\fIcod\fP \fBVertex\fP identifier code\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the newly created vertex\&. 
+.RE
+.PP
+
+.SS "bool depthFirstSearchNamesRec (\fBVertex\fP * g, char * src, char * dest)"
+
+.PP
+Recursively performs a depth-first search on the graph to find a path between two vertices, given their names\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP The head of the vertex list\&. 
+.br
+\fIsrc\fP The name of the source vertex\&. 
+.br
+\fIdest\fP The name of the destination vertex\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if a path is found, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool depthFirstSearchRec (\fBVertex\fP * g, int origin, int dest)"
+
+.PP
+Recursively performs a depth-first search on the graph to find a path between two vertices\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP The head of the vertex list\&. 
+.br
+\fIorigin\fP The code of the origin vertex\&. 
+.br
+\fIdest\fP The code of the destination vertex\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if a path is found, false otherwise\&. 
+.RE
+.PP
+
+.SS "\fBAdj\fP * destroyAdj (\fBAdj\fP * h)"
+
+.PP
+Recursively destroys the adjacent vertex list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP The head of the adjacent vertex list\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+NULL\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * destroyRoutes (\fBVertex\fP * g)"
+
+.PP
+Frees the memory allocated to the graph and its adjacency lists\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph (NULL)\&. 
+.RE
+.PP
+
+.SS "bool existAdj (\fBAdj\fP * h, int cod)"
+
+.PP
+Checks if an adjacent vertex already exists in an adjacency list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP Pointer to the first node in the adjacency list\&. 
+.br
+\fIcod\fP Code identifying the adjacent vertex to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the adjacent vertex exists in the list, false otherwise\&. 
+.RE
+.PP
+
+.SS "\fBAdj\fP * insertAdj (\fBAdj\fP * h, \fBAdj\fP * new, bool * res)"
+
+.PP
+Inserts a new adjacent vertex to a given vertex in the graph\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP The head of the vertex list\&. 
+.br
+\fInew\fP The new adjacent vertex to be inserted\&. 
+.br
+\fIres\fP A pointer to a boolean variable that will be set to true if the insertion is successful\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The head of the vertex list\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * insertAdjacentVertex (\fBVertex\fP * g, char * origin, char * dest, float valuedistance, bool * res)"
+
+.PP
+Inserts a new adjacent vertex into an adjacency list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fIorigin\fP Name of the city of origin\&. 
+.br
+\fIdest\fP Name of the destination city\&. 
+.br
+\fIvaluedistance\fP Value of distance between vertices\&. 
+.br
+\fIres\fP Pointer to a variable that stores the result of the insert operation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * insertAdjacentVertexCod (\fBVertex\fP * g, int codOrigin, int codDest, float valuedistance, bool * res)"
+
+.PP
+Inserts a new adjacent vertex in an adjacency list based on the vertex identifier codes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fIcodOrigin\fP Code identifying the city of origin\&. 
+.br
+\fIcodDest\fP Code identifying the destination city\&. 
+.br
+\fIvaluedistance\fP Value of distance between vertices\&. 
+.br
+\fIres\fP Pointer to a variable that stores the result of the insert operation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * insertRouteVertex (\fBVertex\fP * g, \fBVertex\fP * new, bool * res)"
+
+.PP
+Inserts a new vertex into the graph in alphabetical order\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fInew\fP Pointer to the new vertex to insert\&. 
+.br
+\fIres\fP Pointer to a variable that stores the result of the insert operation\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * loadAdj (\fBVertex\fP * g, bool * res)"
+
+.PP
+LoadAdj - Function that loads the adjacency lists of all vertices in a graph from binary files\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Head of the linked list of vertices in the graph 
+.br
+\fIres\fP Pointer to a boolean variable that will be set to true if all adjacency lists were successfully loaded 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+: Head of the linked list of vertices in the graph with their adjacency lists loaded 
+.RE
+.PP
+
+.SS "\fBVertex\fP * loadGraph (\fBVertex\fP * h, char * fileName, bool * res)"
+
+.PP
+LoadGraph - Function that loads a graph from a binary file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP Head of the linked list of vertices in the graph 
+.br
+\fIfileName\fP Name of the file to load the graph from 
+.br
+\fIres\fP Pointer to a boolean variable that will be set to true if the graph was successfully loaded 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+: Head of the linked list of vertices in the loaded graph, or NULL if the file could not be opened 
+.RE
+.PP
+
+.SS "\fBVertex\fP * resetVisitedVertex (\fBVertex\fP * g)"
+
+.PP
+Resets the 'visited' flag of all graph vertices to false\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * routesReadTxt (\fBVertex\fP * g, bool * res, int * tot)"
+
+.PP
+Reads the initial data from two text files and creates a graph of routes and edges\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the graph of routes and edges\&. 
+.br
+\fIres\fP Pointer to a boolean variable that will be set to true if any errors occur during the creation of the graph\&. 
+.br
+\fItot\fP Pointer to an integer variable that will be incremented for each new vertex added to the graph\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the graph of routes and edges\&. 
+.RE
+.PP
+
+.SS "int saveAdj (\fBAdj\fP * h, char * fileName, int codVertexOrigin)"
+
+.PP
+SaveAdj - Function that saves the adjacency list of a vertex to a binary file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP Head of the linked list of adjacent vertices 
+.br
+\fIfileName\fP Name of the file to save the adjacency list to 
+.br
+\fIcodVertexOrigin\fP Code of the vertex that the adjacency list belongs to 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+: 1 if the adjacency list was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL 
+.RE
+.PP
+
+.SS "int saveGraph (\fBVertex\fP * h, char * fileName)"
+
+.PP
+SaveGraph - Function that saves the graph to a binary file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP Head of the linked list of vertices in the graph 
+.br
+\fIfileName\fP Name of the file to save the graph to 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+: 1 if the graph was successfully saved, -1 if the file could not be opened, -2 if the head of the linked list is NULL 
+.RE
+.PP
+
+.SS "int searchCodVertex (\fBVertex\fP * g, char * city)"
+
+.PP
+Gets the identifier code of a vertex from the city name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fIcity\fP Name of the city to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBVertex\fP identifier code or -1 if the graph is empty, -2 if the city is not found\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * searchVertex (\fBVertex\fP * g, char * city)"
+
+.PP
+Finds a vertex from the city name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fIcity\fP Name of the city to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the found vertex, or NULL if the city is not found\&. 
+.RE
+.PP
+
+.SS "\fBVertex\fP * searchVertexCod (\fBVertex\fP * g, int cod)"
+
+.PP
+Fetch a vertex from the identifier code\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.br
+\fIcod\fP Identifier code of the vertex to be searched\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the found vertex or NULL if the code is not found\&. 
+.RE
+.PP
+
+.SS "void showAdj (\fBAdj\fP * h)"
+
+.PP
+Recursively displays the adjacent vertices of a given vertex\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIh\fP The head of the adjacent vertex list\&. 
+.RE
+.PP
+
+.SS "void showAllPath (\fBBest\fP b, int n, int v)"
+
+.PP
+ShowAllPath - Function that displays the shortest path and distance to all vertices in the graph\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIb\fP \fBBest\fP struct containing the shortest distance and previous vertex for each vertex in the graph 
+.br
+\fIn\fP Number of vertices in the graph 
+.br
+\fIv\fP Index of the starting vertex 
+.RE
+.PP
+
+.SS "void showRoutes (\fBVertex\fP * g)"
+
+.PP
+Displays on screen all vertices and their respective adjacency lists of the graph\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIg\fP Pointer to the starting vertex of the graph\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Trabalho Final EDA from the source code\&.

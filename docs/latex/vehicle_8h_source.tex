@@ -1,0 +1,52 @@
+\doxysection{vehicle.\+h}
+\hypertarget{vehicle_8h_source}{}\label{vehicle_8h_source}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/vehicle.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/vehicle.h}}
+\mbox{\hyperlink{vehicle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{routes_8h}{./routes.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vehicle}{Vehicle}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vehicle_aaaa75c27dd8d56edcd1cbac0cf8447b9}{registration}}[50];}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vehicle_aab10593edc73627b19ef9de53fd331d2}{type}}[50];}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vehicle_a30edcbc6721c4ee39eaefa55f2c6b0cc}{battery}};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vehicle_a66700f11d42fee2413e58dbf49c43ee1}{cost}};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_vehicle_a7f6b14e3e00db83dc6d061d005021cce}{isInUse}};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_vehicle_a12f443a2876a59dda49bb7d296c40fcd}{location}}[50];}
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{struct_vehicle}{Vehicle}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ \mbox{\hyperlink{struct_vehicle_list_a7e67faac7eb0a26632340a79a8f0bf5f}{vehicle}};}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *\mbox{\hyperlink{struct_vehicle_list_a16931b761a6ae7dc99684baed4b50ab3}{next}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *\mbox{\hyperlink{vehicle_8h_a962372f88de03fcd5581aa44353afec6}{readVehiclesFromTxt}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **headNode);}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ *\mbox{\hyperlink{vehicle_8h_acc427433abb865212061d5c9aa8e19dd}{createVehicle}}(\textcolor{keywordtype}{char}\ *registration,\ \textcolor{keywordtype}{char}\ *type,\ \textcolor{keywordtype}{int}\ battery,\ \textcolor{keywordtype}{int}\ cost,\ \textcolor{keywordtype}{bool}\ isInUse,\ \textcolor{keywordtype}{char}\ *location,\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *graph);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_a2f9e802c7e03357a0b24f6e35ae08e2a}{createVehicleList}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **headNode,\ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ vehicle);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a1f861dcfe17198ab1bd092d377c563c7}{printVehicleList}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_a1a12f926cc8099df21bb1f19b140ae43}{editVehicle}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode,\ \textcolor{keywordtype}{char}\ *registration,\ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ vehicle);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_aa5187e1606f79dcc2f2ac6f50c9488e7}{deleteVehicle}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **headNode,\ \textcolor{keywordtype}{char}\ *registration);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_abf926983d64d536d6290140eb25af2cd}{storeVehicleListInBin}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_ad5c915a3b01325b4b0c444e5a6d95390}{searchVehicleByRegistration}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode,\ \textcolor{keywordtype}{char}\ *registration);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_ae070c731f906704c4732c31550e6de33}{isVehicleAvailable}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode,\ \textcolor{keywordtype}{char}\ *registration);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_ae4e0326a3173e078e405a06341910545}{editVehicleAvailability}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *headNode,\ \textcolor{keywordtype}{char}\ *registration,\ \textcolor{keywordtype}{bool}\ isInUse);}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *\mbox{\hyperlink{vehicle_8h_a79573fa45f9b0c6d508d15c53bfe3184}{sortVehicleListDesc}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **headNode);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{vehicle_8h_acf84066409b372896f5f76be1f5b45c3}{checkVehiclesInRadius}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *g,\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *vl,\ \textcolor{keywordtype}{int}\ city,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{char}\ type[]);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_aefd22c2a318f5e40dbdd3d6339d4ba28}{markAsVisited}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *graph);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ad6e2aee20d6d76e8c5c806293a005b23}{traverseGraph}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *graph,\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *vehicles,\ \mbox{\hyperlink{struct_vertex}{Vertex}}\ *current\_node,\ \textcolor{keywordtype}{float}\ remaining\_distance,\ \textcolor{keywordtype}{char}\ type[]);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_a783a166328fa4a2a53819bf8b360ca0a}{showVehicleByTypeOnLocation}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *head,\ \textcolor{keywordtype}{char}\ location[],\ \textcolor{keywordtype}{char}\ type[]);}
+\DoxyCodeLine{00050\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *\mbox{\hyperlink{vehicle_8h_a2fe05f7785a38b737d421da08e511e89}{recoverTruck}}(\mbox{\hyperlink{struct_vertex}{Vertex}}\ *graph,\ \mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **vehicle\_list,\ \textcolor{keywordtype}{int}\ truck\_capacity);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_a3c4821076839fab7e48392abf34d4db1}{checkIsLegibleForTruck}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ *vehicle);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{vehicle_8h_a26f2bdaa084b360f603a0bc9334bd0cb}{headInsertionVehicleList}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **head,\ \mbox{\hyperlink{struct_vehicle}{Vehicle}}\ new\_vehicle);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vehicle_8h_ae5f10ae9f25a3fb2ea24e8496399a96a}{moveAndRechargeVehicle}}(\mbox{\hyperlink{struct_vehicle_list}{VehicleList}}\ **vehicles,\ \textcolor{keywordtype}{char}\ vehicle\_registration[50],\ \textcolor{keywordtype}{char}\ location[]);}
+
+\end{DoxyCode}

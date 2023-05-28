@@ -1,0 +1,208 @@
+\doxysection{/\+Users/inflightit/\+Desktop/coisas/aula\+\_\+ead/trabalho\+Pratico/models/rentals.c File Reference}
+\hypertarget{rentals_8c}{}\label{rentals_8c}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/rentals.c@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/rentals.c}}
+
+
+File containing the functions to manage the rentals.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include \"{}./rentals.\+h\"{}}\newline
+{\ttfamily \#include \"{}./user.\+h\"{}}\newline
+{\ttfamily \#include \"{}./vehicle.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_rent}{Rent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{rentals_8c_a630605bf530ca0a78a13ac7b7b8394dc}{create\+Rent}} (char \texorpdfstring{$\ast$}{*}vehicle\+Registration, int user\+Nif, int time\+In\+Minutes, \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}vehicle\+List, \mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}user\+List, \mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}rent\+List)
+\begin{DoxyCompactList}\small\item\em Creates a new rent. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{rentals_8c_a22ac0bc64779645502309d395d6ef0c3}{create\+Rent\+List}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node, \mbox{\hyperlink{struct_rent}{Rent}} rent)
+\begin{DoxyCompactList}\small\item\em Creates a new node in the rent list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rentals_8c_ac32e4f9d474cf56efc5676307e970719}{print\+Rent\+List}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Prints the rent list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{rentals_8c_a26925977432b96e5502518bd48531445}{delete\+Rent}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}head\+Node, int id, char \texorpdfstring{$\ast$}{*}vehicle\+Registration, \mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}vehicle\+List)
+\begin{DoxyCompactList}\small\item\em Deletes a rent from the rent list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rentals_8c_af9dd3cf157a9ba44cd8d2cf899267f98}{count\+Rents}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Counts the number of rents in the rent list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{rentals_8c_aab6c450fbb87a46cb374c78b591cb656}{edit\+Rent}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}head\+Node, int id, \mbox{\hyperlink{struct_rent}{Rent}} rent)
+\begin{DoxyCompactList}\small\item\em Edits a rent in the rent list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{rentals_8c_ac3b6a49c51c5278f9f6b2bf3b0d9f94e}{store\+Rents\+In\+Bin}} (\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}head\+Node)
+\begin{DoxyCompactList}\small\item\em Stores the rents in a binary file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the functions to manage the rentals. 
+
+This file contains the implementation of functions to manage the rentals, such as creating a new rent, creating a rent list, printing the rent list, deleting a rent, counting the number of rents, editing a rent, and storing the rents in a binary file.
+
+\begin{DoxyAuthor}{Author}
+João Pereira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/03-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rentals_8c_af9dd3cf157a9ba44cd8d2cf899267f98}\label{rentals_8c_af9dd3cf157a9ba44cd8d2cf899267f98} 
+\index{rentals.c@{rentals.c}!countRents@{countRents}}
+\index{countRents@{countRents}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{countRents()}{countRents()}}
+{\footnotesize\ttfamily int count\+Rents (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Counts the number of rents in the rent list. 
+
+This function counts the number of rents in the rent list and returns the count.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of rents in the rent list 
+\end{DoxyReturn}
+\Hypertarget{rentals_8c_a630605bf530ca0a78a13ac7b7b8394dc}\label{rentals_8c_a630605bf530ca0a78a13ac7b7b8394dc} 
+\index{rentals.c@{rentals.c}!createRent@{createRent}}
+\index{createRent@{createRent}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{createRent()}{createRent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_rent}{Rent}} \texorpdfstring{$\ast$}{*} create\+Rent (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{vehicle\+Registration,  }\item[{int}]{user\+Nif,  }\item[{int}]{time\+In\+Minutes,  }\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{vehicle\+List,  }\item[{\mbox{\hyperlink{struct_user_list}{User\+List}} \texorpdfstring{$\ast$}{*}}]{user\+List,  }\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{rent\+List }\end{DoxyParamCaption})}
+
+
+
+Creates a new rent. 
+
+This function creates a new rent with the given vehicle registration, user NIF, and time in minutes. It also checks if the user and vehicle exist and if the vehicle is available. If any of these conditions are not met, the function returns NULL. Otherwise, it creates a new rent and returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vehicle\+Registration} & The registration of the vehicle to be rented \\
+\hline
+{\em user\+Nif} & The NIF of the user renting the vehicle \\
+\hline
+{\em time\+In\+Minutes} & The time in minutes the vehicle will be rented for \\
+\hline
+{\em vehicle\+List} & The list of vehicles \\
+\hline
+{\em user\+List} & The list of users \\
+\hline
+{\em rent\+List} & The list of rents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created rent, or NULL if any of the conditions are not met 
+\end{DoxyReturn}
+\Hypertarget{rentals_8c_a22ac0bc64779645502309d395d6ef0c3}\label{rentals_8c_a22ac0bc64779645502309d395d6ef0c3} 
+\index{rentals.c@{rentals.c}!createRentList@{createRentList}}
+\index{createRentList@{createRentList}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{createRentList()}{createRentList()}}
+{\footnotesize\ttfamily bool create\+Rent\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{\mbox{\hyperlink{struct_rent}{Rent}}}]{rent }\end{DoxyParamCaption})}
+
+
+
+Creates a new node in the rent list. 
+
+This function creates a new node in the rent list with the given rent. It returns true if the node was successfully created, or false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+{\em rent} & The rent to be added to the list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node was successfully created, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{rentals_8c_a26925977432b96e5502518bd48531445}\label{rentals_8c_a26925977432b96e5502518bd48531445} 
+\index{rentals.c@{rentals.c}!deleteRent@{deleteRent}}
+\index{deleteRent@{deleteRent}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{deleteRent()}{deleteRent()}}
+{\footnotesize\ttfamily bool delete\+Rent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{int}]{id,  }\item[{char \texorpdfstring{$\ast$}{*}}]{vehicle\+Registration,  }\item[{\mbox{\hyperlink{struct_vehicle_list}{Vehicle\+List}} \texorpdfstring{$\ast$}{*}}]{vehicle\+List }\end{DoxyParamCaption})}
+
+
+
+Deletes a rent from the rent list. 
+
+This function deletes a rent from the rent list with the given ID and vehicle registration. It also changes the availability of the vehicle to true. It returns true if the rent was successfully deleted, or false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+{\em id} & The ID of the rent to be deleted \\
+\hline
+{\em vehicle\+Registration} & The registration of the vehicle to be returned \\
+\hline
+{\em vehicle\+List} & The list of vehicles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the rent was successfully deleted, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{rentals_8c_aab6c450fbb87a46cb374c78b591cb656}\label{rentals_8c_aab6c450fbb87a46cb374c78b591cb656} 
+\index{rentals.c@{rentals.c}!editRent@{editRent}}
+\index{editRent@{editRent}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{editRent()}{editRent()}}
+{\footnotesize\ttfamily bool edit\+Rent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{struct_rent}{Rent}}}]{rent }\end{DoxyParamCaption})}
+
+
+
+Edits a rent in the rent list. 
+
+This function edits a rent in the rent list with the given ID. It replaces the rent with the given rent parameter. It returns true if the rent was successfully edited, or false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+{\em id} & The ID of the rent to be edited \\
+\hline
+{\em rent} & The new rent to replace the old one \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the rent was successfully edited, or false otherwise 
+\end{DoxyReturn}
+\Hypertarget{rentals_8c_ac32e4f9d474cf56efc5676307e970719}\label{rentals_8c_ac32e4f9d474cf56efc5676307e970719} 
+\index{rentals.c@{rentals.c}!printRentList@{printRentList}}
+\index{printRentList@{printRentList}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{printRentList()}{printRentList()}}
+{\footnotesize\ttfamily void print\+Rent\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Prints the rent list. 
+
+This function prints the rent list, showing the ID, vehicle registration, user NIF, and time in minutes for each rent in the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{rentals_8c_ac3b6a49c51c5278f9f6b2bf3b0d9f94e}\label{rentals_8c_ac3b6a49c51c5278f9f6b2bf3b0d9f94e} 
+\index{rentals.c@{rentals.c}!storeRentsInBin@{storeRentsInBin}}
+\index{storeRentsInBin@{storeRentsInBin}!rentals.c@{rentals.c}}
+\doxysubsubsection{\texorpdfstring{storeRentsInBin()}{storeRentsInBin()}}
+{\footnotesize\ttfamily bool store\+Rents\+In\+Bin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rent_list}{Rent\+List}} \texorpdfstring{$\ast$}{*}}]{head\+Node }\end{DoxyParamCaption})}
+
+
+
+Stores the rents in a binary file. 
+
+This function stores the rents in a binary file named \"{}rents.\+bin\"{} in the \"{}saved-\/data\"{} directory. It returns true if the rents were successfully stored, or false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Node} & A pointer to the head node of the rent list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the rents were successfully stored, or false otherwise 
+\end{DoxyReturn}

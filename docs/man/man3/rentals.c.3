@@ -1,0 +1,211 @@
+.TH "/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c" 3Trabalho Final EDA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c \- File containing the functions to manage the rentals\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <errno\&.h>\fP
+.br
+\fC#include '\&./rentals\&.h'\fP
+.br
+\fC#include '\&./user\&.h'\fP
+.br
+\fC#include '\&./vehicle\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRent\fP * \fBcreateRent\fP (char *vehicleRegistration, int userNif, int timeInMinutes, \fBVehicleList\fP *vehicleList, \fBUserList\fP *userList, \fBRentList\fP **rentList)"
+.br
+.RI "Creates a new rent\&. "
+.ti -1c
+.RI "bool \fBcreateRentList\fP (\fBRentList\fP **headNode, \fBRent\fP rent)"
+.br
+.RI "Creates a new node in the rent list\&. "
+.ti -1c
+.RI "void \fBprintRentList\fP (\fBRentList\fP *headNode)"
+.br
+.RI "Prints the rent list\&. "
+.ti -1c
+.RI "bool \fBdeleteRent\fP (\fBRentList\fP **headNode, int id, char *vehicleRegistration, \fBVehicleList\fP *vehicleList)"
+.br
+.RI "Deletes a rent from the rent list\&. "
+.ti -1c
+.RI "int \fBcountRents\fP (\fBRentList\fP *headNode)"
+.br
+.RI "Counts the number of rents in the rent list\&. "
+.ti -1c
+.RI "bool \fBeditRent\fP (\fBRentList\fP *headNode, int id, \fBRent\fP rent)"
+.br
+.RI "Edits a rent in the rent list\&. "
+.ti -1c
+.RI "bool \fBstoreRentsInBin\fP (\fBRentList\fP *headNode)"
+.br
+.RI "Stores the rents in a binary file\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+File containing the functions to manage the rentals\&. 
+
+This file contains the implementation of functions to manage the rentals, such as creating a new rent, creating a rent list, printing the rent list, deleting a rent, counting the number of rents, editing a rent, and storing the rents in a binary file\&.
+.PP
+\fBAuthor\fP
+.RS 4
+João Pereira 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2023-03-18 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "int countRents (\fBRentList\fP * headNode)"
+
+.PP
+Counts the number of rents in the rent list\&. This function counts the number of rents in the rent list and returns the count\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of rents in the rent list 
+.RE
+.PP
+
+.SS "\fBRent\fP * createRent (char * vehicleRegistration, int userNif, int timeInMinutes, \fBVehicleList\fP * vehicleList, \fBUserList\fP * userList, \fBRentList\fP ** rentList)"
+
+.PP
+Creates a new rent\&. This function creates a new rent with the given vehicle registration, user NIF, and time in minutes\&. It also checks if the user and vehicle exist and if the vehicle is available\&. If any of these conditions are not met, the function returns NULL\&. Otherwise, it creates a new rent and returns it\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIvehicleRegistration\fP The registration of the vehicle to be rented 
+.br
+\fIuserNif\fP The NIF of the user renting the vehicle 
+.br
+\fItimeInMinutes\fP The time in minutes the vehicle will be rented for 
+.br
+\fIvehicleList\fP The list of vehicles 
+.br
+\fIuserList\fP The list of users 
+.br
+\fIrentList\fP The list of rents 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the newly created rent, or NULL if any of the conditions are not met 
+.RE
+.PP
+
+.SS "bool createRentList (\fBRentList\fP ** headNode, \fBRent\fP rent)"
+
+.PP
+Creates a new node in the rent list\&. This function creates a new node in the rent list with the given rent\&. It returns true if the node was successfully created, or false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.br
+\fIrent\fP The rent to be added to the list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the node was successfully created, or false otherwise 
+.RE
+.PP
+
+.SS "bool deleteRent (\fBRentList\fP ** headNode, int id, char * vehicleRegistration, \fBVehicleList\fP * vehicleList)"
+
+.PP
+Deletes a rent from the rent list\&. This function deletes a rent from the rent list with the given ID and vehicle registration\&. It also changes the availability of the vehicle to true\&. It returns true if the rent was successfully deleted, or false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.br
+\fIid\fP The ID of the rent to be deleted 
+.br
+\fIvehicleRegistration\fP The registration of the vehicle to be returned 
+.br
+\fIvehicleList\fP The list of vehicles 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the rent was successfully deleted, or false otherwise 
+.RE
+.PP
+
+.SS "bool editRent (\fBRentList\fP * headNode, int id, \fBRent\fP rent)"
+
+.PP
+Edits a rent in the rent list\&. This function edits a rent in the rent list with the given ID\&. It replaces the rent with the given rent parameter\&. It returns true if the rent was successfully edited, or false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.br
+\fIid\fP The ID of the rent to be edited 
+.br
+\fIrent\fP The new rent to replace the old one 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the rent was successfully edited, or false otherwise 
+.RE
+.PP
+
+.SS "void printRentList (\fBRentList\fP * headNode)"
+
+.PP
+Prints the rent list\&. This function prints the rent list, showing the ID, vehicle registration, user NIF, and time in minutes for each rent in the list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.RE
+.PP
+
+.SS "bool storeRentsInBin (\fBRentList\fP * headNode)"
+
+.PP
+Stores the rents in a binary file\&. This function stores the rents in a binary file named 'rents\&.bin' in the 'saved-data' directory\&. It returns true if the rents were successfully stored, or false otherwise\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the rent list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the rents were successfully stored, or false otherwise 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Trabalho Final EDA from the source code\&.

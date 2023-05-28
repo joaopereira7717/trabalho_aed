@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_best" kind="struct" language="C++" prot="public">
+    <compoundname>Best</compoundname>
+    <includes refid="routes_8h" local="no">routes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_best_1a20db43048c55f6037809778aead48e5c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int distance[MAX]</definition>
+        <argsstring>[MAX]</argsstring>
+        <name>distance</name>
+        <qualifiedname>Best::distance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="62" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int anteriores[MAX]</definition>
+        <argsstring>[MAX]</argsstring>
+        <name>anteriores</name>
+        <qualifiedname>Best::anteriores</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="63" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="60" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="61" bodyend="64"/>
+    <listofallmembers>
+      <member refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" prot="public" virt="non-virtual"><scope>Best</scope><name>anteriores</name></member>
+      <member refid="struct_best_1a20db43048c55f6037809778aead48e5c" prot="public" virt="non-virtual"><scope>Best</scope><name>distance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+\doxysection{user.\+h}
+\hypertarget{user_8h_source}{}\label{user_8h_source}\index{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/user.h@{/Users/inflightit/Desktop/coisas/aula\_ead/trabalhoPratico/models/user.h}}
+\mbox{\hyperlink{user_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_user_list}{UserList}}\ \mbox{\hyperlink{struct_user_list}{UserList}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_user_ad68c6985dce5a3d709f854778dedee19}{nif}};}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{char}\ name[50];}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{char}\ email[50];}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_user_ae2e2e8a4ea94dd765699711cba3da163}{phone}};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_user_acfb3aa53add26760a83b15834b2390f4}{zip}};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{char}\ password[50];}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_user_a8fccfa9bbd26416dcb9abadce88130d9}{wallet}};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_user_af2904b563c9b85eac138359a5e905161}{isManager}};}
+\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{struct_user}{User}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_user_list}{UserList}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{struct_user}{User}}\ \mbox{\hyperlink{struct_user_list_a7ffd636d88d39d8b4366d5423d352b0b}{user}};}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{struct_user_list}{UserList}}\ *\mbox{\hyperlink{struct_user_list_a95d6d33ec7130b8fd25c4239b9ea0fd8}{next}};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \mbox{\hyperlink{struct_user_list}{UserList}}\ *\mbox{\hyperlink{user_8h_ad203452512810651c2171760555aa2a9}{readUsersFromTxt}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ **headNode);}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{struct_user_list}{UserList}}\ *\mbox{\hyperlink{user_8h_a409cd4e7d7f39664f5f342ddd57dcb97}{setUsersData}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ **headNode);}
+\DoxyCodeLine{00034\ \mbox{\hyperlink{struct_user}{User}}\ *\mbox{\hyperlink{user_8h_a4b161546e24d1b81b92fef4f200cf42b}{createUser}}(\textcolor{keywordtype}{int}\ nif,\ \textcolor{keywordtype}{char}\ name[50],\ \textcolor{keywordtype}{char}\ email[50],\ \textcolor{keywordtype}{int}\ phone,\ \textcolor{keywordtype}{int}\ zip,\ \textcolor{keywordtype}{char}\ password[50],\ \textcolor{keywordtype}{int}\ wallet,\ \textcolor{keywordtype}{bool}\ isManager);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{user_8h_af63db65a74a034cbe79bc20a596cddef}{createUserList}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ **headNode,\ \mbox{\hyperlink{struct_user}{User}}\ user);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{user_8h_a52109c29fee919bb798939a3eb7ce0c8}{printUserList}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ *headNode);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{user_8h_a654440f6926efc64d3240c437445d8ad}{editUser}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ *usersList,\ \textcolor{keywordtype}{int}\ nif,\ \mbox{\hyperlink{struct_user}{User}}\ user);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{user_8h_ac197452dacc7d54ad7d8344f7f0bdc21}{deleteUser}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ **usersList,\ \textcolor{keywordtype}{int}\ nif);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{user_8h_a3e9c4ed2c50d02ecb3ce6ec8593c3ef2}{storeUsersInBin}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ *headNode);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{user_8h_a33645599f77fa65990a9d319b408d83d}{searchUserByNif}}(\mbox{\hyperlink{struct_user_list}{UserList}}\ *headNode,\ \textcolor{keywordtype}{int}\ nif);}
+
+\end{DoxyCode}

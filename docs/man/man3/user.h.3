@@ -1,0 +1,248 @@
+.TH "/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" 3Trabalho Final EDA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h \- File containing the functions to manage the users\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdbool\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBUser\fP"
+.br
+.ti -1c
+.RI "struct \fBUserList\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBUserList\fP \fBUserList\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUserList\fP * \fBreadUsersFromTxt\fP (\fBUserList\fP **headNode)"
+.br
+.RI "Reads users from a text file and creates a user list\&. "
+.ti -1c
+.RI "\fBUserList\fP * \fBsetUsersData\fP (\fBUserList\fP **headNode)"
+.br
+.RI "setUsersData - Reads user data from a binary file and creates a linked list of users\&. @headNode: A pointer to a pointer to the head node of the linked list\&. "
+.ti -1c
+.RI "\fBUser\fP * \fBcreateUser\fP (int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager)"
+.br
+.RI "Creates a user\&. "
+.ti -1c
+.RI "bool \fBcreateUserList\fP (\fBUserList\fP **headNode, \fBUser\fP user)"
+.br
+.RI "Creates a user list\&. "
+.ti -1c
+.RI "void \fBprintUserList\fP (\fBUserList\fP *headNode)"
+.br
+.RI "Prints the user list\&. "
+.ti -1c
+.RI "bool \fBeditUser\fP (\fBUserList\fP *usersList, int nif, \fBUser\fP user)"
+.br
+.RI "Edits a user in the list with the given NIF\&. "
+.ti -1c
+.RI "bool \fBdeleteUser\fP (\fBUserList\fP **usersList, int nif)"
+.br
+.RI "Deletes a user from the list\&. "
+.ti -1c
+.RI "bool \fBstoreUsersInBin\fP (\fBUserList\fP *headNode)"
+.br
+.RI "Stores the user list in a binary file\&. "
+.ti -1c
+.RI "bool \fBsearchUserByNif\fP (\fBUserList\fP *headNode, int nif)"
+.br
+.RI "Searches for a user in the list with the given NIF\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+File containing the functions to manage the users\&. 
+
+
+.PP
+\fBAuthor\fP
+.RS 4
+João Pereira 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2023-03-18 
+.RE
+.PP
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBUserList\fP \fBUserList\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBUser\fP * createUser (int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager)"
+
+.PP
+Creates a user\&. This function creates a user with the given parameters and returns a pointer to the user\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInif\fP The NIF of the user 
+.br
+\fIname\fP The name of the user 
+.br
+\fIemail\fP The email of the user 
+.br
+\fIphone\fP The phone number of the user 
+.br
+\fIzip\fP The zip code of the user 
+.br
+\fIpassword\fP The password of the user 
+.br
+\fIwallet\fP The wallet balance of the user 
+.br
+\fIisManager\fP A boolean indicating whether the user is a manager or not 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the created user 
+.RE
+.PP
+
+.SS "bool createUserList (\fBUserList\fP ** headNode, \fBUser\fP user)"
+
+.PP
+Creates a user list\&. This function creates a new node in the user list with the given user and adds it to the head of the list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the user list 
+.br
+\fIuser\fP The user to be added to the list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean indicating whether the user list was successfully created or not 
+.RE
+.PP
+
+.SS "bool deleteUser (\fBUserList\fP ** usersList, int nif)"
+
+.PP
+Deletes a user from the list\&. This function searches for a user in the list with the given NIF and deletes it from the list\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIusersList\fP A pointer to the head node of the user list 
+.br
+\fInif\fP The NIF of the user to be deleted 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean indicating whether the user was successfully deleted or not 
+.RE
+.PP
+
+.SS "bool editUser (\fBUserList\fP * usersList, int nif, \fBUser\fP user)"
+
+.PP
+Edits a user in the list with the given NIF\&. This function searches for a user in the list with the given NIF and edits it with the given user\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIusersList\fP A pointer to the head node of the user list 
+.br
+\fInif\fP The NIF of the user to be edited 
+.br
+\fIuser\fP The user to replace the old user 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean indicating whether the user was successfully edited or not 
+.RE
+.PP
+
+.SS "void printUserList (\fBUserList\fP * headNode)"
+
+.PP
+Prints the user list\&. This function prints the user list to the console\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the user list 
+.RE
+.PP
+
+.SS "\fBUserList\fP * readUsersFromTxt (\fBUserList\fP ** headNode)"
+
+.PP
+Reads users from a text file and creates a user list\&. This function reads users from a text file and creates a user list\&. The user list is created by calling the createUserList function\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the user list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the head node of the user list 
+.RE
+.PP
+
+.SS "bool searchUserByNif (\fBUserList\fP * headNode, int nif)"
+
+.PP
+Searches for a user in the list with the given NIF\&. This function searches for a user in the list with the given NIF and returns a boolean indicating whether the user was found or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the user list 
+.br
+\fInif\fP The NIF of the user to be searched for 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean indicating whether the user was found or not 
+.RE
+.PP
+
+.SS "\fBUserList\fP * setUsersData (\fBUserList\fP ** headNode)"
+
+.PP
+setUsersData - Reads user data from a binary file and creates a linked list of users\&. @headNode: A pointer to a pointer to the head node of the linked list\&. This function opens a binary file containing user data and reads each user record into a \fBUser\fP struct\&. It then calls the createUserList function to create a new node in the linked list for each user\&. The headNode pointer is updated to point to the first node in the list\&. If the file cannot be opened, NULL is returned\&.
+.PP
+Return: A pointer to the head node of the linked list\&. 
+.SS "bool storeUsersInBin (\fBUserList\fP * headNode)"
+
+.PP
+Stores the user list in a binary file\&. This function stores the user list in a binary file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIheadNode\fP A pointer to the head node of the user list 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A boolean indicating whether the user list was successfully stored or not 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Trabalho Final EDA from the source code\&.

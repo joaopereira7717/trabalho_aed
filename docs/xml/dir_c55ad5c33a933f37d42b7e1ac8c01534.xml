@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_c55ad5c33a933f37d42b7e1ac8c01534" kind="dir">
+    <compoundname>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models</compoundname>
+    <innerfile refid="rentals_8c">rentals.c</innerfile>
+    <innerfile refid="rentals_8h">rentals.h</innerfile>
+    <innerfile refid="routes_8c">routes.c</innerfile>
+    <innerfile refid="routes_8h">routes.h</innerfile>
+    <innerfile refid="user_8c">user.c</innerfile>
+    <innerfile refid="user_8h">user.h</innerfile>
+    <innerfile refid="vehicle_8c">vehicle.c</innerfile>
+    <innerfile refid="vehicle_8h">vehicle.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/"/>
+  </compounddef>
+</doxygen>

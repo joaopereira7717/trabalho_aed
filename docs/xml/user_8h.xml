@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="user_8h" kind="file" language="C++">
+    <compoundname>user.h</compoundname>
+    <includes local="no">stdbool.h</includes>
+    <includedby refid="main_8c" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c</includedby>
+    <includedby refid="rentals_8c" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c</includedby>
+    <includedby refid="rentals_8h" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h</includedby>
+    <includedby refid="user_8c" local="yes">/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h</label>
+        <link refid="user_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdbool.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="3">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.c</label>
+        <link refid="rentals_8c"/>
+      </node>
+      <node id="4">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h</label>
+        <link refid="rentals_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c</label>
+        <link refid="user_8c"/>
+      </node>
+      <node id="1">
+        <label>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h</label>
+        <link refid="user_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_user" prot="public">User</innerclass>
+    <innerclass refid="struct_user_list" prot="public">UserList</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="user_8h_1a78e597570645123d7bd3a14c95158650" prot="public" static="no">
+        <type>struct <ref refid="struct_user_list" kindref="compound">UserList</ref></type>
+        <definition>typedef struct UserList UserList</definition>
+        <argsstring></argsstring>
+        <name>UserList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="12" column="23" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="user_8h_1ad203452512810651c2171760555aa2a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+        <definition>UserList * readUsersFromTxt</definition>
+        <argsstring>(UserList **headNode)</argsstring>
+        <name>readUsersFromTxt</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Reads users from a text file and creates a user list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function reads users from a text file and creates a user list. The user list is created by calling the createUserList function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the head node of the user list </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="32" column="10" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="26" bodyend="50" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="32" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a409cd4e7d7f39664f5f342ddd57dcb97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+        <definition>UserList * setUsersData</definition>
+        <argsstring>(UserList **headNode)</argsstring>
+        <name>setUsersData</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>setUsersData - Reads user data from a binary file and creates a linked list of users. @headNode: A pointer to a pointer to the head node of the linked list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function opens a binary file containing user data and reads each user record into a <ref refid="struct_user" kindref="compound">User</ref> struct. It then calls the createUserList function to create a new node in the linked list for each user. The headNode pointer is updated to point to the first node in the list. If the file cannot be opened, NULL is returned.</para>
+<para>Return: A pointer to the head node of the linked list. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="33" column="10" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="63" bodyend="89" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="33" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a4b161546e24d1b81b92fef4f200cf42b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_user" kindref="compound">User</ref> *</type>
+        <definition>User * createUser</definition>
+        <argsstring>(int nif, char name[50], char email[50], int phone, int zip, char password[50], int wallet, bool isManager)</argsstring>
+        <name>createUser</name>
+        <param>
+          <type>int</type>
+          <declname>nif</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>name</declname>
+          <array>[50]</array>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>email</declname>
+          <array>[50]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>phone</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zip</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>password</declname>
+          <array>[50]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>wallet</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isManager</declname>
+        </param>
+        <briefdescription>
+<para>Creates a user. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a user with the given parameters and returns a pointer to the user.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nif</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The NIF of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>email</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The email of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The phone number of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>zip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The zip code of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wallet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wallet balance of the user </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isManager</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean indicating whether the user is a manager or not </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the created user </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="34" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="106" bodyend="118" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1af63db65a74a034cbe79bc20a596cddef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool createUserList</definition>
+        <argsstring>(UserList **headNode, User user)</argsstring>
+        <name>createUserList</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> **</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user" kindref="compound">User</ref></type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Creates a user list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function creates a new node in the user list with the given user and adds it to the head of the list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user to be added to the list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean indicating whether the user list was successfully created or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="35" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="129" bodyend="144" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a52109c29fee919bb798939a3eb7ce0c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printUserList</definition>
+        <argsstring>(UserList *headNode)</argsstring>
+        <name>printUserList</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Prints the user list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prints the user list to the console.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="36" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="153" bodyend="171" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="36" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a654440f6926efc64d3240c437445d8ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool editUser</definition>
+        <argsstring>(UserList *usersList, int nif, User user)</argsstring>
+        <name>editUser</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+          <declname>usersList</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nif</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user" kindref="compound">User</ref></type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Edits a user in the list with the given NIF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a user in the list with the given NIF and edits it with the given user.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>usersList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nif</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The NIF of the user to be edited </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user to replace the old user </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean indicating whether the user was successfully edited or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="37" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="183" bodyend="196" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="37" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1ac197452dacc7d54ad7d8344f7f0bdc21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool deleteUser</definition>
+        <argsstring>(UserList **usersList, int nif)</argsstring>
+        <name>deleteUser</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> **</type>
+          <declname>usersList</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nif</declname>
+        </param>
+        <briefdescription>
+<para>Deletes a user from the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a user in the list with the given NIF and deletes it from the list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>usersList</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nif</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The NIF of the user to be deleted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean indicating whether the user was successfully deleted or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="38" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="207" bodyend="233" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="38" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a3e9c4ed2c50d02ecb3ce6ec8593c3ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool storeUsersInBin</definition>
+        <argsstring>(UserList *headNode)</argsstring>
+        <name>storeUsersInBin</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <briefdescription>
+<para>Stores the user list in a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function stores the user list in a binary file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean indicating whether the user list was successfully stored or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="39" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="243" bodyend="264" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="user_8h_1a33645599f77fa65990a9d319b408d83d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool searchUserByNif</definition>
+        <argsstring>(UserList *headNode, int nif)</argsstring>
+        <name>searchUserByNif</name>
+        <param>
+          <type><ref refid="struct_user_list" kindref="compound">UserList</ref> *</type>
+          <declname>headNode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nif</declname>
+        </param>
+        <briefdescription>
+<para>Searches for a user in the list with the given NIF. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function searches for a user in the list with the given NIF and returns a boolean indicating whether the user was found or not.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>headNode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the head node of the user list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nif</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The NIF of the user to be searched for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean indicating whether the user was found or not </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" line="40" column="6" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.c" bodystart="275" bodyend="292" declfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h" declline="40" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>File containing the functions to manage the users. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>João Pereira </para>
+</simplesect>
+<simplesect kind="date"><para>2023-03-18 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="user_8h_1a78e597570645123d7bd3a14c95158650" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/><ref refid="struct_user_list" kindref="compound">UserList</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="struct_user" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="struct_user_1ad68c6985dce5a3d709f854778dedee19" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_user_1ad68c6985dce5a3d709f854778dedee19" kindref="member">nif</ref>;</highlight></codeline>
+<codeline lineno="17" refid="struct_user_1ae5cb967283dbbdf75cb2032c1fa08fee" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>name[50];</highlight></codeline>
+<codeline lineno="18" refid="struct_user_1acc7965ca6d364e411c18b73e63a780ab" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>email[50];</highlight></codeline>
+<codeline lineno="19" refid="struct_user_1ae2e2e8a4ea94dd765699711cba3da163" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_user_1ae2e2e8a4ea94dd765699711cba3da163" kindref="member">phone</ref>;</highlight></codeline>
+<codeline lineno="20" refid="struct_user_1acfb3aa53add26760a83b15834b2390f4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_user_1acfb3aa53add26760a83b15834b2390f4" kindref="member">zip</ref>;</highlight></codeline>
+<codeline lineno="21" refid="struct_user_1a66860a4081ffdd725177cc1293ac23c7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>password[50];</highlight></codeline>
+<codeline lineno="22" refid="struct_user_1a8fccfa9bbd26416dcb9abadce88130d9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_user_1a8fccfa9bbd26416dcb9abadce88130d9" kindref="member">wallet</ref>;</highlight></codeline>
+<codeline lineno="23" refid="struct_user_1af2904b563c9b85eac138359a5e905161" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_user_1af2904b563c9b85eac138359a5e905161" kindref="member">isManager</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}<sp/><ref refid="struct_user" kindref="compound">User</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="struct_user_list" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_user_list" kindref="compound">UserList</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28" refid="struct_user_list_1a7ffd636d88d39d8b4366d5423d352b0b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_user" kindref="compound">User</ref><sp/><ref refid="struct_user_list_1a7ffd636d88d39d8b4366d5423d352b0b" kindref="member">user</ref>;</highlight></codeline>
+<codeline lineno="29" refid="struct_user_list_1a95d6d33ec7130b8fd25c4239b9ea0fd8" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*<ref refid="struct_user_list_1a95d6d33ec7130b8fd25c4239b9ea0fd8" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*<ref refid="user_8h_1ad203452512810651c2171760555aa2a9" kindref="member">readUsersFromTxt</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>**headNode);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*<ref refid="user_8h_1a409cd4e7d7f39664f5f342ddd57dcb97" kindref="member">setUsersData</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>**headNode);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="struct_user" kindref="compound">User</ref><sp/>*<ref refid="user_8h_1a4b161546e24d1b81b92fef4f200cf42b" kindref="member">createUser</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nif,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>name[50],<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>email[50],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>phone,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zip,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>password[50],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>wallet,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isManager);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="user_8h_1af63db65a74a034cbe79bc20a596cddef" kindref="member">createUserList</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>**headNode,<sp/><ref refid="struct_user" kindref="compound">User</ref><sp/>user);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="user_8h_1a52109c29fee919bb798939a3eb7ce0c8" kindref="member">printUserList</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*headNode);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="user_8h_1a654440f6926efc64d3240c437445d8ad" kindref="member">editUser</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*usersList,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nif,<sp/><ref refid="struct_user" kindref="compound">User</ref><sp/>user);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="user_8h_1ac197452dacc7d54ad7d8344f7f0bdc21" kindref="member">deleteUser</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>**usersList,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nif);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="user_8h_1a3e9c4ed2c50d02ecb3ce6ec8593c3ef2" kindref="member">storeUsersInBin</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*headNode);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="user_8h_1a33645599f77fa65990a9d319b408d83d" kindref="member">searchUserByNif</ref>(<ref refid="struct_user_list" kindref="compound">UserList</ref><sp/>*headNode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nif);</highlight></codeline>
+    </programlisting>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/user.h"/>
+  </compounddef>
+</doxygen>

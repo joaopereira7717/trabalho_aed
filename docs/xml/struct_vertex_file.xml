@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_vertex_file" kind="struct" language="C++" prot="public">
+    <compoundname>VertexFile</compoundname>
+    <includes refid="routes_8h" local="no">routes.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_vertex_file_1af126ceed259751781ea3b64024138f7d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cod</definition>
+        <argsstring></argsstring>
+        <name>cod</name>
+        <qualifiedname>VertexFile::cod</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Código do Vértice </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="52" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_vertex_file_1aa95d66244c3d3c01f6c1e8ae63ea123f" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char city[N]</definition>
+        <argsstring>[N]</argsstring>
+        <name>city</name>
+        <qualifiedname>VertexFile::city</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Nome da City </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="53" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" line="50" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/routes.h" bodystart="51" bodyend="54"/>
+    <listofallmembers>
+      <member refid="struct_vertex_file_1aa95d66244c3d3c01f6c1e8ae63ea123f" prot="public" virt="non-virtual"><scope>VertexFile</scope><name>city</name></member>
+      <member refid="struct_vertex_file_1af126ceed259751781ea3b64024138f7d" prot="public" virt="non-virtual"><scope>VertexFile</scope><name>cod</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

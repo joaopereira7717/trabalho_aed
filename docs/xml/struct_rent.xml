@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="struct_rent" kind="struct" language="C++" prot="public">
+    <compoundname>Rent</compoundname>
+    <includes refid="rentals_8h" local="no">rentals.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>Rent::id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="18" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rent_1a8f6ccb815804f631c051eb8662123827" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char vehicleRegistration[50]</definition>
+        <argsstring>[50]</argsstring>
+        <name>vehicleRegistration</name>
+        <qualifiedname>Rent::vehicleRegistration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="19" column="8" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rent_1ad44e504cd2c62fca8bd43810612f8b5e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int userNif</definition>
+        <argsstring></argsstring>
+        <name>userNif</name>
+        <qualifiedname>Rent::userNif</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="20" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_rent_1ab3f85406a374fa651e08c8e29d993e96" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int timeInMinutes</definition>
+        <argsstring></argsstring>
+        <name>timeInMinutes</name>
+        <qualifiedname>Rent::timeInMinutes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="21" column="7" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" line="16" column="1" bodyfile="/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models/rentals.h" bodystart="17" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" prot="public" virt="non-virtual"><scope>Rent</scope><name>id</name></member>
+      <member refid="struct_rent_1ab3f85406a374fa651e08c8e29d993e96" prot="public" virt="non-virtual"><scope>Rent</scope><name>timeInMinutes</name></member>
+      <member refid="struct_rent_1ad44e504cd2c62fca8bd43810612f8b5e" prot="public" virt="non-virtual"><scope>Rent</scope><name>userNif</name></member>
+      <member refid="struct_rent_1a8f6ccb815804f631c051eb8662123827" prot="public" virt="non-virtual"><scope>Rent</scope><name>vehicleRegistration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

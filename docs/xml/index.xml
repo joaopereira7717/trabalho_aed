@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.7" xml:lang="en-US">
+  <compound refid="struct_adj" kind="struct"><name>Adj</name>
+    <member refid="struct_adj_1af126ceed259751781ea3b64024138f7d" kind="variable"><name>cod</name></member>
+    <member refid="struct_adj_1a2578b368dad74bcd4a88bbeeb319a833" kind="variable"><name>dist</name></member>
+    <member refid="struct_adj_1ac5792fa79623e519e0e7b6eeeaea2ef4" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="struct_adj_file" kind="struct"><name>AdjFile</name>
+    <member refid="struct_adj_file_1a3f7e074121ff0e7cbe474548c852eee2" kind="variable"><name>codOrigin</name></member>
+    <member refid="struct_adj_file_1a993972db92bb1646ef99f12bc02b2789" kind="variable"><name>codDestiny</name></member>
+    <member refid="struct_adj_file_1a8128625c9e3fd04c27b82957732d8781" kind="variable"><name>weight</name></member>
+  </compound>
+  <compound refid="struct_best" kind="struct"><name>Best</name>
+    <member refid="struct_best_1a20db43048c55f6037809778aead48e5c" kind="variable"><name>distance</name></member>
+    <member refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" kind="variable"><name>anteriores</name></member>
+  </compound>
+  <compound refid="struct_rent" kind="struct"><name>Rent</name>
+    <member refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kind="variable"><name>id</name></member>
+    <member refid="struct_rent_1a8f6ccb815804f631c051eb8662123827" kind="variable"><name>vehicleRegistration</name></member>
+    <member refid="struct_rent_1ad44e504cd2c62fca8bd43810612f8b5e" kind="variable"><name>userNif</name></member>
+    <member refid="struct_rent_1ab3f85406a374fa651e08c8e29d993e96" kind="variable"><name>timeInMinutes</name></member>
+  </compound>
+  <compound refid="struct_rent_list" kind="struct"><name>RentList</name>
+    <member refid="struct_rent_list_1aa86fb95e2e6fefbf086cf348913f859e" kind="variable"><name>rent</name></member>
+    <member refid="struct_rent_list_1a2ace171a2af41b05ad9e8d2d8097667b" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="struct_user" kind="struct"><name>User</name>
+    <member refid="struct_user_1ad68c6985dce5a3d709f854778dedee19" kind="variable"><name>nif</name></member>
+    <member refid="struct_user_1ae5cb967283dbbdf75cb2032c1fa08fee" kind="variable"><name>name</name></member>
+    <member refid="struct_user_1acc7965ca6d364e411c18b73e63a780ab" kind="variable"><name>email</name></member>
+    <member refid="struct_user_1ae2e2e8a4ea94dd765699711cba3da163" kind="variable"><name>phone</name></member>
+    <member refid="struct_user_1acfb3aa53add26760a83b15834b2390f4" kind="variable"><name>zip</name></member>
+    <member refid="struct_user_1a66860a4081ffdd725177cc1293ac23c7" kind="variable"><name>password</name></member>
+    <member refid="struct_user_1a8fccfa9bbd26416dcb9abadce88130d9" kind="variable"><name>wallet</name></member>
+    <member refid="struct_user_1af2904b563c9b85eac138359a5e905161" kind="variable"><name>isManager</name></member>
+  </compound>
+  <compound refid="struct_user_list" kind="struct"><name>UserList</name>
+    <member refid="struct_user_list_1a7ffd636d88d39d8b4366d5423d352b0b" kind="variable"><name>user</name></member>
+    <member refid="struct_user_list_1a95d6d33ec7130b8fd25c4239b9ea0fd8" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="struct_vehicle" kind="struct"><name>Vehicle</name>
+    <member refid="struct_vehicle_1aaaa75c27dd8d56edcd1cbac0cf8447b9" kind="variable"><name>registration</name></member>
+    <member refid="struct_vehicle_1aab10593edc73627b19ef9de53fd331d2" kind="variable"><name>type</name></member>
+    <member refid="struct_vehicle_1a30edcbc6721c4ee39eaefa55f2c6b0cc" kind="variable"><name>battery</name></member>
+    <member refid="struct_vehicle_1a66700f11d42fee2413e58dbf49c43ee1" kind="variable"><name>cost</name></member>
+    <member refid="struct_vehicle_1a7f6b14e3e00db83dc6d061d005021cce" kind="variable"><name>isInUse</name></member>
+    <member refid="struct_vehicle_1a12f443a2876a59dda49bb7d296c40fcd" kind="variable"><name>location</name></member>
+  </compound>
+  <compound refid="struct_vehicle_list" kind="struct"><name>VehicleList</name>
+    <member refid="struct_vehicle_list_1a7e67faac7eb0a26632340a79a8f0bf5f" kind="variable"><name>vehicle</name></member>
+    <member refid="struct_vehicle_list_1a16931b761a6ae7dc99684baed4b50ab3" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="struct_vertex" kind="struct"><name>Vertex</name>
+    <member refid="struct_vertex_1af126ceed259751781ea3b64024138f7d" kind="variable"><name>cod</name></member>
+    <member refid="struct_vertex_1aa95d66244c3d3c01f6c1e8ae63ea123f" kind="variable"><name>city</name></member>
+    <member refid="struct_vertex_1a1df99df902f5f6e81ec3e21e9c07360e" kind="variable"><name>visited</name></member>
+    <member refid="struct_vertex_1ad959a48c566626429c5091adfbd48bac" kind="variable"><name>next</name></member>
+    <member refid="struct_vertex_1aedb112186b8bd0ae14df3a55f7cd90ce" kind="variable"><name>adjacents</name></member>
+  </compound>
+  <compound refid="struct_vertex_file" kind="struct"><name>VertexFile</name>
+    <member refid="struct_vertex_file_1af126ceed259751781ea3b64024138f7d" kind="variable"><name>cod</name></member>
+    <member refid="struct_vertex_file_1aa95d66244c3d3c01f6c1e8ae63ea123f" kind="variable"><name>city</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="rentals_8c" kind="file"><name>rentals.c</name>
+    <member refid="rentals_8c_1a630605bf530ca0a78a13ac7b7b8394dc" kind="function"><name>createRent</name></member>
+    <member refid="rentals_8c_1a22ac0bc64779645502309d395d6ef0c3" kind="function"><name>createRentList</name></member>
+    <member refid="rentals_8c_1ac32e4f9d474cf56efc5676307e970719" kind="function"><name>printRentList</name></member>
+    <member refid="rentals_8c_1a26925977432b96e5502518bd48531445" kind="function"><name>deleteRent</name></member>
+    <member refid="rentals_8c_1af9dd3cf157a9ba44cd8d2cf899267f98" kind="function"><name>countRents</name></member>
+    <member refid="rentals_8c_1aab6c450fbb87a46cb374c78b591cb656" kind="function"><name>editRent</name></member>
+    <member refid="rentals_8c_1ac3b6a49c51c5278f9f6b2bf3b0d9f94e" kind="function"><name>storeRentsInBin</name></member>
+  </compound>
+  <compound refid="rentals_8h" kind="file"><name>rentals.h</name>
+    <member refid="rentals_8h_1a6dc0036600630edd64217590fbd27279" kind="typedef"><name>RentList</name></member>
+    <member refid="rentals_8h_1ae83e1c05f1ef1979c057561501df3a79" kind="typedef"><name>Rent</name></member>
+    <member refid="rentals_8h_1a630605bf530ca0a78a13ac7b7b8394dc" kind="function"><name>createRent</name></member>
+    <member refid="rentals_8h_1ac32e4f9d474cf56efc5676307e970719" kind="function"><name>printRentList</name></member>
+    <member refid="rentals_8h_1a22ac0bc64779645502309d395d6ef0c3" kind="function"><name>createRentList</name></member>
+    <member refid="rentals_8h_1af9dd3cf157a9ba44cd8d2cf899267f98" kind="function"><name>countRents</name></member>
+    <member refid="rentals_8h_1a26925977432b96e5502518bd48531445" kind="function"><name>deleteRent</name></member>
+    <member refid="rentals_8h_1aab6c450fbb87a46cb374c78b591cb656" kind="function"><name>editRent</name></member>
+    <member refid="rentals_8h_1ac3b6a49c51c5278f9f6b2bf3b0d9f94e" kind="function"><name>storeRentsInBin</name></member>
+  </compound>
+  <compound refid="routes_8c" kind="file"><name>routes.c</name>
+    <member refid="routes_8c_1a5019e918f68638f5ee193138027405df" kind="function"><name>createRoute</name></member>
+    <member refid="routes_8c_1ae87720a58f6d30b7a5ec8c41fe0158e2" kind="function"><name>createRouteVertex</name></member>
+    <member refid="routes_8c_1a6b02bd0cb67e4175a6ff84da2fc20036" kind="function"><name>insertRouteVertex</name></member>
+    <member refid="routes_8c_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kind="function"><name>showRoutes</name></member>
+    <member refid="routes_8c_1ac08fd85b0e1d73b8e22eec74d0b38185" kind="function"><name>destroyRoutes</name></member>
+    <member refid="routes_8c_1af9a8d20dbd4301590efe66c09c9cad84" kind="function"><name>searchCodVertex</name></member>
+    <member refid="routes_8c_1ab70e1129d2c0c8b9ea3dbb7c779505a0" kind="function"><name>searchVertex</name></member>
+    <member refid="routes_8c_1ac54eed9c8e70a3e0ef969900c8872552" kind="function"><name>searchVertexCod</name></member>
+    <member refid="routes_8c_1a1a8f75be4e9b363d012459131f3d7ada" kind="function"><name>resetVisitedVertex</name></member>
+    <member refid="routes_8c_1a73e20349f3e629ccd24d5b9b7c1e3fad" kind="function"><name>createAdj</name></member>
+    <member refid="routes_8c_1a4994b5d4c5bb2b050655a2d4ef14531b" kind="function"><name>insertAdjacentVertex</name></member>
+    <member refid="routes_8c_1aabe0b89e10f88f50df9fc6ee273eea38" kind="function"><name>insertAdjacentVertexCod</name></member>
+    <member refid="routes_8c_1a2aa41a6a2d3caa6e5e43490c296fb32d" kind="function"><name>existAdj</name></member>
+    <member refid="routes_8c_1a251a8ffd0dbbbd4c915eecf69eeed000" kind="function"><name>insertAdj</name></member>
+    <member refid="routes_8c_1a6cdcfff755904515945a32bf205656ef" kind="function"><name>showAdj</name></member>
+    <member refid="routes_8c_1a96dc20b046a393d2896ed7e3123a9450" kind="function"><name>destroyAdj</name></member>
+    <member refid="routes_8c_1a6dbab8f1d02d69c671fa250132262f4a" kind="function"><name>countPaths</name></member>
+    <member refid="routes_8c_1a6dc33af1d97003e2d1dd85632d6adf5d" kind="function"><name>countPathsVertexsName</name></member>
+    <member refid="routes_8c_1a08d25e7f746a8921ca8c47af9e9bb4c6" kind="function"><name>depthFirstSearchRec</name></member>
+    <member refid="routes_8c_1aeab2ed9ec5a8977b247fc0de0b0411dc" kind="function"><name>depthFirstSearchNamesRec</name></member>
+    <member refid="routes_8c_1af5ba1fa298635549c730b1f281432335" kind="function"><name>bestPath</name></member>
+    <member refid="routes_8c_1a77ee3a8e94ffffc8866509b0d2736443" kind="function"><name>showAllPath</name></member>
+    <member refid="routes_8c_1ab02145d9bf9a32a12062fcb320adf915" kind="function"><name>saveGraph</name></member>
+    <member refid="routes_8c_1ae8db4207926f1b116c13b72445acb875" kind="function"><name>saveAdj</name></member>
+    <member refid="routes_8c_1aa1b1f204441114d6b5bad6387df28a9f" kind="function"><name>loadGraph</name></member>
+    <member refid="routes_8c_1aa5b4862a92a3141268f21eb64e266a71" kind="function"><name>loadAdj</name></member>
+    <member refid="routes_8c_1a56243cd6d5aeb39369194ea05c3178cf" kind="function"><name>routesReadTxt</name></member>
+  </compound>
+  <compound refid="routes_8h" kind="file"><name>routes.h</name>
+    <member refid="routes_8h_1a0240ac851181b84ac374872dc5434ee4" kind="define"><name>N</name></member>
+    <member refid="routes_8h_1a392fb874e547e582e9c66a08a1f23326" kind="define"><name>MAX</name></member>
+    <member refid="routes_8h_1a010fa716ced1170c05d8fc9da46a5d34" kind="define"><name>MAXDISTANCE</name></member>
+    <member refid="routes_8h_1acd9f17cb24ce73dde34e7a6bc62f92fb" kind="typedef"><name>Adj</name></member>
+    <member refid="routes_8h_1aed6ccfc49dc362b265d9e5593ddebc3c" kind="typedef"><name>AdjFile</name></member>
+    <member refid="routes_8h_1a2e1662af5233d0fe6a6f061445d2ff25" kind="typedef"><name>Vertex</name></member>
+    <member refid="routes_8h_1a83efe7c483203486d5f51915d1b5e753" kind="typedef"><name>VertexFile</name></member>
+    <member refid="routes_8h_1aac29ddebe4eb20f71937c0605f314505" kind="typedef"><name>Best</name></member>
+    <member refid="routes_8h_1a5019e918f68638f5ee193138027405df" kind="function"><name>createRoute</name></member>
+    <member refid="routes_8h_1a6b02bd0cb67e4175a6ff84da2fc20036" kind="function"><name>insertRouteVertex</name></member>
+    <member refid="routes_8h_1a84701986d37adc4a7855eae547fd5158" kind="function"><name>createRouteVertex</name></member>
+    <member refid="routes_8h_1a09d7bed5e43bd9d16ee464b0e6ef6d7b" kind="function"><name>showRoutes</name></member>
+    <member refid="routes_8h_1af9a8d20dbd4301590efe66c09c9cad84" kind="function"><name>searchCodVertex</name></member>
+    <member refid="routes_8h_1ab70e1129d2c0c8b9ea3dbb7c779505a0" kind="function"><name>searchVertex</name></member>
+    <member refid="routes_8h_1ac54eed9c8e70a3e0ef969900c8872552" kind="function"><name>searchVertexCod</name></member>
+    <member refid="routes_8h_1ac08fd85b0e1d73b8e22eec74d0b38185" kind="function"><name>destroyRoutes</name></member>
+    <member refid="routes_8h_1ad41cec83095230a117758bb726522a9c" kind="function"><name>insertAdjacentVertex</name></member>
+    <member refid="routes_8h_1a3cd1c5401553c8d282e0bb168107ba11" kind="function"><name>insertAdjacentVertexCod</name></member>
+    <member refid="routes_8h_1a73e20349f3e629ccd24d5b9b7c1e3fad" kind="function"><name>createAdj</name></member>
+    <member refid="routes_8h_1a251a8ffd0dbbbd4c915eecf69eeed000" kind="function"><name>insertAdj</name></member>
+    <member refid="routes_8h_1a2aa41a6a2d3caa6e5e43490c296fb32d" kind="function"><name>existAdj</name></member>
+    <member refid="routes_8h_1a6cdcfff755904515945a32bf205656ef" kind="function"><name>showAdj</name></member>
+    <member refid="routes_8h_1a96dc20b046a393d2896ed7e3123a9450" kind="function"><name>destroyAdj</name></member>
+    <member refid="routes_8h_1a6c171e28de18201f13008fae2434d7da" kind="function"><name>countPaths</name></member>
+    <member refid="routes_8h_1a6dc33af1d97003e2d1dd85632d6adf5d" kind="function"><name>countPathsVertexsName</name></member>
+    <member refid="routes_8h_1aa14be61fd430c21593ec7bb80ec083ce" kind="function"><name>depthFirstSearchRec</name></member>
+    <member refid="routes_8h_1aeab2ed9ec5a8977b247fc0de0b0411dc" kind="function"><name>depthFirstSearchNamesRec</name></member>
+    <member refid="routes_8h_1a1a8f75be4e9b363d012459131f3d7ada" kind="function"><name>resetVisitedVertex</name></member>
+    <member refid="routes_8h_1af5ba1fa298635549c730b1f281432335" kind="function"><name>bestPath</name></member>
+    <member refid="routes_8h_1a77ee3a8e94ffffc8866509b0d2736443" kind="function"><name>showAllPath</name></member>
+    <member refid="routes_8h_1ab02145d9bf9a32a12062fcb320adf915" kind="function"><name>saveGraph</name></member>
+    <member refid="routes_8h_1ad2c48746dd630427e2033e3fef8c0aa4" kind="function"><name>saveAdj</name></member>
+    <member refid="routes_8h_1aa1b1f204441114d6b5bad6387df28a9f" kind="function"><name>loadGraph</name></member>
+    <member refid="routes_8h_1aa5b4862a92a3141268f21eb64e266a71" kind="function"><name>loadAdj</name></member>
+    <member refid="routes_8h_1a56243cd6d5aeb39369194ea05c3178cf" kind="function"><name>routesReadTxt</name></member>
+  </compound>
+  <compound refid="user_8c" kind="file"><name>user.c</name>
+    <member refid="user_8c_1ad203452512810651c2171760555aa2a9" kind="function"><name>readUsersFromTxt</name></member>
+    <member refid="user_8c_1a409cd4e7d7f39664f5f342ddd57dcb97" kind="function"><name>setUsersData</name></member>
+    <member refid="user_8c_1a4b161546e24d1b81b92fef4f200cf42b" kind="function"><name>createUser</name></member>
+    <member refid="user_8c_1af63db65a74a034cbe79bc20a596cddef" kind="function"><name>createUserList</name></member>
+    <member refid="user_8c_1a52109c29fee919bb798939a3eb7ce0c8" kind="function"><name>printUserList</name></member>
+    <member refid="user_8c_1a654440f6926efc64d3240c437445d8ad" kind="function"><name>editUser</name></member>
+    <member refid="user_8c_1ac197452dacc7d54ad7d8344f7f0bdc21" kind="function"><name>deleteUser</name></member>
+    <member refid="user_8c_1a3e9c4ed2c50d02ecb3ce6ec8593c3ef2" kind="function"><name>storeUsersInBin</name></member>
+    <member refid="user_8c_1a33645599f77fa65990a9d319b408d83d" kind="function"><name>searchUserByNif</name></member>
+  </compound>
+  <compound refid="user_8h" kind="file"><name>user.h</name>
+    <member refid="user_8h_1a78e597570645123d7bd3a14c95158650" kind="typedef"><name>UserList</name></member>
+    <member refid="user_8h_1ad203452512810651c2171760555aa2a9" kind="function"><name>readUsersFromTxt</name></member>
+    <member refid="user_8h_1a409cd4e7d7f39664f5f342ddd57dcb97" kind="function"><name>setUsersData</name></member>
+    <member refid="user_8h_1a4b161546e24d1b81b92fef4f200cf42b" kind="function"><name>createUser</name></member>
+    <member refid="user_8h_1af63db65a74a034cbe79bc20a596cddef" kind="function"><name>createUserList</name></member>
+    <member refid="user_8h_1a52109c29fee919bb798939a3eb7ce0c8" kind="function"><name>printUserList</name></member>
+    <member refid="user_8h_1a654440f6926efc64d3240c437445d8ad" kind="function"><name>editUser</name></member>
+    <member refid="user_8h_1ac197452dacc7d54ad7d8344f7f0bdc21" kind="function"><name>deleteUser</name></member>
+    <member refid="user_8h_1a3e9c4ed2c50d02ecb3ce6ec8593c3ef2" kind="function"><name>storeUsersInBin</name></member>
+    <member refid="user_8h_1a33645599f77fa65990a9d319b408d83d" kind="function"><name>searchUserByNif</name></member>
+  </compound>
+  <compound refid="vehicle_8c" kind="file"><name>vehicle.c</name>
+    <member refid="vehicle_8c_1a962372f88de03fcd5581aa44353afec6" kind="function"><name>readVehiclesFromTxt</name></member>
+    <member refid="vehicle_8c_1a1dba59da0b1fb87236e27cd988cba929" kind="function"><name>createVehicle</name></member>
+    <member refid="vehicle_8c_1a2f9e802c7e03357a0b24f6e35ae08e2a" kind="function"><name>createVehicleList</name></member>
+    <member refid="vehicle_8c_1a1f861dcfe17198ab1bd092d377c563c7" kind="function"><name>printVehicleList</name></member>
+    <member refid="vehicle_8c_1a79573fa45f9b0c6d508d15c53bfe3184" kind="function"><name>sortVehicleListDesc</name></member>
+    <member refid="vehicle_8c_1a1a12f926cc8099df21bb1f19b140ae43" kind="function"><name>editVehicle</name></member>
+    <member refid="vehicle_8c_1aa5187e1606f79dcc2f2ac6f50c9488e7" kind="function"><name>deleteVehicle</name></member>
+    <member refid="vehicle_8c_1abf926983d64d536d6290140eb25af2cd" kind="function"><name>storeVehicleListInBin</name></member>
+    <member refid="vehicle_8c_1ad5c915a3b01325b4b0c444e5a6d95390" kind="function"><name>searchVehicleByRegistration</name></member>
+    <member refid="vehicle_8c_1ae070c731f906704c4732c31550e6de33" kind="function"><name>isVehicleAvailable</name></member>
+    <member refid="vehicle_8c_1ae4e0326a3173e078e405a06341910545" kind="function"><name>editVehicleAvailability</name></member>
+    <member refid="vehicle_8c_1ad789e0c673b0d9c3a4b2a4c13ee18f1c" kind="function"><name>sortVehiclesByLocation</name></member>
+    <member refid="vehicle_8c_1acf84066409b372896f5f76be1f5b45c3" kind="function"><name>checkVehiclesInRadius</name></member>
+    <member refid="vehicle_8c_1aefd22c2a318f5e40dbdd3d6339d4ba28" kind="function"><name>markAsVisited</name></member>
+    <member refid="vehicle_8c_1ad6e2aee20d6d76e8c5c806293a005b23" kind="function"><name>traverseGraph</name></member>
+    <member refid="vehicle_8c_1a783a166328fa4a2a53819bf8b360ca0a" kind="function"><name>showVehicleByTypeOnLocation</name></member>
+    <member refid="vehicle_8c_1a2fe05f7785a38b737d421da08e511e89" kind="function"><name>recoverTruck</name></member>
+    <member refid="vehicle_8c_1a3c4821076839fab7e48392abf34d4db1" kind="function"><name>checkIsLegibleForTruck</name></member>
+    <member refid="vehicle_8c_1a26f2bdaa084b360f603a0bc9334bd0cb" kind="function"><name>headInsertionVehicleList</name></member>
+    <member refid="vehicle_8c_1ae5f10ae9f25a3fb2ea24e8496399a96a" kind="function"><name>moveAndRechargeVehicle</name></member>
+  </compound>
+  <compound refid="vehicle_8h" kind="file"><name>vehicle.h</name>
+    <member refid="vehicle_8h_1a14e7676fb0bc4b258e56ce36ab3054dc" kind="typedef"><name>VehicleList</name></member>
+    <member refid="vehicle_8h_1abe36c46f351fd80b9dd6401e7cce0b5d" kind="typedef"><name>Vehicle</name></member>
+    <member refid="vehicle_8h_1a962372f88de03fcd5581aa44353afec6" kind="function"><name>readVehiclesFromTxt</name></member>
+    <member refid="vehicle_8h_1acc427433abb865212061d5c9aa8e19dd" kind="function"><name>createVehicle</name></member>
+    <member refid="vehicle_8h_1a2f9e802c7e03357a0b24f6e35ae08e2a" kind="function"><name>createVehicleList</name></member>
+    <member refid="vehicle_8h_1a1f861dcfe17198ab1bd092d377c563c7" kind="function"><name>printVehicleList</name></member>
+    <member refid="vehicle_8h_1a1a12f926cc8099df21bb1f19b140ae43" kind="function"><name>editVehicle</name></member>
+    <member refid="vehicle_8h_1aa5187e1606f79dcc2f2ac6f50c9488e7" kind="function"><name>deleteVehicle</name></member>
+    <member refid="vehicle_8h_1abf926983d64d536d6290140eb25af2cd" kind="function"><name>storeVehicleListInBin</name></member>
+    <member refid="vehicle_8h_1ad5c915a3b01325b4b0c444e5a6d95390" kind="function"><name>searchVehicleByRegistration</name></member>
+    <member refid="vehicle_8h_1ae070c731f906704c4732c31550e6de33" kind="function"><name>isVehicleAvailable</name></member>
+    <member refid="vehicle_8h_1ae4e0326a3173e078e405a06341910545" kind="function"><name>editVehicleAvailability</name></member>
+    <member refid="vehicle_8h_1a79573fa45f9b0c6d508d15c53bfe3184" kind="function"><name>sortVehicleListDesc</name></member>
+    <member refid="vehicle_8h_1acf84066409b372896f5f76be1f5b45c3" kind="function"><name>checkVehiclesInRadius</name></member>
+    <member refid="vehicle_8h_1aefd22c2a318f5e40dbdd3d6339d4ba28" kind="function"><name>markAsVisited</name></member>
+    <member refid="vehicle_8h_1ad6e2aee20d6d76e8c5c806293a005b23" kind="function"><name>traverseGraph</name></member>
+    <member refid="vehicle_8h_1a783a166328fa4a2a53819bf8b360ca0a" kind="function"><name>showVehicleByTypeOnLocation</name></member>
+    <member refid="vehicle_8h_1a2fe05f7785a38b737d421da08e511e89" kind="function"><name>recoverTruck</name></member>
+    <member refid="vehicle_8h_1a3c4821076839fab7e48392abf34d4db1" kind="function"><name>checkIsLegibleForTruck</name></member>
+    <member refid="vehicle_8h_1a26f2bdaa084b360f603a0bc9334bd0cb" kind="function"><name>headInsertionVehicleList</name></member>
+    <member refid="vehicle_8h_1ae5f10ae9f25a3fb2ea24e8496399a96a" kind="function"><name>moveAndRechargeVehicle</name></member>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="md__2_users_2inflightit_2_desktop_2coisas_2aula__ead_2trabalho_pratico_2_r_e_a_d_m_e" kind="page"><name>md__2_users_2inflightit_2_desktop_2coisas_2aula__ead_2trabalho_pratico_2_r_e_a_d_m_e</name>
+  </compound>
+  <compound refid="dir_2e7aed224a7ff24ef99fb144a36ab20e" kind="dir"><name>/Users/inflightit/Desktop/coisas/aula_ead</name>
+  </compound>
+  <compound refid="dir_1f55215847a6c1ed98db2020a069c1f2" kind="dir"><name>/Users/inflightit/Desktop/coisas</name>
+  </compound>
+  <compound refid="dir_45fe88cf990f87374d0ca52409d63b56" kind="dir"><name>/Users/inflightit/Desktop</name>
+  </compound>
+  <compound refid="dir_5d65b7e6aad6911040358c0621c5ab39" kind="dir"><name>/Users/inflightit</name>
+  </compound>
+  <compound refid="dir_c55ad5c33a933f37d42b7e1ac8c01534" kind="dir"><name>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico/models</name>
+  </compound>
+  <compound refid="dir_8ea230685036708d7a2f5c904b559845" kind="dir"><name>/Users/inflightit/Desktop/coisas/aula_ead/trabalhoPratico</name>
+  </compound>
+  <compound refid="dir_d522931ffa1371640980b621734a4381" kind="dir"><name>/Users</name>
+  </compound>
+</doxygenindex>
