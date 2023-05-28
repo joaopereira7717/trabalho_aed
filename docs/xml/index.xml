@@ -12,7 +12,7 @@
   </compound>
   <compound refid="struct_best" kind="struct"><name>Best</name>
     <member refid="struct_best_1a20db43048c55f6037809778aead48e5c" kind="variable"><name>distance</name></member>
-    <member refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" kind="variable"><name>anteriores</name></member>
+    <member refid="struct_best_1ad8d8c331edd1d4c2f034f542b077887b" kind="variable"><name>befores</name></member>
   </compound>
   <compound refid="struct_rent" kind="struct"><name>Rent</name>
     <member refid="struct_rent_1a7441ef0865bcb3db9b8064dd7375c1ea" kind="variable"><name>id</name></member>

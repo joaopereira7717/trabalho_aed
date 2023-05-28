@@ -15,55 +15,46 @@
 
 #define N 50
 
-/**
- * Estrutura de uma Adjacência.
- */
-typedef struct Adj
+typedef struct Adj // adjacents
 {
-  int cod;    /*!< Código da Adjacência */
-  float dist; /*!< ValueDistance */
+  int cod;    /*!< Cod of adjacent */
+  float dist; /*!< Distance */
   struct Adj *next;
 } Adj;
 
-/**
- * Estrutura de uma Adjacência para Ficheiro
- */
-typedef struct AdjFile
+typedef struct AdjFile // adj to file
 {
   int codOrigin;
-  int codDestiny; /*!< Código da Adjacência */
-  float weight;   /*!< ValueDistance */
+  int codDestiny;
+  float weight;
 } AdjFile;
 
-/**
- * Descrição de um Vértice do grafo.
- */
-typedef struct Vertex
+typedef struct Vertex // vertex from the graph
 {
-  int cod;      /*!< Código do Vértice */
-  char city[N]; /*!< Nome da City */
+  int cod;
+  char city[N];
   bool visited;
-  struct Vertex *next;   /*!< Lista de Vértices */
-  struct Adj *adjacents; /*!< Lista de Adjacências */
+  struct Vertex *next;   // list of vertex
+  struct Adj *adjacents; // list of adjacents
 } Vertex;
 
 typedef struct VertexFile
 {
-  int cod;      /*!< Código do Vértice */
-  char city[N]; /*!< Nome da City */
+  int cod;
+  char city[N];
 } VertexFile;
 
-// Auxiliar ao Dijkstra
+// Dijkstra aux
 #define MAX 5
 #define MAXDISTANCE 9999
 
 typedef struct Best
 {
-  int distance[MAX];   // weight
-  int anteriores[MAX]; // vertexs cod
+  int distance[MAX]; // weight
+  int befores[MAX];  // vertexs cod
 } Best;
 
-#pragma region GRAFO
+#pragma region GRAPH
 
 Vertex *createRoute();
 Vertex *insertRouteVertex(Vertex *g, Vertex *new, bool *res);
@@ -76,12 +67,12 @@ Vertex *destroyRoutes(Vertex *g);
 
 #pragma endregion
 
-#pragma region ADJACENCIAS
+#pragma region ADJACENTS
 
 Vertex *insertAdjacentVertex(Vertex *g, char *origem, char *dest, float valuedistance, bool *res);
 Vertex *insertAdjacentVertexCod(Vertex *g, int origem, int dest, float valuedistance, bool *res);
 
-#pragma region LISTA_ADJACENCIAS
+#pragma region LIST_ADJACENTS
 
 Adj *createAdj(int cod, float valuedistance);
 Adj *insertAdj(Adj *h, Adj *new, bool *res);
@@ -93,7 +84,7 @@ Adj *destroyAdj(Adj *h);
 
 #pragma endregion
 
-#pragma region ALGORITMOS
+#pragma region ALGORITMS
 
 int countPaths(Vertex *g, int src, int dst, int pathCount);
 int countPathsVertexsName(Vertex *g, char *src, char *dest, int pathCount);
@@ -108,7 +99,7 @@ void showAllPath(Best b, int n, int v);
 
 #pragma endregion
 
-#pragma region PRESERVAÇÂO
+#pragma region SAVING
 
 int saveGraph(Vertex *h, char *fileName);
 int saveAdj(Adj *h, char *fileName, int cod);

@@ -525,7 +525,7 @@ Best bestPath(Vertex *g, int n, int v)
   Best b;
   for (int i = 0; i < n; i++)
   {
-    b.anteriores[i] = pred[i];
+    b.befores[i] = pred[i];
     b.distance[i] = distance[i];
   }
   return b;
@@ -549,7 +549,7 @@ void showAllPath(Best b, int n, int v)
       j = i;
       do
       {
-        j = b.anteriores[j];
+        j = b.befores[j];
         printf(" <- %d", j);
       } while (j != v);
     }
