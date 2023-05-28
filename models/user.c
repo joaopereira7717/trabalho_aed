@@ -291,6 +291,15 @@ bool searchUserByNif(UserList *headNode, int nif)
   return false;
 }
 
+/**
+ * @brief Updates the wallet of a user with the given NIF.
+ *
+ * @param headNode A pointer to the head node of the user list.
+ * @param nif The NIF of the user whose wallet will be updated.
+ * @param wallet The amount to add to the user's wallet.
+ *
+ * @return true if the wallet was updated successfully, false otherwise.
+ */
 bool updateUserWallet(UserList *headNode, int nif, int wallet)
 {
   UserList *current = headNode;

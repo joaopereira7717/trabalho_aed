@@ -266,6 +266,15 @@ bool storeRentsInBin(RentList *headNode)
   return true;
 }
 
+/**
+ * @brief Calculates the rent price for a given vehicle registration and time in minutes.
+ *
+ * @param vehicleList A pointer to the head of the linked list of vehicles.
+ * @param vehicleRegistration The registration number of the vehicle to calculate the rent price for.
+ * @param timeInMinutes The time in minutes that the vehicle was rented for.
+ *
+ * @return The calculated rent price for the given vehicle and time in minutes. Returns 0 if the vehicle is not found in the list.
+ */
 int calculateRentPrice(VehicleList *vehicleList, char *vehicleRegistration, int timeInMinutes)
 {
   VehicleList *current = vehicleList;
