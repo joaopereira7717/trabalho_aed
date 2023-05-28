@@ -171,12 +171,20 @@ int main()
 #pragma region RENT
   RentList *rentList = NULL;
   printUserList(userList);
+  updateUserWallet(userList, 123, 100);
   Rent *rent = createRent("70-10-JK", 123, 10, vehicleList, userList, &rentList);
-  bool isCreatedRent = createRentList(&rentList, *rent);
-  printf("\nisCreated rent: %d", isCreatedRent);
+  if (rent != NULL)
+  {
+    bool isCreatedRent = createRentList(&rentList, *rent);
+    printf("\nisCreated rent: %d", isCreatedRent);
+  }
+  updateUserWallet(userList, 1234, 100);
   Rent *rent2 = createRent("20-03-LL", 1234, 15, vehicleList, userList, &rentList);
-  bool isCreatedRent2 = createRentList(&rentList, *rent2);
-  printf("\nisCreated rent2: %d", isCreatedRent2);
+  if (rent2 != NULL)
+  {
+    bool isCreatedRent2 = createRentList(&rentList, *rent2);
+    printf("\nisCreated rent2: %d", isCreatedRent2);
+  }
   printRentList(rentList);
   bool isDeletedRent = deleteRent(&rentList, 1, "70-10-JK", vehicleList);
   printf("\nisDeleted rent: %d", isDeletedRent);
@@ -204,5 +212,10 @@ int main()
   VehicleList *collected_vehicles = recoverTruck(start_node, &vehicleList, 1);
   printf("collected vehicles: \n");
   printVehicleList(collected_vehicles);
+  printVehicleList(vehicleList);
+  updateUserWallet(userList, 12345, 100);
+  updateUserWallet(userList, 12345, 100);
+  updateUserWallet(userList, 12345, -100);
+  printUserList(userList);
   return 0;
 }

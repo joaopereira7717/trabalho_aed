@@ -67,15 +67,26 @@ Rent *createRent(char *vehicleRegistration, int userNif, int timeInMinutes, Vehi
   strcpy(rent->vehicleRegistration, vehicleRegistration);
   rent->userNif = userNif;
   rent->timeInMinutes = timeInMinutes;
+  int price = calculateRentPrice(vehicleList, vehicleRegistration, timeInMinutes);
 
   // edit vehicle availability
   bool availabilityChanged = editVehicleAvailability(vehicleList, vehicleRegistration, false);
-
   if (!availabilityChanged)
   {
-    perror("Could not change vehicle availability!");
+    printf("Could not change vehicle availability!");
     return NULL;
   }
+  // update user wallet
+  bool payed = updateUserWallet(userList, userNif, -price);
+  printf("Price: %d\n", price);
+
+  if (!payed)
+  {
+    printf("Could not pay!");
+    return NULL;
+  }
+
+  printf("Rent created!\n");
 
   return rent;
 }
@@ -253,4 +264,18 @@ bool storeRentsInBin(RentList *headNode)
 
   fclose(pFile);
   return true;
+}
+
+int calculateRentPrice(VehicleList *vehicleList, char *vehicleRegistration, int timeInMinutes)
+{
+  VehicleList *current = vehicleList;
+  while (current != NULL)
+  {
+    if (strcmp(current->vehicle.registration, vehicleRegistration) == 0)
+    {
+      return current->vehicle.cost * timeInMinutes;
+    }
+    current = current->next;
+  }
+  return 0;
 }

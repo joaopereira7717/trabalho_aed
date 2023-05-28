@@ -290,3 +290,23 @@ bool searchUserByNif(UserList *headNode, int nif)
   }
   return false;
 }
+
+bool updateUserWallet(UserList *headNode, int nif, int wallet)
+{
+  UserList *current = headNode;
+  while (current != NULL)
+  {
+    if (current->user.nif == nif)
+    {
+      current->user.wallet += wallet;
+      if (current->user.wallet < 0)
+      {
+        current->user.wallet -= wallet;
+        return false;
+      }
+      return true;
+    }
+    current = current->next;
+  }
+  return false;
+}

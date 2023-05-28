@@ -38,3 +38,4 @@ bool editUser(UserList *usersList, int nif, User user);
 bool deleteUser(UserList **usersList, int nif);
 bool storeUsersInBin(UserList *headNode);
 bool searchUserByNif(UserList *headNode, int nif);
+bool updateUserWallet(UserList *headNode, int nif, int wallet);
