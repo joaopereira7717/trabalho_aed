@@ -578,6 +578,12 @@ VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_c
         bool is_legible = checkIsLegibleForTruck(current_vehicle);
         bool is_same_location = strcmp(current_vehicle->vehicle.location, current_node->city) == 0;
 
+        printf("is_legible -> %d\n", is_legible);
+        printf("is_same_location -> %d\n", is_same_location);
+        printf("current_vehicle->vehicle.location -> %s\n", current_vehicle->vehicle.location);
+        printf("current_node->city -> %s\n", current_node->city);
+        printf("vehicle registration -> %s\n", current_vehicle->vehicle.registration);
+
         if (is_legible && is_same_location)
         {
           collected_count++;
@@ -602,8 +608,6 @@ VehicleList *recoverTruck(Vertex *graph, VehicleList **vehicle_list, int truck_c
         moveAndRechargeVehicle(vehicle_list, vehicles_collected->vehicle.registration, start_node->city);
         markAsVisited(graph);
       }
-
-      printf("current node location -> %s\n", current_node->city);
     }
 
     // find the next unvisited node with the shortest distance from the current node
